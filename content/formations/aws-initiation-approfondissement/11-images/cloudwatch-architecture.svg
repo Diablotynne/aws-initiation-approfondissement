@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" font-family="system-ui, sans-serif">
+  <rect width="760" height="300" fill="#0d1117"/>
+
+  <rect x="20" y="20" width="150" height="45" rx="5" fill="#161b22" stroke="#58a6ff"/>
+  <text x="95" y="47" text-anchor="middle" fill="#58a6ff" font-size="11">EC2 (CPU, réseau)</text>
+
+  <rect x="20" y="80" width="150" height="45" rx="5" fill="#161b22" stroke="#58a6ff"/>
+  <text x="95" y="107" text-anchor="middle" fill="#58a6ff" font-size="11">RDS (connexions, I/O)</text>
+
+  <rect x="20" y="140" width="150" height="45" rx="5" fill="#161b22" stroke="#58a6ff"/>
+  <text x="95" y="167" text-anchor="middle" fill="#58a6ff" font-size="11">Load Balancer</text>
+
+  <rect x="20" y="200" width="150" height="45" rx="5" fill="#161b22" stroke="#58a6ff"/>
+  <text x="95" y="222" text-anchor="middle" fill="#58a6ff" font-size="10">Application custom</text>
+  <text x="95" y="236" text-anchor="middle" fill="#8b949e" font-size="9">métriques via API</text>
+
+  <rect x="290" y="90" width="180" height="90" rx="6" fill="#161b22" stroke="#f0883e" stroke-width="2"/>
+  <text x="380" y="120" text-anchor="middle" fill="#f0883e" font-size="13" font-weight="bold">CloudWatch</text>
+  <text x="380" y="140" text-anchor="middle" fill="#8b949e" font-size="10">Métriques, Logs,</text>
+  <text x="380" y="155" text-anchor="middle" fill="#8b949e" font-size="10">Dashboards, Alarms</text>
+
+  <rect x="590" y="30" width="150" height="45" rx="5" fill="#161b22" stroke="#3fb950"/>
+  <text x="665" y="57" text-anchor="middle" fill="#3fb950" font-size="11">SNS (notification)</text>
+
+  <rect x="590" y="90" width="150" height="45" rx="5" fill="#161b22" stroke="#3fb950"/>
+  <text x="665" y="112" text-anchor="middle" fill="#3fb950" font-size="10">Auto Scaling</text>
+  <text x="665" y="126" text-anchor="middle" fill="#8b949e" font-size="9">(scale out/in)</text>
+
+  <rect x="590" y="150" width="150" height="45" rx="5" fill="#161b22" stroke="#3fb950"/>
+  <text x="665" y="172" text-anchor="middle" fill="#3fb950" font-size="10">Lambda</text>
+  <text x="665" y="186" text-anchor="middle" fill="#8b949e" font-size="9">(action automatisée)</text>
+
+  <rect x="590" y="210" width="150" height="45" rx="5" fill="#161b22" stroke="#3fb950"/>
+  <text x="665" y="232" text-anchor="middle" fill="#3fb950" font-size="10">EC2 Action</text>
+  <text x="665" y="246" text-anchor="middle" fill="#8b949e" font-size="9">(reboot, stop, recover)</text>
+
+  <line x1="170" y1="42" x2="285" y2="115" stroke="#8b949e" stroke-width="1"/>
+  <line x1="170" y1="102" x2="285" y2="130" stroke="#8b949e" stroke-width="1"/>
+  <line x1="170" y1="162" x2="285" y2="150" stroke="#8b949e" stroke-width="1"/>
+  <line x1="170" y1="222" x2="285" y2="165" stroke="#8b949e" stroke-width="1"/>
+
+  <line x1="470" y1="115" x2="585" y2="52" stroke="#e6edf3" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <line x1="470" y1="130" x2="585" y2="112" stroke="#e6edf3" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <line x1="470" y1="150" x2="585" y2="172" stroke="#e6edf3" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <line x1="470" y1="165" x2="585" y2="232" stroke="#e6edf3" stroke-width="1.3" marker-end="url(#arrow)"/>
+
+  <text x="380" y="280" text-anchor="middle" fill="#8b949e" font-size="10">Les métriques déclenchent des alarmes, qui déclenchent des actions automatisées.</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#e6edf3"/>
+    </marker>
+  </defs>
+</svg>

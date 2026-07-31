@@ -1,0 +1,153 @@
+<svg viewBox="0 0 1000 550" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#232F3E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a202c;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <rect width="1000" height="550" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="500" y="30" font-size="18" font-weight="bold" fill="#FF9900" text-anchor="middle">AWS Serverless Event-Driven Architecture</text>
+
+  <!-- Client/Internet -->
+  <g filter="url(#shadow)">
+    <circle cx="80" cy="100" r="40" fill="#FF9900" opacity="0.8"/>
+    <text x="80" y="95" font-size="11" font-weight="bold" fill="#232F3E" text-anchor="middle">Client</text>
+    <text x="80" y="110" font-size="10" fill="#232F3E" text-anchor="middle">Internet</text>
+  </g>
+
+  <!-- API Gateway -->
+  <g filter="url(#shadow)">
+    <rect x="180" y="60" width="130" height="80" fill="#FF9900" opacity="0.8" rx="5"/>
+    <text x="245" y="80" font-size="11" font-weight="bold" fill="#232F3E" text-anchor="middle">API Gateway</text>
+    <text x="245" y="100" font-size="9" fill="#232F3E" text-anchor="middle">REST/HTTP</text>
+    <text x="245" y="115" font-size="9" fill="#232F3E" text-anchor="middle">Endpoint</text>
+  </g>
+
+  <!-- Arrow Client to API Gateway -->
+  <path d="M 120 100 L 180 100" stroke="#FF9900" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="150" y="90" font-size="8" fill="#FFFFFF">Request</text>
+
+  <!-- Lambda Function -->
+  <g filter="url(#shadow)">
+    <rect x="380" y="40" width="130" height="100" fill="#FF6700" opacity="0.85" rx="5"/>
+    <text x="445" y="65" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">AWS Lambda</text>
+    <text x="445" y="85" font-size="9" fill="#FFFFFF" text-anchor="middle">Function</text>
+    <text x="445" y="100" font-size="8" fill="#FFFFFF" text-anchor="middle">(Business Logic)</text>
+    <text x="445" y="115" font-size="8" fill="#FFFFFF" text-anchor="middle">Node.js/Python</text>
+  </g>
+
+  <!-- Arrow API Gateway to Lambda -->
+  <path d="M 310 100 L 380 90" stroke="#FF9900" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="340" y="85" font-size="8" fill="#FFFFFF">Invoke</text>
+
+  <!-- DynamoDB (Main Data) -->
+  <g filter="url(#shadow)">
+    <rect x="180" y="210" width="130" height="90" fill="#146EB4" opacity="0.85" rx="5"/>
+    <text x="245" y="235" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">DynamoDB</text>
+    <text x="245" y="255" font-size="9" fill="#FFFFFF" text-anchor="middle">NoSQL Database</text>
+    <text x="245" y="270" font-size="8" fill="#FFFFFF" text-anchor="middle">Key-Value / Document</text>
+    <text x="245" y="285" font-size="8" fill="#FFFFFF" text-anchor="middle">Auto Scaling</text>
+  </g>
+
+  <!-- Arrow Lambda to DynamoDB -->
+  <path d="M 410 140 L 280 210" stroke="#FF9900" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="360" y="170" font-size="8" fill="#FFFFFF">Read/Write</text>
+
+  <!-- S3 (Object Storage) -->
+  <g filter="url(#shadow)">
+    <rect x="380" y="210" width="130" height="90" fill="#569A31" opacity="0.85" rx="5"/>
+    <text x="445" y="235" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Amazon S3</text>
+    <text x="445" y="255" font-size="9" fill="#FFFFFF" text-anchor="middle">Object Storage</text>
+    <text x="445" y="270" font-size="8" fill="#FFFFFF" text-anchor="middle">Buckets</text>
+    <text x="445" y="285" font-size="8" fill="#FFFFFF" text-anchor="middle">Static Assets</text>
+  </g>
+
+  <!-- Arrow Lambda to S3 -->
+  <path d="M 445 140 L 445 210" stroke="#FF9900" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="460" y="175" font-size="8" fill="#FFFFFF">Store</text>
+
+  <!-- SQS (Queue) -->
+  <g filter="url(#shadow)">
+    <rect x="580" y="210" width="130" height="90" fill="#FF9900" opacity="0.75" rx="5"/>
+    <text x="645" y="235" font-size="11" font-weight="bold" fill="#232F3E" text-anchor="middle">Amazon SQS</text>
+    <text x="645" y="255" font-size="9" fill="#232F3E" text-anchor="middle">Message Queue</text>
+    <text x="645" y="270" font-size="8" fill="#232F3E" text-anchor="middle">Event Buffer</text>
+    <text x="645" y="285" font-size="8" fill="#232F3E" text-anchor="middle">Async Tasks</text>
+  </g>
+
+  <!-- Arrow Lambda to SQS -->
+  <path d="M 510 180 L 580 245" stroke="#FF9900" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="530" y="210" font-size="8" fill="#FFFFFF">Publish</text>
+
+  <!-- Lambda Function 2 (Worker) -->
+  <g filter="url(#shadow)">
+    <rect x="580" y="380" width="130" height="90" fill="#FF6700" opacity="0.85" rx="5"/>
+    <text x="645" y="405" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Lambda Worker</text>
+    <text x="645" y="425" font-size="9" fill="#FFFFFF" text-anchor="middle">Function</text>
+    <text x="645" y="440" font-size="8" fill="#FFFFFF" text-anchor="middle">(Processing)</text>
+    <text x="645" y="455" font-size="8" fill="#FFFFFF" text-anchor="middle">Triggered by SQS</text>
+  </g>
+
+  <!-- Arrow SQS to Lambda Worker -->
+  <path d="M 645 300 L 645 380" stroke="#FF9900" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="660" y="340" font-size="8" fill="#FFFFFF">Pull</text>
+
+  <!-- CloudWatch (Logs & Monitoring) -->
+  <g filter="url(#shadow)">
+    <rect x="780" y="210" width="130" height="90" fill="#759EE6" opacity="0.85" rx="5"/>
+    <text x="845" y="235" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">CloudWatch</text>
+    <text x="845" y="255" font-size="9" fill="#FFFFFF" text-anchor="middle">Logs &amp; Metrics</text>
+    <text x="845" y="270" font-size="8" fill="#FFFFFF" text-anchor="middle">Monitoring</text>
+    <text x="845" y="285" font-size="8" fill="#FFFFFF" text-anchor="middle">Dashboards</text>
+  </g>
+
+  <!-- Arrow Lambda to CloudWatch -->
+  <path d="M 510 110 L 780 250" stroke="#759EE6" stroke-width="1.5" fill="none" marker-end="url(#arrowhead2)"/>
+
+  <!-- Arrow Lambda Worker to CloudWatch -->
+  <path d="M 710 425 L 780 260" stroke="#759EE6" stroke-width="1.5" fill="none" marker-end="url(#arrowhead2)"/>
+
+  <!-- X-Ray (Tracing) -->
+  <g filter="url(#shadow)">
+    <rect x="780" y="380" width="130" height="90" fill="#FF9900" opacity="0.7" rx="5"/>
+    <text x="845" y="405" font-size="11" font-weight="bold" fill="#232F3E" text-anchor="middle">AWS X-Ray</text>
+    <text x="845" y="425" font-size="9" fill="#232F3E" text-anchor="middle">Request Tracing</text>
+    <text x="845" y="440" font-size="8" fill="#232F3E" text-anchor="middle">Performance Analysis</text>
+    <text x="845" y="455" font-size="8" fill="#232F3E" text-anchor="middle">Error Detection</text>
+  </g>
+
+  <!-- Arrow Lambda to X-Ray -->
+  <path d="M 510 160 L 780 410" stroke="#FF9900" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+
+  <!-- Response Path -->
+  <path d="M 445 140 Q 350 120 310 100" stroke="#FF6700" stroke-width="1.5" fill="none" stroke-dasharray="2,2" marker-end="url(#arrowhead3)"/>
+  <text x="380" y="110" font-size="8" fill="#FF6700">Response</text>
+
+  <!-- Event Flow Legend -->
+  <g>
+    <text x="30" y="520" font-size="10" font-weight="bold" fill="#FFFFFF">Event Flow:</text>
+    <text x="140" y="520" font-size="9" fill="#FFFFFF">1) Client → API Gateway  2) Lambda executes  3) Read/Write data  4) Async processing via SQS</text>
+  </g>
+
+  <!-- Key Benefits -->
+  <text x="500" y="515" font-size="9" fill="#FFFFFF" text-anchor="middle">No servers to manage | Auto-scaling | Pay per execution | Event-driven | Highly available</text>
+
+  <!-- Arrow marker definitions -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#FF9900"/>
+    </marker>
+    <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#759EE6"/>
+    </marker>
+    <marker id="arrowhead3" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#FF6700"/>
+    </marker>
+  </defs>
+</svg>

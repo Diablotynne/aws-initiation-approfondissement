@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" font-family="system-ui, sans-serif">
+  <rect width="800" height="420" fill="#0d1117"/>
+
+  <rect x="30" y="180" width="120" height="60" rx="6" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
+  <text x="90" y="205" text-anchor="middle" fill="#58a6ff" font-size="13" font-weight="bold">Utilisateur</text>
+  <text x="90" y="222" text-anchor="middle" fill="#8b949e" font-size="11">Navigateur</text>
+
+  <rect x="220" y="180" width="140" height="60" rx="6" fill="#161b22" stroke="#f0883e" stroke-width="2"/>
+  <text x="290" y="203" text-anchor="middle" fill="#f0883e" font-size="13" font-weight="bold">AD FS</text>
+  <text x="290" y="219" text-anchor="middle" fill="#8b949e" font-size="11">Identity Provider</text>
+  <text x="290" y="233" text-anchor="middle" fill="#8b949e" font-size="10">(Active Directory)</text>
+
+  <rect x="430" y="180" width="160" height="60" rx="6" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+  <text x="510" y="200" text-anchor="middle" fill="#3fb950" font-size="12" font-weight="bold">AWS IAM</text>
+  <text x="510" y="215" text-anchor="middle" fill="#3fb950" font-size="12" font-weight="bold">Identity Center</text>
+  <text x="510" y="230" text-anchor="middle" fill="#8b949e" font-size="10">valide l'assertion SAML</text>
+
+  <rect x="650" y="180" width="130" height="60" rx="6" fill="#161b22" stroke="#d29922" stroke-width="2"/>
+  <text x="715" y="203" text-anchor="middle" fill="#d29922" font-size="13" font-weight="bold">Console AWS</text>
+  <text x="715" y="219" text-anchor="middle" fill="#8b949e" font-size="10">rôle fédéré + STS</text>
+
+  <line x1="150" y1="200" x2="215" y2="200" stroke="#e6edf3" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="182" y="192" text-anchor="middle" fill="#8b949e" font-size="10">① authentification</text>
+
+  <line x1="360" y1="210" x2="425" y2="210" stroke="#e6edf3" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="392" y="202" text-anchor="middle" fill="#8b949e" font-size="10">② assertion SAML</text>
+
+  <line x1="590" y1="200" x2="645" y2="200" stroke="#e6edf3" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="617" y="192" text-anchor="middle" fill="#8b949e" font-size="10">③④ token STS</text>
+
+  <line x1="510" y1="240" x2="510" y2="290" stroke="#8b949e" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="510" y="308" text-anchor="middle" fill="#8b949e" font-size="10">③ valide l'assertion et génère</text>
+  <text x="510" y="322" text-anchor="middle" fill="#8b949e" font-size="10">un token STS temporaire</text>
+
+  <text x="400" y="370" text-anchor="middle" fill="#e6edf3" font-size="11">⑤ L'utilisateur accède à la console ou aux API AWS selon les permissions du rôle fédéré</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#e6edf3"/>
+    </marker>
+  </defs>
+</svg>

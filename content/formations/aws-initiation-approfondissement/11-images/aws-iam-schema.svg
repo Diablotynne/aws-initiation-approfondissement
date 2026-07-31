@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .aws-orange { fill: #FF9900; stroke: #1A365D; stroke-width: 2; }
+      .aws-navy { fill: #1A365D; stroke: #1A365D; stroke-width: 2; }
+      .aws-green { fill: #38A169; stroke: #1A365D; stroke-width: 2; }
+      .aws-blue { fill: #3182CE; stroke: #1A365D; stroke-width: 2; }
+      .aws-red { fill: #E53E3E; stroke: #1A365D; stroke-width: 2; }
+      .text-white { fill: white; font-family: Arial, sans-serif; font-weight: bold; font-size: 12px; text-anchor: middle; }
+      .text-dark { fill: #1A365D; font-family: Arial, sans-serif; font-weight: bold; font-size: 11px; text-anchor: middle; }
+      .text-title { fill: #1A365D; font-family: Arial, sans-serif; font-weight: bold; font-size: 14px; text-anchor: middle; }
+      .text-label { fill: #1A365D; font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; }
+      .arrow-line { stroke: #1A365D; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .dotted-line { stroke: #1A365D; stroke-width: 2; stroke-dasharray: 5,5; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#1A365D"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="25" class="text-title">Modèle de Contrôle d'Accès IAM — Chaîne de Responsabilité</text>
+
+  <!-- Column 1: User -->
+  <rect x="40" y="70" width="100" height="100" class="aws-blue"/>
+  <text x="90" y="105" class="text-white" font-size="14">👤</text>
+  <text x="90" y="125" class="text-white" font-size="11">User</text>
+  <text x="90" y="140" class="text-label" font-size="9">(Identité)</text>
+
+  <!-- Arrow 1 -->
+  <path d="M 140 120 L 190 120" class="arrow-line"/>
+  <text x="165" y="110" class="text-label" font-size="9">Appartient à</text>
+
+  <!-- Column 2: Group -->
+  <rect x="190" y="70" width="100" height="100" class="aws-orange"/>
+  <text x="240" y="105" class="text-white" font-size="14">👥</text>
+  <text x="240" y="125" class="text-white" font-size="11">Group</text>
+  <text x="240" y="140" class="text-label" font-size="9">(Collection)</text>
+
+  <!-- Arrow 2 -->
+  <path d="M 290 120 L 340 120" class="arrow-line"/>
+  <text x="315" y="110" class="text-label" font-size="9">A des</text>
+
+  <!-- Column 3: Role -->
+  <rect x="340" y="70" width="100" height="100" class="aws-green"/>
+  <text x="390" y="105" class="text-white" font-size="14">🎭</text>
+  <text x="390" y="125" class="text-white" font-size="11">Role</text>
+  <text x="390" y="140" class="text-label" font-size="9">(Temporaire)</text>
+
+  <!-- Arrow 3 -->
+  <path d="M 440 120 L 490 120" class="arrow-line"/>
+  <text x="465" y="110" class="text-label" font-size="9">Assume</text>
+
+  <!-- Column 4: Policy -->
+  <rect x="490" y="70" width="100" height="100" class="aws-navy"/>
+  <text x="540" y="105" class="text-white" font-size="14">📋</text>
+  <text x="540" y="125" class="text-white" font-size="11">Policy</text>
+  <text x="540" y="140" class="text-label" font-size="9">(Permissions)</text>
+
+  <!-- Arrow 4 -->
+  <path d="M 590 120 L 640 120" class="arrow-line"/>
+  <text x="615" y="110" class="text-label" font-size="9">Autorise</text>
+
+  <!-- Column 5: AWS Services -->
+  <rect x="640" y="70" width="100" height="100" class="aws-red"/>
+  <text x="690" y="105" class="text-white" font-size="14">⚙️</text>
+  <text x="690" y="125" class="text-white" font-size="11">Services</text>
+  <text x="690" y="140" class="text-label" font-size="9">(Ressources)</text>
+
+  <!-- Examples under User -->
+  <text x="90" y="200" class="text-label" font-size="10" font-weight="bold">Exemples:</text>
+  <text x="90" y="215" class="text-label" font-size="9">- alice@company.com</text>
+  <text x="90" y="228" class="text-label" font-size="9">- bob@company.com</text>
+  <text x="90" y="241" class="text-label" font-size="9">- API applications</text>
+
+  <!-- Examples under Group -->
+  <text x="240" y="200" class="text-label" font-size="10" font-weight="bold">Exemples:</text>
+  <text x="240" y="215" class="text-label" font-size="9">- DevTeam</text>
+  <text x="240" y="228" class="text-label" font-size="9">- Admins</text>
+  <text x="240" y="241" class="text-label" font-size="9">- Developers</text>
+
+  <!-- Examples under Role -->
+  <text x="390" y="200" class="text-label" font-size="10" font-weight="bold">Exemples:</text>
+  <text x="390" y="215" class="text-label" font-size="9">- EC2-Admin</text>
+  <text x="390" y="228" class="text-label" font-size="9">- S3-ReadOnly</text>
+  <text x="390" y="241" class="text-label" font-size="9">- Lambda-Exec</text>
+
+  <!-- Examples under Policy -->
+  <text x="540" y="200" class="text-label" font-size="10" font-weight="bold">Exemples:</text>
+  <text x="540" y="215" class="text-label" font-size="9">- AmazonEC2FullAccess</text>
+  <text x="540" y="228" class="text-label" font-size="9">- AmazonS3ReadOnlyAccess</text>
+  <text x="540" y="241" class="text-label" font-size="9">- Custom Policy JSON</text>
+
+  <!-- Examples under Services -->
+  <text x="690" y="200" class="text-label" font-size="10" font-weight="bold">Exemples:</text>
+  <text x="690" y="215" class="text-label" font-size="9">- EC2 instances</text>
+  <text x="690" y="228" class="text-label" font-size="9">- S3 buckets</text>
+  <text x="690" y="241" class="text-label" font-size="9">- RDS databases</text>
+
+  <!-- Permission Boundary Section -->
+  <rect x="40" y="300" width="700" height="155" class="aws-navy" opacity="0.1" stroke-dasharray="5,5"/>
+  <text x="390" y="320" class="text-title" font-size="12">Concept: Permission Boundary (Limite de Permissions)</text>
+
+  <text x="60" y="345" class="text-label" font-size="10" font-weight="bold" style="text-anchor:start">Définition:</text>
+  <text x="60" y="360" class="text-label" font-size="9.5" style="text-anchor:start">Une Permission Boundary est une limite maximale définissant le périmètre complet</text>
+  <text x="60" y="373" class="text-label" font-size="9.5" style="text-anchor:start">des permissions qu'un utilisateur/rôle peut obtenir. Elle agit comme un filtre :</text>
+  <text x="60" y="386" class="text-label" font-size="9.5" style="text-anchor:start">même si une policy accorde l'accès à 100 services, la boundary limite à 5 services.</text>
+
+  <!-- Permission Boundary Example -->
+  <rect x="60" y="400" width="140" height="42" class="aws-green" opacity="0.3"/>
+  <text x="130" y="417" class="text-dark" font-size="9">Policy: EC2 + S3 + RDS</text>
+  <text x="130" y="430" class="text-dark" font-size="9">+ IAM + Lambda</text>
+
+  <text x="240" y="421" class="text-dark" font-size="9">Boundary</text>
+  <text x="240" y="433" class="text-dark" font-size="9">Filter:</text>
+
+  <rect x="280" y="400" width="140" height="42" class="aws-orange" opacity="0.3"/>
+  <text x="350" y="417" class="text-dark" font-size="9">Max Allowed:</text>
+  <text x="350" y="430" class="text-dark" font-size="9">EC2 + S3 + RDS</text>
+
+  <text x="440" y="426" class="text-dark" font-size="11">=</text>
+
+  <rect x="480" y="400" width="140" height="42" class="aws-blue" opacity="0.3"/>
+  <text x="550" y="417" class="text-dark" font-size="9">Final Permissions:</text>
+  <text x="550" y="430" class="text-dark" font-size="9">EC2 + S3 + RDS</text>
+
+  <text x="637" y="421" class="text-label" font-size="8.5" style="text-anchor:start">(IAM &amp;</text>
+  <text x="637" y="433" class="text-label" font-size="8.5" style="text-anchor:start">Lambda bloqués)</text>
+
+  <!-- Security Notes -->
+  <rect x="40" y="460" width="700" height="10" class="aws-navy" opacity="0.05"/>
+  <text x="390" y="475" class="text-label" font-size="9">💡 Conseil: Appliquer le Principe du Moindre Privilège (PoLP) — accorder juste ce qui est nécessaire, pas plus.</text>
+</svg>
