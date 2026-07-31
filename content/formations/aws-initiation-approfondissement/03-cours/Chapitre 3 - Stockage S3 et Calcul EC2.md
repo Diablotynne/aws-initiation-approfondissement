@@ -2100,3 +2100,9 @@ aws cloudtrail list-events \
 
 
 ---
+
+## Quiz interactif du chapitre
+
+Choisissez une réponse : la correction expliquée apparaît immédiatement. Les propositions changent d’ordre à chaque nouvelle tentative.
+
+<iframe class="quiz-frame" src="https://diablotynne.github.io/aws-initiation-approfondissement/static/quiz-aws/quiz-chapitre-3.html" title="Quiz interactif du chapitre 3" loading="lazy"></iframe>

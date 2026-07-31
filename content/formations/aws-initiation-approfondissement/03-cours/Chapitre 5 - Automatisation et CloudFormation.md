@@ -2354,3 +2354,11 @@ Ces codes suivent une logique simple : les deux ou trois premières lettres iden
 - [Amazon CloudWatch Documentation](https://docs.aws.amazon.com/cloudwatch/)
 - [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/)
 - [AWS Certification](https://aws.amazon.com/certification/)
+
+---
+
+## Quiz interactif du chapitre
+
+Choisissez une ou plusieurs réponses selon la question. La correction expliquée apparaît immédiatement et les propositions changent d’ordre à chaque nouvelle tentative.
+
+<iframe class="quiz-frame" src="https://diablotynne.github.io/aws-initiation-approfondissement/static/quiz-aws/quiz-chapitre-5.html" title="Quiz interactif du chapitre 5" loading="lazy"></iframe>

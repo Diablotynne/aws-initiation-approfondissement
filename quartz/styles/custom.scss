@@ -96,3 +96,102 @@ article img[src*="11-images/"] {
   border-radius: 0.8rem;
   box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.18);
 }
+.course-intro-hero {
+  margin: 0 0 2rem;
+  padding: clamp(1.5rem, 4vw, 3.25rem);
+  border: 1px solid #ff9900;
+  border-radius: 1.2rem;
+  background: linear-gradient(135deg, #15284a 0%, #243b64 65%, #5b5146 100%);
+  color: #fff;
+
+  h2 {
+    margin: 0.6rem 0 1rem;
+    color: #fff;
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    line-height: 1.03;
+  }
+
+  p { max-width: 52rem; font-size: 1.05rem; }
+}
+
+.learning-mode-grid,
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 1.2rem 0 2rem;
+
+  > div,
+  > a {
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--lightgray);
+    border-radius: 0.75rem;
+    background: color-mix(in srgb, var(--secondary) 5%, var(--light));
+  }
+
+  p { margin-bottom: 0; }
+}
+
+.download-grid a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-decoration: none;
+
+  strong { font-size: 1.1rem; }
+  span { color: var(--darkgray); }
+}
+
+.academy-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem 0 1.5rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid color-mix(in srgb, #ff9900 65%, var(--lightgray));
+  border-radius: 0.8rem;
+  background: color-mix(in srgb, #ff9900 8%, var(--light));
+
+  p { margin: 0.35rem 0 0; }
+  a { white-space: nowrap; font-weight: 700; }
+}
+
+@media (max-width: 700px) {
+  .learning-mode-grid,
+  .download-grid { grid-template-columns: 1fr; }
+  .academy-cta { align-items: flex-start; flex-direction: column; }
+}
+.lab-route {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1rem 0 1.75rem;
+
+  details {
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--lightgray);
+    border-radius: 0.7rem;
+    background: color-mix(in srgb, var(--secondary) 5%, var(--light));
+  }
+
+  summary {
+    cursor: pointer;
+    color: var(--secondary);
+    font-size: 1.02rem;
+  }
+
+  details[open] summary {
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--lightgray);
+  }
+}
+.quiz-frame {
+  display: block;
+  width: 100%;
+  min-height: 650px;
+  margin: 1rem 0 2rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 0.85rem;
+  background: #111827;
+}

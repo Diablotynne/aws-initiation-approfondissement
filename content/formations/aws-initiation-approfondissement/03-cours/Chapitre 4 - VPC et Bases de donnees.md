@@ -2510,3 +2510,11 @@ aws route53 change-resource-record-sets \
 - [Amazon Route 53 Documentation](https://docs.aws.amazon.com/route53/)
 - [Amazon ElastiCache Documentation](https://docs.aws.amazon.com/elasticache/)
 - [AWS Transit Gateway](https://docs.aws.amazon.com/vpc/latest/tgw/)
+
+---
+
+## Quiz interactif du chapitre
+
+Choisissez une réponse : la correction expliquée apparaît immédiatement. Les propositions changent d’ordre à chaque nouvelle tentative.
+
+<iframe class="quiz-frame" src="https://diablotynne.github.io/aws-initiation-approfondissement/static/quiz-aws/quiz-chapitre-4.html" title="Quiz interactif du chapitre 4" loading="lazy"></iframe>

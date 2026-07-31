@@ -1,103 +1,100 @@
 ---
-date: 2026-06-30
-tags: aws, cloud, ec2, s3, iam, devops
-type: cours
-status: active
----
-<center><img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="logo AWS" width="160" /></center>
-
+title: AWS — Construire une architecture cloud pas à pas
+description: Point de départ de la formation AWS, parcours pédagogique, accès AWS Academy et ressources.
 ---
 
-> **Formateur** : Formateur Dawan — formation@dawan.fr
-> **Durée** : 5 jours — Réf. Dawan : CLO100999-F
-> **Lien Formation** : [Lien Teams à remplir]()
-> **Lien Supports** :
->     - [HedgeDoc — Chapitre 1 : Fondamentaux du Cloud]()
->     - [HedgeDoc — Chapitre 2 : Sécurité et IAM]()
->     - [HedgeDoc — Chapitre 3 : Stockage S3 et Calcul EC2]()
->     - [HedgeDoc — Chapitre 4 : VPC et Bases de données]()
->     - [HedgeDoc — Chapitre 5 : Automatisation et CloudFormation]()
-> **Lien HTML** : [HTML interactifs]()
-> **Lien Prez** : [Présentation]()
-> **Lien TP RECAP** : [TP de révision]()
+# AWS — Construire une architecture cloud pas à pas
 
----
+<section class="course-intro-hero">
+  <div>
+    <span class="aws-kicker">Formation guidée · AWS Academy · Du concept à l’architecture</span>
+    <h2>Comprendre avant de déployer.<br>Observer avant d’automatiser.</h2>
+    <p>Ce parcours relie les décisions d’architecture aux manipulations réalisées dans les environnements temporaires AWS Academy. Chaque service est introduit par le problème qu’il résout, puis replacé dans une architecture complète.</p>
+    <div class="aws-actions">
+      <a href="../03-cours/Chapitre%201%20-%20Fondamentaux%20du%20Cloud">Commencer le chapitre 1 →</a>
+      <a href="http://awsacademy.com/vforcesite/LMS_Login#!/blueprint/blueprint_subscriptions/178677/131721040" target="_blank" rel="noopener">Ouvrir AWS Academy ↗</a>
+    </div>
+  </div>
+</section>
 
-[TOC]
+![Progression de la formation depuis les fondations jusqu'à l'automatisation d'une architecture AWS](formations/aws-initiation-approfondissement/11-images/aws-parcours-formation.svg)
 
----
+## Le fil rouge
 
-# Bienvenue
+Vous accompagnez l’évolution d’une application : d’abord comprise comme un besoin métier, elle est sécurisée, hébergée, connectée à ses données, puis automatisée et supervisée.
 
-Cette formation construit une architecture AWS résiliente pas à pas sur 5 jours : de la navigation dans la console le premier jour jusqu'à un template CloudFormation complet le cinquième. Plutôt que de survoler les centaines de services AWS, on se concentre sur les fondamentaux incontournables — IAM, EC2, S3, VPC, RDS — en comprenant pourquoi chaque service existe avant de l'utiliser.
+<div class="aws-learning-path">
+  <a href="../03-cours/Chapitre%201%20-%20Fondamentaux%20du%20Cloud"><b>01</b><span>Décider</span><strong>Fondamentaux du cloud</strong><small>Modèles cloud, responsabilité partagée, régions, zones et coûts.</small></a>
+  <a href="../03-cours/Chapitre%202%20-%20Securite%20et%20IAM"><b>02</b><span>Protéger</span><strong>Identités et accès</strong><small>IAM, rôles, politiques, MFA, fédération et traçabilité.</small></a>
+  <a href="../03-cours/Chapitre%203%20-%20Stockage%20S3%20et%20Calcul%20EC2"><b>03</b><span>Exécuter</span><strong>Calcul et stockage</strong><small>S3, EC2, EBS, EFS, équilibrage de charge et élasticité.</small></a>
+  <a href="../03-cours/Chapitre%204%20-%20VPC%20et%20Bases%20de%20donnees"><b>04</b><span>Connecter</span><strong>Réseau et données</strong><small>VPC, routage, sécurité réseau, RDS, Aurora et DynamoDB.</small></a>
+  <a href="../03-cours/Chapitre%205%20-%20Automatisation%20et%20CloudFormation"><b>05</b><span>Industrialiser</span><strong>Automatisation et résilience</strong><small>CloudFormation, CloudWatch, découplage et Well-Architected.</small></a>
+</div>
 
-L'objectif final : concevoir et déployer une architecture cloud sécurisée et automatisée sur AWS, en autonomie.
+## Ce que vous saurez faire
 
-> [!NOTE]
-> **Pourquoi cette progression ?** AWS compte plus de 200 services. En 5 jours, l'objectif n'est pas de les cataloguer mais de comprendre l'architecture sous-jacente — régions, zones, comptes, politiques — pour être capable de naviguer seul dans n'importe quel service par la suite.
-## Tour de table
+À la fin du parcours, vous pourrez :
 
-Avant de commencer, un tour de table permet de mieux cerner le groupe et d'ajuster le rythme de la semaine :
+- expliquer le fonctionnement du cloud et situer les responsabilités d’AWS et du client ;
+- choisir une région, un modèle de service et les composants adaptés à un besoin ;
+- appliquer le moindre privilège avec les identités, rôles et politiques IAM ;
+- associer calcul, stockage, réseau et données dans une architecture cohérente ;
+- identifier les points uniques de défaillance et proposer une architecture résiliente ;
+- automatiser une infrastructure avec CloudFormation ;
+- observer son comportement avec les métriques, journaux et alarmes AWS ;
+- justifier vos choix avec les principes du AWS Well-Architected Framework.
 
-- Qui êtes-vous, quel est votre parcours ?
-- Avez-vous déjà pratiqué un cloud public (AWS, Azure, GCP) ?
-- Quel est le contexte qui vous amène à suivre cette formation ?
-- Votre OS de prédilection ?
+## Comment travailler avec ce support
 
-Se rendre également sur [https://moncompte.dawan.fr](https://moncompte.dawan.fr) pour remplir : besoins/attentes, niveau d'entrée, puis chaque jour l'émargement bi-quotidien, et en fin de formation l'évaluation et le niveau de sortie.
+<div class="learning-mode-grid">
+  <div><strong>1 · Comprendre</strong><p>Lisez le schéma et formulez le problème résolu avant d’étudier le service.</p></div>
+  <div><strong>2 · Décider</strong><p>Répondez aux situations proposées et comparez votre raisonnement à la correction dépliable.</p></div>
+  <div><strong>3 · Manipuler</strong><p>Suivez le module ou le lab indiqué dans AWS Academy, exclusivement dans l’environnement temporaire.</p></div>
+  <div><strong>4 · Vérifier</strong><p>Validez le résultat technique, expliquez-le avec vos mots puis complétez le quiz du chapitre.</p></div>
+</div>
 
-> [!NOTE]
-> **Règle d'or de cette formation :** interrompre le formateur dès que vous ne comprenez pas ou dès que vous avez une question ; partager votre écran dès que vous rencontrez un blocage technique — le groupe est là pour s'entraider ; la caméra est recommandée, les gestes et expressions comptent autant que les mots.
-## Objectifs de la formation
+> [!IMPORTANT] Environnement de formation
+> Aucun compte AWS personnel, aucune carte bancaire, aucune clé d’accès permanente et aucune installation locale ne sont nécessaires. Les commandes AWS CLI sont exécutées dans CloudShell avec le rôle temporaire du lab.
 
-À l'issue de cette formation, chaque stagiaire sera capable de :
+## Parcours AWS Academy
 
-- Expliquer les concepts fondamentaux du Cloud Computing et l'infrastructure mondiale AWS
-- Configurer IAM avec des politiques de sécurité restrictives, rôles et MFA
-- Déployer des instances EC2 et gérer du stockage S3, EBS et EFS
-- Concevoir un réseau VPC segmenté et déployer une base de données RDS sécurisée
-- Automatiser un déploiement complet avec CloudFormation en suivant le Well-Architected Framework
+Les pages de travaux pratiques ne remplacent pas les énoncés AWS Academy. Elles fournissent un **itinéraire pédagogique** : concepts à observer, ordre conseillé, points de contrôle et questions de compréhension.
 
-## Public concerné et prérequis
+<div class="academy-cta">
+  <div><strong>AWS Academy Learner Lab</strong><p>Démarrez uniquement le module ou le lab indiqué par la formatrice. Vérifiez le rôle, la région et les restrictions avant toute manipulation.</p></div>
+  <a href="http://awsacademy.com/vforcesite/LMS_Login#!/blueprint/blueprint_subscriptions/178677/131721040" target="_blank" rel="noopener">Accéder à AWS Academy ↗</a>
+</div>
 
-Cette formation s'adresse aux administrateurs systèmes et développeurs souhaitant maîtriser les fondamentaux d'AWS. Aucune connaissance préalable du cloud n'est requise, mais une aisance de base avec la ligne de commande est utile.
+| Étape | Action | Contrôle attendu |
+|---|---|---|
+| Accéder | Ouvrir le cours depuis le lien AWS Academy | Le cours attribué apparaît dans le tableau de bord |
+| Préparer | Lire les objectifs et repérer la région demandée | Vous savez quelles ressources seront manipulées |
+| Démarrer | Cliquer sur **Start Lab**, puis attendre l’état prêt | Le bouton **AWS** ouvre la console temporaire |
+| Manipuler | Suivre l’énoncé Academy et les repères du chapitre | Chaque étape produit un résultat vérifiable |
+| Expliquer | Relier la manipulation au schéma d’architecture | Vous pouvez justifier le service et sa configuration |
+| Terminer | Utiliser **End Lab** lorsque la séance est terminée | La session temporaire est fermée proprement |
 
-## Programme de la semaine
+## Accès directs
 
-| Chapitre | Cours | Atelier | Stack en fin de chapitre |
-|------|-------------------------------|--------------|------------------------|
-| **Chapitre 1** | Introduction au Cloud Computing · Concepts de base (IaaS, PaaS, SaaS) · Modèles de déploiement · Infrastructure mondiale AWS (Régions, Zones) | Création du compte · navigation dans le portail · premier déploiement de ressources statiques | Compte actif · familiarisation portail validée |
-| **Chapitre 2** | IAM (Identity and Access Management) · Sécurité · Politiques JSON · Rôles & Utilisateurs · MFA · STS & Broker · IAM Identity Center | Configuration d'une politique de sécurité restrictive · création de groupes · test de droits via CLI | Structure de sécurité IAM en place et testée |
-| **Chapitre 3** | Calcul avec EC2 · Stockage avec S3 (Stockage objet) · Volumes EBS et EFS · Cycle de vie des données · AWS CLI stockage | Lancement d'instances EC2 avec volume EBS et partage EFS · gestion et transferts de fichiers S3 par CLI | VMs en exécution · stockage S3 connecté |
-| **Chapitre 4** | Architecture réseau (VPC, subnets publics/privés) · Sécurité (Security Groups, ACL) · Bases de données (RDS, Aurora, DynamoDB) | Conception d'un réseau VPC segmenté · configuration des Security Groups · déploiement d'une base RDS PostgreSQL | Réseau VPC isolé · base relationnelle RDS sécurisée et connectée |
-| **Chapitre 5** | Automatisation avec CloudFormation (IaC) · AWS Backup · Architecture de production (Well-Architected Framework) | Déploiement automatisé d'une stack complète avec un template CloudFormation YAML | Stack automatisée · validation de la conception Well-Architected |
+<div class="aws-resource-grid">
+  <a href="../04-exercices/"><strong>Activités AWS Academy</strong><span>Modules, labs, déroulés guidés et points de contrôle par chapitre.</span></a>
+  <a href="../06-quiz/"><strong>Quiz expliqués</strong><span>Valider les acquis et comprendre chaque correction.</span></a>
+  <a href="../07-annexes/"><strong>Ressources techniques</strong><span>Aide-mémoire CLI, glossaire et documentation officielle.</span></a>
+</div>
 
-## Organisation pédagogique
+## Télécharger les supports
 
-Chaque chapitre alterne apports théoriques et ateliers pratiques sur un compte AWS réel, et se termine par un quiz de validation des connaissances. Une étape de nettoyage des ressources est systématique en fin de TP, pour éviter tout coût résiduel.
+<div class="download-grid">
+  <a href="formations/aws-initiation-approfondissement/10-telechargements/AWS-Initiation-Approfondissement.markdown" download><strong>Markdown</strong><span>Télécharger les cinq chapitres dans un fichier Markdown unique.</span></a>
+  <a href="formations/aws-initiation-approfondissement/10-telechargements/AWS-Initiation-Approfondissement.pdf" download><strong>PDF</strong><span>Télécharger le support de cours complet pour une consultation hors ligne.</span></a>
+</div>
 
-## Horaires
+## Fin de parcours : badge et accompagnement
 
-- Lundi : 9h30–12h30, 13h30–17h30
-- Mardi à vendredi : 9h00–12h30, 13h30–17h00
-- 1 pause de 15 min le matin et 1 pause de 15 min l'après-midi
+<div class="learning-mode-grid">
+  <div><strong>Badge AWS Academy</strong><p>Après les modules, les labs et l’évaluation finale demandés, vérifiez dans AWS Academy que le badge du cursus est disponible. Le badge constitue l’objectif de clôture du parcours Academy.</p></div>
+  <div><strong>Conversation Teams</strong><p>Utilisez la conversation Teams de votre session pour les annonces, questions et échanges avec le groupe. Son lien est communiqué directement par la formatrice et n’est pas publié sur ce site public.</p></div>
+</div>
 
-## Matériel et environnement
-
-Cette formation n'utilise pas de machines virtuelles locales. Chaque stagiaire dispose d'un **compte AWS temporaire** fourni avec des crédits de formation.
-
-| Outil | Endpoint | Rôle |
-|-------|----------|------|
-| **AWS Console** | `https://aws.amazon.com/console` | Portail graphique |
-| **AWS CLI** | Disponible dans AWS CloudShell, depuis le lab Academy | Ligne de commande sans installation locale |
-| **Cloud Shell** | Intégré à la console AWS | Terminal en ligne sans installation |
-
-> [!WARNING]
-> **Avant la formation :** vérifier que les quotas de service permettent le déploiement de 2 instances `t2.micro` ou `t3.micro` par stagiaire dans la région sélectionnée.
-## Évaluation
-
-Chaque chapitre se termine par un quiz de validation des connaissances (10 questions).
-
-## Ressources
-
-Un espace de partage (Teams / moncompte.dawan.fr) centralise les supports et les corrections mises à disposition en fin de formation. Les modalités d'accès sont communiquées en début de session.
+> [!TIP] Votre progression
+> Ne cherchez pas à mémoriser un catalogue de services. Pour chaque composant, retenez quatre questions : quel problème résout-il, quelle est sa portée, qui le sécurise et comment vérifier son fonctionnement ?

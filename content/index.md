@@ -1,9 +1,10 @@
 ---
-title: Formations DevOps
+title: Formation AWS
 ---
 
-# Formations DevOps
+<meta http-equiv="refresh" content="0; url=./formations/aws-initiation-approfondissement/00-intro-generale/intro-generale">
+<script>window.location.replace('./formations/aws-initiation-approfondissement/00-intro-generale/intro-generale')</script>
 
-Bienvenue dans l'espace de consultation des supports de formation DevOps.
+# Formation AWS
 
-Les formations publiées apparaissent dans l'explorateur après leur synchronisation. Chaque atelier propose un énoncé professionnel et, lorsqu'il est disponible, un pas-à-pas repliable adapté aux stagiaires débutants.
+[Ouvrir l’introduction de la formation](./formations/aws-initiation-approfondissement/00-intro-generale/intro-generale)

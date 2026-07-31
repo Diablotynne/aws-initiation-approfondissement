@@ -1742,3 +1742,11 @@ Utilisé par :                         Utilisé pour :
 - [AWS IAM Identity Center](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html)
 - [Amazon Cognito Documentation](https://docs.aws.amazon.com/cognito/)
 - [AWS CloudTrail Documentation](https://docs.aws.amazon.com/cloudtrail/)
+
+---
+
+## Quiz interactif du chapitre
+
+Choisissez une réponse : la correction expliquée apparaît immédiatement. Les propositions changent d’ordre à chaque nouvelle tentative.
+
+<iframe class="quiz-frame" src="https://diablotynne.github.io/aws-initiation-approfondissement/static/quiz-aws/quiz-chapitre-2.html" title="Quiz interactif du chapitre 2" loading="lazy"></iframe>

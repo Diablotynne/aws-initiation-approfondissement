@@ -1182,7 +1182,6 @@ Sa philosophie est simple : offrir à chaque entreprise, quelle que soit sa tail
 | | Redshift | Entrepôt de données pour BI et reporting | Tableaux de bord, KPIs, analytique | Base de données XXL pour l'analyse |
 
 📎 [AWS Products](https://aws.amazon.com/products/)
-📎 [Services AWS](https://hedgedoc.dawan.fr/s/I5V3mcU2n)
 
 Nous n'entrons pas ici dans les détails techniques de chaque service — cela sera traité dans les jours suivants (IAM, S3, EC2, RDS, VPC…).
 
@@ -1501,3 +1500,11 @@ Comprendre l'infrastructure ne suffit pas — encore faut-il la sécuriser. Le C
 - [AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html)
 - [AWS Free Tier](https://aws.amazon.com/fr/free/)
 - [Régions et zones de disponibilité AWS](https://aws.amazon.com/fr/about-aws/global-infrastructure/regions_az/)
+
+---
+
+## Quiz interactif du chapitre
+
+Choisissez une réponse : la correction expliquée apparaît immédiatement. Les propositions changent d’ordre à chaque nouvelle tentative.
+
+<iframe class="quiz-frame" src="https://diablotynne.github.io/aws-initiation-approfondissement/static/quiz-aws/quiz-chapitre-1.html" title="Quiz interactif du chapitre 1" loading="lazy"></iframe>
