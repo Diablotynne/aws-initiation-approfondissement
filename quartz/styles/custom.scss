@@ -35,7 +35,12 @@ body[data-slug="formations/aws-initiation-approfondissement/index"] article > h1
 .aws-kicker { color: var(--aws-orange); font-size: 0.8rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
 .aws-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.4rem; }
 .aws-actions a { padding: 0.72rem 1rem; border: 1px solid #ffffff55; border-radius: 0.65rem; color: #fff; font-weight: 750; text-decoration: none; }
-.aws-actions a:first-child { border-color: var(--aws-orange); color: #17223b; background: var(--aws-orange); }
+.aws-actions a:first-child,
+.course-intro-hero .aws-actions a:first-child:visited {
+  border-color: var(--aws-orange);
+  color: #111827 !important;
+  background: var(--aws-orange);
+}
 
 .aws-learning-path { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; }
 .aws-learning-path > a { display: grid; grid-template-columns: auto 1fr; gap: 0.15rem 0.75rem; padding: 1rem; border: 1px solid var(--lightgray); border-radius: 0.9rem; color: var(--dark); background: var(--light); text-decoration: none; transition: 160ms ease; }
