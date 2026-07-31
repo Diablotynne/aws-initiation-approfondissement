@@ -5,10 +5,19 @@ description: Support complet de formation
 
 # AWS â€” Initiation et approfondissement
 
-Support consolidÃ© des cinq chapitres. Les activitÃ©s pratiques sont rÃ©alisÃ©es dans AWS Academy.
+Support consolidÃ© des cinq chapitres de cours.
 
 ---
 # Chapitre 1 — Fondamentaux du Cloud & Présentation AWS
+
+<nav class="chapter-map" aria-label="Sous-sections du chapitre">
+  <a href="#1-introduction">01 · Introduction</a>
+  <a href="#2-fondamentaux-du-cloud-computing">02 · Fondamentaux du cloud</a>
+  <a href="#3-modèles-de-services--iaas-paas-et-saas">03 · Modèles de services</a>
+  <a href="#5-fondamentaux-techniques--virtualisation-et-conteneurs">04 · Fondamentaux techniques</a>
+  <a href="#6-présentation-daws-et-de-son-écosystème">05 · Écosystème AWS</a>
+  <a href="#7-aws-well-architected-framework">06 · Architecture et bonnes pratiques</a>
+</nav>
 
 
 ---
@@ -1467,14 +1476,14 @@ Les deux ressources ont été créées par CloudFormation dans le bon ordre. En 
 ## 10. Bonnes pratiques de démarrage
 
 :::info
-La pratique dans **AWS Academy** permet de découvrir la console dans un environnement temporaire, sans créer de compte AWS personnel.
+L’environnement temporaire fourni pendant la formation permet de découvrir la console sans créer de compte AWS personnel.
 :::
 
-### 10.1 Démarrer et sécuriser une session AWS Academy
+### 10.1 Démarrer et sécuriser une session de lab
 
 Le lab fournit un compte, un rôle et des autorisations temporaires. La séquence de démarrage est la suivante :
 
-1. Ouvrir le cours et le lab indiqués dans **AWS Academy**.
+1. Ouvrir le lab indiqué par la formatrice.
 2. Cliquer sur **Start Lab** et attendre que la console soit disponible.
 3. Ouvrir la console avec le bouton **AWS** fourni par le lab.
 4. Vérifier le rôle et la **région active** avant toute création de ressource.
@@ -1497,7 +1506,7 @@ L'ARN confirme que la session utilise un rôle temporaire du lab. N'exécutez pa
 
 ### 10.2 Repères pour la navigation dans la console AWS
 
-Voici les éléments essentiels à repérer dans la console — vous les retrouverez présentés en vidéo dans le module AWS Academy correspondant.
+Voici les éléments essentiels à repérer dans la console pendant la démonstration.
 
 **Éléments clés :**
 
@@ -1556,6 +1565,15 @@ Choisissez une réponse : la correction expliquée apparaît immédiatement. Les
 <div style="page-break-before: always"></div>
 
 # Chapitre 2 — Sécurité et gestion des accès — IAM, MFA, SSO
+
+<nav class="chapter-map" aria-label="Sous-sections du chapitre">
+  <a href="#1-introduction-à-iam--identity-and-access-management">01 · Fondamentaux IAM</a>
+  <a href="#2-sécuriser-les-accès-iam-avec-mfa-et-politiques-conditionnelles">02 · MFA et politiques</a>
+  <a href="#3-fédération-didentité-et-sso-avec-iam-identity-center">03 · Fédération et SSO</a>
+  <a href="#4-amazon-cognito--gestion-didentités-applicatives">04 · Identités applicatives</a>
+  <a href="#5-stratégie-multi-comptes-avec-aws-organizations">05 · Multi-comptes</a>
+  <a href="#6-traçabilité-et-surveillance-avec-cloudtrail">06 · Traçabilité</a>
+</nav>
 
 ---
 
@@ -2865,7 +2883,7 @@ Ces deux services ne sont **pas gratuits au-delà d'un premier niveau minimal** 
 ## 7. Gestion pratique d'IAM avec la CLI
 
 :::info
-La pratique dans **AWS Academy** (module Security) vous permettra d'approfondir la gestion des utilisateurs, groupes et rôles IAM en CLI.
+Une activité pratique permet d’approfondir la gestion des utilisateurs, groupes et rôles IAM en CLI.
 :::
 
 ### 7.1 Créer un utilisateur IAM
@@ -3351,6 +3369,15 @@ Choisissez une réponse : la correction expliquée apparaît immédiatement. Les
 <div style="page-break-before: always"></div>
 
 # Chapitre 3 — Stockage et Calcul — Amazon S3 & Amazon EC2
+
+<nav class="chapter-map" aria-label="Sous-sections du chapitre">
+  <a href="#1-introduction-aux-services-de-stockage-aws">01 · Choisir un stockage</a>
+  <a href="#2-amazon-s3--le-stockage-objet-scalable">02 · Amazon S3</a>
+  <a href="#5-amazon-ec2--la-couche-de-calcul-aws">03 · Amazon EC2</a>
+  <a href="#8-options-de-tarification-aws-ec2">04 · Tarification EC2</a>
+  <a href="#10-elastic-load-balancing-elb--répartition-du-trafic">05 · Élasticité et répartition</a>
+  <a href="#12-aws-lambda--le-calcul-sans-serveur">06 · Serverless</a>
+</nav>
 
 ---
 
@@ -3874,7 +3901,7 @@ aws s3api delete-bucket-policy --bucket mon-bucket
 ## 4. Gestion de S3 en CLI
 
 :::info
-La pratique dans **AWS Academy** (module Storage) vous permettra d'approfondir la manipulation de S3 en CLI.
+Une activité pratique permet d’approfondir la manipulation de S3 en CLI.
 :::
 
 ### 4.1 Créer un bucket S3
@@ -4671,7 +4698,7 @@ URL : https://calculator.aws/
 ## 9. Lancer une instance EC2 en CLI
 
 :::info
-La pratique dans **AWS Academy** (module Compute) vous permettra d'approfondir le lancement d'instances EC2 en CLI.
+Une activité pratique permet d’approfondir le lancement d’instances EC2 en CLI.
 :::
 
 ### 9.1 Créer une Key Pair
@@ -5167,7 +5194,7 @@ Le CPU alloué est proportionnel à la mémoire configurée — une fonction à 
 ### 12.3 Créer et invoquer une fonction Lambda en CLI
 
 :::info
-La pratique dans **AWS Academy** (module Serverless / Lambda) vous permettra d'approfondir la création et l'invocation de fonctions Lambda.
+Une activité pratique permet d’approfondir la création et l’invocation de fonctions Lambda.
 :::
 
 Cette séquence crée une fonction Lambda Python minimale, l'invoque manuellement, puis vérifie les logs d'exécution dans CloudWatch.
@@ -5541,6 +5568,15 @@ Choisissez une réponse : la correction expliquée apparaît immédiatement. Les
 
 # Chapitre 4 — Réseaux et Bases de données — VPC, RDS, DynamoDB, Route 53
 
+<nav class="chapter-map" aria-label="Sous-sections du chapitre">
+  <a href="#1-bases-de-données-dans-aws--du-service-géré-à-la-scalabilité">01 · Bases de données</a>
+  <a href="#2-amazon-vpc--concevoir-un-réseau-privé-sécurisé">02 · Amazon VPC</a>
+  <a href="#3-amazon-route-53--dns-intelligent">03 · Route 53</a>
+  <a href="#4-amazon-elasticache--mise-en-cache-distribuée">04 · ElastiCache</a>
+  <a href="#5-points-importants-et-pièges-fréquents">05 · Pièges fréquents</a>
+  <a href="#6-construire-une-vpc-en-cli">06 · VPC en CLI</a>
+</nav>
+
 ---
 
 :::info
@@ -5837,7 +5873,7 @@ Aurora offre **deux modèles de déploiement** :
 #### Créer un cluster Aurora en CLI
 
 :::info
-La pratique dans **AWS Academy** (module Database) vous permettra d'approfondir le déploiement d'un cluster Aurora.
+Une activité pratique permet d’approfondir le déploiement d’un cluster Aurora.
 :::
 
 Cette séquence crée un cluster Aurora MySQL complet avec une instance writer, une instance reader, du chiffrement activé et une fenêtre de sauvegarde automatique. Aurora est un cluster — pas une instance unique — ce qui explique les deux commandes distinctes (cluster + instance).
@@ -6113,7 +6149,7 @@ La source (Oracle Database on-premise/RDS, 5 To, 50 tables, actif à 1000 txn/s)
 #### Créer une tâche DMS en CLI
 
 :::info
-La pratique dans **AWS Academy** (module Database, section migration) vous permettra d'approfondir DMS.
+Une activité pratique permet d’approfondir AWS Database Migration Service.
 :::
 
 DMS fonctionne en 3 objets : un **endpoint source** (base existante), un **endpoint cible** (base AWS), et une **instance de réplication** (le moteur qui exécute la migration). On les crée dans cet ordre, puis on démarre la tâche.
@@ -7142,7 +7178,7 @@ PUBLISH channel:notifications "Hello" # Diffuser
 ### 4.6 Créer un cluster Redis en CLI
 
 :::info
-La pratique dans **AWS Academy** (module Database, section ElastiCache) vous permettra d'approfondir le déploiement d'un cluster Redis.
+Une activité pratique permet d’approfondir le déploiement d’un cache Redis.
 :::
 
 On crée ici le type de cluster le plus simple : un nœud Redis unique, sans réplication. En production, on ajouterait un groupe de réplication (`create-replication-group`) avec un nœud primaire et des replicas, mais ce modèle suffit pour comprendre les concepts.
@@ -7352,7 +7388,7 @@ Exemple : 1 000 req/s × 2 résolutions/min (TTL=30s) × 3 600 s/h = ~432 000 re
 ## 6. Construire une VPC en CLI
 
 :::info
-La pratique dans **AWS Academy** (module Networking) vous permettra d'approfondir la construction d'une VPC complète.
+Une activité pratique permet d’approfondir la construction d’un VPC complet.
 :::
 
 ### 6.1 Créer une VPC complète avec AWS CLI
@@ -8119,6 +8155,15 @@ Choisissez une réponse : la correction expliquée apparaît immédiatement. Les
 <div style="page-break-before: always"></div>
 
 # Chapitre 5 — Automatisation, CloudFormation et Well-Architected Framework
+
+<nav class="chapter-map" aria-label="Sous-sections du chapitre">
+  <a href="#1-rtorpo-et-récupération-de-sauvegarde">01 · Continuité et reprise</a>
+  <a href="#2-pourquoi-automatiser-dans-le-cloud-">02 · Principes d’automatisation</a>
+  <a href="#3-aws-cloudformation--infrastructure-as-code">03 · CloudFormation</a>
+  <a href="#4-aws-systems-manager--automatisation-opérationnelle">04 · Systems Manager</a>
+  <a href="#6-amazon-cloudwatch--supervision-et-alarmes">05 · Supervision</a>
+  <a href="#7-aws-well-architected-framework--mise-en-pratique">06 · Well-Architected</a>
+</nav>
 
 ---
 
@@ -9022,7 +9067,7 @@ Outputs:
 ##### Déployer ce template
 
 :::info
-La pratique dans **AWS Academy** (module Automation, section CloudFormation) vous permettra d'approfondir le déploiement de ce template.
+Une activité pratique permet d’approfondir le déploiement de ce template CloudFormation.
 :::
 
 ```bash

@@ -1,5 +1,14 @@
 # Chapitre 2 — Sécurité et gestion des accès — IAM, MFA, SSO
 
+<nav class="chapter-map" aria-label="Sous-sections du chapitre">
+  <a href="#1-introduction-à-iam--identity-and-access-management">01 · Fondamentaux IAM</a>
+  <a href="#2-sécuriser-les-accès-iam-avec-mfa-et-politiques-conditionnelles">02 · MFA et politiques</a>
+  <a href="#3-fédération-didentité-et-sso-avec-iam-identity-center">03 · Fédération et SSO</a>
+  <a href="#4-amazon-cognito--gestion-didentités-applicatives">04 · Identités applicatives</a>
+  <a href="#5-stratégie-multi-comptes-avec-aws-organizations">05 · Multi-comptes</a>
+  <a href="#6-traçabilité-et-surveillance-avec-cloudtrail">06 · Traçabilité</a>
+</nav>
+
 ---
 
 > [!NOTE]
@@ -1292,7 +1301,7 @@ Ces deux services ne sont **pas gratuits au-delà d'un premier niveau minimal** 
 ## 7. Gestion pratique d'IAM avec la CLI
 
 > [!NOTE]
-> La pratique dans **AWS Academy** (module Security) vous permettra d'approfondir la gestion des utilisateurs, groupes et rôles IAM en CLI.
+> Une activité pratique permet d’approfondir la gestion des utilisateurs, groupes et rôles IAM en CLI.
 ### 7.1 Créer un utilisateur IAM
 
 La commande crée l'utilisateur `alice`, puis une seconde commande vérifie immédiatement qu'il a bien été enregistré dans IAM — confirmer la création après chaque commande est toujours une bonne pratique.

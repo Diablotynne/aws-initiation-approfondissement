@@ -1,5 +1,14 @@
 # Chapitre 5 — Automatisation, CloudFormation et Well-Architected Framework
 
+<nav class="chapter-map" aria-label="Sous-sections du chapitre">
+  <a href="#1-rtorpo-et-récupération-de-sauvegarde">01 · Continuité et reprise</a>
+  <a href="#2-pourquoi-automatiser-dans-le-cloud-">02 · Principes d’automatisation</a>
+  <a href="#3-aws-cloudformation--infrastructure-as-code">03 · CloudFormation</a>
+  <a href="#4-aws-systems-manager--automatisation-opérationnelle">04 · Systems Manager</a>
+  <a href="#6-amazon-cloudwatch--supervision-et-alarmes">05 · Supervision</a>
+  <a href="#7-aws-well-architected-framework--mise-en-pratique">06 · Well-Architected</a>
+</nav>
+
 ---
 
 > [!NOTE]
@@ -888,7 +897,7 @@ Outputs:
 ##### Déployer ce template
 
 > [!NOTE]
-> La pratique dans **AWS Academy** (module Automation, section CloudFormation) vous permettra d'approfondir le déploiement de ce template.
+> Une activité pratique permet d’approfondir le déploiement de ce template CloudFormation.
 ```bash
 # 1. Créer la stack depuis le fichier YAML local
 aws cloudformation create-stack \

@@ -1,5 +1,14 @@
 # Chapitre 4 — Réseaux et Bases de données — VPC, RDS, DynamoDB, Route 53
 
+<nav class="chapter-map" aria-label="Sous-sections du chapitre">
+  <a href="#1-bases-de-données-dans-aws--du-service-géré-à-la-scalabilité">01 · Bases de données</a>
+  <a href="#2-amazon-vpc--concevoir-un-réseau-privé-sécurisé">02 · Amazon VPC</a>
+  <a href="#3-amazon-route-53--dns-intelligent">03 · Route 53</a>
+  <a href="#4-amazon-elasticache--mise-en-cache-distribuée">04 · ElastiCache</a>
+  <a href="#5-points-importants-et-pièges-fréquents">05 · Pièges fréquents</a>
+  <a href="#6-construire-une-vpc-en-cli">06 · VPC en CLI</a>
+</nav>
+
 ---
 
 > [!NOTE]
@@ -290,7 +299,7 @@ Aurora offre **deux modèles de déploiement** :
 #### Créer un cluster Aurora en CLI
 
 > [!NOTE]
-> La pratique dans **AWS Academy** (module Database) vous permettra d'approfondir le déploiement d'un cluster Aurora.
+> Une activité pratique permet d’approfondir le déploiement d’un cluster Aurora.
 Cette séquence crée un cluster Aurora MySQL complet avec une instance writer, une instance reader, du chiffrement activé et une fenêtre de sauvegarde automatique. Aurora est un cluster — pas une instance unique — ce qui explique les deux commandes distinctes (cluster + instance).
 
 ```bash
@@ -560,7 +569,7 @@ La source (Oracle Database on-premise/RDS, 5 To, 50 tables, actif à 1000 txn/s)
 #### Créer une tâche DMS en CLI
 
 > [!NOTE]
-> La pratique dans **AWS Academy** (module Database, section migration) vous permettra d'approfondir DMS.
+> Une activité pratique permet d’approfondir AWS Database Migration Service.
 DMS fonctionne en 3 objets : un **endpoint source** (base existante), un **endpoint cible** (base AWS), et une **instance de réplication** (le moteur qui exécute la migration). On les crée dans cet ordre, puis on démarre la tâche.
 
 ```bash
@@ -1573,7 +1582,7 @@ PUBLISH channel:notifications "Hello" # Diffuser
 ### 4.6 Créer un cluster Redis en CLI
 
 > [!NOTE]
-> La pratique dans **AWS Academy** (module Database, section ElastiCache) vous permettra d'approfondir le déploiement d'un cluster Redis.
+> Une activité pratique permet d’approfondir le déploiement d’un cache Redis.
 On crée ici le type de cluster le plus simple : un nœud Redis unique, sans réplication. En production, on ajouterait un groupe de réplication (`create-replication-group`) avec un nœud primaire et des replicas, mais ce modèle suffit pour comprendre les concepts.
 
 ```bash
@@ -1777,7 +1786,7 @@ ElastiCache se facture à l'heure d'instance active, comme EC2 et RDS — pas de
 ## 6. Construire une VPC en CLI
 
 > [!NOTE]
-> La pratique dans **AWS Academy** (module Networking) vous permettra d'approfondir la construction d'une VPC complète.
+> Une activité pratique permet d’approfondir la construction d’un VPC complet.
 ### 6.1 Créer une VPC complète avec AWS CLI
 
 Cette séquence construit une VPC de zéro, pièce par pièce : VPC → subnets public/privé → Internet Gateway → NAT Gateway → tables de routage. C'est l'ordre obligatoire — chaque ressource dépend de la précédente.

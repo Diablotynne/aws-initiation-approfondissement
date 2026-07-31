@@ -1,5 +1,14 @@
 # Chapitre 1 — Fondamentaux du Cloud & Présentation AWS
 
+<nav class="chapter-map" aria-label="Sous-sections du chapitre">
+  <a href="#1-introduction">01 · Introduction</a>
+  <a href="#2-fondamentaux-du-cloud-computing">02 · Fondamentaux du cloud</a>
+  <a href="#3-modèles-de-services--iaas-paas-et-saas">03 · Modèles de services</a>
+  <a href="#5-fondamentaux-techniques--virtualisation-et-conteneurs">04 · Fondamentaux techniques</a>
+  <a href="#6-présentation-daws-et-de-son-écosystème">05 · Écosystème AWS</a>
+  <a href="#7-aws-well-architected-framework">06 · Architecture et bonnes pratiques</a>
+</nav>
+
 
 ---
 
@@ -205,7 +214,7 @@ Nous allons détailler **la contrainte liée à la sécurité partagée**, car e
 
 ### 2.6 Le modèle de responsabilité partagée AWS
 
-Avant d'étudier le tableau, utilisez le [simulateur interactif de responsabilité partagée](../07-annexes/simulateur-responsabilite-partagee.html). Comparez EC2, RDS et Lambda : plus le service est managé, plus AWS prend en charge de couches techniques, sans jamais devenir responsable de la classification des données ni des autorisations décidées par le client.
+Avant d'étudier le tableau, utilisez le [simulateur interactif de responsabilité partagée](formations/aws-initiation-approfondissement/07-annexes/simulateur-responsabilite-partagee.html). Comparez EC2, RDS et Lambda : plus le service est managé, plus AWS prend en charge de couches techniques, sans jamais devenir responsable de la classification des données ni des autorisations décidées par le client.
 
 Le modèle de responsabilité partagée AWS répartit la sécurité entre deux parties, et confondre les deux moitiés est l'une des erreurs les plus fréquentes chez les entreprises qui découvrent le cloud.
 
@@ -1429,12 +1438,12 @@ Resources:
 ## 10. Bonnes pratiques de démarrage
 
 > [!NOTE]
-> La pratique dans **AWS Academy** permet de découvrir la console dans un environnement temporaire, sans créer de compte AWS personnel.
-### 10.1 Démarrer et sécuriser une session AWS Academy
+> L’environnement temporaire fourni pendant la formation permet de découvrir la console sans créer de compte AWS personnel.
+### 10.1 Démarrer et sécuriser une session de lab
 
 Le lab fournit un compte, un rôle et des autorisations temporaires. La séquence de démarrage est la suivante :
 
-1. Ouvrir le cours et le lab indiqués dans **AWS Academy**.
+1. Ouvrir le lab indiqué par la formatrice.
 2. Cliquer sur **Start Lab** et attendre que la console soit disponible.
 3. Ouvrir la console avec le bouton **AWS** fourni par le lab.
 4. Vérifier le rôle et la **région active** avant toute création de ressource.
@@ -1455,7 +1464,7 @@ Le lab fournit un compte, un rôle et des autorisations temporaires. La séquenc
 > L'ARN confirme que la session utilise un rôle temporaire du lab. N'exécutez pas `aws configure` et ne copiez jamais d'identifiants sur votre poste.
 ### 10.2 Repères pour la navigation dans la console AWS
 
-Voici les éléments essentiels à repérer dans la console — vous les retrouverez présentés en vidéo dans le module AWS Academy correspondant.
+Voici les éléments essentiels à repérer dans la console pendant la démonstration.
 
 **Éléments clés :**
 

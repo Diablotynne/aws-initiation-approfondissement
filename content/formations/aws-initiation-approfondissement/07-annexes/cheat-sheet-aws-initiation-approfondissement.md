@@ -4,7 +4,7 @@ Référence rapide des commandes CLI et des templates types utilisés dans la fo
 
 ---
 
-## AWS CLI dans CloudShell (lab AWS Academy)
+## AWS CLI dans CloudShell
 
 Les commandes sont exécutées depuis **AWS CloudShell** dans la console temporaire du lab. Ne lancez pas `aws configure` et ne copiez aucune clé sur votre poste.
 

@@ -1,5 +1,14 @@
 # Chapitre 3 — Stockage et Calcul — Amazon S3 & Amazon EC2
 
+<nav class="chapter-map" aria-label="Sous-sections du chapitre">
+  <a href="#1-introduction-aux-services-de-stockage-aws">01 · Choisir un stockage</a>
+  <a href="#2-amazon-s3--le-stockage-objet-scalable">02 · Amazon S3</a>
+  <a href="#5-amazon-ec2--la-couche-de-calcul-aws">03 · Amazon EC2</a>
+  <a href="#8-options-de-tarification-aws-ec2">04 · Tarification EC2</a>
+  <a href="#10-elastic-load-balancing-elb--répartition-du-trafic">05 · Élasticité et répartition</a>
+  <a href="#12-aws-lambda--le-calcul-sans-serveur">06 · Serverless</a>
+</nav>
+
 ---
 
 > [!NOTE]
@@ -508,7 +517,7 @@ aws s3api delete-bucket-policy --bucket mon-bucket
 ## 4. Gestion de S3 en CLI
 
 > [!NOTE]
-> La pratique dans **AWS Academy** (module Storage) vous permettra d'approfondir la manipulation de S3 en CLI.
+> Une activité pratique permet d’approfondir la manipulation de S3 en CLI.
 ### 4.1 Créer un bucket S3
 
 Le nom d'un bucket S3 doit être **unique à l'échelle mondiale** (personne d'autre dans le monde ne peut avoir le même nom). La syntaxe utilise `$(date +%s)` pour ajouter un timestamp et éviter les conflits.
@@ -1271,7 +1280,7 @@ URL : https://calculator.aws/
 ## 9. Lancer une instance EC2 en CLI
 
 > [!NOTE]
-> La pratique dans **AWS Academy** (module Compute) vous permettra d'approfondir le lancement d'instances EC2 en CLI.
+> Une activité pratique permet d’approfondir le lancement d’instances EC2 en CLI.
 ### 9.1 Créer une Key Pair
 
 La Key Pair est l'équivalent d'une clé SSH. AWS génère la paire (privée + publique), conserve la clé publique, et vous remet la clé privée **une seule fois**. Le `chmod 600` est obligatoire — SSH refuse de se connecter si la clé est trop permissive.
@@ -1747,7 +1756,7 @@ Le CPU alloué est proportionnel à la mémoire configurée — une fonction à 
 ### 12.3 Créer et invoquer une fonction Lambda en CLI
 
 > [!NOTE]
-> La pratique dans **AWS Academy** (module Serverless / Lambda) vous permettra d'approfondir la création et l'invocation de fonctions Lambda.
+> Une activité pratique permet d’approfondir la création et l’invocation de fonctions Lambda.
 Cette séquence crée une fonction Lambda Python minimale, l'invoque manuellement, puis vérifie les logs d'exécution dans CloudWatch.
 
 ```bash
