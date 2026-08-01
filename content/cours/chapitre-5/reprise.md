@@ -3,81 +3,45 @@ title: "1. RTO/RPO et Récupération de Sauvegarde"
 description: "Chapitre 5 — Automatisation, supervision et reprise d'activité - 1. RTO/RPO et Récupération de Sauvegarde"
 ---
 
-# 1. RTO/RPO et Récupération de Sauvegarde
-
 <nav class="page-sequence"><a href="cours/chapitre-5/vocabulaire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/automatisation">Suivant</a></nav>
 
 ### 1.1 Définitions essentielles
 
 Avant d'automatiser une infrastructure, il faut comprendre deux concepts critiques pour la **continuité de service** :
 
-#### RTO (Recovery Time Objective) — Temps d'Indisponibilité Acceptable
+#### RTO (Recovery Time Objective) — Objectif de rétablissement
 
-**RTO** = **combien de temps maximum l'application peut-elle rester indisponible avant que l'impact métier devienne intolérable ?**
+Le **RTO** est la durée maximale visée pour rétablir le service après une interruption. Il ne s'agit pas d'une valeur fournie automatiquement par AWS : l'organisation la fixe à partir de l'impact métier, puis vérifie par des tests que l'architecture permet de l'atteindre.
 
-```text
-Exemples concrets :
+#### RPO (Recovery Point Objective) — Objectif de point de reprise
 
-Service                    | RTO typical | Raison
---------------------------|-------------|----------------------------------------
-Site e-commerce (Amazon)   | 5 minutes   | Chaque minute sans vente = perte
-Application interne (RH)   | 8 heures    | Métier critique mais moins urgent
-Service vidéo (Netflix)    | 30 minutes  | Perte d'utilisateurs, mais pas urgent
-Système bancaire           | 15 minutes  | Réglementation stricte
-API partenaire (non-vital) | 4 heures    | Impact mineur sur le business
-```
+Le **RPO** exprime la quantité maximale de données que l'organisation accepte de perdre, mesurée dans le temps. Un RPO de quatre heures signifie, par exemple, que le mécanisme de protection doit permettre de revenir à un état vieux de quatre heures au maximum.
 
-#### RPO (Recovery Point Objective) — Quantité de Données Perdable
+#### Relier les objectifs aux mécanismes techniques
 
-**RPO** = **combien de données suis-je prêt à perdre en cas de sinistre ?**
+| Question à trancher | Conséquence d'architecture |
+|---|---|
+| Quel délai de rétablissement est acceptable ? | Choisir entre restauration, capacité maintenue en attente ou service actif sur plusieurs emplacements. |
+| Quelle perte de données est acceptable ? | Définir la fréquence des points de reprise et, si nécessaire, une réplication synchrone ou continue. |
+| Quel périmètre de panne faut-il couvrir ? | Tester la perte d'une ressource, d'une zone de disponibilité ou d'une région selon le besoin métier. |
+| Comment prouver que l'objectif est atteignable ? | Exécuter régulièrement une restauration ou un basculement et mesurer le résultat. |
 
-```text
-Exemples concrets :
-
-Application              | RPO        | Raison
-------------------------|------------|----------------------------------------
-E-commerce actif         | 5 minutes  | Transactions en temps réel = critique
-Logs d'application       | 1 jour     | Données historiques, non urgentes
-Données de client (CRM)  | 1 heure    | Important pour relancer les clients
-Backups archivés         | 30 jours   | Archive long terme, peu critique
-```
-
-#### Relation RTO ↔ RPO
-
-```text
-Scénario : Serveur RDS tombe en panne à 10:00
-
-Stratégie 1 (RTO court, RPO court)
-  - Sauvegarde automatique toutes les 10 minutes
-  - Multi-AZ activé (failover < 2 minutes)
-  - RTO = 2 minutes, RPO = 10 minutes
-  - Coût : ⭐⭐⭐⭐ (cher)
-
-Stratégie 2 (RTO moyen, RPO moyen)
-  - Sauvegarde quotidienne (minuit)
-  - Backup lisible rapidement (1 heure pour restaurer)
-  - RTO = 1 heure, RPO = 24 heures
-  - Coût : ⭐⭐ (raisonnable)
-
-Stratégie 3 (RTO long, RPO long)
-  - Sauvegarde hebdomadaire
-  - Pas de failover automatique
-  - RTO = 8 heures, RPO = 7 jours
-  - Coût : ⭐ (très bon marché)
-```
+Un objectif ambitieux augmente généralement la capacité, l'automatisation et les tests nécessaires. Une sauvegarde non restaurée et non chronométrée ne démontre donc ni le RPO ni le RTO.
 
 ---
 
-### 1.2 Stratégies AWS pour Atteindre RTO/RPO
+### 1.2 Mécanismes AWS à combiner
 
-| Technologie | RTO | RPO | Coût | Cas d'usage |
-|-------------|-----|-----|------|-----------|
-| **Multi-AZ** | < 2 min | ≈ 0 min | Moyen | Haute dispo critique |
-| **Snapshots EBS** | 15-30 min | 1 jour | Faible | Backup régulier |
-| **AWS Backup** | 1-4 heures | 1-24 heures | Faible-Moyen | Backup centralisé |
-| **Read Replicas (RDS)** | 5-10 min | ≈ 0 min | Moyen | Failover rapide BD |
-| **AWS Glacier** | 1-12 heures | Sans limite | Très faible | Archive long terme |
-| **Lambda + S3** | 10-60 min | 1 heure | Très faible | Backup custom |
+Les valeurs de RTO et de RPO dépendent du volume de données, de la configuration, du scénario de panne et des procédures testées. Le tableau suivant décrit donc le rôle des mécanismes, sans promettre de délai générique.
+
+| Mécanisme | Rôle | Point d'attention |
+|---|---|---|
+| **Déploiement RDS Multi-AZ** | Maintenir une instance de secours synchrone et permettre un basculement géré. | C'est un mécanisme de disponibilité, pas un remplacement des sauvegardes. |
+| **Sauvegardes automatiques RDS et restauration à un instant donné** | Restaurer une nouvelle base dans la fenêtre de conservation configurée. | Le temps de restauration doit être mesuré avec un volume représentatif. |
+| **Snapshots EBS** | Conserver un point de reprise d'un volume. | La fréquence de création pilote le RPO ; la restauration et l'initialisation du volume influencent le RTO. |
+| **AWS Backup** | Centraliser les plans, calendriers, règles de conservation et coffres de sauvegarde. | La couverture exacte des fonctions dépend du type de ressource et de la région. |
+| **Versioning et réplication Amazon S3** | Conserver plusieurs versions et, si configuré, répliquer des objets vers un autre compartiment. | La réplication seule ne protège pas de toutes les suppressions ou erreurs logiques ; les règles doivent être testées. |
+| **Architecture pilot light, warm standby ou active/active** | Maintenir plus ou moins de capacité prête à reprendre le trafic. | Plus la reprise doit être rapide, plus le coût et la complexité opérationnelle augmentent. |
 
 ---
 
@@ -142,17 +106,17 @@ aws backup create-backup-plan \
   --region eu-west-3
 ```
 
-:::success
-**Résultat attendu :**
-```json
-{
-    "BackupPlanId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-    "BackupPlanArn": "arn:aws:backup:eu-west-3:123456789012:backup-plan:a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-    "CreationDate": "2026-03-24T10:15:00.000Z",
-    "VersionId": "NDEzMWVlNzgtMTk2My00NjMxLWJlOTYt"
-}
-```
-:::
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> {
+>     "BackupPlanId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+>     "BackupPlanArn": "arn:aws:backup:eu-west-3:123456789012:backup-plan:a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+>     "CreationDate": "2026-03-24T10:15:00.000Z",
+>     "VersionId": "NDEzMWVlNzgtMTk2My00NjMxLWJlOTYt"
+> }
+> ```
+
 
 ```bash
 # 4. Assigner des ressources au plan
@@ -174,32 +138,32 @@ aws backup start-restore-job \
   --region eu-west-3
 ```
 
-:::success
-**Résultat attendu :**
-```json
-# list-recovery-points-by-resource :
-{
-    "RecoveryPoints": [
-        {
-            "RecoveryPointArn": "arn:aws:backup:eu-west-3:123456789012:recovery-point:abc123",
-            "CreationDate": "2026-03-24T00:05:12.000Z",
-            "Status": "COMPLETED",
-            "BackupSizeInBytes": 8589934592,
-            "BackupVaultName": "mon-vault-production"
-        }
-    ]
-}
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> # list-recovery-points-by-resource :
+> {
+>     "RecoveryPoints": [
+>         {
+>             "RecoveryPointArn": "arn:aws:backup:eu-west-3:123456789012:recovery-point:abc123",
+>             "CreationDate": "2026-03-24T00:05:12.000Z",
+>             "Status": "COMPLETED",
+>             "BackupSizeInBytes": 8589934592,
+>             "BackupVaultName": "mon-vault-production"
+>         }
+>     ]
+> }
+>
+> # start-restore-job :
+> {
+>     "RestoreJobId": "restore-job-0abc123def456"
+> }
+> ```
 
-# start-restore-job :
-{
-    "RestoreJobId": "restore-job-0abc123def456"
-}
-```
-:::
 
-:::warning
-**Coûts AWS Backup :** la facture dépend du volume protégé, du type de stockage, des restaurations, des copies interrégions ou intercomptes et de la durée de rétention. Relevez ces paramètres dans le plan de sauvegarde, puis appliquez les tarifs officiels de la région. Vérifiez régulièrement la consommation dans **Cost Explorer** et supprimez les rétentions sans justification métier.
-:::
+> [!warning]
+> **Coûts AWS Backup :** la facture dépend du volume protégé, du type de stockage, des restaurations, des copies interrégions ou intercomptes et de la durée de rétention. Relevez ces paramètres dans le plan de sauvegarde, puis appliquez les tarifs officiels de la région. Vérifiez régulièrement la consommation dans **Cost Explorer** et supprimez les rétentions sans justification métier.
+
 
 #### Bonnes pratiques AWS Backup
 
@@ -238,32 +202,32 @@ aws ec2 create-volume \
   --region eu-west-3
 ```
 
-:::success
-**Résultat attendu :**
-```json
-# create-snapshot :
-{
-    "SnapshotId": "snap-0abc123def456789a",
-    "VolumeId": "vol-12345678",
-    "State": "pending",
-    "StartTime": "2026-03-24T09:00:00.000Z",
-    "Progress": "0%",
-    "Description": "Sauvegarde avant migration"
-}
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> # create-snapshot :
+> {
+>     "SnapshotId": "snap-0abc123def456789a",
+>     "VolumeId": "vol-12345678",
+>     "State": "pending",
+>     "StartTime": "2026-03-24T09:00:00.000Z",
+>     "Progress": "0%",
+>     "Description": "Sauvegarde avant migration"
+> }
+>
+> # describe-snapshots (après quelques minutes) :
+> {
+>     "Snapshots": [
+>         {
+>             "SnapshotId": "snap-0abc123def456789a",
+>             "State": "completed",
+>             "Progress": "100%",
+>             "VolumeSize": 20
+>         }
+>     ]
+> }
+> ```
 
-# describe-snapshots (après quelques minutes) :
-{
-    "Snapshots": [
-        {
-            "SnapshotId": "snap-0abc123def456789a",
-            "State": "completed",
-            "Progress": "100%",
-            "VolumeSize": 20
-        }
-    ]
-}
-```
-:::
 
 **Snapshot RDS** = sauvegarde complète de base de données
 
@@ -285,33 +249,33 @@ aws rds restore-db-instance-from-db-snapshot \
   --region eu-west-3
 ```
 
-:::success
-**Résultat attendu :**
-```json
-# create-db-snapshot :
-{
-    "DBSnapshot": {
-        "DBSnapshotIdentifier": "prod-db-backup-2026-03-24",
-        "DBInstanceIdentifier": "production-db",
-        "Status": "creating",
-        "Engine": "mysql",
-        "AllocatedStorage": 100,
-        "SnapshotCreateTime": "2026-03-24T09:30:00.000Z"
-    }
-}
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> # create-db-snapshot :
+> {
+>     "DBSnapshot": {
+>         "DBSnapshotIdentifier": "prod-db-backup-2026-03-24",
+>         "DBInstanceIdentifier": "production-db",
+>         "Status": "creating",
+>         "Engine": "mysql",
+>         "AllocatedStorage": 100,
+>         "SnapshotCreateTime": "2026-03-24T09:30:00.000Z"
+>     }
+> }
+>
+> # describe-db-snapshots (après quelques minutes) :
+> {
+>     "DBSnapshots": [
+>         {
+>             "DBSnapshotIdentifier": "prod-db-backup-2026-03-24",
+>             "Status": "available",
+>             "PercentProgress": 100
+>         }
+>     ]
+> }
+> ```
 
-# describe-db-snapshots (après quelques minutes) :
-{
-    "DBSnapshots": [
-        {
-            "DBSnapshotIdentifier": "prod-db-backup-2026-03-24",
-            "Status": "available",
-            "PercentProgress": 100
-        }
-    ]
-}
-```
-:::
 
 > **Résultat attendu :** `create-db-snapshot` retourne un JSON avec le `DBSnapshotIdentifier` et le statut `creating`. Quelques minutes plus tard, `describe-db-snapshots` affiche le statut `available`. La restauration (`restore-db-instance-from-db-snapshot`) crée une **nouvelle instance** RDS — pas un remplacement de l'existante.
 

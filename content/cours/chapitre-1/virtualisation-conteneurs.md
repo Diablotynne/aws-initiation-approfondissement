@@ -3,8 +3,6 @@ title: "5. Fondamentaux techniques : Virtualisation et Conteneurs"
 description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 5. Fondamentaux techniques : Virtualisation et Conteneurs"
 ---
 
-# 5. Fondamentaux techniques : Virtualisation et Conteneurs
-
 <nav class="page-sequence"><a href="cours/chapitre-1/modeles-deploiement">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/ecosysteme-aws">Suivant</a></nav>
 
 Derrière le Cloud se cachent des **technologies fondamentales** qui le rendent possible.
@@ -103,7 +101,7 @@ Les **microservices** sont une approche architecturale qui consiste à **découp
 Le monolithe (une application unique de 500k lignes, une seule technologie, un déploiement lent et une scalabilité limitée) s'oppose aux microservices (Auth, Cart, Payment, Reco découpés en services indépendants), qui autorisent des technologies différentes par service, un déploiement rapide et une scalabilité flexible par équipe.
 
 - **Agilité** : chaque équipe développe son service indépendamment.
-- **Scalabilité** : seul le service de paiement reçoit beaucoup de trafic ? Scalez juste ce service.
+- **Scalabilité** : un service fortement sollicité peut être mis à l'échelle indépendamment des autres composants.
 - **Résilience** : si le service de recommandations est down, le reste de l'app fonctionne.
 - **Technologie** : chaque service peut utiliser Node.js, Python, Java… selon le besoin.
 
@@ -122,9 +120,9 @@ Chaque microservice est empaqueté dans son propre **conteneur Docker**, puis or
 
 #### Un exemple en image
 
-<img src="assets/schemas/aws-microservices-ecs-fargate.svg"
+<a class="schema-zoom" href="assets/schemas/aws-microservices-ecs-fargate.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/aws-microservices-ecs-fargate.svg"
      alt="Architecture microservices : CloudFront vers ALB, distribué vers Auth/Cart/Payment/Recomend puis vers RDS/DynamoDB/S3"
-     style="display:block; margin:auto; width:90%">
+     style="display:block; margin:auto; width:90%"></a>
 
 **Lecture du schéma.** Les requêtes entrent par CloudFront, puis l'Application Load Balancer les répartit vers plusieurs microservices exécutés séparément. Chaque service accède uniquement au stockage adapté à son besoin. Les flèches représentent les flux réseau ; elles ne signifient pas que tous les services partagent automatiquement les mêmes droits IAM.
 

@@ -3,8 +3,6 @@ title: "7. AWS Well-Architected Framework"
 description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 7. AWS Well-Architected Framework"
 ---
 
-# 7. AWS Well-Architected Framework
-
 <nav class="page-sequence"><a href="cours/chapitre-1/ecosysteme-aws">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/console-aws">Suivant</a></nav>
 
 Le **Well-Architected Framework** est une méthodologie officielle AWS qui permet de **concevoir des architectures Cloud robustes**, sécurisées, performantes, optimisées en coûts et **durables**.
@@ -20,23 +18,23 @@ Ce framework repose sur **six piliers**, souvent représentés par le sigle **SO
 - 💰 **Cost Optimization** → Optimisation des dépenses
 - 🌱 **Sustainability** → Impact environnemental, efficacité
 
-:::success
-**Vérification AWS CLI — liste des piliers WAF disponibles pour une review :**
-```bash
-aws wellarchitected list-lenses --lens-type AWS_OFFICIAL
-```
-```json
-{
-    "LensSummaries": [
-        { "LensAlias": "wellarchitected", "LensName": "AWS Well-Architected Framework",
-          "LensVersion": "2023-04-10", "Description": "Six pillars review" },
-        { "LensAlias": "serverless", "LensName": "Serverless Lens", "LensVersion": "3.0" },
-        { "LensAlias": "saas", "LensName": "SaaS Lens", "LensVersion": "1.0" }
-    ]
-}
-```
-Le Framework Well-Architected est disponible depuis la console et via API. Vous pouvez lancer une revue avec **AWS Well-Architected Tool** : les questions sont organisées selon les six piliers. Ce service ne doit pas être confondu avec **AWS WAF**, le pare-feu applicatif web.
-:::
+> [!tip]
+> **Vérification AWS CLI — liste des piliers WAF disponibles pour une review :**
+> ```bash
+> aws wellarchitected list-lenses --lens-type AWS_OFFICIAL
+> ```
+> ```json
+> {
+>     "LensSummaries": [
+>         { "LensAlias": "wellarchitected", "LensName": "AWS Well-Architected Framework",
+>           "LensVersion": "2023-04-10", "Description": "Six pillars review" },
+>         { "LensAlias": "serverless", "LensName": "Serverless Lens", "LensVersion": "3.0" },
+>         { "LensAlias": "saas", "LensName": "SaaS Lens", "LensVersion": "1.0" }
+>     ]
+> }
+> ```
+> Le Framework Well-Architected est disponible depuis la console et via API. Vous pouvez lancer une revue avec **AWS Well-Architected Tool** : les questions sont organisées selon les six piliers. Ce service ne doit pas être confondu avec **AWS WAF**, le pare-feu applicatif web.
+
 
 #### 1. Security (Sécurité)
 

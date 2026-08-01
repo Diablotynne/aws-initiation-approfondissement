@@ -3,8 +3,6 @@ title: "6. Présentation d'AWS et de son écosystème"
 description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 6. Présentation d'AWS et de son écosystème"
 ---
 
-# 6. Présentation d'AWS et de son écosystème
-
 <nav class="page-sequence"><a href="cours/chapitre-1/virtualisation-conteneurs">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/well-architected">Suivant</a></nav>
 
 ### 6.1 Vue d'ensemble
@@ -101,9 +99,9 @@ OpenStack ne joue pas sur le même terrain qu'AWS/Azure/GCP (qui sont des servic
 
 ### 6.4 L'infrastructure mondiale d'AWS
 
-<img src="assets/schemas/infrastructure-mondiale-aws.svg"
+<a class="schema-zoom" href="assets/schemas/infrastructure-mondiale-aws.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/infrastructure-mondiale-aws.svg"
      alt="Une région AWS contenant plusieurs zones de disponibilité, distinctes des points de présence"
-     style="display:block; margin:auto; width:95%">
+     style="display:block; margin:auto; width:95%"></a>
 
 **Lecture du schéma.** Une région est le périmètre géographique sélectionné pour de nombreux services. Elle contient plusieurs zones de disponibilité isolées les unes des autres. Un point de présence sert notamment à rapprocher certains services des utilisateurs ; ce n'est ni une région ni une zone dans laquelle on déploie arbitrairement les mêmes ressources.
 
@@ -131,7 +129,7 @@ Elle est structurée en trois grandes composantes :
 
 #### Vidéo explicative : infrastructure AWS
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TFxSjn8AHi8?si=jCQPMlT4-X9HT7Ip" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/TFxSjn8AHi8" title="Présentation de l'infrastructure mondiale AWS" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 Retenons que le concept de *région* et de *localisation géographique des données* est souvent déterminant pour des raisons légales et de performance.
 

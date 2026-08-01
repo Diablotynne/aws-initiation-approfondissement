@@ -3,9 +3,7 @@ title: "Ressources"
 description: "Chapitre 4 — Amazon VPC et bases de données AWS - Ressources"
 ---
 
-# Ressources
-
-<nav class="page-sequence"><a href="cours/chapitre-4/points-attention">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/quiz">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-4/travaux-pratiques">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/quiz">Suivant</a></nav>
 
 ### Documentation officielle AWS
 - [Amazon RDS Documentation](https://docs.aws.amazon.com/rds/)
@@ -17,4 +15,4 @@ description: "Chapitre 4 — Amazon VPC et bases de données AWS - Ressources"
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-4/points-attention">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/quiz">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-4/travaux-pratiques">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/quiz">Suivant</a></nav>

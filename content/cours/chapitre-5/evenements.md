@@ -3,8 +3,6 @@ title: "8. Services complémentaires — Queues et événements"
 description: "Chapitre 5 — Automatisation, supervision et reprise d'activité - 8. Services complémentaires — Queues et événements"
 ---
 
-# 8. Services complémentaires — Queues et événements
-
 <nav class="page-sequence"><a href="cours/chapitre-5/well-architected">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/certifications">Suivant</a></nav>
 
 ### 8.1 Amazon SQS — File d'attente de messages
@@ -46,35 +44,35 @@ aws sqs delete-message \
   --receipt-handle <receipt-handle>
 ```
 
-:::success
-**Résultat attendu :**
-```json
-# create-queue :
-{
-    "QueueUrl": "https://sqs.eu-west-1.amazonaws.com/123456789012/MonQueue"
-}
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> # create-queue :
+> {
+>     "QueueUrl": "https://sqs.eu-west-1.amazonaws.com/123456789012/MonQueue"
+> }
+>
+> # send-message :
+> {
+>     "MD5OfMessageBody": "9c7c6f0f3f748bdfa5a5e6e7c8d9e0f1",
+>     "MessageId": "msg-0abc123def456789a"
+> }
+>
+> # receive-message :
+> {
+>     "Messages": [
+>         {
+>             "MessageId": "msg-0abc123def456789a",
+>             "ReceiptHandle": "AQEB...longstring...",
+>             "MD5OfBody": "9c7c6f0f3f748bdfa5a5e6e7c8d9e0f1",
+>             "Body": "Bonjour depuis CloudFormation"
+>         }
+>     ]
+> }
+>
+> # delete-message : pas de sortie si succès (HTTP 200)
+> ```
 
-# send-message :
-{
-    "MD5OfMessageBody": "9c7c6f0f3f748bdfa5a5e6e7c8d9e0f1",
-    "MessageId": "msg-0abc123def456789a"
-}
-
-# receive-message :
-{
-    "Messages": [
-        {
-            "MessageId": "msg-0abc123def456789a",
-            "ReceiptHandle": "AQEB...longstring...",
-            "MD5OfBody": "9c7c6f0f3f748bdfa5a5e6e7c8d9e0f1",
-            "Body": "Bonjour depuis CloudFormation"
-        }
-    ]
-}
-
-# delete-message : pas de sortie si succès (HTTP 200)
-```
-:::
 
 ---
 
@@ -106,27 +104,27 @@ aws sns publish \
   --message "Alerte : CPU élevé détecté !"
 ```
 
-:::success
-**Résultat attendu :**
-```json
-# create-topic :
-{
-    "TopicArn": "arn:aws:sns:eu-west-1:123456789012:MonTopicAlarmes"
-}
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> # create-topic :
+> {
+>     "TopicArn": "arn:aws:sns:eu-west-1:123456789012:MonTopicAlarmes"
+> }
+>
+> # subscribe :
+> {
+>     "SubscriptionArn": "pending confirmation"
+> }
+> # → Un email est envoyé avec un lien de confirmation
+>
+> # publish :
+> {
+>     "MessageId": "pub-0abc123def456789a"
+> }
+> # → Tous les abonnés (email, SQS, Lambda) reçoivent le message instantanément
+> ```
 
-# subscribe :
-{
-    "SubscriptionArn": "pending confirmation"
-}
-# → Un email est envoyé avec un lien de confirmation
-
-# publish :
-{
-    "MessageId": "pub-0abc123def456789a"
-}
-# → Tous les abonnés (email, SQS, Lambda) reçoivent le message instantanément
-```
-:::
 
 > **Référence** : [Amazon SQS](https://docs.aws.amazon.com/sqs/)
 > **Référence** : [Amazon SNS](https://docs.aws.amazon.com/sns/)
@@ -195,20 +193,20 @@ aws apigateway put-integration \
   --uri arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:123456789:function:lister-produits/invocations
 ```
 
-:::success
-**Résultat attendu (create-rest-api) :**
-```json
-{
-    "id": "a1b2c3d4e5",
-    "name": "MonAPI-Catalogue",
-    "createdDate": "2026-07-27T10:00:00Z",
-    "apiKeySource": "HEADER",
-    "endpointConfiguration": {
-        "types": ["EDGE"]
-    }
-}
-```
-:::
+> [!tip]
+> **Résultat attendu (create-rest-api) :**
+> ```json
+> {
+>     "id": "a1b2c3d4e5",
+>     "name": "MonAPI-Catalogue",
+>     "createdDate": "2026-07-27T10:00:00Z",
+>     "apiKeySource": "HEADER",
+>     "endpointConfiguration": {
+>         "types": ["EDGE"]
+>     }
+> }
+> ```
+
 
 **AWS Step Functions — orchestrer plusieurs services dans un workflow**
 
@@ -290,9 +288,9 @@ L'illustration ci-dessous assemble les briques vues dans ce chapitre et les pré
 
 Aucun composant de ce schéma ne connaît directement l'adresse réseau d'un autre composant en amont : le client ne connaît que l'URL d'API Gateway, les Lambdas ne connaissent que les ARN des ressources qu'elles invoquent, et la communication asynchrone (SQS/SNS) élimine toute dépendance temporelle stricte entre le traitement de la commande et l'envoi de la notification. C'est cette absence de dépendance directe qui permet à chaque brique d'être mise à l'échelle, remplacée ou de tomber en panne sans effet domino sur le reste de l'architecture — le principe même du découplage appliqué à l'échelle d'un système complet.
 
-:::warning
-**Piège fréquent :** multiplier les microservices sans réel besoin métier augmente la complexité opérationnelle (plus de composants à surveiller, plus de latence réseau entre services, plus de scénarios d'échec partiel à gérer) sans bénéfice proportionnel. Le découpage en microservices se justifie quand des équipes différentes doivent déployer indépendamment, quand des composants ont des besoins de mise à l'échelle très différents (le service de paiement encaisse un pic le vendredi soir, le catalogue reste stable), ou quand la résilience d'un composant ne doit jamais bloquer les autres. Un monolithe bien structuré reste souvent le bon choix pour une application simple ou une petite équipe.
-:::
+> [!warning]
+> **Piège fréquent :** multiplier les microservices sans réel besoin métier augmente la complexité opérationnelle (plus de composants à surveiller, plus de latence réseau entre services, plus de scénarios d'échec partiel à gérer) sans bénéfice proportionnel. Le découpage en microservices se justifie quand des équipes différentes doivent déployer indépendamment, quand des composants ont des besoins de mise à l'échelle très différents (le service de paiement encaisse un pic le vendredi soir, le catalogue reste stable), ou quand la résilience d'un composant ne doit jamais bloquer les autres. Un monolithe bien structuré reste souvent le bon choix pour une application simple ou une petite équipe.
+
 
 > **Référence** : [Amazon API Gateway](https://docs.aws.amazon.com/apigateway/)
 > **Référence** : [AWS Step Functions](https://docs.aws.amazon.com/step-functions/)

@@ -3,13 +3,11 @@ title: "3. Modèles de services : IaaS, PaaS et SaaS"
 description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 3. Modèles de services : IaaS, PaaS et SaaS"
 ---
 
-# 3. Modèles de services : IaaS, PaaS et SaaS
-
 <nav class="page-sequence"><a href="cours/chapitre-1/fondamentaux-cloud">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/modeles-deploiement">Suivant</a></nav>
 
-<img src="assets/schemas/modeles-service-cloud.svg"
+<a class="schema-zoom" href="assets/schemas/modeles-service-cloud.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/modeles-service-cloud.svg"
      alt="Répartition des couches gérées par le client et par le fournisseur pour les modèles sur site, IaaS, PaaS et SaaS"
-     style="display:block; margin:auto; width:95%">
+     style="display:block; margin:auto; width:95%"></a>
 
 **Lecture du schéma.** De gauche à droite, le fournisseur prend en charge davantage de couches. Le client conserve néanmoins la responsabilité de ses données, de ses identités, de ses configurations et de la manière dont il utilise le service. Le schéma décrit une répartition générale : le contrat précis dépend du service choisi.
 

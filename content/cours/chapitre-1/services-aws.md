@@ -3,8 +3,6 @@ title: "9. Les services AWS les plus utilisés"
 description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 9. Les services AWS les plus utilisés"
 ---
 
-# 9. Les services AWS les plus utilisés
-
 <nav class="page-sequence"><a href="cours/chapitre-1/console-aws">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/bonnes-pratiques">Suivant</a></nav>
 
 AWS propose un catalogue étendu et évolutif couvrant le calcul, le stockage, le réseau, les bases de données, la sécurité et de nombreux services applicatifs. Il est plus utile de comprendre les familles et les critères de choix que de mémoriser un nombre de services rapidement périmé.
@@ -47,9 +45,9 @@ Il supporte deux moteurs d'automation populaires :
 - **Chef** (propriétaire de OpsWorks Chef)
 - **Puppet** (partenariat AWS)
 
-:::warning
-**Toute la famille OpsWorks est désormais en fin de vie et désactivée.** OpsWorks for Chef Automate et OpsWorks for Puppet Enterprise ont été arrêtés le 5 mai 2024 ; OpsWorks Stacks l'a été le 26 mai 2024. Cette section sert uniquement à reconnaître une infrastructure historique et à comprendre les principes de Chef et Puppet. Pour une nouvelle architecture AWS, privilégiez notamment AWS Systems Manager, les images automatisées, les services de conteneurs ou une solution de gestion de configuration encore maintenue.
-:::
+> [!warning]
+> **Toute la famille OpsWorks est désormais en fin de vie et désactivée.** OpsWorks for Chef Automate et OpsWorks for Puppet Enterprise ont été arrêtés le 5 mai 2024 ; OpsWorks Stacks l'a été le 26 mai 2024. Cette section sert uniquement à reconnaître une infrastructure historique et à comprendre les principes de Chef et Puppet. Pour une nouvelle architecture AWS, privilégiez notamment AWS Systems Manager, les images automatisées, les services de conteneurs ou une solution de gestion de configuration encore maintenue.
+
 
 **Cas d'usage typiques :**
 - Provisionner automatiquement des serveurs EC2 avec une stack applicative complète.
@@ -76,18 +74,18 @@ template '/var/www/html/index.html' do
 end
 ```
 
-:::success
-**Résultat attendu — exécution de `chef-client` :**
-```text
-[2024-01-15T09:12:34+00:00] INFO: Starting Chef Infra Client Run
-[2024-01-15T09:12:35+00:00] INFO: Installing package apache2
-[2024-01-15T09:12:42+00:00] INFO: package[apache2] installed version 2.4.57
-[2024-01-15T09:12:43+00:00] INFO: service[apache2] enabled and started
-[2024-01-15T09:12:43+00:00] INFO: template[/var/www/html/index.html] created file
-[2024-01-15T09:12:43+00:00] INFO: Chef Infra Client Run complete in 9.123 seconds.
-```
-Apache est installé, démarré et la page d'accueil est en place. Si vous relancez `chef-client`, rien ne change — c'est l'idempotence en action.
-:::
+> [!tip]
+> **Résultat attendu — exécution de `chef-client` :**
+> ```text
+> [2024-01-15T09:12:34+00:00] INFO: Starting Chef Infra Client Run
+> [2024-01-15T09:12:35+00:00] INFO: Installing package apache2
+> [2024-01-15T09:12:42+00:00] INFO: package[apache2] installed version 2.4.57
+> [2024-01-15T09:12:43+00:00] INFO: service[apache2] enabled and started
+> [2024-01-15T09:12:43+00:00] INFO: template[/var/www/html/index.html] created file
+> [2024-01-15T09:12:43+00:00] INFO: Chef Infra Client Run complete in 9.123 seconds.
+> ```
+> Apache est installé, démarré et la page d'accueil est en place. Si vous relancez `chef-client`, rien ne change — c'est l'idempotence en action.
+
 
 **Intérêt :** Au lieu de cliquer dans une UI ou d'écrire des scripts bash, vous décrivez le **résultat attendu** (Apache installé, service actif, fichiers à jour).
 Chef **idempotent** — si vous exécutez la recipe 10 fois, le résultat sera toujours le même.
@@ -111,17 +109,17 @@ service { 'apache2':
 }
 ```
 
-:::success
-**Résultat attendu — exécution de `puppet agent --test` :**
-```text
-Info: Caching catalog for node01.example.com
-Info: Applying configuration version '1705312800'
-Notice: /Stage[main]/Main/Package[apache2]/ensure: created
-Notice: /Stage[main]/Main/Service[apache2]/ensure: ensure changed 'stopped' to 'running'
-Notice: Applied catalog in 8.54 seconds
-```
-Puppet a appliqué l'état souhaité : `apache2` installé et le service actif. Tout est tracé dans les logs Puppet Master.
-:::
+> [!tip]
+> **Résultat attendu — exécution de `puppet agent --test` :**
+> ```text
+> Info: Caching catalog for node01.example.com
+> Info: Applying configuration version '1705312800'
+> Notice: /Stage[main]/Main/Package[apache2]/ensure: created
+> Notice: /Stage[main]/Main/Service[apache2]/ensure: ensure changed 'stopped' to 'running'
+> Notice: Applied catalog in 8.54 seconds
+> ```
+> Puppet a appliqué l'état souhaité : `apache2` installé et le service actif. Tout est tracé dans les logs Puppet Master.
+
 
 **Intérêt :** Comme Chef, il permet d'automatiser des déploiements complexes à grande échelle.
 
@@ -129,7 +127,7 @@ Puppet a appliqué l'état souhaité : `apache2` installé et le service actif. 
 
 #### Ansible — Automatisation agentless et modules AWS
 
-**Ansible** est aujourd'hui l'un des outils d'automatisation les plus utilisés dans les environnements Cloud, notamment en **complément de Terraform** pour la gestion de configuration.
+**Ansible** est couramment utilisé pour automatiser la configuration des systèmes. Il peut compléter un outil de provisionnement d'infrastructure tel que Terraform.
 
 Contrairement à Chef ou Puppet, Ansible est **agentless** : il n'installe rien sur les machines cibles — il se connecte via SSH (Linux) ou WinRM (Windows) et exécute les tâches définies dans des **playbooks** YAML. Voici un playbook typique pour configurer un serveur Apache sur une instance EC2 :
 
@@ -158,28 +156,28 @@ Contrairement à Chef ou Puppet, Ansible est **agentless** : il n'installe rien 
         dest: /var/www/html/index.html
 ```
 
-:::success
-**Résultat attendu — `ansible-playbook site.yml -i inventory.ini` :**
-```text
-PLAY [Configurer un serveur web Apache sur EC2] ****************************
+> [!tip]
+> **Résultat attendu — `ansible-playbook site.yml -i inventory.ini` :**
+> ```text
+> PLAY [Configurer un serveur web Apache sur EC2] ****************************
+>
+> TASK [Gathering Facts] *****************************************************
+> ok: [ec2-18-234-56-78.eu-west-3.compute.amazonaws.com]
+>
+> TASK [Installer Apache] ****************************************************
+> changed: [ec2-18-234-56-78.eu-west-3.compute.amazonaws.com]
+>
+> TASK [Démarrer et activer le service] **************************************
+> changed: [ec2-18-234-56-78.eu-west-3.compute.amazonaws.com]
+>
+> TASK [Copier la page d'accueil] ********************************************
+> changed: [ec2-18-234-56-78.eu-west-3.compute.amazonaws.com]
+>
+> PLAY RECAP *****************************************************************
+> ec2-18-234-56-78.eu-west-3.compute.amazonaws.com : ok=4  changed=3  unreachable=0  failed=0
+> ```
+> Apache est installé et opérationnel sur l'instance EC2. La ligne `changed=3` confirme que les trois tâches ont apporté des modifications. Si vous relancez le playbook, vous verrez `changed=0` — c'est l'idempotence Ansible.
 
-TASK [Gathering Facts] *****************************************************
-ok: [ec2-18-234-56-78.eu-west-3.compute.amazonaws.com]
-
-TASK [Installer Apache] ****************************************************
-changed: [ec2-18-234-56-78.eu-west-3.compute.amazonaws.com]
-
-TASK [Démarrer et activer le service] **************************************
-changed: [ec2-18-234-56-78.eu-west-3.compute.amazonaws.com]
-
-TASK [Copier la page d'accueil] ********************************************
-changed: [ec2-18-234-56-78.eu-west-3.compute.amazonaws.com]
-
-PLAY RECAP *****************************************************************
-ec2-18-234-56-78.eu-west-3.compute.amazonaws.com : ok=4  changed=3  unreachable=0  failed=0
-```
-Apache est installé et opérationnel sur l'instance EC2. La ligne `changed=3` confirme que les trois tâches ont apporté des modifications. Si vous relancez le playbook, vous verrez `changed=0` — c'est l'idempotence Ansible.
-:::
 
 Ansible propose également une **collection dédiée AWS** (`amazon.aws`) permettant de piloter directement les ressources AWS depuis un playbook :
 
@@ -199,22 +197,22 @@ Ansible propose également une **collection dédiée AWS** (`amazon.aws`) permet
       Owner: formation
 ```
 
-:::success
-**Résultat attendu — `ansible-playbook create-ec2.yml` :**
-```text
-TASK [Lancer une instance EC2] *********************************************
-changed: [localhost]
+> [!tip]
+> **Résultat attendu — `ansible-playbook create-ec2.yml` :**
+> ```text
+> TASK [Lancer une instance EC2] *********************************************
+> changed: [localhost]
+>
+> PLAY RECAP *****************************************************************
+> localhost : ok=1  changed=1  unreachable=0  failed=0
+>
+> Instance créée : i-0a1b2c3d4e5f67890
+> IP publique    : 15.236.142.87
+> Région         : eu-west-3
+> Statut         : running
+> ```
+> L'instance EC2 `mon-serveur-web` est lancée en `eu-west-3`. Elle est tagguée `Env: production` et visible dans la console AWS sous EC2 > Instances. Vous pouvez vous y connecter via SSH : `ssh -i ma-cle-ssh.pem ubuntu@15.236.142.87`.
 
-PLAY RECAP *****************************************************************
-localhost : ok=1  changed=1  unreachable=0  failed=0
-
-Instance créée : i-0a1b2c3d4e5f67890
-IP publique    : 15.236.142.87
-Région         : eu-west-3
-Statut         : running
-```
-L'instance EC2 `mon-serveur-web` est lancée en `eu-west-3`. Elle est tagguée `Env: production` et visible dans la console AWS sous EC2 > Instances. Vous pouvez vous y connecter via SSH : `ssh -i ma-cle-ssh.pem ubuntu@15.236.142.87`.
-:::
 
 **Intérêt dans un contexte AWS :**
 - Complémentaire à **Terraform** : Terraform crée l'infrastructure (VPC, EC2, RDS…), Ansible configure les instances après leur lancement.
@@ -245,22 +243,22 @@ Resources:
       BucketName: my-app-bucket
 ```
 
-:::success
-**Résultat attendu — après `aws cloudformation deploy --template-file stack.yaml --stack-name ma-stack` :**
-```text
-Waiting for changeset to be created...
-Waiting for stack create/update to complete...
+> [!tip]
+> **Résultat attendu — après `aws cloudformation deploy --template-file stack.yaml --stack-name ma-stack` :**
+> ```text
+> Waiting for changeset to be created...
+> Waiting for stack create/update to complete...
+>
+> Successfully created/updated stack - ma-stack
+>
+> Stack ID   : arn:aws:cloudformation:eu-west-3:123456789012:stack/ma-stack/abc12345
+> Status     : CREATE_COMPLETE
+> Resources  :
+>   - MyInstance  → i-0abc123def456789  (AWS::EC2::Instance)    CREATE_COMPLETE
+>   - MyBucket    → my-app-bucket       (AWS::S3::Bucket)        CREATE_COMPLETE
+> ```
+> Les deux ressources ont été créées par CloudFormation dans le bon ordre. En cas de suppression, `aws cloudformation delete-stack --stack-name ma-stack` supprimera l'EC2 et le bucket ensemble — ce qui garantit qu'il ne reste pas de ressources orphelines.
 
-Successfully created/updated stack - ma-stack
-
-Stack ID   : arn:aws:cloudformation:eu-west-3:123456789012:stack/ma-stack/abc12345
-Status     : CREATE_COMPLETE
-Resources  :
-  - MyInstance  → i-0abc123def456789  (AWS::EC2::Instance)    CREATE_COMPLETE
-  - MyBucket    → my-app-bucket       (AWS::S3::Bucket)        CREATE_COMPLETE
-```
-Les deux ressources ont été créées par CloudFormation dans le bon ordre. En cas de suppression, `aws cloudformation delete-stack --stack-name ma-stack` supprimera l'EC2 et le bucket ensemble — ce qui garantit qu'il ne reste pas de ressources orphelines.
-:::
 
 **Intérêt :** CloudFormation est intégré nativement à AWS. Vous versionnez votre infrastructure comme du code et pouvez la recréer en quelques clics.
 
@@ -279,7 +277,7 @@ Les deux ressources ont été créées par CloudFormation dans le bon ordre. En 
 - Pour **configurer les instances après déploiement**, utiliser **Ansible** — agentless et très bien intégré à AWS.
 - Pour **gérer des configurations** sur des centaines de serveurs, évaluer AWS Systems Manager ou une solution Chef/Puppet maintenue ; ne pas créer de dépendance à OpsWorks.
 - Pour **Puppet**, privilégier dans les environnements d'entreprise très structurés.
-- En pratique : **Terraform + Ansible** est le duo le plus courant aujourd'hui — Terraform provisionne, Ansible configure.
+- Une association fréquente consiste à utiliser **Terraform** pour provisionner l'infrastructure et **Ansible** pour configurer les systèmes.
 
 📎 [AWS CloudFormation Documentation](https://docs.aws.amazon.com/cloudformation/)
 📎 [Sortir d'AWS OpsWorks Stacks avant sa fin de vie](https://aws.amazon.com/blogs/mt/seamlessly-off-board-from-aws-opsworks-stacks-by-detaching-resources/)

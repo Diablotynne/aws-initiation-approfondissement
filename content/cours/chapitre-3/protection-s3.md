@@ -3,8 +3,6 @@ title: "3. Protéger et optimiser les données S3"
 description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 3. Protéger et optimiser les données S3"
 ---
 
-# 3. Protéger et optimiser les données S3
-
 <nav class="page-sequence"><a href="cours/chapitre-3/s3">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/ec2">Suivant</a></nav>
 
 Amazon S3 propose plusieurs mécanismes pour **sécuriser vos fichiers**, **préserver leur historique**, et **réduire les coûts de stockage**. Ces options sont souvent méconnues, mais elles sont essentielles pour bien gérer vos données dans le cloud.
@@ -56,9 +54,9 @@ Quand vous stockez un fichier dans S3, vous pouvez demander à AWS de le **chiff
 - **SSE-KMS** : recommandé pour les données sensibles ou les environnements réglementés.
 - **HTTPS/TLS** : toujours activé pour sécuriser les échanges réseau.
 
-:::info
-**SSE-KMS et coûts KMS** — L'utilisation de clés KMS peut générer des appels KMS facturables en plus des opérations S3. Pour un bucket très sollicité, évaluez **S3 Bucket Keys**, qui réduisent le trafic de requêtes de S3 vers KMS. La réduction réelle et les conditions d'éligibilité doivent être vérifiées dans la documentation et la tarification courantes.
-:::
+> [!info]
+> **SSE-KMS et coûts KMS** — L'utilisation de clés KMS peut générer des appels KMS facturables en plus des opérations S3. Pour un bucket très sollicité, évaluez **S3 Bucket Keys**, qui réduisent le trafic de requêtes de S3 vers KMS. La réduction réelle et les conditions d'éligibilité doivent être vérifiées dans la documentation et la tarification courantes.
+
 
 ### 3.4 Versioning : garder l'historique des fichiers
 
@@ -84,9 +82,9 @@ Les **politiques de cycle de vie** permettent de définir des règles pour :
 - Déplacer les fichiers vers une classe de stockage moins coûteuse
 - Archiver dans Glacier pour la conformité
 
-<img src="assets/schemas/cycle-vie-s3.svg"
+<a class="schema-zoom" href="assets/schemas/cycle-vie-s3.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/cycle-vie-s3.svg"
      alt="Cycle de vie d'un objet S3 depuis sa création jusqu'aux transitions, à l'archivage et à l'expiration"
-     style="display:block; margin:auto; width:95%">
+     style="display:block; margin:auto; width:95%"></a>
 
 **Lecture du schéma.** Une règle sélectionne des objets par préfixe ou par tags, puis applique les actions configurées. Les transitions disponibles, les durées minimales de stockage et les délais de restauration dépendent de la classe choisie. Une expiration est une suppression : elle doit être alignée sur la politique de conservation de l'organisation.
 
@@ -167,16 +165,16 @@ aws s3 cp mon-fichier-gros.zip \
     --region eu-west-1
 ```
 
-:::success
-**Résultat attendu :**
-```text
-# put-bucket-accelerate-configuration : aucun output si succès
+> [!tip]
+> **Résultat attendu :**
+> ```text
+> # put-bucket-accelerate-configuration : aucun output si succès
+>
+> # s3 cp retourne la progression :
+> upload: ./mon-fichier-gros.zip to s3://mon-bucket/uploads/mon-fichier-gros.zip
+> ```
+> Transfer Acceleration est activé sur le bucket. Les uploads utilisent désormais les Edge Locations CloudFront pour rejoindre le bucket S3, ce qui réduit la latence depuis les clients distants.
 
-# s3 cp retourne la progression :
-upload: ./mon-fichier-gros.zip to s3://mon-bucket/uploads/mon-fichier-gros.zip
-```
-Transfer Acceleration est activé sur le bucket. Les uploads utilisent désormais les Edge Locations CloudFront pour rejoindre le bucket S3, ce qui réduit la latence depuis les clients distants.
-:::
 
 **Coûts** :
 - Des frais d'accélération s'ajoutent au transfert standard et varient selon le trajet des données.
@@ -214,25 +212,25 @@ aws cloudfront create-distribution \
   --default-root-object index.html
 ```
 
-:::success
-**Résultat attendu (extrait) :**
-```json
-{
-  "Distribution": {
-    "Id": "E1A2B3C4D5E6F7",
-    "DomainName": "d111111abcdef8.cloudfront.net",
-    "Status": "InProgress"
-  }
-}
-```
-La distribution devient `Deployed` après quelques minutes de propagation sur le réseau mondial CloudFront. Le bucket S3 reste privé — seule cette distribution CloudFront (via son OAC) est autorisée à le lire, configuré automatiquement dans la bucket policy.
-:::
+> [!tip]
+> **Résultat attendu (extrait) :**
+> ```json
+> {
+>   "Distribution": {
+>     "Id": "E1A2B3C4D5E6F7",
+>     "DomainName": "d111111abcdef8.cloudfront.net",
+>     "Status": "InProgress"
+>   }
+> }
+> ```
+> La distribution devient `Deployed` après quelques minutes de propagation sur le réseau mondial CloudFront. Le bucket S3 reste privé — seule cette distribution CloudFront (via son OAC) est autorisée à le lire, configuré automatiquement dans la bucket policy.
+
 
 📎 [Amazon CloudFront — Restricting access to S3](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html)
 
-:::warning
-**Coûts Transfer Acceleration** : cette fonctionnalité ajoute un coût au volume transféré. Ne l'activez qu'après avoir mesuré un gain utile depuis les emplacements réels des clients. Un test de performance et une estimation sur la page tarifaire S3 sont plus fiables qu'un seuil de taille générique.
-:::
+> [!warning]
+> **Coûts Transfer Acceleration** : cette fonctionnalité ajoute un coût au volume transféré. Ne l'activez qu'après avoir mesuré un gain utile depuis les emplacements réels des clients. Un test de performance et une estimation sur la page tarifaire S3 sont plus fiables qu'un seuil de taille générique.
+
 
 **Cas d'usage** :
 - Uploads de fichiers vidéo ou binaires depuis un client distant.
@@ -303,9 +301,9 @@ Pour héberger un site web HTML/CSS sur S3, le bucket doit autoriser la lecture 
 
 **Effet** : Tous les utilisateurs peuvent **lire** les fichiers du bucket (parfait pour un site statique).
 
-:::danger
-**Bucket public : risque de fuite de données** — L'utilisation de `"Principal": "*"` rend l'ensemble des objets du bucket accessibles sur Internet **sans authentification**. Ne l'appliquez **jamais** à un bucket contenant des données sensibles (fichiers clients, logs internes, clés, backups). Depuis 2023, AWS bloque par défaut les accès publics sur les nouveaux buckets — cette policy nécessite de désactiver explicitement ce blocage.
-:::
+> [!danger]
+> **Bucket public : risque de fuite de données** — L'utilisation de `"Principal": "*"` rend l'ensemble des objets du bucket accessibles sur Internet **sans authentification**. Ne l'appliquez **jamais** à un bucket contenant des données sensibles (fichiers clients, logs internes, clés, backups). Depuis 2023, AWS bloque par défaut les accès publics sur les nouveaux buckets — cette policy nécessite de désactiver explicitement ce blocage.
+
 
 #### Cas d'usage 2 : Restreindre à une adresse IP spécifique
 
@@ -377,19 +375,19 @@ aws s3api get-bucket-policy --bucket mon-bucket
 aws s3api delete-bucket-policy --bucket mon-bucket
 ```
 
-:::success
-**Résultat attendu :**
-```json
-# put-bucket-policy : aucun output si succès
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> # put-bucket-policy : aucun output si succès
+>
+> # get-bucket-policy retourne :
+> {
+>     "Policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"AllowPublicRead\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"s3:GetObject\",\"Resource\":\"arn:aws:s3:::mon-bucket/*\"}]}"
+> }
+>
+> # delete-bucket-policy : aucun output si succès
+> ```
 
-# get-bucket-policy retourne :
-{
-    "Policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"AllowPublicRead\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"s3:GetObject\",\"Resource\":\"arn:aws:s3:::mon-bucket/*\"}]}"
-}
-
-# delete-bucket-policy : aucun output si succès
-```
-:::
 
 **Point important** : Les bucket policies s'ajoutent aux **ACL (Access Control Lists)**, il faut les deux pour une sécurité complète.
 

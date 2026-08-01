@@ -3,9 +3,7 @@ title: "Ressources"
 description: "Chapitre 5 — Automatisation, supervision et reprise d'activité - Ressources"
 ---
 
-# Ressources
-
-<nav class="page-sequence"><a href="cours/chapitre-5/certifications">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/quiz">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/travaux-pratiques">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/quiz">Suivant</a></nav>
 
 ### Documentation officielle AWS
 - [AWS CloudFormation Documentation](https://docs.aws.amazon.com/cloudformation/)
@@ -17,4 +15,4 @@ description: "Chapitre 5 — Automatisation, supervision et reprise d'activité 
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-5/certifications">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/quiz">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/travaux-pratiques">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/quiz">Suivant</a></nav>

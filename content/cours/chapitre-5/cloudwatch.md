@@ -3,8 +3,6 @@ title: "6. Amazon CloudWatch — Supervision et alarmes"
 description: "Chapitre 5 — Automatisation, supervision et reprise d'activité - 6. Amazon CloudWatch — Supervision et alarmes"
 ---
 
-# 6. Amazon CloudWatch — Supervision et alarmes
-
 <nav class="page-sequence"><a href="cours/chapitre-5/beanstalk">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/well-architected">Suivant</a></nav>
 
 ### 6.1 Qu'est-ce que CloudWatch ?
@@ -16,9 +14,9 @@ description: "Chapitre 5 — Automatisation, supervision et reprise d'activité 
 - **Load Balancers** : requêtes/seconde, latence
 - **Applications custom** : envoi de métriques via API
 
-<img src="assets/schemas/cloudwatch-architecture.svg"
+<a class="schema-zoom" href="assets/schemas/cloudwatch-architecture.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/cloudwatch-architecture.svg"
      alt="Architecture Amazon CloudWatch"
-     style="display:block; margin:auto; width:90%">
+     style="display:block; margin:auto; width:90%"></a>
 
 **Lecture du schéma.** Les services et applications publient métriques et journaux dans CloudWatch. Les tableaux de bord servent à observer, tandis que les alarmes évaluent des conditions. Une alarme peut déclencher une notification ou une automatisation, mais elle ne corrige pas un incident sans action associée.
 
@@ -73,38 +71,38 @@ aws cloudwatch describe-alarms
 aws cloudwatch delete-alarms --alarm-names "MonInstance-CPU-Élevé"
 ```
 
-:::success
-**Résultat attendu :**
-```json
-# sns create-topic :
-{
-    "TopicArn": "arn:aws:sns:eu-west-1:123456789012:MonTopicAlarmes"
-}
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> # sns create-topic :
+> {
+>     "TopicArn": "arn:aws:sns:eu-west-1:123456789012:MonTopicAlarmes"
+> }
+>
+> # sns subscribe :
+> {
+>     "SubscriptionArn": "pending confirmation"
+> }
+> # → Un email est envoyé à admin@example.com avec un lien de confirmation
+>
+> # put-metric-alarm : (pas de sortie si succès — code HTTP 200)
+>
+> # describe-alarms (extrait) :
+> {
+>     "MetricAlarms": [
+>         {
+>             "AlarmName": "MonInstance-CPU-Élevé",
+>             "AlarmDescription": "Alerte CPU élevé instance EC2",
+>             "StateValue": "OK",
+>             "MetricName": "CPUUtilization",
+>             "Threshold": 80.0,
+>             "Period": 300,
+>             "EvaluationPeriods": 2
+>         }
+>     ]
+> }
+> ```
 
-# sns subscribe :
-{
-    "SubscriptionArn": "pending confirmation"
-}
-# → Un email est envoyé à admin@example.com avec un lien de confirmation
-
-# put-metric-alarm : (pas de sortie si succès — code HTTP 200)
-
-# describe-alarms (extrait) :
-{
-    "MetricAlarms": [
-        {
-            "AlarmName": "MonInstance-CPU-Élevé",
-            "AlarmDescription": "Alerte CPU élevé instance EC2",
-            "StateValue": "OK",
-            "MetricName": "CPUUtilization",
-            "Threshold": 80.0,
-            "Period": 300,
-            "EvaluationPeriods": 2
-        }
-    ]
-}
-```
-:::
 
 ---
 
@@ -122,14 +120,14 @@ aws cloudwatch put-metric-data \
   --timestamp 2025-03-24T14:30:00Z
 ```
 
-:::success
-**Résultat attendu :**
-```text
-# put-metric-data : pas de sortie si succès (HTTP 200)
-# La métrique est visible dans CloudWatch Console sous "MonApplication > OrdersPerMinute"
-# après environ 1 minute de délai d'ingestion.
-```
-:::
+> [!tip]
+> **Résultat attendu :**
+> ```text
+> # put-metric-data : pas de sortie si succès (HTTP 200)
+> # La métrique est visible dans CloudWatch Console sous "MonApplication > OrdersPerMinute"
+> # après environ 1 minute de délai d'ingestion.
+> ```
+
 
 ```bash
 # Ou dans un script Python :
@@ -185,17 +183,17 @@ aws cloudwatch put-dashboard \
   --dashboard-body file://dashboard.json
 ```
 
-:::success
-**Résultat attendu :**
-```json
-# put-dashboard :
-{
-    "DashboardValidationMessages": []
-}
-# Le tableau de bord "MonDashboard" est maintenant visible dans la console CloudWatch.
-# Accès : CloudWatch → Dashboards → MonDashboard
-```
-:::
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> # put-dashboard :
+> {
+>     "DashboardValidationMessages": []
+> }
+> # Le tableau de bord "MonDashboard" est maintenant visible dans la console CloudWatch.
+> # Accès : CloudWatch → Dashboards → MonDashboard
+> ```
+
 
 > **Référence** : [CloudWatch Documentation](https://docs.aws.amazon.com/cloudwatch/)
 
@@ -253,15 +251,15 @@ pip install boto3
 python3 -c "import boto3; print(boto3.__version__)"
 ```
 
-:::success
-**Résultat attendu :**
-```python
-Collecting boto3
-  Downloading boto3-1.34.69-py3-none-any.whl (139 kB)
-Successfully installed boto3-1.34.69 botocore-1.34.69 s3transfer-0.10.1
-1.34.69
-```
-:::
+> [!tip]
+> **Résultat attendu :**
+> ```python
+> Collecting boto3
+>   Downloading boto3-1.34.69-py3-none-any.whl (139 kB)
+> Successfully installed boto3-1.34.69 botocore-1.34.69 s3transfer-0.10.1
+> 1.34.69
+> ```
+
 
 ##### Exemple 1 : Lister les instances EC2
 

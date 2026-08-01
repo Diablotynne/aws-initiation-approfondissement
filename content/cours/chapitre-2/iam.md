@@ -3,8 +3,6 @@ title: "1. Introduction à IAM : Identity and Access Management"
 description: "Chapitre 2 — Sécurité des accès avec AWS IAM - 1. Introduction à IAM : Identity and Access Management"
 ---
 
-# 1. Introduction à IAM : Identity and Access Management
-
 <nav class="page-sequence"><a href="cours/chapitre-2/vocabulaire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/mfa-politiques">Suivant</a></nav>
 
 ### 1.1 Définition et rôle stratégique
@@ -19,9 +17,9 @@ IAM est à la sécurité ce que la serrure est à une porte. Il constitue **le c
 
 IAM fonctionne comme un contrôleur central placé entre deux mondes : d'un côté les **identités** (utilisateurs, groupes, rôles, services AWS), de l'autre les **ressources AWS** qu'elles cherchent à atteindre (S3, EC2, RDS, Lambda…). Chaque requête suit le même chemin : une identité émet un appel API, IAM évalue les **politiques JSON** qui lui sont associées, puis autorise (`Allow`) ou refuse (`Deny`) l'accès à la ressource visée.
 
-<img src="assets/schemas/aws-iam-schema.svg"
+<a class="schema-zoom" href="assets/schemas/aws-iam-schema.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/aws-iam-schema.svg"
      alt="Fonctionnement global d'IAM — identités, évaluation des policies, ressources AWS"
-     style="display:block; margin:auto; width:90%">
+     style="display:block; margin:auto; width:90%"></a>
 
 **Lecture du schéma.** Une identité authentifiée envoie une requête. IAM rassemble les politiques applicables, recherche d'abord un refus explicite, puis vérifie qu'une autorisation correspond à l'action et à la ressource. Sans autorisation applicable, la requête est refusée implicitement.
 
@@ -81,9 +79,9 @@ Le **STS** permet de générer des identifiants temporaires pour accéder à AWS
 
 Sans STS, chaque utilisateur devrait avoir des identifiants IAM permanents dans chaque compte AWS, avec des permissions fixes. Cela rendrait la gestion des accès lourde, risquée, et peu compatible avec les standards modernes d'authentification.
 
-:::danger
-**Ne jamais utiliser le compte root pour les opérations courantes.** Le compte root AWS dispose de tous les droits sans restriction — il n'est pas soumis aux politiques IAM. Toute compromission du root expose l'intégralité du compte. Créez immédiatement un utilisateur IAM administrateur, activez MFA sur le root, puis verrouillez les credentials root.
-:::
+> [!danger]
+> **Réserver l'utilisateur racine aux opérations qui l'exigent.** Aucune politique IAM basée sur l'identité ne peut lui être attachée. Dans un compte membre d'AWS Organizations, certaines politiques d'organisation, notamment les SCP et RCP applicables, peuvent toutefois limiter ses actions. Protégez l'accès racine avec une authentification multifacteur et n'utilisez aucun accès quotidien permanent.
+
 
 ---
 
@@ -115,9 +113,9 @@ Un administrateur met en place une **stratégie de sécurité structurée** :
 - Groupe `Developers` → accès restreint à **EC2** et **S3**.
 - Groupe `Comptabilité` → lecture seule sur la facturation (Billing).
 
-<img src="assets/schemas/aws-iam-groupes-exemple.svg"
+<a class="schema-zoom" href="assets/schemas/aws-iam-groupes-exemple.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/aws-iam-groupes-exemple.svg"
      alt="Organisation des groupes IAM — Admins, Developers, Comptabilité et leurs policies respectives"
-     style="display:block; margin:auto; width:90%">
+     style="display:block; margin:auto; width:90%"></a>
 
 **Lecture du schéma.** Les utilisateurs sont rattachés à des groupes représentant une fonction. Les politiques attachées au groupe transmettent les mêmes autorisations à ses membres. Un groupe ne s'imbrique pas dans un autre groupe IAM et ne doit pas servir à représenter une charge de travail.
 
@@ -209,9 +207,9 @@ AWS suit **trois règles fondamentales**, dans cet ordre :
 
 📎 [Policy Simulator](https://policysim.aws.amazon.com/home/index.jsp)
 
-:::warning
-**Principe du moindre privilège (Least Privilege).** Ne jamais attribuer `"Action": "*"` ou `"Resource": "*"` en production. Accordez uniquement les permissions strictement nécessaires à la tâche. En cas de doute, commencez par un accès minimal et élargissez progressivement selon les besoins réels.
-:::
+> [!warning]
+> **Principe du moindre privilège (Least Privilege).** Ne jamais attribuer `"Action": "*"` ou `"Resource": "*"` en production. Accordez uniquement les permissions strictement nécessaires à la tâche. En cas de doute, commencez par un accès minimal et élargissez progressivement selon les besoins réels.
+
 
 ---
 

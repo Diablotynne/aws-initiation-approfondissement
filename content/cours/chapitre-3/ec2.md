@@ -3,13 +3,11 @@ title: "4. Amazon EC2 : La couche de calcul AWS"
 description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 4. Amazon EC2 : La couche de calcul AWS"
 ---
 
-# 4. Amazon EC2 : La couche de calcul AWS
-
 <nav class="page-sequence"><a href="cours/chapitre-3/protection-s3">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/instance-ec2">Suivant</a></nav>
 
 ### 4.1 Introduction à EC2
 
-📹 **Vidéo** : [Lancer sa première machine virtuelle Windows avec EC2](https://www.youtube.com/watch?v=aARcLxcGJaU)
+<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/aARcLxcGJaU" title="Lancer une machine virtuelle Windows avec Amazon EC2" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 Après avoir stocké nos données avec Amazon S3, nous allons voir comment **les traiter, les héberger ou les exécuter** grâce à **Amazon Elastic Compute Cloud (EC2)**.
 

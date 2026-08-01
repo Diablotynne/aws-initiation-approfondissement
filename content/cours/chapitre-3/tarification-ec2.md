@@ -3,8 +3,6 @@ title: "7. Options de tarification AWS EC2"
 description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 7. Options de tarification AWS EC2"
 ---
 
-# 7. Options de tarification AWS EC2
-
 <nav class="page-sequence"><a href="cours/chapitre-3/compute-optimizer">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/elb">Suivant</a></nav>
 
 AWS propose plusieurs modèles de tarification pour s'adapter aux besoins techniques et budgétaires des entreprises. Le choix dépend du niveau de prévisibilité des workloads, du budget disponible, et de la tolérance aux interruptions.
@@ -47,9 +45,9 @@ AWS propose plusieurs modèles de tarification pour s'adapter aux besoins techni
 - Implémenter via **EC2 Spot Fleet** ou **EC2 Spot Instances Requests**.
 - Concevoir l'application pour tolérer les interruptions.
 
-:::warning
-**Instances Spot : interruption en 2 minutes** — AWS peut récupérer vos instances Spot avec seulement **2 minutes de préavis** lorsque la capacité est nécessaire. Ne jamais utiliser des instances Spot pour des workloads critiques sans tolérance aux interruptions (bases de données de production, serveurs web sans état de session externalisé). Toujours prévoir un mécanisme de sauvegarde ou de checkpoint des données en cours de traitement.
-:::
+> [!warning]
+> **Instances Spot : concevoir pour l'interruption.** L'avis d'interruption est émis au mieux deux minutes avant l'arrêt ou la terminaison ; l'hibernation commence immédiatement et les notifications restent fournies en best effort. Utilisez Spot pour des traitements tolérants aux interruptions, avec reprise, checkpoint ou remplacement automatique.
+
 
 ### 7.4 Reserved Instances (RI)
 
@@ -110,15 +108,15 @@ aws ec2 request-spot-fleet \
     }'
 ```
 
-:::success
-**Résultat attendu :**
-```json
-{
-    "SpotFleetRequestId": "sfr-0a1b2c3d4e5f6789a",
-    "SpotFleetRequestState": "submitted"
-}
-```
-:::
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> {
+>     "SpotFleetRequestId": "sfr-0a1b2c3d4e5f6789a",
+>     "SpotFleetRequestState": "submitted"
+> }
+> ```
+
 
 #### Cas 4 : Application critiques 24/7 avec charge non prévisible
 

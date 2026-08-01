@@ -3,8 +3,6 @@ title: "5. Stratégie multi-comptes avec AWS Organizations"
 description: "Chapitre 2 — Sécurité des accès avec AWS IAM - 5. Stratégie multi-comptes avec AWS Organizations"
 ---
 
-# 5. Stratégie multi-comptes avec AWS Organizations
-
 <nav class="page-sequence"><a href="cours/chapitre-2/cognito">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/cloudtrail">Suivant</a></nav>
 
 ### 5.1 Problématique
@@ -69,9 +67,9 @@ Ces comptes sont regroupés dans des OU distinctes et **sécurisés par des SCP*
 - SCP sur `Production` → Interdire toute modification réseau sans validation.
 - SCP globale → Interdire l'utilisation de certaines régions AWS.
 
-<img src="assets/schemas/aws-scp-multi-comptes.svg"
+<a class="schema-zoom" href="assets/schemas/aws-scp-multi-comptes.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/aws-scp-multi-comptes.svg"
      alt="Architecture multi-comptes AWS à 4 niveaux — Management Account, OU Sandbox/Développement/Production et leurs SCP respectives"
-     style="display:block; margin:auto; width:90%">
+     style="display:block; margin:auto; width:90%"></a>
 
 **Lecture du schéma.** Le compte de gestion pilote l'organisation. Les unités organisationnelles regroupent les comptes par environnement et reçoivent des SCP. Une SCP fixe la limite maximale des autorisations possibles ; elle n'accorde jamais à elle seule une permission IAM.
 
@@ -87,7 +85,7 @@ Elles **ne donnent pas de permissions** directement mais **restreignent** ce que
 
 #### SCP vs IAM Policy — Différence essentielle
 
-Beaucoup de stagiaires confondent **SCP** et **IAM Policy**. Voici la différence cruciale :
+Une **SCP** et une **politique IAM** n'ont pas le même rôle dans l'évaluation des autorisations :
 
 | Aspect | IAM Policy | SCP |
 |--------|-----------|-----|
@@ -154,7 +152,7 @@ Résultat final = SCP AND IAM Policy
 
 #### Exemple 2 : Interdire la suppression de certaines ressources critiques
 
-**Contexte** : Les stagiaires ne doivent pas pouvoir supprimer les RDS ou les VPC de production.
+**Contexte** : les identités non habilitées ne doivent pas pouvoir supprimer les bases RDS ni les VPC de production.
 
 ```json
 {
@@ -241,9 +239,9 @@ Les SCP peuvent s'appliquer à différents niveaux :
 **Bonne pratique** : Préférer les OU plutôt que les comptes individuels, pour une gestion centralisée.
 
 Exemple de structure :
-<img src="assets/schemas/aws-organizations-tree.svg"
+<a class="schema-zoom" href="assets/schemas/aws-organizations-tree.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/aws-organizations-tree.svg"
      alt="AWS Organizations — Structure multi-comptes"
-     style="display:block; margin:auto; width:90%">
+     style="display:block; margin:auto; width:90%"></a>
 
 **Lecture du schéma.** L'arbre représente l'héritage de la gouvernance : une règle placée sur la racine ou une unité organisationnelle s'applique aux comptes descendants. Les comptes restent toutefois des frontières d'isolation distinctes avec leurs propres ressources et rôles.
 
@@ -306,9 +304,9 @@ AWS Budgets peut être configuré au niveau de l'organisation pour :
 * Toujours tester les SCP dans un **compte non critique** avant de les déployer globalement.
 * Ne pas donner trop de privilèges au compte Management.
 
-:::danger
-**Le Management Account ne doit jamais héberger de workloads applicatifs.** Ce compte dispose de droits sur tous les comptes membres via les SCP. Une compromission du Management Account compromet l'ensemble de l'organisation. Restreignez l'accès au strict minimum, activez MFA, et surveillez-le via CloudTrail au niveau organisationnel.
-:::
+> [!danger]
+> **Le Management Account ne doit jamais héberger de workloads applicatifs.** Ce compte dispose de droits sur tous les comptes membres via les SCP. Une compromission du Management Account compromet l'ensemble de l'organisation. Restreignez l'accès au strict minimum, activez MFA, et surveillez-le via CloudTrail au niveau organisationnel.
+
 
 ---
 

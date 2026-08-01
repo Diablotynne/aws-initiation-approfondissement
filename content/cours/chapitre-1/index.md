@@ -3,11 +3,10 @@ title: Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS
 description: Cloud Computing, modèles de service et de déploiement, infrastructure AWS, coûts et Well-Architected.
 ---
 
-# Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS
-
-Chaque entr&eacute;e ci-dessous ouvre une page consacr&eacute;e &agrave; un seul concept. Utilisez les liens Pr&eacute;c&eacute;dent et Suivant pour suivre la progression de la journ&eacute;e.
+Chaque entr&eacute;e ci-dessous ouvre une page consacr&eacute;e &agrave; un seul concept. Utilisez les liens Pr&eacute;c&eacute;dent et Suivant pour suivre la progression du chapitre.
 
 <nav class="chapter-map" aria-label="Sous-chapitres de la journee">
+  <a href="cours/chapitre-1/objectifs">Objectifs du chapitre</a>
   <a href="cours/chapitre-1/vocabulaire">Vocabulaire du chapitre</a>
   <a href="cours/chapitre-1/introduction">Introduction</a>
   <a href="cours/chapitre-1/fondamentaux-cloud">Fondamentaux du Cloud Computing</a>
@@ -20,6 +19,8 @@ Chaque entr&eacute;e ci-dessous ouvre une page consacr&eacute;e &agrave; un seul
   <a href="cours/chapitre-1/services-aws">Les services AWS les plus utilisés</a>
   <a href="cours/chapitre-1/bonnes-pratiques">Bonnes pratiques de démarrage</a>
   <a href="cours/chapitre-1/points-attention">Points importants et pièges fréquents</a>
+  <a href="cours/chapitre-1/fiche-memoire">Fiche mémo — Fondamentaux et AWS</a>
+  <a href="cours/chapitre-1/travaux-pratiques">Travaux pratiques — Modules de fondamentaux</a>
   <a href="cours/chapitre-1/ressources">Ressources</a>
   <a href="cours/chapitre-1/quiz">Quiz interactif du chapitre</a>
 </nav>

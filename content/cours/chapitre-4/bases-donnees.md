@@ -3,13 +3,11 @@ title: "1. Bases de données dans AWS — Du service géré à la scalabilité"
 description: "Chapitre 4 — Amazon VPC et bases de données AWS - 1. Bases de données dans AWS — Du service géré à la scalabilité"
 ---
 
-# 1. Bases de données dans AWS — Du service géré à la scalabilité
-
 <nav class="page-sequence"><a href="cours/chapitre-4/vocabulaire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/vpc">Suivant</a></nav>
 
-### 1.1 La révolution des bases managées
+### 1.1 Répartition des responsabilités avec une base managée
 
-📹 **Vidéo** : [AWS Database Services Overview](https://www.youtube.com/watch?v=adB--KhJ95w)
+<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/adB--KhJ95w" title="Présentation des services de bases de données AWS" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 Quand on parle de **bases de données dans le Cloud**, la question centrale n'est plus « Où vais-je installer un serveur ? » mais plutôt « Quel type de données vais-je stocker, et quel accès dois-je offrir ? ».
 
@@ -110,22 +108,22 @@ Supposons une plateforme qui stocke **les métadonnées** de ses contenus : titr
 
 Dans un déploiement RDS Multi-AZ avec une instance de secours, les modifications du principal sont répliquées de manière synchrone vers une autre zone de disponibilité. AWS peut basculer vers cette instance lors de certains incidents ou opérations de maintenance. Les autres variantes Multi-AZ peuvent utiliser plusieurs instances lisibles : il faut vérifier le comportement du moteur et du type de déploiement choisis.
 
-<img src="assets/schemas/rds-multiaz-read-replica.svg"
+<a class="schema-zoom" href="assets/schemas/rds-multiaz-read-replica.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/rds-multiaz-read-replica.svg"
      alt="Comparaison entre RDS Multi-AZ pour la disponibilité et une réplique en lecture pour décharger les lectures"
-     style="display:block; margin:auto; width:95%">
+     style="display:block; margin:auto; width:95%"></a>
 
 **Lecture du schéma.** À gauche, la réplication synchrone et le basculement visent la disponibilité. À droite, la réplication asynchrone permet d'envoyer des lectures vers un autre endpoint, avec un retard possible. Une réplique en lecture ne remplace donc pas automatiquement un déploiement Multi-AZ.
 
 **Bénéfice** : la réplication synchrone réduit le risque de perte de données et le basculement évite une reconstruction manuelle complète.
 **À savoir** : le nom de l'endpoint reste stable, mais les connexions en cours sont interrompues. L'application doit savoir se reconnecter et tolérer le délai de basculement.
 
-:::warning
-**Coût Multi-AZ RDS — Attention au budget**
+> [!warning]
+> **Coût Multi-AZ RDS — Attention au budget**
+>
+> Une configuration Multi-AZ ajoute des ressources et augmente donc la facture. Selon le moteur et le type de déploiement, l'architecture et la facturation diffèrent : instance de secours non lisible ou cluster comportant plusieurs instances. Ne déduisez pas le prix avec un coefficient générique.
+>
+> **Décision** : activez Multi-AZ lorsque l'objectif de disponibilité le justifie, y compris hors production si l'environnement doit tester les basculements. Comparez les options dans la console ou dans AWS Pricing Calculator.
 
-Une configuration Multi-AZ ajoute des ressources et augmente donc la facture. Selon le moteur et le type de déploiement, l'architecture et la facturation diffèrent : instance de secours non lisible ou cluster comportant plusieurs instances. Ne déduisez pas le prix avec un coefficient générique.
-
-**Décision** : activez Multi-AZ lorsque l'objectif de disponibilité le justifie, y compris hors production si l'environnement doit tester les basculements. Comparez les options dans la console ou dans AWS Pricing Calculator.
-:::
 
 #### Read Replicas — Répartition de la charge de lecture
 
@@ -157,27 +155,27 @@ aws rds create-db-instance-read-replica \
   --db-instance-class db.t3.small
 ```
 
-:::success
-**Résultat attendu :**
-```json
-{
-    "DBInstance": {
-        "DBInstanceIdentifier": "formation-db-analytics",
-        "DBInstanceClass": "db.t3.small",
-        "Engine": "mysql",
-        "DBInstanceStatus": "creating",
-        "ReadReplicaSourceDBInstanceIdentifier": "formation-db",
-        "AvailabilityZone": "eu-west-1b",
-        "MultiAZ": false,
-        "StorageType": "gp3",
-        "Endpoint": {
-            "Address": "formation-db-analytics.abc123.eu-west-1.rds.amazonaws.com",
-            "Port": 3306
-        }
-    }
-}
-```
-:::
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> {
+>     "DBInstance": {
+>         "DBInstanceIdentifier": "formation-db-analytics",
+>         "DBInstanceClass": "db.t3.small",
+>         "Engine": "mysql",
+>         "DBInstanceStatus": "creating",
+>         "ReadReplicaSourceDBInstanceIdentifier": "formation-db",
+>         "AvailabilityZone": "eu-west-1b",
+>         "MultiAZ": false,
+>         "StorageType": "gp3",
+>         "Endpoint": {
+>             "Address": "formation-db-analytics.abc123.eu-west-1.rds.amazonaws.com",
+>             "Port": 3306
+>         }
+>     }
+> }
+> ```
+
 
 ---
 
@@ -248,9 +246,9 @@ Aurora offre **deux modèles de déploiement** :
 
 #### Créer un cluster Aurora en CLI
 
-:::info
-Une activité pratique permet d’approfondir le déploiement d’un cluster Aurora.
-:::
+> [!info]
+> Une activité pratique permet d’approfondir le déploiement d’un cluster Aurora.
+
 
 Cette séquence crée un cluster Aurora MySQL complet avec une instance writer, une instance reader, du chiffrement activé et une fenêtre de sauvegarde automatique. Aurora est un cluster — pas une instance unique — ce qui explique les deux commandes distinctes (cluster + instance).
 
@@ -328,24 +326,24 @@ aws rds create-db-cluster \
   --replication-source-identifier arn:aws:rds:eu-west-1:123456789012:cluster:formation-aurora-cluster
 ```
 
-:::success
-**Résultat attendu :**
-```json
-{
-    "DBCluster": {
-        "DBClusterIdentifier": "formation-aurora-cluster",
-        "Status": "creating",
-        "Engine": "aurora-mysql",
-        "EngineVersion": "8.0.mysql_aurora.3.02.0",
-        "DBClusterEndpoint": "formation-aurora-cluster.cluster-abc123.eu-west-1.rds.amazonaws.com",
-        "ReaderEndpoint": "formation-aurora-cluster.cluster-ro-abc123.eu-west-1.rds.amazonaws.com",
-        "MultiAZ": true,
-        "StorageEncrypted": true,
-        "BackupRetentionPeriod": 7
-    }
-}
-```
-:::
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> {
+>     "DBCluster": {
+>         "DBClusterIdentifier": "formation-aurora-cluster",
+>         "Status": "creating",
+>         "Engine": "aurora-mysql",
+>         "EngineVersion": "8.0.mysql_aurora.3.02.0",
+>         "DBClusterEndpoint": "formation-aurora-cluster.cluster-abc123.eu-west-1.rds.amazonaws.com",
+>         "ReaderEndpoint": "formation-aurora-cluster.cluster-ro-abc123.eu-west-1.rds.amazonaws.com",
+>         "MultiAZ": true,
+>         "StorageEncrypted": true,
+>         "BackupRetentionPeriod": 7
+>     }
+> }
+> ```
+
 
 > **Résultat attendu :** `create-db-cluster` retourne le JSON du cluster (état `creating`). `rds wait db-cluster-available` bloque jusqu'à ce que le cluster soit prêt (peut prendre 5-10 min). `describe-db-clusters` affiche les endpoints writer et reader — deux URLs distinctes.
 
@@ -410,19 +408,19 @@ Aucune contrainte de schéma : vous pouvez ajouter des attributs par ligne.
 | **Scalabilité** | Verticale surtout | Horizontale, ultra-massive |
 | **Latence** | ms-s | ms |
 
-:::danger
-**Hot Partitions DynamoDB — Erreur de conception fréquente**
+> [!danger]
+> **Hot Partitions DynamoDB — Erreur de conception fréquente**
+>
+> DynamoDB distribue vos données sur des partitions selon la **Partition Key**. Si vous choisissez une clé avec peu de valeurs distinctes (ex. : `status = "active"/"inactive"`, ou une date comme `2026-05-17`), toutes les requêtes frappent la **même partition** → throttling, latence explosive.
+>
+> **Symptômes** : erreurs `ProvisionedThroughputExceededException`, latences P99 > 500ms.
+>
+> **Solutions** :
+> - Choisir une Partition Key à **haute cardinalité** (UUID utilisateur, ID produit unique)
+> - Ajouter un **suffixe aléatoire** (write sharding) : `user_id#1`, `user_id#2`
+> - Utiliser un **Global Secondary Index** avec une clé mieux distribuée
+> - Passer en mode **On-Demand** pour absorber les pics sans throttling
 
-DynamoDB distribue vos données sur des partitions selon la **Partition Key**. Si vous choisissez une clé avec peu de valeurs distinctes (ex. : `status = "active"/"inactive"`, ou une date comme `2026-05-17`), toutes les requêtes frappent la **même partition** → throttling, latence explosive.
-
-**Symptômes** : erreurs `ProvisionedThroughputExceededException`, latences P99 > 500ms.
-
-**Solutions** :
-- Choisir une Partition Key à **haute cardinalité** (UUID utilisateur, ID produit unique)
-- Ajouter un **suffixe aléatoire** (write sharding) : `user_id#1`, `user_id#2`
-- Utiliser un **Global Secondary Index** avec une clé mieux distribuée
-- Passer en mode **On-Demand** pour absorber les pics sans throttling
-:::
 
 ---
 
@@ -457,9 +455,9 @@ Une migration s'appuie sur un endpoint source, un endpoint cible et une configur
 
 #### Créer une tâche DMS en CLI
 
-:::info
-Une activité pratique permet d’approfondir AWS Database Migration Service.
-:::
+> [!info]
+> Une activité pratique permet d’approfondir AWS Database Migration Service.
+
 
 DMS fonctionne en 3 objets : un **endpoint source** (base existante), un **endpoint cible** (base AWS), et une **instance de réplication** (le moteur qui exécute la migration). On les crée dans cet ordre, puis on démarre la tâche.
 
@@ -592,26 +590,26 @@ aws dms describe-replication-tasks \
   --filters 'Name=replication-task-arn,Values=arn:aws:dms:eu-west-1:123456789012:task:oracle-to-aurora-migration'
 ```
 
-:::success
-**Résultat attendu :**
-```json
-{
-    "ReplicationTasks": [{
-        "ReplicationTaskIdentifier": "oracle-to-aurora-migration",
-        "Status": "running",
-        "MigrationType": "cdc",
-        "ReplicationTaskStats": {
-            "FullLoadProgressPercent": 100,
-            "ElapsedTimeMillis": 18000000,
-            "TablesLoaded": 50,
-            "TablesQueued": 0,
-            "TablesErrored": 0,
-            "TablesLoading": 0
-        }
-    }]
-}
-```
-:::
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> {
+>     "ReplicationTasks": [{
+>         "ReplicationTaskIdentifier": "oracle-to-aurora-migration",
+>         "Status": "running",
+>         "MigrationType": "cdc",
+>         "ReplicationTaskStats": {
+>             "FullLoadProgressPercent": 100,
+>             "ElapsedTimeMillis": 18000000,
+>             "TablesLoaded": 50,
+>             "TablesQueued": 0,
+>             "TablesErrored": 0,
+>             "TablesLoading": 0
+>         }
+>     }]
+> }
+> ```
+
 
 ```bash
 # Voir les tables migrées (status, nb rows)
@@ -620,17 +618,17 @@ aws dms describe-table-statistics \
   --query 'TableStatistics[*].[SchemaName,TableName,FullLoadRows,FullLoadErrorRows,Updates,Inserts,Deletes]'
 ```
 
-:::success
-**Résultat attendu :**
-```json
-[
-    ["PRODDB", "CONTENT_META", 2500000, 0, 1250, 340, 12],
-    ["PRODDB", "RIGHTS_TABLE", 180000, 0, 45, 8, 1],
-    ["PRODDB", "CALENDAR_SLOTS", 95000, 0, 320, 120, 5],
-    ["PRODDB", "USERS", 50000, 0, 88, 15, 0]
-]
-```
-:::
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> [
+>     ["PRODDB", "CONTENT_META", 2500000, 0, 1250, 340, 12],
+>     ["PRODDB", "RIGHTS_TABLE", 180000, 0, 45, 8, 1],
+>     ["PRODDB", "CALENDAR_SLOTS", 95000, 0, 320, 120, 5],
+>     ["PRODDB", "USERS", 50000, 0, 88, 15, 0]
+> ]
+> ```
+
 
 ```bash
 # ═══════════════════════════════════════════════════════════

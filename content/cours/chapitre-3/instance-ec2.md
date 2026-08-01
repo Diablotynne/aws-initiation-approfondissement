@@ -3,8 +3,6 @@ title: "5. Choisir le bon type d'instance, AMI, stockage et sécurité"
 description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 5. Choisir le bon type d'instance, AMI, stockage et sécurité"
 ---
 
-# 5. Choisir le bon type d'instance, AMI, stockage et sécurité
-
 <nav class="page-sequence"><a href="cours/chapitre-3/ec2">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/compute-optimizer">Suivant</a></nav>
 
 ### 5.1 Types d'instances EC2
@@ -22,9 +20,9 @@ AWS propose plusieurs familles d'instances, selon le type de charge à traiter :
 
 _Dans un environnement de formation, le type d'instance est imposé par le lab. L'éligibilité au Free Tier dépend du plan du compte, de sa date de création et des types actuellement marqués comme éligibles dans la console AWS._
 
-:::warning
-**Types d'instances coûteux** — Les familles accélérées par GPU et les instances à très grande capacité peuvent avoir un coût horaire élevé. Le type autorisé pendant la formation est celui indiqué dans le lab. En entreprise, le choix doit être vérifié avec AWS Pricing Calculator et les tarifs de la région avant déploiement.
-:::
+> [!warning]
+> **Types d'instances coûteux** — Les familles accélérées par GPU et les instances à très grande capacité peuvent avoir un coût horaire élevé. Le type autorisé pendant la formation est celui indiqué dans le lab. En entreprise, le choix doit être vérifié avec AWS Pricing Calculator et les tarifs de la région avant déploiement.
+
 
 **Explication des suffixes de type** :
 - `t3` : type t (général), génération 3
@@ -36,7 +34,7 @@ _Dans un environnement de formation, le type d'instance est imposé par le lab. 
 
 L'AMI est le **système d'exploitation** de votre machine EC2.
 
-📹 **Vidéo** : [AMI — Amazon Machine Images](https://www.youtube.com/watch?v=xjZx37dsVRw)
+<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/xjZx37dsVRw" title="Amazon Machine Images — AMI" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 #### Types d'AMI
 
@@ -190,9 +188,9 @@ Les environnements réglementés (santé, finance, RGPD) ont besoin de **garanti
 - Idéal pour cache, données temporaires, haute performance.
 - À éviter pour données persistantes.
 
-:::danger
-**Instance Store : perte de données garantie à l'arrêt** — Contrairement à EBS, le stockage instance store **n'est pas persistant**. Toutes les données écrites dessus sont définitivement perdues si l'instance est arrêtée, terminée ou si l'hôte physique tombe en panne. Ne stockez jamais de données de production, de bases de données ou de fichiers importants sur instance store sans sauvegarde préalable vers S3 ou EBS.
-:::
+> [!danger]
+> **Instance Store : stockage éphémère.** Les données ne persistent pas après l'arrêt ou la terminaison de l'instance, ni après certaines défaillances de l'hôte. Réservez ce stockage aux caches, espaces temporaires et données reproductibles ; placez les données persistantes sur un service adapté.
+
 
 #### Encrypted EBS Volumes
 

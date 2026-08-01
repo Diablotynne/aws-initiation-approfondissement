@@ -3,8 +3,6 @@ title: "1. Introduction"
 description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 1. Introduction"
 ---
 
-# 1. Introduction
-
 <nav class="page-sequence"><a href="cours/chapitre-1/vocabulaire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/fondamentaux-cloud">Suivant</a></nav>
 
 ### 1.1 Qu'est-ce qu'AWS et pourquoi le découvrir ?
@@ -29,7 +27,7 @@ Vous trouverez AWS dans **quasiment tous les secteurs** : startups qui testent u
 | **2009** | Introduction de **VPC** et **RDS** | AWS ajoute **VPC** (Virtual Private Cloud) pour créer des réseaux privés isolés, et **RDS** (Relational Database Service) pour gérer des bases de données relationnelles sans administrer les serveurs. Cela marque l'arrivée des services réseau et des bases gérées. |
 | **2012** | Lancement de **DynamoDB** | AWS introduit **DynamoDB**, une base NoSQL scalable et sans schéma, adaptée aux applications modernes (web, mobile, IoT). C'est le tournant vers les architectures serverless et les microservices. |
 | **2014** | Lancement de **AWS Lambda** | Lambda exécute du code à la demande sans exposer au client l'administration des serveurs sous-jacents. Le terme *serverless* décrit cette abstraction, pas l'absence de serveurs. |
-| **Aujourd'hui** | Plateforme de services étendue | AWS propose des services couvrant notamment le calcul, le stockage, le réseau, les données, la sécurité, l'automatisation et l'intelligence artificielle. Le catalogue évolue régulièrement. |
+| **Catalogue actuel** | Plateforme de services étendue | AWS propose notamment des services de calcul, stockage, réseau, données, sécurité, automatisation et intelligence artificielle. Le catalogue évolue régulièrement. |
 
 Ces dates montrent comment AWS a évolué d'un simple fournisseur de serveurs et de stockage vers une **plateforme cloud complète**, capable de répondre à tous les besoins informatiques : hébergement, sécurité, automatisation, intelligence artificielle, etc.
 

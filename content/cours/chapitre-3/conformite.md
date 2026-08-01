@@ -3,8 +3,6 @@ title: "13. Conformité et sécurité pour les données sensibles"
 description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 13. Conformité et sécurité pour les données sensibles"
 ---
 
-# 13. Conformité et sécurité pour les données sensibles
-
 <nav class="page-sequence"><a href="cours/chapitre-3/haute-disponibilite">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/points-attention">Suivant</a></nav>
 
 Les environnements soumis à des réglementations (RGPD, HIPAA, PCI-DSS) nécessitent des garanties strictes.
@@ -88,44 +86,44 @@ aws cloudtrail list-events \
     --lookup-attributes AttributeKey=ResourceName,AttributeValue=mon-bucket
 ```
 
-:::success
-**Résultat attendu :**
-```json
-# describe-trails retourne :
-{
-    "trailList": [
-        {
-            "Name": "management-events-trail",
-            "S3BucketName": "my-cloudtrail-logs-bucket",
-            "IncludeGlobalServiceEvents": true,
-            "IsMultiRegionTrail": true,
-            "HomeRegion": "eu-west-1",
-            "TrailARN": "arn:aws:cloudtrail:eu-west-1:123456789012:trail/management-events-trail",
-            "LogFileValidationEnabled": true
-        }
-    ]
-}
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> # describe-trails retourne :
+> {
+>     "trailList": [
+>         {
+>             "Name": "management-events-trail",
+>             "S3BucketName": "my-cloudtrail-logs-bucket",
+>             "IncludeGlobalServiceEvents": true,
+>             "IsMultiRegionTrail": true,
+>             "HomeRegion": "eu-west-1",
+>             "TrailARN": "arn:aws:cloudtrail:eu-west-1:123456789012:trail/management-events-trail",
+>             "LogFileValidationEnabled": true
+>         }
+>     ]
+> }
+>
+> # list-events retourne des événements du type :
+> {
+>     "Events": [
+>         {
+>             "EventId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+>             "EventName": "PutObject",
+>             "ReadOnly": "false",
+>             "EventTime": "2024-05-17T14:23:05+00:00",
+>             "Username": "operator-demo",
+>             "Resources": [
+>                 {
+>                     "ResourceType": "AWS::S3::Object",
+>                     "ResourceName": "mon-bucket/documents/rapport.pdf"
+>                 }
+>             ]
+>         }
+>     ]
+> }
+> ```
 
-# list-events retourne des événements du type :
-{
-    "Events": [
-        {
-            "EventId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-            "EventName": "PutObject",
-            "ReadOnly": "false",
-            "EventTime": "2024-05-17T14:23:05+00:00",
-            "Username": "stagiaire-demo",
-            "Resources": [
-                {
-                    "ResourceType": "AWS::S3::Object",
-                    "ResourceName": "mon-bucket/documents/rapport.pdf"
-                }
-            ]
-        }
-    ]
-}
-```
-:::
 
 ---
 

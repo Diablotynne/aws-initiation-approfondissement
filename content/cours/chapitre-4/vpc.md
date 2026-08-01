@@ -3,8 +3,6 @@ title: "2. Amazon VPC — Concevoir un réseau privé sécurisé"
 description: "Chapitre 4 — Amazon VPC et bases de données AWS - 2. Amazon VPC — Concevoir un réseau privé sécurisé"
 ---
 
-# 2. Amazon VPC — Concevoir un réseau privé sécurisé
-
 <nav class="page-sequence"><a href="cours/chapitre-4/bases-donnees">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/route-53">Suivant</a></nav>
 
 ### 2.1 Du réseau on-prem au réseau virtuel
@@ -24,9 +22,9 @@ Une VPC vous offre :
 
 #### Schéma architectural complet d'une VPC sécurisée
 
-<img src="assets/schemas/vpc-architecture.svg"
+<a class="schema-zoom" href="assets/schemas/vpc-architecture.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/vpc-architecture.svg"
      alt="Architecture VPC — Haute disponibilité multi-AZ"
-     style="display:block; margin:auto; width:90%">
+     style="display:block; margin:auto; width:90%"></a>
 
 **Lecture du schéma.** Le VPC est découpé en sous-réseaux publics et privés répartis sur plusieurs zones de disponibilité. Les composants exposés reçoivent le trafic entrant ; les bases restent dans les sous-réseaux privés. Les routes et les groupes de sécurité contrôlent des aspects différents : chemin réseau pour les premières, autorisation des flux pour les seconds.
 
@@ -136,9 +134,9 @@ Une instance EC2 sans IP publique reste pleinement fonctionnelle dans le VPC. El
 
 Chaque subnet est associé à une **table de routage** qui définit comment le trafic circule.
 
-<img src="assets/schemas/vpc-route-tables.svg"
+<a class="schema-zoom" href="assets/schemas/vpc-route-tables.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/vpc-route-tables.svg"
      alt="Tables de routage VPC — subnet public vs privé, association subnet/route table"
-     style="display:block; margin:auto; width:90%">
+     style="display:block; margin:auto; width:90%"></a>
 
 **Lecture du schéma.** Le sous-réseau public possède une route vers l'Internet Gateway. Le sous-réseau privé n'en possède pas ; lorsqu'une sortie Internet est nécessaire, sa route pointe vers une NAT Gateway située dans un sous-réseau public. Le trafic retour suit l'état de la traduction NAT.
 
@@ -157,7 +155,7 @@ Un **Security Group** est un ensemble de **règles de filtrage** appliquées à 
 - Changements appliqués **immédiatement**.
 - Peut être modifié sur une instance en cours d'exécution.
 
-📹 [Groupes de sécurité : pourquoi faire ? Comment ?](https://www.youtube.com/watch?v=QwhexkU2ya4)
+<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/QwhexkU2ya4" title="Comprendre les groupes de sécurité AWS" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 #### Network ACLs — Pare-feu au niveau subnet
 
@@ -180,7 +178,7 @@ Un **Network ACL** est un ensemble de règles appliquées à un **subnet entier*
 
 #### Comment tout s'imbrique — architecture 3-tiers dans une VPC
 
-Ces briques (subnets, Security Groups, NAT Gateway) ne prennent tout leur sens qu'assemblées avec les ressources RDS/EC2 vues plus haut dans ce chapitre. Voici l'architecture la plus enseignée en SAA-C03 : un serveur web accessible depuis Internet, une base de données qui ne l'est jamais.
+Ces briques prennent leur sens lorsqu'elles forment un chemin réseau cohérent. Le modèle suivant expose uniquement le point d'entrée web et maintient la base de données dans des subnets privés.
 
 ```text
 VPC 10.0.0.0/16
@@ -223,13 +221,13 @@ VPC 10.0.0.0/16
 | **Inter-comptes** | Deux VPC dans deux comptes AWS différents peuvent être peered |
 | **Inter-régions** | Deux VPC dans deux régions différentes peuvent être peered |
 
-:::warning
-**VPC Peering est non-transitif — Piège architectural classique**
+> [!warning]
+> **VPC Peering est non-transitif — Piège architectural classique**
+>
+> Si vous avez 3 VPCs : **Prod ↔ Shared** et **Dev ↔ Shared**, cela ne signifie PAS que Prod peut parler à Dev via Shared. Le trafic ne transite JAMAIS par un VPC intermédiaire.
+>
+> Pour interconnecter N VPCs avec transitivité, utilisez **AWS Transit Gateway** (hub centralisé). Avec 4 VPCs, VPC Peering crée 6 connexions à gérer — avec 10 VPCs, c'est 45 connexions. Transit Gateway réduit cela à 1 attachement par VPC.
 
-Si vous avez 3 VPCs : **Prod ↔ Shared** et **Dev ↔ Shared**, cela ne signifie PAS que Prod peut parler à Dev via Shared. Le trafic ne transite JAMAIS par un VPC intermédiaire.
-
-Pour interconnecter N VPCs avec transitivité, utilisez **AWS Transit Gateway** (hub centralisé). Avec 4 VPCs, VPC Peering crée 6 connexions à gérer — avec 10 VPCs, c'est 45 connexions. Transit Gateway réduit cela à 1 attachement par VPC.
-:::
 
 📎 [Documentation VPC Peering](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html)
 
@@ -316,16 +314,16 @@ aws ec2 create-transit-gateway-vpc-attachment \
   --subnet-ids subnet-prod-1a subnet-prod-1b
 ```
 
-:::success
-**Résultat attendu :**
-```json
-{"TransitGatewayVpcAttachment": {"State": "pending", "TransitGatewayId": "tgw-0123456789abcdef", "VpcId": "vpc-prod-12345"}}
-```
-:::
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> {"TransitGatewayVpcAttachment": {"State": "pending", "TransitGatewayId": "tgw-0123456789abcdef", "VpcId": "vpc-prod-12345"}}
+> ```
 
-:::info
-**Pour aller plus loin — hors périmètre de cette formation** : partager un Transit Gateway entre plusieurs comptes AWS (via Resource Access Manager) et l'étendre à un réseau on-premise (VPN Site-to-Site) relèvent du niveau Advanced Networking Specialty. Le principe reste le même — un attachement par ressource, une table de routage centralisée — mais la mise en œuvre cross-account est un sujet à part entière.
-:::
+
+> [!info]
+> **Pour aller plus loin — hors périmètre de cette formation** : partager un Transit Gateway entre plusieurs comptes AWS (via Resource Access Manager) et l'étendre à un réseau on-premise (VPN Site-to-Site) relèvent du niveau Advanced Networking Specialty. Le principe reste le même — un attachement par ressource, une table de routage centralisée — mais la mise en œuvre cross-account est un sujet à part entière.
+
 
 #### Pièges Transit Gateway
 
@@ -383,7 +381,7 @@ Instance EC2 (t3.medium)
    - Source/Dest Check : ✅ activée (drop trafic non-destiné)
 ```
 
-📹 [Comment conserver son IP sur AWS ?](https://www.youtube.com/watch?v=oSMEQlQDohM)
+<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/oSMEQlQDohM" title="Conserver une adresse IP avec Elastic IP" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 #### Cas d'usage : Multiple ENIs sur une même instance
 
@@ -486,15 +484,15 @@ aws ec2 describe-instances \
 # ]
 ```
 
-:::success
-**Résultat attendu :**
-```json
-[
-    ["eni-0a1b2c3d4e5f00001", 0, "10.0.1.42", "203.0.113.50"],
-    ["eni-0a1b2c3d4e5f00002", 1, "10.0.2.100", null]
-]
-```
-:::
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> [
+>     ["eni-0a1b2c3d4e5f00001", 0, "10.0.1.42", "203.0.113.50"],
+>     ["eni-0a1b2c3d4e5f00002", 1, "10.0.2.100", null]
+> ]
+> ```
+
 
 #### Cas d'usage réels : ENI multiples
 
@@ -527,21 +525,21 @@ aws ec2 modify-network-interface-attribute \
   --source-dest-check
 ```
 
-:::success
-**Résultat attendu :**
-```json
-# modify-network-interface-attribute : aucun output si succès
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> # modify-network-interface-attribute : aucun output si succès
+>
+> # Vérification : aws ec2 describe-network-interface-attribute --network-interface-id eni-12345678 --attribute sourceDestCheck
+> {
+>     "NetworkInterfaceId": "eni-12345678",
+>     "SourceDestCheck": {
+>         "Value": false
+>     }
+> }
+> ```
+> La vérification Source/Destination est désactivée (`Value: false`). L'interface peut désormais forwarder du trafic dont elle n'est pas la destination finale — comportement requis pour une instance jouant le rôle de routeur ou de pare-feu.
 
-# Vérification : aws ec2 describe-network-interface-attribute --network-interface-id eni-12345678 --attribute sourceDestCheck
-{
-    "NetworkInterfaceId": "eni-12345678",
-    "SourceDestCheck": {
-        "Value": false
-    }
-}
-```
-La vérification Source/Destination est désactivée (`Value: false`). L'interface peut désormais forwarder du trafic dont elle n'est pas la destination finale — comportement requis pour une instance jouant le rôle de routeur ou de pare-feu.
-:::
 
 ---
 

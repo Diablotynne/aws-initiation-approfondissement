@@ -1,14 +1,14 @@
 @use "./variables.scss" as *;
 
-body[data-slug="formations/aws-initiation-approfondissement/index"] {
+body {
   --aws-orange: #ff9900;
   --aws-navy: #17223b;
 }
 
-body[data-slug="formations/aws-initiation-approfondissement/index"] .article-title,
-body[data-slug="formations/aws-initiation-approfondissement/index"] .content-meta,
-body[data-slug="formations/aws-initiation-approfondissement/index"] .note-properties,
-body[data-slug="formations/aws-initiation-approfondissement/index"] article > h1:first-child {
+body[data-slug="index"] .article-title,
+body[data-slug="index"] .content-meta,
+body[data-slug="index"] .note-properties,
+body[data-slug="index"] article > h1:first-child {
   display: none;
 }
 
@@ -98,6 +98,13 @@ body[data-slug="formations/aws-initiation-approfondissement/index"] article > h1
   }
 
   a:hover { border-color: var(--aws-orange); transform: translateY(-1px); }
+}
+
+/* Le sommaire pédagogique ci-dessus porte l'ordre du chapitre. La liste de
+   dossier ajoutée automatiquement par Quartz est triée par date et ferait
+   apparaître une seconde navigation incohérente. */
+body[data-slug^="cours/chapitre-"][data-slug$="/index"] .page-listing {
+  display: none;
 }
 
 .page-sequence {
@@ -196,13 +203,46 @@ body[data-slug="formations/aws-initiation-approfondissement/index"] article > h1
   }
 }
 
-article img[src*="11-images/"] {
+.schema-zoom {
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 0.9rem;
+  cursor: zoom-in;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: 0 1rem 2.2rem rgb(0 0 0 / 25%);
+    transform: translateY(-3px);
+  }
+}
+
+article img[src*="assets/schemas/"] {
   display: block;
   width: 100%;
   height: auto;
-  margin: 1.5rem auto;
+  margin: 0 auto;
   border-radius: 0.8rem;
   box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.18);
+}
+
+.video-embed {
+  position: relative;
+  width: 100%;
+  margin: 1.5rem 0 2rem;
+  overflow: hidden;
+  border: 1px solid var(--lightgray);
+  border-radius: 0.9rem;
+  background: #0b1220;
+  aspect-ratio: 16 / 9;
+
+  iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
 }
 .course-intro-hero {
   margin: 0 0 2rem;
@@ -329,4 +369,36 @@ article img[src*="11-images/"] {
 
 @media (max-width: 700px) {
   .module-quiz-link { align-items: flex-start; flex-direction: column; }
+}
+
+@media print {
+  @page { size: A4; margin: 15mm 13mm 17mm; }
+
+  body { color: #172033 !important; background: #fff !important; font-size: 10.5pt; }
+  .left.sidebar,
+  .right.sidebar,
+  .page-header,
+  .page-footer,
+  footer,
+  .chapter-map,
+  .page-sequence,
+  .video-embed,
+  .quiz-frame { display: none !important; }
+  .page > #quartz-body { display: block !important; }
+  .page,
+  .page > #quartz-body,
+  .center,
+  article { width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; }
+  article > h1:not(:first-of-type) { break-before: page; }
+  h1 { color: #17223b !important; font-size: 24pt; }
+  h2 { color: #243b64 !important; font-size: 17pt; break-after: avoid-page; }
+  h3 { color: #374f70 !important; font-size: 13pt; break-after: avoid-page; }
+  table,
+  pre,
+  blockquote,
+  .callout,
+  .schema-zoom,
+  article img { break-inside: avoid-page; box-shadow: none !important; }
+  pre { white-space: pre-wrap; word-break: break-word; }
+  a { color: #1f4f82 !important; text-decoration: none !important; }
 }

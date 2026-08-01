@@ -3,8 +3,6 @@ title: "12. Bonnes pratiques — Architecture hautement disponible"
 description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 12. Bonnes pratiques — Architecture hautement disponible"
 ---
 
-# 12. Bonnes pratiques — Architecture hautement disponible
-
 <nav class="page-sequence"><a href="cours/chapitre-3/architecture">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/conformite">Suivant</a></nav>
 
 ### 12.1 Architecture résiliente S3
@@ -48,9 +46,9 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 12. Bonne
 - Activer les **lifecycle policies** agressives pour archiver.
 - Monitorer la bande passante (les téléchargements hors AWS coûtent cher).
 
-:::warning
-**Attention aux postes de coût S3** — Le stockage n'est qu'une partie de la facture. Les requêtes, les transitions de classe, la récupération d'archives, la surveillance des objets et le transfert sortant peuvent devenir dominants. Pour un lac de données composé de nombreux petits objets, comptez les opérations autant que les gigaoctets. Utilisez **Cost Explorer** et les rapports de coûts pour identifier les postes réels.
-:::
+> [!warning]
+> **Attention aux postes de coût S3** — Le stockage n'est qu'une partie de la facture. Les requêtes, les transitions de classe, la récupération d'archives, la surveillance des objets et le transfert sortant peuvent devenir dominants. Pour un lac de données composé de nombreux petits objets, comptez les opérations autant que les gigaoctets. Utilisez **Cost Explorer** et les rapports de coûts pour identifier les postes réels.
+
 
 **EC2 Coûts** :
 - Étudier les **Savings Plans** pour les charges stables, après analyse de l'utilisation réelle.

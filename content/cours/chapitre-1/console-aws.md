@@ -3,8 +3,6 @@ title: "8. AWS Management Console"
 description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 8. AWS Management Console"
 ---
 
-# 8. AWS Management Console
-
 <nav class="page-sequence"><a href="cours/chapitre-1/well-architected">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/services-aws">Suivant</a></nav>
 
 La **console AWS** est une interface Web centralisée qui permet de gérer tous les services AWS depuis un seul endroit.
@@ -29,26 +27,26 @@ Elle donne d'abord accès à l'ensemble des services AWS disponibles dans la ré
 📎 [AWS Console](https://aws.amazon.com/console/)
 📎 [Guide de l'interface AWS Management Console](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/what-is.html)
 
-:::success
-**Vérification AWS CLI — lister les régions disponibles :**
-```bash
-aws ec2 describe-regions --output table
-```
-```text
--------------------------------------------------------
-|                    DescribeRegions                  |
-+-------------------+---------------------------------+
-|   RegionName      |   Endpoint                      |
-+-------------------+---------------------------------+
-|  eu-west-3        |  ec2.eu-west-3.amazonaws.com   |  ← Paris
-|  eu-west-1        |  ec2.eu-west-1.amazonaws.com   |  ← Irlande
-|  eu-central-1     |  ec2.eu-central-1.amazonaws.com|  ← Francfort
-|  us-east-1        |  ec2.us-east-1.amazonaws.com   |  ← Virginie du Nord
-|  ap-southeast-1   |  ec2.ap-southeast-1.amazonaws.com| ← Singapour
-+-------------------+---------------------------------+
-```
-La région `eu-west-3` (Paris) est votre région de travail par défaut pour cette formation. Vérifiez toujours que vous êtes bien dans la bonne région avant de créer une ressource — une instance EC2 créée dans `us-east-1` par erreur sera difficile à retrouver.
-:::
+> [!tip]
+> **Vérification AWS CLI — lister les régions disponibles :**
+> ```bash
+> aws ec2 describe-regions --output table
+> ```
+> ```text
+> -------------------------------------------------------
+> |                    DescribeRegions                  |
+> +-------------------+---------------------------------+
+> |   RegionName      |   Endpoint                      |
+> +-------------------+---------------------------------+
+> |  eu-west-3        |  ec2.eu-west-3.amazonaws.com   |  ← Paris
+> |  eu-west-1        |  ec2.eu-west-1.amazonaws.com   |  ← Irlande
+> |  eu-central-1     |  ec2.eu-central-1.amazonaws.com|  ← Francfort
+> |  us-east-1        |  ec2.us-east-1.amazonaws.com   |  ← Virginie du Nord
+> |  ap-southeast-1   |  ec2.ap-southeast-1.amazonaws.com| ← Singapour
+> +-------------------+---------------------------------+
+> ```
+> La région `eu-west-3` (Paris) est votre région de travail par défaut pour cette formation. Vérifiez toujours que vous êtes bien dans la bonne région avant de créer une ressource — une instance EC2 créée dans `us-east-1` par erreur sera difficile à retrouver.
+
 
 Rappelons que la console est un moyen parmi d'autres d'interagir avec AWS — il existe également des API, des SDK et la **CLI AWS** pour les automatisations.
 
@@ -77,29 +75,29 @@ AWS fournit des outils puissants pour **monitorer, budgéter et optimiser** les 
 3. **Réductions possibles** : Reserved Instances (engagement 1 ou 3 ans), Savings Plans (engagement flexible), Spot Instances (capacité excédentaire à -70%).
 4. **AWS Free Tier** : les nouveaux clients peuvent recevoir 100 USD de crédits à l'inscription et jusqu'à 100 USD supplémentaires via des activités. Le plan gratuit s'arrête après six mois ou lorsque les crédits sont épuisés. Dans un plan gratuit, AWS n'inscrit pas de frais sur la facture avant passage au plan payant ; dans un plan payant, l'utilisation non couverte ou supérieure au solde de crédits est facturée au tarif normal.
 
-:::success
-**Exemple de commande AWS CLI pour vérifier votre consommation du Free Tier :**
-```bash
-aws ce get-cost-and-usage \
-  --time-period Start=2024-01-01,End=2024-01-31 \
-  --granularity MONTHLY \
-  --metrics BlendedCost \
-  --group-by Type=DIMENSION,Key=SERVICE
-```
-```json
-{
-    "ResultsByTime": [{
-        "TimePeriod": { "Start": "2024-01-01", "End": "2024-01-31" },
-        "Groups": [
-            { "Keys": ["Amazon EC2"], "Metrics": { "BlendedCost": { "Amount": "0.00", "Unit": "USD" } } },
-            { "Keys": ["Amazon S3"], "Metrics": { "BlendedCost": { "Amount": "0.23", "Unit": "USD" } } },
-            { "Keys": ["Amazon RDS"], "Metrics": { "BlendedCost": { "Amount": "0.00", "Unit": "USD" } } }
-        ]
-    }]
-}
-```
-Dans cet exemple fictif, les crédits promotionnels absorbent encore la consommation EC2 et RDS. S3 affiche un coût car l'usage concerné n'est plus entièrement couvert. Le résultat réel dépend de la date de création du compte, du plan choisi, du solde de crédits, de la région et des services utilisés : il faut toujours vérifier la page **Free Tier** et la facturation du compte actif.
-:::
+> [!tip]
+> **Exemple de commande AWS CLI pour vérifier votre consommation du Free Tier :**
+> ```bash
+> aws ce get-cost-and-usage \
+>   --time-period Start=2024-01-01,End=2024-01-31 \
+>   --granularity MONTHLY \
+>   --metrics BlendedCost \
+>   --group-by Type=DIMENSION,Key=SERVICE
+> ```
+> ```json
+> {
+>     "ResultsByTime": [{
+>         "TimePeriod": { "Start": "2024-01-01", "End": "2024-01-31" },
+>         "Groups": [
+>             { "Keys": ["Amazon EC2"], "Metrics": { "BlendedCost": { "Amount": "0.00", "Unit": "USD" } } },
+>             { "Keys": ["Amazon S3"], "Metrics": { "BlendedCost": { "Amount": "0.23", "Unit": "USD" } } },
+>             { "Keys": ["Amazon RDS"], "Metrics": { "BlendedCost": { "Amount": "0.00", "Unit": "USD" } } }
+>         ]
+>     }]
+> }
+> ```
+> Dans cet exemple fictif, les crédits promotionnels absorbent encore la consommation EC2 et RDS. S3 affiche un coût car l'usage concerné n'est plus entièrement couvert. Le résultat réel dépend de la date de création du compte, du plan choisi, du solde de crédits, de la région et des services utilisés : il faut toujours vérifier la page **Free Tier** et la facturation du compte actif.
+
 
 ### Outils de monitoring des coûts
 
@@ -182,27 +180,27 @@ Imaginons une startup qui lance une application web sur AWS.
 - Découverte des versions excessives → nettoyage
 - **Coût final : 5 €/mois**
 
-:::success
-**Résultat attendu — alerte AWS Budgets reçue par email :**
-```text
-De : no-reply@notifications.aws
-Objet : [AWS Budgets] Alerte — Mon Budget Mensuel (80% atteint)
+> [!tip]
+> **Résultat attendu — alerte AWS Budgets reçue par email :**
+> ```text
+> De : no-reply@notifications.aws
+> Objet : [AWS Budgets] Alerte — Mon Budget Mensuel (80% atteint)
+>
+> Bonjour,
+>
+> Votre budget "Mon Budget Mensuel" a atteint 80% de votre seuil d'alerte.
+>
+> Budget : 50,00 USD
+> Dépensé : 40,23 USD
+> Prévu ce mois : 52,31 USD
+>
+> Service le plus coûteux : Amazon EC2 (28,50 USD)
+> Recommandation : vérifiez les instances EC2 actives dans toutes les régions.
+>
+> → Accéder au Cost Explorer : https://console.aws.amazon.com/cost-management/
+> ```
+> Grâce à cette alerte précoce, vous pouvez arrêter l'instance oubliée avant que la facture n'explose. Sans ce budget configuré, vous n'auriez découvert le problème qu'à la réception de la facture mensuelle.
 
-Bonjour,
-
-Votre budget "Mon Budget Mensuel" a atteint 80% de votre seuil d'alerte.
-
-Budget : 50,00 USD
-Dépensé : 40,23 USD
-Prévu ce mois : 52,31 USD
-
-Service le plus coûteux : Amazon EC2 (28,50 USD)
-Recommandation : vérifiez les instances EC2 actives dans toutes les régions.
-
-→ Accéder au Cost Explorer : https://console.aws.amazon.com/cost-management/
-```
-Grâce à cette alerte précoce, vous pouvez arrêter l'instance oubliée avant que la facture n'explose. Sans ce budget configuré, vous n'auriez découvert le problème qu'à la réception de la facture mensuelle.
-:::
 
 C'est pourquoi **mettre en place un monitoring budgétaire dès le départ est essentiel**.
 

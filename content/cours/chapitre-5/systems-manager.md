@@ -3,8 +3,6 @@ title: "4. AWS Systems Manager — Automatisation opérationnelle"
 description: "Chapitre 5 — Automatisation, supervision et reprise d'activité - 4. AWS Systems Manager — Automatisation opérationnelle"
 ---
 
-# 4. AWS Systems Manager — Automatisation opérationnelle
-
 <nav class="page-sequence"><a href="cours/chapitre-5/cloudformation">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/beanstalk">Suivant</a></nav>
 
 ### 4.1 Qu'est-ce que Systems Manager ?
@@ -67,31 +65,31 @@ aws ssm get-command-invocation \
   --instance-id i-12345
 ```
 
-:::success
-**Résultat attendu :**
-```json
-# send-command :
-{
-    "Command": {
-        "CommandId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-        "DocumentName": "AWS-RunShellScript",
-        "Status": "Pending",
-        "TargetCount": 5,
-        "CompletedCount": 0
-    }
-}
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> # send-command :
+> {
+>     "Command": {
+>         "CommandId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+>         "DocumentName": "AWS-RunShellScript",
+>         "Status": "Pending",
+>         "TargetCount": 5,
+>         "CompletedCount": 0
+>     }
+> }
+>
+> # get-command-invocation (après exécution) :
+> {
+>     "CommandId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+>     "InstanceId": "i-12345",
+>     "Status": "Success",
+>     "StatusDetails": "Success",
+>     "StandardOutputContent": "Reading package lists...\nBuilding dependency tree...\nThe following NEW packages will be installed: apache2\nSetting up apache2 (2.4.52-1ubuntu4)...\n",
+>     "StandardErrorContent": ""
+> }
+> ```
 
-# get-command-invocation (après exécution) :
-{
-    "CommandId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-    "InstanceId": "i-12345",
-    "Status": "Success",
-    "StatusDetails": "Success",
-    "StandardOutputContent": "Reading package lists...\nBuilding dependency tree...\nThe following NEW packages will be installed: apache2\nSetting up apache2 (2.4.52-1ubuntu4)...\n",
-    "StandardErrorContent": ""
-}
-```
-:::
 
 > **Résultat attendu :** `send-command` retourne un `CommandId`. `get-command-invocation` affiche le `Status` (`InProgress` → `Success`) et les `StandardOutputContent` avec la sortie de chaque commande exécutée sur l'instance.
 
@@ -121,29 +119,29 @@ aws ssm put-parameter \
   --type "String"
 ```
 
-:::success
-**Résultat attendu :**
-```json
-# put-parameter :
-{
-    "Version": 1,
-    "Tier": "Standard"
-}
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> # put-parameter :
+> {
+>     "Version": 1,
+>     "Tier": "Standard"
+> }
+>
+> # get-parameter (avec --with-decryption) :
+> {
+>     "Parameter": {
+>         "Name": "/prod/database/password",
+>         "Type": "SecureString",
+>         "Value": "<valeur déchiffrée masquée dans le support>",
+>         "Version": 1,
+>         "LastModifiedDate": "2026-03-24T10:00:00.000Z",
+>         "ARN": "arn:aws:ssm:eu-west-3:123456789012:parameter/prod/database/password",
+>         "DataType": "text"
+>     }
+> }
+> ```
 
-# get-parameter (avec --with-decryption) :
-{
-    "Parameter": {
-        "Name": "/prod/database/password",
-        "Type": "SecureString",
-        "Value": "<valeur déchiffrée masquée dans le support>",
-        "Version": 1,
-        "LastModifiedDate": "2026-03-24T10:00:00.000Z",
-        "ARN": "arn:aws:ssm:eu-west-3:123456789012:parameter/prod/database/password",
-        "DataType": "text"
-    }
-}
-```
-:::
 
 > **Résultat attendu :** `put-parameter` retourne un numéro de version (`"Version": 1`). `get-parameter` retourne le JSON avec `"Value"` déchiffré (grâce à `--with-decryption`). Sans ce flag, `SecureString` serait masqué.
 
@@ -161,14 +159,14 @@ aws ssm start-session \
 # AWS configure le tunnel securely et vous connecte au shell
 ```
 
-:::success
-**Résultat attendu :**
-```text
-Starting session with SessionId: stagiaire-demo-0abc123def456789
-sh-4.2$
-```
-Un shell bash s'ouvre directement sur l'instance sans passer par SSH. Toutes les commandes saisies sont journalisées dans CloudTrail. Si la commande échoue avec `TargetNotConnected`, vérifiez que l'agent SSM est actif (`systemctl status amazon-ssm-agent`) et que le rôle IAM `AmazonSSMManagedInstanceCore` est attaché à l'instance.
-:::
+> [!tip]
+> **Résultat attendu :**
+> ```text
+> Starting session with SessionId: operator-demo-0abc123def456789
+> sh-4.2$
+> ```
+> Un shell bash s'ouvre directement sur l'instance sans passer par SSH. Toutes les commandes saisies sont journalisées dans CloudTrail. Si la commande échoue avec `TargetNotConnected`, vérifiez que l'agent SSM est actif (`systemctl status amazon-ssm-agent`) et que le rôle IAM `AmazonSSMManagedInstanceCore` est attaché à l'instance.
+
 
 > **Note :** Un shell s'ouvre sur l'instance (`sh-4.2$`). CloudTrail enregistre les appels d'API liés au démarrage et à l'arrêt de la session, mais pas automatiquement chaque commande saisie dans le shell. Pour conserver les données de session, configurez explicitement la journalisation Session Manager vers CloudWatch Logs ou S3. Si la commande échoue avec `TargetNotConnected`, vérifiez l'état de l'agent SSM, la connectivité vers les endpoints SSM et le rôle IAM de l'instance.
 
@@ -195,38 +193,38 @@ aws ssm create-patch-baseline \
   --approval-rules 'PatchRules=[{PatchFilterGroup={PatchFilters=[{Key=CLASSIFICATION,Values=[SECURITY,BUGFIX]}]},ApproveAfterDays=7}]'
 ```
 
-:::success
-**Résultat attendu :**
-```json
-# describe-instance-patches :
-{
-    "Patches": [
-        {
-            "Title": "linux-aws-headers-5.15.0-1056",
-            "KBId": "USN-6819-1",
-            "Classification": "SECURITY",
-            "Severity": "Important",
-            "State": "Missing",
-            "InstalledTime": null
-        },
-        {
-            "Title": "libssl3",
-            "Classification": "SECURITY",
-            "Severity": "Critical",
-            "State": "Missing"
-        }
-    ]
-}
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> # describe-instance-patches :
+> {
+>     "Patches": [
+>         {
+>             "Title": "linux-aws-headers-5.15.0-1056",
+>             "KBId": "USN-6819-1",
+>             "Classification": "SECURITY",
+>             "Severity": "Important",
+>             "State": "Missing",
+>             "InstalledTime": null
+>         },
+>         {
+>             "Title": "libssl3",
+>             "Classification": "SECURITY",
+>             "Severity": "Critical",
+>             "State": "Missing"
+>         }
+>     ]
+> }
+>
+> # create-patch-baseline :
+> {
+>     "BaselineId": "pb-0abc123def456789a",
+>     "Name": "MonLieuxPatchLineMonthly",
+>     "OperatingSystem": "UBUNTU",
+>     "CreatedDate": "2026-03-24T10:00:00.000Z"
+> }
+> ```
 
-# create-patch-baseline :
-{
-    "BaselineId": "pb-0abc123def456789a",
-    "Name": "MonLieuxPatchLineMonthly",
-    "OperatingSystem": "UBUNTU",
-    "CreatedDate": "2026-03-24T10:00:00.000Z"
-}
-```
-:::
 
 > **Résultat attendu :** `describe-instance-patches` liste les patchs manquants avec leur sévérité (`Critical`, `Important`…). `create-patch-baseline` retourne un `BaselineId` (ex. `pb-0abc123`). Cette baseline s'applique ensuite via une **Maintenance Window** planifiée.
 
@@ -248,9 +246,9 @@ aws ssm create-patch-baseline \
 
 OpsWorks permettait de **déployer et configurer des applications** sur des instances EC2 en utilisant des **scripts de configuration déclaratifs** :
 
-<img src="assets/schemas/opsworks-vs-ssm.svg"
+<a class="schema-zoom" href="assets/schemas/opsworks-vs-ssm.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/opsworks-vs-ssm.svg"
      alt="CloudFormation vs OpsWorks vs Systems Manager"
-     style="display:block; margin:auto; width:90%">
+     style="display:block; margin:auto; width:90%"></a>
 
 **Lecture du schéma.** CloudFormation provisionne l'infrastructure déclarée. Systems Manager agit ensuite sur l'exploitation des nœuds et de leurs configurations. OpsWorks correspond à une génération antérieure de services fondés sur Chef ou Puppet ; il est présenté pour reconnaître les architectures historiques, pas comme choix par défaut pour un nouveau projet.
 
@@ -278,20 +276,20 @@ aws ssm create-patch-baseline \
 # Archiver les informations nécessaires avant de retirer les dépendances OpsWorks
 ```
 
-:::success
-**Résultat attendu :**
-```json
-# send-command (migration depuis OpsWorks) :
-{
-    "Command": {
-        "CommandId": "c3d4e5f6-a7b8-9012-cdef-a12345678901",
-        "DocumentName": "AWS-RunShellScript",
-        "Status": "Pending",
-        "TargetCount": 1
-    }
-}
-```
-:::
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> # send-command (migration depuis OpsWorks) :
+> {
+>     "Command": {
+>         "CommandId": "c3d4e5f6-a7b8-9012-cdef-a12345678901",
+>         "DocumentName": "AWS-RunShellScript",
+>         "Status": "Pending",
+>         "TargetCount": 1
+>     }
+> }
+> ```
+
 
 #### Ressources de migration
 
@@ -300,7 +298,7 @@ aws ssm create-patch-baseline \
 📎 [Pourquoi OpsWorks est obsolète](https://aws.amazon.com/fr/blogs/france/migration-opsworks-systems-manager/)
 ```
 
-**Conclusion pour les stagiaires :** Vous ne créerez JAMAIS un nouvel OpsWorks stack. Si vous le rencontrez en production, c'est un signal pour moderniser vers Systems Manager.
+**Décision d'architecture :** AWS OpsWorks n'est plus un choix pour une nouvelle architecture. Sa présence dans un système existant déclenche une analyse de migration vers des services maintenus, notamment AWS Systems Manager selon le besoin.
 
 ---
 

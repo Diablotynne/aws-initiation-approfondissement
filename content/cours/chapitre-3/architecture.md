@@ -3,8 +3,6 @@ title: "11. Architecture complète : Illustration e-commerce"
 description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 11. Architecture complète : Illustration e-commerce"
 ---
 
-# 11. Architecture complète : Illustration e-commerce
-
 <nav class="page-sequence"><a href="cours/chapitre-3/lambda">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/haute-disponibilite">Suivant</a></nav>
 
 Scénario réaliste — montée en charge pendant les soldes, puis retour à la normale :

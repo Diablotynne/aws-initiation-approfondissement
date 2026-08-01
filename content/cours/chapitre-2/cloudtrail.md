@@ -3,8 +3,6 @@ title: "6. Traçabilité et surveillance avec CloudTrail"
 description: "Chapitre 2 — Sécurité des accès avec AWS IAM - 6. Traçabilité et surveillance avec CloudTrail"
 ---
 
-# 6. Traçabilité et surveillance avec CloudTrail
-
 <nav class="page-sequence"><a href="cours/chapitre-2/organizations">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/points-attention">Suivant</a></nav>
 
 ### 6.1 Pourquoi surveiller les activités dans AWS ?
@@ -144,9 +142,9 @@ Si CloudTrail trace les **actions**, AWS Config trace les **états**. Ensemble, 
 
 📎 [CloudTrail + Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-cloudtrail.html)
 
-:::warning
-**Ne jamais désactiver CloudTrail en production.** La suppression ou la désactivation d'un trail est elle-même un événement critique enregistré. Configurez des alertes EventBridge sur l'événement `DeleteTrail` et `StopLogging`. En conformité ISO 27001 ou PCI-DSS, les logs CloudTrail doivent être conservés au minimum 1 an et être immuables (activer S3 Object Lock).
-:::
+> [!warning]
+> **Protéger la journalisation CloudTrail.** Surveillez notamment `DeleteTrail` et `StopLogging`, centralisez les journaux et définissez leur durée de conservation à partir des exigences réglementaires et internes applicables. S3 Object Lock peut contribuer à une stratégie d'immutabilité lorsque sa configuration répond au besoin retenu.
+
 
 ### 6.10 Comprendre les coûts de CloudTrail et d'AWS Config
 

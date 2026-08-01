@@ -3,8 +3,6 @@ title: "6. AWS Compute Optimizer — Dimensionnement optimal"
 description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 6. AWS Compute Optimizer — Dimensionnement optimal"
 ---
 
-# 6. AWS Compute Optimizer — Dimensionnement optimal
-
 <nav class="page-sequence"><a href="cours/chapitre-3/instance-ec2">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/tarification-ec2">Suivant</a></nav>
 
 ### 6.1 Qu'est-ce que AWS Compute Optimizer ?
@@ -56,20 +54,20 @@ aws compute-optimizer get-ec2-instance-recommendations \
     --output table
 ```
 
-:::success
-**Résultat attendu :**
-```text
--------------------------------------------------------------------------------------------
-|                         GetEc2InstanceRecommendations                                   |
-+-------------------------------------+----------+------------+---------+------------------+
-|              Instance               | Current  | Recommended| Savings | ConfidenceLevel  |
-+-------------------------------------+----------+------------+---------+------------------+
-|  arn:aws:ec2:eu-west-1:123:instance | t3.large | t3.small   |  47.82  |  t3.large        |
-|  arn:aws:ec2:eu-west-1:123:instance | m5.xlarge| m5.large   |  62.40  |  m5.xlarge       |
-+-------------------------------------+----------+------------+---------+------------------+
-```
-Si aucune recommandation n'apparaît, Compute Optimizer manque encore de données (il lui faut au minimum 30h d'activité sur les instances).
-:::
+> [!tip]
+> **Résultat attendu :**
+> ```text
+> -------------------------------------------------------------------------------------------
+> |                         GetEc2InstanceRecommendations                                   |
+> +-------------------------------------+----------+------------+---------+------------------+
+> |              Instance               | Current  | Recommended| Savings | ConfidenceLevel  |
+> +-------------------------------------+----------+------------+---------+------------------+
+> |  arn:aws:ec2:eu-west-1:123:instance | t3.large | t3.small   |  47.82  |  t3.large        |
+> |  arn:aws:ec2:eu-west-1:123:instance | m5.xlarge| m5.large   |  62.40  |  m5.xlarge       |
+> +-------------------------------------+----------+------------+---------+------------------+
+> ```
+> Si aucune recommandation n'apparaît, Compute Optimizer manque encore de données (il lui faut au minimum 30h d'activité sur les instances).
+
 
 ### 6.5 Cas d'usage
 

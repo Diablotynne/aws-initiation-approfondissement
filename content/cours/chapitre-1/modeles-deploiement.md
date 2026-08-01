@@ -3,8 +3,6 @@ title: "4. Modèles de déploiement : Public, Privé et Hybride"
 description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 4. Modèles de déploiement : Public, Privé et Hybride"
 ---
 
-# 4. Modèles de déploiement : Public, Privé et Hybride
-
 <nav class="page-sequence"><a href="cours/chapitre-1/modeles-service">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/virtualisation-conteneurs">Suivant</a></nav>
 
 Les **modèles de déploiement** définissent *où* sont hébergées les ressources Cloud et *qui* les gère.
@@ -114,10 +112,10 @@ Le **RGPD** impose aux entreprises européennes une **maîtrise stricte** de la 
 
 Ce type de réglementation **explique pourquoi certaines entreprises gardent encore des charges sensibles "on-premise"** ou sur des **infrastructures dédiées** plutôt que dans le cloud public pur.
 
-:::warning
-**RGPD et localisation des données AWS :**
-Par défaut, AWS peut stocker vos données dans n'importe quelle zone de disponibilité de la région choisie. Pour les données personnelles de citoyens européens, vous devez impérativement choisir une **région européenne** (ex. `eu-west-3` Paris, `eu-central-1` Francfort) et vérifier que les services utilisés ne transfèrent pas les données hors UE sans votre accord explicite.
-:::
+> [!warning]
+> **RGPD et localisation des données AWS :**
+> Par défaut, AWS peut stocker vos données dans n'importe quelle zone de disponibilité de la région choisie. Pour les données personnelles de citoyens européens, vous devez impérativement choisir une **région européenne** (ex. `eu-west-3` Paris, `eu-central-1` Francfort) et vérifier que les services utilisés ne transfèrent pas les données hors UE sans votre accord explicite.
+
 
 #### AWS s'est adapté :
 

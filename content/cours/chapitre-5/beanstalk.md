@@ -3,8 +3,6 @@ title: "5. AWS Elastic Beanstalk — Déploiement simplifié d'applications"
 description: "Chapitre 5 — Automatisation, supervision et reprise d'activité - 5. AWS Elastic Beanstalk — Déploiement simplifié d'applications"
 ---
 
-# 5. AWS Elastic Beanstalk — Déploiement simplifié d'applications
-
 <nav class="page-sequence"><a href="cours/chapitre-5/systems-manager">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/cloudwatch">Suivant</a></nav>
 
 ### 5.1 Qu'est-ce que Elastic Beanstalk ?
@@ -122,40 +120,40 @@ eb deploy
 eb terminate monappbeanstalk-env
 ```
 
-:::success
-**Résultat attendu :**
-```text
-# eb create (extrait de la progression) :
-Creating application version archive "app-v1".
-Uploading monappbeanstalk/app-v1.zip to S3. This may take a while.
-Upload Complete.
-Environment details for: monappbeanstalk-env
-  Application name: monappbeanstalk
-  Region: eu-west-1
-  Deployed Version: app-v1
-  Environment ID: e-abc123defg
-  Platform: arn:aws:elasticbeanstalk:eu-west-1::platform/Node.js 18 running on 64bit Amazon Linux 2023
-  Tier: WebServer-Standard-1.0
-  CNAME: monappbeanstalk-env.eu-west-1.elasticbeanstalk.com
-  Updated: 2026-03-24 10:45:00.000000+00:00
-  Status: Launching
-  Health: Grey
-...
-INFO: Successfully launched environment: monappbeanstalk-env
+> [!tip]
+> **Résultat attendu :**
+> ```text
+> # eb create (extrait de la progression) :
+> Creating application version archive "app-v1".
+> Uploading monappbeanstalk/app-v1.zip to S3. This may take a while.
+> Upload Complete.
+> Environment details for: monappbeanstalk-env
+>   Application name: monappbeanstalk
+>   Region: eu-west-1
+>   Deployed Version: app-v1
+>   Environment ID: e-abc123defg
+>   Platform: arn:aws:elasticbeanstalk:eu-west-1::platform/Node.js 18 running on 64bit Amazon Linux 2023
+>   Tier: WebServer-Standard-1.0
+>   CNAME: monappbeanstalk-env.eu-west-1.elasticbeanstalk.com
+>   Updated: 2026-03-24 10:45:00.000000+00:00
+>   Status: Launching
+>   Health: Grey
+> ...
+> INFO: Successfully launched environment: monappbeanstalk-env
+>
+> # eb status :
+> Environment details for: monappbeanstalk-env
+>   Status: Ready
+>   Health: Green
+>   CNAME: monappbeanstalk-env.eu-west-1.elasticbeanstalk.com
+>
+> # L'application répond "Bonjour depuis Elastic Beanstalk !" à http://monappbeanstalk-env.eu-west-1.elasticbeanstalk.com
+> ```
 
-# eb status :
-Environment details for: monappbeanstalk-env
-  Status: Ready
-  Health: Green
-  CNAME: monappbeanstalk-env.eu-west-1.elasticbeanstalk.com
 
-# L'application répond "Bonjour depuis Elastic Beanstalk !" à http://monappbeanstalk-env.eu-west-1.elasticbeanstalk.com
-```
-:::
+> [!warning]
+> **Cold start Elastic Beanstalk :** Le premier déploiement (`eb create`) prend généralement 5 à 10 minutes car AWS provisionne l'infrastructure complète (EC2, ELB, Auto Scaling Group). Les déploiements suivants (`eb deploy`) sont plus rapides (1 à 3 minutes). Si `eb status` reste sur `Launching` trop longtemps, consultez les logs avec `eb logs`.
 
-:::warning
-**Cold start Elastic Beanstalk :** Le premier déploiement (`eb create`) prend généralement 5 à 10 minutes car AWS provisionne l'infrastructure complète (EC2, ELB, Auto Scaling Group). Les déploiements suivants (`eb deploy`) sont plus rapides (1 à 3 minutes). Si `eb status` reste sur `Launching` trop longtemps, consultez les logs avec `eb logs`.
-:::
 
 > **Résultat attendu :** `eb create` affiche la progression en temps réel (création VPC, EC2, Load Balancer…) et se termine avec l'URL publique de l'application. `eb open` ouvre cette URL dans votre navigateur — vous devez voir "Bonjour depuis Elastic Beanstalk !".
 
@@ -190,9 +188,9 @@ Ces deux services répondent à la même question — "comment déployer du code
 | **Infrastructure** | EC2 + ELB + ASG (gérés automatiquement) | Aucune instance visible |
 | **Démarrage** | Toujours chaud | Cold start possible (ms à quelques s) |
 
-:::warning
-**Lambda Cold Starts :** Lors du premier appel d'une fonction Lambda (ou après une longue période d'inactivité), AWS doit initialiser le conteneur d'exécution — c'est le **cold start**. La latence peut aller de quelques dizaines de ms (Node.js/Python) à plusieurs secondes (Java). Solutions : **Provisioned Concurrency** (maintient N conteneurs chauds en permanence, payant), ou choisir un runtime léger (Node.js/Python) pour les APIs sensibles à la latence.
-:::
+> [!warning]
+> **Lambda Cold Starts :** Lors du premier appel d'une fonction Lambda (ou après une longue période d'inactivité), AWS doit initialiser le conteneur d'exécution — c'est le **cold start**. La latence peut aller de quelques dizaines de ms (Node.js/Python) à plusieurs secondes (Java). Solutions : **Provisioned Concurrency** (maintient N conteneurs chauds en permanence, payant), ou choisir un runtime léger (Node.js/Python) pour les APIs sensibles à la latence.
+
 | **Durée max d'exécution** | Illimitée | **15 minutes** |
 | **Mémoire max** | Celle de l'instance (jusqu'à 384 Go) | **10 Go** |
 | **Stockage local** | EBS persistent | **/tmp : 10 Go seulement** |

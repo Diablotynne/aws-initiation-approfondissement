@@ -3,8 +3,6 @@ title: "3. Amazon Route 53 — DNS Intelligent"
 description: "Chapitre 4 — Amazon VPC et bases de données AWS - 3. Amazon Route 53 — DNS Intelligent"
 ---
 
-# 3. Amazon Route 53 — DNS Intelligent
-
 <nav class="page-sequence"><a href="cours/chapitre-4/vpc">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/elasticache">Suivant</a></nav>
 
 ### 3.1 Fondamentaux du DNS

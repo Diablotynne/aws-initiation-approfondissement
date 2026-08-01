@@ -3,8 +3,6 @@ title: "10. AWS Lambda — Le calcul sans serveur"
 description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 10. AWS Lambda — Le calcul sans serveur"
 ---
 
-# 10. AWS Lambda — Le calcul sans serveur
-
 <nav class="page-sequence"><a href="cours/chapitre-3/auto-scaling">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/architecture">Suivant</a></nav>
 
 ### 10.1 Pourquoi Lambda, quand on a déjà EC2 et Auto Scaling ?
@@ -38,9 +36,9 @@ Le CPU alloué est proportionnel à la mémoire configurée — une fonction à 
 
 ### 10.3 Créer et invoquer une fonction Lambda en CLI
 
-:::info
-Une activité pratique permet d’approfondir la création et l’invocation de fonctions Lambda.
-:::
+> [!info]
+> Une activité pratique permet d’approfondir la création et l’invocation de fonctions Lambda.
+
 
 Cette séquence crée une fonction Lambda Python minimale, l'invoque manuellement, puis vérifie les logs d'exécution dans CloudWatch.
 
@@ -95,29 +93,29 @@ aws lambda invoke \
 cat reponse.json
 ```
 
-:::success
-**Résultat attendu :**
-```json
-{
-  "StatusCode": 200,
-  "ExecutedVersion": "$LATEST"
-}
-```
-Contenu de `reponse.json` :
-```json
-{"statusCode": 200, "body": "Bonjour, Formation AWS ! Fonction exécutée avec succès."}
-```
-La fonction s'est exécutée en quelques centaines de millisecondes. Aucune instance EC2 n'a été provisionnée — Lambda a alloué l'environnement d'exécution le temps de traiter cette seule invocation, puis l'a libéré.
-:::
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> {
+>   "StatusCode": 200,
+>   "ExecutedVersion": "$LATEST"
+> }
+> ```
+> Contenu de `reponse.json` :
+> ```json
+> {"statusCode": 200, "body": "Bonjour, Formation AWS ! Fonction exécutée avec succès."}
+> ```
+> La fonction s'est exécutée en quelques centaines de millisecondes. Aucune instance EC2 n'a été provisionnée — Lambda a alloué l'environnement d'exécution le temps de traiter cette seule invocation, puis l'a libéré.
+
 
 ```bash
 # 7. Consulter les logs d'exécution (CloudWatch Logs, créés automatiquement)
 aws logs tail /aws/lambda/formation-bonjour --follow
 ```
 
-:::info
-**Le rôle IAM est la seule "sécurité réseau" de Lambda par défaut.** Contrairement à EC2, une fonction Lambda n'a pas de Security Group tant qu'elle n'est pas explicitement rattachée à un VPC (`--vpc-config`). Une Lambda simple qui n'a besoin que d'appeler d'autres services AWS (S3, DynamoDB) via leurs API n'a généralement pas besoin d'être dans un VPC — le rôle IAM suffit à contrôler ce qu'elle a le droit de faire.
-:::
+> [!info]
+> **Le rôle IAM est la seule "sécurité réseau" de Lambda par défaut.** Contrairement à EC2, une fonction Lambda n'a pas de Security Group tant qu'elle n'est pas explicitement rattachée à un VPC (`--vpc-config`). Une Lambda simple qui n'a besoin que d'appeler d'autres services AWS (S3, DynamoDB) via leurs API n'a généralement pas besoin d'être dans un VPC — le rôle IAM suffit à contrôler ce qu'elle a le droit de faire.
+
 
 ### 10.4 Comment estimer le coût de Lambda ?
 

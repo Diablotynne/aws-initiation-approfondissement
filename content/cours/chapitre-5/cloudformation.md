@@ -3,8 +3,6 @@ title: "3. AWS CloudFormation — Infrastructure as Code"
 description: "Chapitre 5 — Automatisation, supervision et reprise d'activité - 3. AWS CloudFormation — Infrastructure as Code"
 ---
 
-# 3. AWS CloudFormation — Infrastructure as Code
-
 <nav class="page-sequence"><a href="cours/chapitre-5/automatisation">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/systems-manager">Suivant</a></nav>
 
 ### 3.1 Qu'est-ce que CloudFormation ?
@@ -40,9 +38,9 @@ Avantage : la recette peut être réutilisée 100 fois identiquement
 4. **Mettre à jour** la stack pour faire évoluer l'infrastructure (ajout, suppression, modification de ressources)
 5. **Supprimer** la stack si plus besoin (CloudFormation supprime toutes les ressources associées)
 
-<img src="assets/schemas/cloudformation-flow.svg"
+<a class="schema-zoom" href="assets/schemas/cloudformation-flow.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/cloudformation-flow.svg"
      alt="Flux simplifié de CloudFormation"
-     style="display:block; margin:auto; width:90%">
+     style="display:block; margin:auto; width:90%"></a>
 
 **Lecture du schéma.** Le template décrit l'état attendu. CloudFormation analyse les dépendances, appelle les API AWS et regroupe les ressources obtenues dans une stack. Une mise à jour compare la nouvelle déclaration à la stack existante avant d'appliquer les changements nécessaires.
 
@@ -402,9 +400,9 @@ Outputs:
 
 ##### Déployer ce template
 
-:::info
-Une activité pratique permet d’approfondir le déploiement de ce template CloudFormation.
-:::
+> [!info]
+> Une activité pratique permet d’approfondir le déploiement de ce template CloudFormation.
+
 
 ```bash
 # 1. Créer la stack depuis le fichier YAML local
@@ -442,29 +440,29 @@ aws cloudformation wait stack-delete-complete \
   --region eu-west-3
 ```
 
-:::success
-**Résultat attendu :**
-```json
-# create-stack :
-{
-    "StackId": "arn:aws:cloudformation:eu-west-3:123456789012:stack/formation-webserver-lab/b2c3d4e5-f6a7-8901-bcde-f12345678901"
-}
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> # create-stack :
+> {
+>     "StackId": "arn:aws:cloudformation:eu-west-3:123456789012:stack/formation-webserver-lab/b2c3d4e5-f6a7-8901-bcde-f12345678901"
+> }
+>
+> # (après wait stack-create-complete — ~3 à 5 minutes)
+> # describe-stacks → WebServerURL :
+> http://ec2-15-236-78-42.eu-west-3.compute.amazonaws.com
+>
+> # Le navigateur affiche la page HTML avec "Bienvenue sur votre serveur web CloudFormation!"
+> ```
 
-# (après wait stack-create-complete — ~3 à 5 minutes)
-# describe-stacks → WebServerURL :
-http://ec2-15-236-78-42.eu-west-3.compute.amazonaws.com
 
-# Le navigateur affiche la page HTML avec "Bienvenue sur votre serveur web CloudFormation!"
-```
-:::
+> [!warning]
+> **IAM requis pour CloudFormation :** Pour déployer ce template, l'utilisateur (ou le rôle IAM) doit avoir les permissions de créer des ressources EC2, VPC, Security Groups. En entreprise, créer un rôle IAM dédié `CloudFormationDeployRole` avec les permissions nécessaires, plutôt que d'utiliser un compte admin.
 
-:::warning
-**IAM requis pour CloudFormation :** Pour déployer ce template, l'utilisateur (ou le rôle IAM) doit avoir les permissions de créer des ressources EC2, VPC, Security Groups. En entreprise, créer un rôle IAM dédié `CloudFormationDeployRole` avec les permissions nécessaires, plutôt que d'utiliser un compte admin.
-:::
 
-:::danger
-**`delete-stack` supprime toutes les ressources :** La commande `delete-stack` détruit la VPC, le subnet, l'IGW, le Security Group ET l'instance EC2 de manière irréversible. Toutes les données stockées sur l'instance EBS seront perdues. Toujours vérifier `--stack-name` avant d'exécuter.
-:::
+> [!danger]
+> **`delete-stack` supprime toutes les ressources :** La commande `delete-stack` détruit la VPC, le subnet, l'IGW, le Security Group ET l'instance EC2 de manière irréversible. Toutes les données stockées sur l'instance EBS seront perdues. Toujours vérifier `--stack-name` avant d'exécuter.
+
 
 ##### Points clés de ce template production
 
@@ -485,9 +483,9 @@ http://ec2-15-236-78-42.eu-west-3.compute.amazonaws.com
 
 Une fois le template rédigé, on peut le déployer depuis la ligne de commande :
 
-:::info
-**Valider le template avant déploiement :** Avant de créer une stack, il est conseillé de valider la syntaxe YAML avec `aws cloudformation validate-template --template-body file://mon-fichier.yaml`. Cette commande vérifie la syntaxe mais pas la validité des valeurs (AMI ID, type d'instance, etc.).
-:::
+> [!info]
+> **Valider le template avant déploiement :** Avant de créer une stack, il est conseillé de valider la syntaxe YAML avec `aws cloudformation validate-template --template-body file://mon-fichier.yaml`. Cette commande vérifie la syntaxe mais pas la validité des valeurs (AMI ID, type d'instance, etc.).
+
 
 ```bash
 # 1. Créer la stack (remplacer mon-fichier.yaml par le chemin réel)
@@ -524,52 +522,52 @@ aws cloudformation delete-stack \
   --region eu-west-1
 ```
 
-:::success
-**Résultat attendu :**
-```json
-# create-stack :
-{
-    "StackId": "arn:aws:cloudformation:eu-west-1:123456789012:stack/ma-premiere-stack/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-}
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> # create-stack :
+> {
+>     "StackId": "arn:aws:cloudformation:eu-west-1:123456789012:stack/ma-premiere-stack/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+> }
+>
+> # describe-stack-events (extrait) :
+> {
+>     "StackEvents": [
+>         {
+>             "StackId": "arn:aws:cloudformation:eu-west-1:...",
+>             "EventId": "...",
+>             "ResourceStatus": "CREATE_COMPLETE",
+>             "ResourceType": "AWS::EC2::Instance",
+>             "LogicalResourceId": "MonInstance",
+>             "Timestamp": "2026-03-24T10:32:15.000Z"
+>         },
+>         {
+>             "ResourceStatus": "CREATE_COMPLETE",
+>             "ResourceType": "AWS::CloudFormation::Stack",
+>             "LogicalResourceId": "ma-premiere-stack"
+>         }
+>     ]
+> }
+>
+> # describe-stacks (Outputs) :
+> [
+>     {
+>         "OutputKey": "PublicIP",
+>         "OutputValue": "54.12.34.56",
+>         "Description": "Adresse IP publique de l'instance EC2"
+>     },
+>     {
+>         "OutputKey": "WebServerURL",
+>         "OutputValue": "http://54.12.34.56",
+>         "Description": "URL pour accéder au serveur web"
+>     }
+> ]
+> ```
 
-# describe-stack-events (extrait) :
-{
-    "StackEvents": [
-        {
-            "StackId": "arn:aws:cloudformation:eu-west-1:...",
-            "EventId": "...",
-            "ResourceStatus": "CREATE_COMPLETE",
-            "ResourceType": "AWS::EC2::Instance",
-            "LogicalResourceId": "MonInstance",
-            "Timestamp": "2026-03-24T10:32:15.000Z"
-        },
-        {
-            "ResourceStatus": "CREATE_COMPLETE",
-            "ResourceType": "AWS::CloudFormation::Stack",
-            "LogicalResourceId": "ma-premiere-stack"
-        }
-    ]
-}
 
-# describe-stacks (Outputs) :
-[
-    {
-        "OutputKey": "PublicIP",
-        "OutputValue": "54.12.34.56",
-        "Description": "Adresse IP publique de l'instance EC2"
-    },
-    {
-        "OutputKey": "WebServerURL",
-        "OutputValue": "http://54.12.34.56",
-        "Description": "URL pour accéder au serveur web"
-    }
-]
-```
-:::
+> [!danger]
+> **Attention — `delete-stack` supprime TOUTES les ressources !** La commande `aws cloudformation delete-stack` détruit définitivement toutes les ressources créées par la stack (instances EC2, VPC, RDS, S3…). Il n'y a pas de corbeille. Assurez-vous d'avoir des sauvegardes et de cibler la bonne stack avant d'exécuter cette commande.
 
-:::danger
-**Attention — `delete-stack` supprime TOUTES les ressources !** La commande `aws cloudformation delete-stack` détruit définitivement toutes les ressources créées par la stack (instances EC2, VPC, RDS, S3…). Il n'y a pas de corbeille. Assurez-vous d'avoir des sauvegardes et de cibler la bonne stack avant d'exécuter cette commande.
-:::
 
 ---
 
@@ -584,9 +582,9 @@ aws cloudformation delete-stack \
 | **Rollback** | Si une erreur survient, CloudFormation annule les changements automatiquement |
 | **Coût** | CloudFormation est gratuit (on paie seulement les ressources créées) |
 
-:::warning
-**CloudFormation Drift — Divergence de configuration :** Si vous modifiez manuellement des ressources gérées par CloudFormation (via la console ou la CLI), elles entrent en état de **drift** — elles ne correspondent plus au template. CloudFormation ne détecte pas ces écarts automatiquement. Utilisez `aws cloudformation detect-stack-drift --stack-name <nom>` pour identifier les ressources divergentes. Règle d'or : **ne jamais modifier manuellement une ressource gérée par CloudFormation**.
-:::
+> [!warning]
+> **CloudFormation Drift — Divergence de configuration :** Si vous modifiez manuellement des ressources gérées par CloudFormation (via la console ou la CLI), elles entrent en état de **drift** — elles ne correspondent plus au template. CloudFormation ne détecte pas ces écarts automatiquement. Utilisez `aws cloudformation detect-stack-drift --stack-name <nom>` pour identifier les ressources divergentes. Règle d'or : **ne jamais modifier manuellement une ressource gérée par CloudFormation**.
+
 
 > **Référence** : [CloudFormation Template Reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-reference.html)
 

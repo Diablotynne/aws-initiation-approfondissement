@@ -3,11 +3,10 @@ title: Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2
 description: S3, AMI, instances EC2, stockage EBS, équilibrage de charge et Auto Scaling.
 ---
 
-# Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2
-
-Chaque entr&eacute;e ci-dessous ouvre une page consacr&eacute;e &agrave; un seul concept. Utilisez les liens Pr&eacute;c&eacute;dent et Suivant pour suivre la progression de la journ&eacute;e.
+Chaque entr&eacute;e ci-dessous ouvre une page consacr&eacute;e &agrave; un seul concept. Utilisez les liens Pr&eacute;c&eacute;dent et Suivant pour suivre la progression du chapitre.
 
 <nav class="chapter-map" aria-label="Sous-chapitres de la journee">
+  <a href="cours/chapitre-3/objectifs">Objectifs du chapitre</a>
   <a href="cours/chapitre-3/vocabulaire">Vocabulaire du chapitre</a>
   <a href="cours/chapitre-3/stockage-aws">Introduction aux services de stockage AWS</a>
   <a href="cours/chapitre-3/s3">Amazon S3 : Le stockage objet scalable</a>
@@ -23,6 +22,8 @@ Chaque entr&eacute;e ci-dessous ouvre une page consacr&eacute;e &agrave; un seul
   <a href="cours/chapitre-3/haute-disponibilite">Bonnes pratiques — Architecture hautement disponible</a>
   <a href="cours/chapitre-3/conformite">Conformité et sécurité pour les données sensibles</a>
   <a href="cours/chapitre-3/points-attention">Points importants et pièges fréquents</a>
+  <a href="cours/chapitre-3/fiche-memoire">Fiche mémo — Stockage et calcul</a>
+  <a href="cours/chapitre-3/travaux-pratiques">Travaux pratiques — Amazon S3 et Amazon EC2</a>
   <a href="cours/chapitre-3/ressources">Ressources</a>
   <a href="cours/chapitre-3/quiz">Quiz interactif du chapitre</a>
 </nav>

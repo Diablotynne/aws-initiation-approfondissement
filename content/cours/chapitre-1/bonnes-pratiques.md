@@ -3,8 +3,6 @@ title: "10. Bonnes pratiques de démarrage"
 description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 10. Bonnes pratiques de démarrage"
 ---
 
-# 10. Bonnes pratiques de démarrage
-
 <nav class="page-sequence"><a href="cours/chapitre-1/services-aws">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/points-attention">Suivant</a></nav>
 
 ### 10.1 Repères pour la navigation dans la console AWS
@@ -25,10 +23,10 @@ Voici les éléments essentiels à repérer dans la console pendant la démonstr
 
 Retenons que certaines ressources sont **spécifiques à une région** et que la facturation dépend de cette localisation.
 
-:::warning
-**Piège fréquent — mauvaise région active :**
-Si vous créez des ressources dans une région autre que celle attendue (ex. `us-east-1` au lieu de `eu-west-3`), vous ne les verrez pas dans votre vue habituelle et continuerez à les payer. Vérifiez toujours le sélecteur de région en haut à droite de la console avant toute création de ressource.
-:::
+> [!warning]
+> **Piège fréquent — mauvaise région active :**
+> Si vous créez des ressources dans une région autre que celle attendue (ex. `us-east-1` au lieu de `eu-west-3`), vous ne les verrez pas dans votre vue habituelle et continuerez à les payer. Vérifiez toujours le sélecteur de région en haut à droite de la console avant toute création de ressource.
+
 
 ---
 

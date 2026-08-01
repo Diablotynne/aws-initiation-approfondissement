@@ -3,8 +3,6 @@ title: "3. Fédération d'identité et SSO avec IAM Identity Center"
 description: "Chapitre 2 — Sécurité des accès avec AWS IAM - 3. Fédération d'identité et SSO avec IAM Identity Center"
 ---
 
-# 3. Fédération d'identité et SSO avec IAM Identity Center
-
 <nav class="page-sequence"><a href="cours/chapitre-2/mfa-politiques">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/cognito">Suivant</a></nav>
 
 ### 3.1 Introduction à la fédération d'identité
@@ -28,7 +26,7 @@ Grâce à cette approche :
 
 ### 3.2 IAM Identity Center vs IAM classique — Clarification pour débutant
 
-Beaucoup de stagiaires confondent ces deux concepts. Voici la différence **essentielle** :
+Ces deux concepts sont fréquemment confondus. La différence essentielle porte sur la source de l'identité et la façon dont la session AWS est obtenue :
 
 | Critère | IAM classique | IAM Identity Center |
 |---------|---------------|-------------------|
@@ -80,9 +78,9 @@ Pour une entreprise ayant un **AD local** ou **Azure AD**, AD FS permet de crée
 
 #### Architecture générale : AD FS → AWS IAM
 
-<img src="assets/schemas/saml-adfs-flow.svg"
+<a class="schema-zoom" href="assets/schemas/saml-adfs-flow.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/saml-adfs-flow.svg"
      alt="Flux SSO — AD FS vers AWS IAM (SAML)"
-     style="display:block; margin:auto; width:90%">
+     style="display:block; margin:auto; width:90%"></a>
 
 **Lecture du schéma.** L'utilisateur s'authentifie auprès d'AD FS, qui joue le rôle de fournisseur d'identité. AD FS émet une assertion SAML signée ; AWS la valide, associe l'utilisateur à un rôle autorisé et remet une session temporaire. Le mot de passe d'entreprise n'est pas transmis à AWS.
 
@@ -152,9 +150,9 @@ Explication :
 - La **confiance de certificat** doit être validée côté AWS.
 - Si AD FS tombe, les utilisateurs **ne peuvent plus accéder à AWS** (prévoir un backup ou un accès d'urgence).
 
-:::warning
-**Single Point of Failure SAML.** Si l'IdP (AD FS, Azure AD, Okta) devient indisponible, tous les accès fédérés AWS sont coupés. Prévoyez toujours un compte IAM d'urgence ("break-glass account") avec MFA, stocké en lieu sûr, pour récupérer l'accès en cas de panne de l'IdP.
-:::
+> [!warning]
+> **Single Point of Failure SAML.** Si l'IdP (AD FS, Azure AD, Okta) devient indisponible, tous les accès fédérés AWS sont coupés. Prévoyez toujours un compte IAM d'urgence ("break-glass account") avec MFA, stocké en lieu sûr, pour récupérer l'accès en cas de panne de l'IdP.
+
 
 📎 [Configuring AD FS as SAML Provider](https://docs.aws.amazon.com/singlesignon/latest/userguide/adfs.html)
 
@@ -217,7 +215,7 @@ Cela permet de synchroniser les groupes et utilisateurs automatiquement.
 * Tenir à jour les métadonnées SAML (certificats, endpoints).
 * Surveiller les connexions via CloudTrail.
 
-📹 [AWS IAM : comment gérer les permissions de ses équipes ?](https://www.youtube.com/watch?v=ZMHlBza1l1A)
+<div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/ZMHlBza1l1A" title="AWS IAM : gérer les permissions des équipes" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
 ---
 

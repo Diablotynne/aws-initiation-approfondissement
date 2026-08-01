@@ -3,8 +3,6 @@ title: "2. Fondamentaux du Cloud Computing"
 description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 2. Fondamentaux du Cloud Computing"
 ---
 
-# 2. Fondamentaux du Cloud Computing
-
 <nav class="page-sequence"><a href="cours/chapitre-1/introduction">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/modeles-service">Suivant</a></nav>
 
 ### 2.1 Qu'est-ce que le Cloud Computing ?
@@ -74,10 +72,10 @@ Avec le Cloud, elles passent à un modèle **OPEX** (*Operational Expenditures*)
 
 La différence ? Flexibilité, prévisibilité des coûts, et liberté d'adapter l'infrastructure en temps réel.
 
-:::warning
-**Attention aux coûts AWS — le modèle OPEX peut surprendre :**
-Une instance EC2 laissée tournante 24h/7j sans utilisation reste facturée. Contrairement à un investissement CAPEX amorti sur plusieurs années, les coûts OPEX s'accumulent en temps réel. Activez toujours des **alertes de budget (AWS Budgets)** dès le premier jour.
-:::
+> [!warning]
+> **Attention aux coûts AWS — le modèle OPEX peut surprendre :**
+> Une instance EC2 laissée tournante 24h/7j sans utilisation reste facturée. Contrairement à un investissement CAPEX amorti sur plusieurs années, les coûts OPEX s'accumulent en temps réel. Activez toujours des **alertes de budget (AWS Budgets)** dès le premier jour.
+
 
 📎 [AWS Economics Center](https://aws.amazon.com/economics/)
 
@@ -116,7 +114,7 @@ Avec **le Cloud AWS**, ce modèle est **complètement bouleversé**.
   * Accepter la rapidité et parfois le désordre initial.
   * Former et responsabiliser les équipes pour qu'elles deviennent **consommatrices actives** du cloud.
 
-« Avant, il fallait une demande, une validation, une livraison. Aujourd'hui, on clique — ou on lance une commande API — et on a une infrastructure prête en quelques secondes. Cette autonomie est la clé du Cloud, mais elle exige une nouvelle culture : celle de la confiance, de la responsabilisation et de la gouvernance bien pensée. »
+Le libre-service réduit le délai entre une demande et la mise à disposition d'une ressource. Cette autonomie doit être encadrée par des politiques, des quotas, une traçabilité et une attribution claire des coûts.
 
 ### 2.5 Les limites et contraintes du Cloud
 
@@ -141,15 +139,15 @@ Le **client**, de son côté, porte la responsabilité de la **sécurité dans l
 
 Cela signifie que même si AWS est hautement sécurisé, **une mauvaise configuration côté client peut compromettre la sécurité** (par ex. un bucket S3 public par erreur).
 
-:::danger
-**Responsabilité client — erreurs fréquentes en production :**
-- Un bucket S3 configuré en **accès public par erreur** expose toutes vos données sur Internet.
-- L'utilisation du **compte root** pour les opérations quotidiennes est une faille de sécurité majeure.
-- Un **Security Group ouvert sur 0.0.0.0/0 port 22** expose vos instances SSH au monde entier.
-- L'absence de **MFA** sur le compte root est la première cause de compromission de compte AWS.
+> [!danger]
+> **Responsabilité client — erreurs fréquentes en production :**
+> - Un bucket S3 configuré en **accès public par erreur** expose toutes vos données sur Internet.
+> - L'utilisation du **compte root** pour les opérations quotidiennes est une faille de sécurité majeure.
+> - Un **Security Group ouvert sur 0.0.0.0/0 port 22** expose vos instances SSH au monde entier.
+> - L'absence de **MFA** sur le compte root est la première cause de compromission de compte AWS.
+>
+> AWS ne peut pas vous protéger de vos propres erreurs de configuration — c'est votre responsabilité.
 
-AWS ne peut pas vous protéger de vos propres erreurs de configuration — c'est votre responsabilité.
-:::
 
 📎 [Shared Responsibility Model – AWS](https://aws.amazon.com/fr/compliance/shared-responsibility-model/)
 
@@ -163,7 +161,7 @@ La **sécurité de l'information** repose sur trois piliers fondamentaux (**CID*
 | **Intégrité** | Les données ne doivent pas être altérées ou corrompues. | Checksums, versioning S3 |
 | **Disponibilité** | Les systèmes doivent être accessibles à tout moment. | Multi-AZ, Load Balancer, snapshots |
 
-Ce tableau cite trois exemples AWS dont vous ne verrez le détail que plus tard dans la formation — c'est normal à ce stade : **IAM** (gestion des identités et des accès) est le sujet entier du Chapitre 2, **KMS** (Key Management Service, le service de gestion des clés de chiffrement) et les **Bucket Policies** (règles d'accès attachées à un bucket S3) seront présentés respectivement en section 6 de ce chapitre et au Chapitre 3. Retenez pour l'instant seulement le principe : chaque pilier CID s'appuie sur des outils AWS concrets que vous manipulerez au fil de la formation.
+Les mécanismes cités sont approfondis dans les chapitres suivants : **IAM** gère les identités et autorisations, **KMS** les clés de chiffrement, et les **bucket policies** les autorisations attachées aux buckets S3. À ce stade, il faut retenir que confidentialité, intégrité et disponibilité reposent sur plusieurs contrôles complémentaires.
 
 AWS fournit des outils et des certifications (ISO 27001, SOC 2, PCI-DSS…), mais **l'entreprise reste responsable de son usage**.
 

@@ -3,8 +3,6 @@ title: "2. Sécuriser les accès IAM avec MFA et politiques conditionnelles"
 description: "Chapitre 2 — Sécurité des accès avec AWS IAM - 2. Sécuriser les accès IAM avec MFA et politiques conditionnelles"
 ---
 
-# 2. Sécuriser les accès IAM avec MFA et politiques conditionnelles
-
 <nav class="page-sequence"><a href="cours/chapitre-2/iam">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/federation-sso">Suivant</a></nav>
 
 ### 2.1 Pourquoi MFA et politiques conditionnelles ?
@@ -47,7 +45,7 @@ Dans AWS, la MFA s'applique :
 | MFA matérielle | Clé physique dédiée | YubiKey, Gemalto |
 | Passkey / FIDO2 | Authentification sans mot de passe | Clé biométrique ou physique compatible FIDO |
 
-**Gemalto** est un fabricant (aujourd'hui filiale de Thales) de clés de sécurité physiques concurrentes de YubiKey — les deux fonctionnent selon le même principe : un petit boîtier USB ou NFC à brancher/approcher pour valider la connexion, sans code à recopier. **FIDO2** (Fast IDentity Online 2) est le standard ouvert sur lequel reposent ces clés biométriques ou physiques : il définit comment le navigateur, l'appareil et le service en ligne dialoguent pour vérifier votre identité sans jamais transmettre de mot de passe — c'est la même technologie qui permet de se connecter avec son empreinte digitale ou Face ID sur un site compatible.
+Une clé de sécurité compatible **FIDO2** utilise la cryptographie à clé publique pour prouver la possession du facteur sans transmettre de secret partagé au service. Le modèle réduit notamment le risque d'hameçonnage par rapport à un code recopié manuellement.
 
 ---
 
@@ -60,9 +58,9 @@ Dans AWS, la MFA s'applique :
 
 📎 [AWS Security Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
 
-:::danger
-**MFA obligatoire sur le compte root et tous les comptes administrateurs.** Une connexion sans MFA sur un compte à privilèges élevés est la principale cause de compromission de comptes AWS. AWS Security Hub et IAM Access Analyzer peuvent détecter automatiquement les comptes sans MFA et générer des alertes.
-:::
+> [!danger]
+> **MFA obligatoire sur le compte root et tous les comptes administrateurs.** Une connexion sans MFA sur un compte à privilèges élevés est la principale cause de compromission de comptes AWS. AWS Security Hub et IAM Access Analyzer peuvent détecter automatiquement les comptes sans MFA et générer des alertes.
+
 
 ---
 
@@ -323,16 +321,16 @@ except Exception as e:
     print(f"Erreur STS : {e}")
 ```
 
-:::success
-**Résultat attendu — exécution du script Python STS :**
-```text
-AccessKeyId: ASIA4EXAMPLESTSTEMP
-SecretAccessKey: <masquée volontairement>
-SessionToken: AQoDYXdzEJr//////////wEaoAK...Hgc=
-Expiration: 2024-01-15 11:40:00+00:00
-```
-Les credentials temporaires STS se distinguent par leur `AccessKeyId` commençant par **`ASIA`** (vs `AKIA` pour les clés permanentes). Ils expirent automatiquement à l'heure indiquée — aucune révocation manuelle nécessaire.
-:::
+> [!tip]
+> **Résultat attendu — exécution du script Python STS :**
+> ```text
+> AccessKeyId: ASIA4EXAMPLESTSTEMP
+> SecretAccessKey: <masquée volontairement>
+> SessionToken: AQoDYXdzEJr//////////wEaoAK...Hgc=
+> Expiration: 2024-01-15 11:40:00+00:00
+> ```
+> Les credentials temporaires STS se distinguent par leur `AccessKeyId` commençant par **`ASIA`** (vs `AKIA` pour les clés permanentes). Ils expirent automatiquement à l'heure indiquée — aucune révocation manuelle nécessaire.
+
 
 Ce code illustre comment un **broker** peut obtenir et distribuer des credentials temporaires.
 

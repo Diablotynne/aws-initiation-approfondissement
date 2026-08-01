@@ -3,9 +3,7 @@ title: "8. Choisir la bonne solution d'authentification AWS"
 description: "Chapitre 2 — Sécurité des accès avec AWS IAM - 8. Choisir la bonne solution d'authentification AWS"
 ---
 
-# 8. Choisir la bonne solution d'authentification AWS
-
-<nav class="page-sequence"><a href="cours/chapitre-2/points-attention">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/ressources">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/points-attention">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/fiche-memoire">Suivant</a></nav>
 
 AWS propose de nombreux services d'authentification. Voici une carte complète pour savoir lequel choisir.
 
@@ -87,4 +85,4 @@ Utilisé par :                         Utilisé pour :
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-2/points-attention">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/ressources">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/points-attention">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/fiche-memoire">Suivant</a></nav>

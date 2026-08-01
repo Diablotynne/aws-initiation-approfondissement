@@ -3,8 +3,6 @@ title: "8. Elastic Load Balancing (ELB) — Répartition du trafic"
 description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 8. Elastic Load Balancing (ELB) — Répartition du trafic"
 ---
 
-# 8. Elastic Load Balancing (ELB) — Répartition du trafic
-
 <nav class="page-sequence"><a href="cours/chapitre-3/tarification-ec2">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/auto-scaling">Suivant</a></nav>
 
 ### 8.1 Pourquoi un Load Balancer ?
@@ -13,9 +11,9 @@ Un **Load Balancer** agit comme un répartiteur de trafic. Il reçoit les requê
 
 #### Architecture simple
 
-<img src="assets/schemas/elb-architecture.svg"
+<a class="schema-zoom" href="assets/schemas/elb-architecture.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/elb-architecture.svg"
      alt="Elastic Load Balancing — Architecture"
-     style="display:block; margin:auto; width:90%">
+     style="display:block; margin:auto; width:90%"></a>
 
 **Lecture du schéma.** Le répartiteur reçoit le trafic client et l'envoie uniquement aux cibles déclarées saines par les contrôles d'état. Les instances sont réparties sur plusieurs zones de disponibilité afin qu'une défaillance de zone n'interrompe pas nécessairement le service.
 

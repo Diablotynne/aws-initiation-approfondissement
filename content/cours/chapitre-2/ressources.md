@@ -3,9 +3,7 @@ title: "Ressources"
 description: "Chapitre 2 — Sécurité des accès avec AWS IAM - Ressources"
 ---
 
-# Ressources
-
-<nav class="page-sequence"><a href="cours/chapitre-2/choix-authentification">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/quiz">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/travaux-pratiques">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/quiz">Suivant</a></nav>
 
 ### Documentation officielle AWS
 - [AWS IAM Documentation](https://docs.aws.amazon.com/iam/)
@@ -16,4 +14,4 @@ description: "Chapitre 2 — Sécurité des accès avec AWS IAM - Ressources"
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-2/choix-authentification">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/quiz">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/travaux-pratiques">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/quiz">Suivant</a></nav>

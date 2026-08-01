@@ -3,8 +3,6 @@ title: "9. Auto Scaling — Adaptation dynamique des ressources"
 description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 9. Auto Scaling — Adaptation dynamique des ressources"
 ---
 
-# 9. Auto Scaling — Adaptation dynamique des ressources
-
 <nav class="page-sequence"><a href="cours/chapitre-3/elb">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/lambda">Suivant</a></nav>
 
 ### 9.1 Qu'est-ce qu'Auto Scaling ?
@@ -108,23 +106,23 @@ aws autoscaling put-scaling-policy \
     }'
 ```
 
-:::success
-**Résultat attendu :**
-```json
-# put-scaling-policy (cpu-scale-out) retourne :
-{
-    "PolicyARN": "arn:aws:autoscaling:eu-west-1:123456789012:scalingPolicy:a1b2c3d4:autoScalingGroupName/mon-asg:policyName/cpu-scale-out",
-    "Alarms": [
-        {
-            "AlarmName": "TargetTracking-mon-asg-AlarmHigh-cpu-scale-out",
-            "AlarmARN": "arn:aws:cloudwatch:eu-west-1:123456789012:alarm:TargetTracking-mon-asg-AlarmHigh"
-        }
-    ]
-}
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> # put-scaling-policy (cpu-scale-out) retourne :
+> {
+>     "PolicyARN": "arn:aws:autoscaling:eu-west-1:123456789012:scalingPolicy:a1b2c3d4:autoScalingGroupName/mon-asg:policyName/cpu-scale-out",
+>     "Alarms": [
+>         {
+>             "AlarmName": "TargetTracking-mon-asg-AlarmHigh-cpu-scale-out",
+>             "AlarmARN": "arn:aws:cloudwatch:eu-west-1:123456789012:alarm:TargetTracking-mon-asg-AlarmHigh"
+>         }
+>     ]
+> }
+>
+> # put-scaling-policy (network-scale-out) retourne de même avec un ARN différent
+> ```
 
-# put-scaling-policy (network-scale-out) retourne de même avec un ARN différent
-```
-:::
 
 #### Cooldown Periods (délais entre actions)
 

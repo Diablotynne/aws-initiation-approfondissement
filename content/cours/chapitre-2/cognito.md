@@ -3,13 +3,11 @@ title: "4. Amazon Cognito : gestion d'identités applicatives"
 description: "Chapitre 2 — Sécurité des accès avec AWS IAM - 4. Amazon Cognito : gestion d'identités applicatives"
 ---
 
-# 4. Amazon Cognito : gestion d'identités applicatives
-
 <nav class="page-sequence"><a href="cours/chapitre-2/federation-sso">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/organizations">Suivant</a></nav>
 
 ### 4.1 Différence : IAM vs Cognito
 
-Souvent, les stagiaires confondent IAM et Cognito. C'est normal — ce sont tous les deux des services d'identité. Mais ils n'ont **pas le même public** :
+IAM et Cognito traitent tous deux des identités, mais répondent à des usages distincts :
 
 - **IAM** = gestion des identités **administratives** (accès AWS pour l'équipe IT/DevOps).
 - **Amazon Cognito** = gestion des identités **applicatives** (accès à une application web ou mobile pour les utilisateurs finaux).

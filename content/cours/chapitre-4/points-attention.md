@@ -3,9 +3,7 @@ title: "5. Points importants et pièges fréquents"
 description: "Chapitre 4 — Amazon VPC et bases de données AWS - 5. Points importants et pièges fréquents"
 ---
 
-# 5. Points importants et pièges fréquents
-
-<nav class="page-sequence"><a href="cours/chapitre-4/elasticache">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/ressources">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-4/elasticache">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/fiche-memoire">Suivant</a></nav>
 
 ### 5.1 Pièges RDS et Bases de données
 
@@ -41,16 +39,16 @@ description: "Chapitre 4 — Amazon VPC et bases de données AWS - 5. Points imp
 | **Health Check ≠ Failover automatique** | Health check détecte panne, failover redirection | Juste détecter ne suffit pas | Configurer failover + health check |
 | **Alias Records ≠ CNAME** | Alias = pointeur AWS (gratuit, flexible), CNAME = alias DNS classique | Confondre risque problèmes CNAME root | Toujours Alias pour AWS resources (ALB, CloudFront) |
 
-:::warning
-**TTL Route 53 trop court = coût de requêtes élevé**
+> [!warning]
+> **TTL Route 53 trop court = coût de requêtes élevé**
+>
+> Un TTL très court peut augmenter le nombre de résolutions DNS et donc le coût des requêtes. Le trafic HTTP n'est toutefois pas égal au nombre de résolutions : les résolveurs et les clients mettent les réponses en cache. Mesurez les requêtes DNS réelles au lieu de les déduire directement des requêtes applicatives.
+>
+> **Règle** :
+> - TTL **300s** (5 min) pour la plupart des enregistrements stables
+> - TTL **60s** maximum pendant une migration ou un failover planifié
+> - Remonter le TTL à **300-3600s** après stabilisation
 
-Un TTL très court peut augmenter le nombre de résolutions DNS et donc le coût des requêtes. Le trafic HTTP n'est toutefois pas égal au nombre de résolutions : les résolveurs et les clients mettent les réponses en cache. Mesurez les requêtes DNS réelles au lieu de les déduire directement des requêtes applicatives.
-
-**Règle** :
-- TTL **300s** (5 min) pour la plupart des enregistrements stables
-- TTL **60s** maximum pendant une migration ou un failover planifié
-- Remonter le TTL à **300-3600s** après stabilisation
-:::
 
 ### 5.4 Pièges DynamoDB
 
@@ -80,4 +78,4 @@ Un TTL très court peut augmenter le nombre de résolutions DNS et donc le coût
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-4/elasticache">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/ressources">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-4/elasticache">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/fiche-memoire">Suivant</a></nav>

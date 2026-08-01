@@ -3,8 +3,6 @@ title: "4. Amazon ElastiCache — Mise en cache distribuée"
 description: "Chapitre 4 — Amazon VPC et bases de données AWS - 4. Amazon ElastiCache — Mise en cache distribuée"
 ---
 
-# 4. Amazon ElastiCache — Mise en cache distribuée
-
 <nav class="page-sequence"><a href="cours/chapitre-4/route-53">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/points-attention">Suivant</a></nav>
 
 ### 4.1 Pourquoi une couche cache ?
@@ -139,9 +137,9 @@ PUBLISH channel:notifications "Hello" # Diffuser
 
 ### 4.6 Créer un cluster Redis en CLI
 
-:::info
-Une activité pratique permet d’approfondir le déploiement d’un cache Redis.
-:::
+> [!info]
+> Une activité pratique permet d’approfondir le déploiement d’un cache Redis.
+
 
 On crée ici le type de cluster le plus simple : un nœud Redis unique, sans réplication. En production, on ajouterait un groupe de réplication (`create-replication-group`) avec un nœud primaire et des replicas, mais ce modèle suffit pour comprendre les concepts.
 
@@ -168,28 +166,28 @@ aws elasticache describe-cache-clusters \
 # Résultat exemple : formation-redis-simple.abc123.ng.0001.euw1.cache.amazonaws.com:6379
 ```
 
-:::success
-**Résultat attendu :**
-```json
-{
-    "CacheClusters": [{
-        "CacheClusterId": "formation-redis-simple",
-        "CacheClusterStatus": "available",
-        "Engine": "redis",
-        "EngineVersion": "7.0.7",
-        "CacheNodeType": "cache.t3.micro",
-        "CacheNodes": [{
-            "CacheNodeId": "0001",
-            "CacheNodeStatus": "available",
-            "Endpoint": {
-                "Address": "formation-redis-simple.abc123.ng.0001.euw1.cache.amazonaws.com",
-                "Port": 6379
-            }
-        }]
-    }]
-}
-```
-:::
+> [!tip]
+> **Résultat attendu :**
+> ```json
+> {
+>     "CacheClusters": [{
+>         "CacheClusterId": "formation-redis-simple",
+>         "CacheClusterStatus": "available",
+>         "Engine": "redis",
+>         "EngineVersion": "7.0.7",
+>         "CacheNodeType": "cache.t3.micro",
+>         "CacheNodes": [{
+>             "CacheNodeId": "0001",
+>             "CacheNodeStatus": "available",
+>             "Endpoint": {
+>                 "Address": "formation-redis-simple.abc123.ng.0001.euw1.cache.amazonaws.com",
+>                 "Port": 6379
+>             }
+>         }]
+>     }]
+> }
+> ```
+
 
 ```bash
 # 4. Créer un Replication Group (Multi-AZ avec failover auto)

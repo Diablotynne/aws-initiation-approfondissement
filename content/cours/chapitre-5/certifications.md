@@ -3,21 +3,19 @@ title: "9. Certifications AWS — Objectif SAA-C03"
 description: "Chapitre 5 — Automatisation, supervision et reprise d'activité - 9. Certifications AWS — Objectif SAA-C03"
 ---
 
-# 9. Certifications AWS — Objectif SAA-C03
-
-<nav class="page-sequence"><a href="cours/chapitre-5/evenements">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/ressources">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/evenements">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/fiche-memoire">Suivant</a></nav>
 
 Le Chapitre 1 a présenté les quatre niveaux de certification AWS (Fondamental, Associate, Professional, Specialty) et pourquoi cette formation cible la **Solutions Architect Associate (SAA-C03)**. Maintenant que vous avez vu l'ensemble des services du programme, voici ce qui compte vraiment pour préparer concrètement cet examen : la pondération réelle des domaines testés.
 
-<img src="assets/schemas/aws-certification-path.svg"
+<a class="schema-zoom" href="assets/schemas/aws-certification-path.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/aws-certification-path.svg"
      alt="Parcours de certification AWS : Foundational, puis trois Associate (dont SAA-C03 ciblé par cette formation), puis Professional, puis Specialty"
-     style="display:block; margin:auto; width:90%">
+     style="display:block; margin:auto; width:90%"></a>
 
 **Lecture du schéma.** Les niveaux représentent une progression de profondeur, pas des prérequis obligatoires entre toutes les certifications. Le choix d'un examen dépend du rôle visé et de l'expérience pratique ; les codes et versions d'examen doivent toujours être vérifiés sur le site officiel AWS avant inscription.
 
-:::info
-**Besoin d'un rappel des 4 niveaux de certification ?** Retournez au Chapitre 1, section 1.3.
-:::
+> [!info]
+> **Besoin d'un rappel des 4 niveaux de certification ?** Retournez au Chapitre 1, section 1.3.
+
 
 ---
 
@@ -49,4 +47,4 @@ Le préfixe du code identifie l'examen et le suffixe `-C0x` sa version. Le catal
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-5/evenements">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/ressources">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/evenements">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/fiche-memoire">Suivant</a></nav>
