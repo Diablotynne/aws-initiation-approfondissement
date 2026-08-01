@@ -5,7 +5,7 @@ description: "Chapitre 2 — Sécurité des accès avec AWS IAM - 4. Amazon Cogn
 
 # 4. Amazon Cognito : gestion d'identités applicatives
 
-<nav class="page-sequence"><a href="../../cours/chapitre-2/federation-sso">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-2/">Sommaire</a> <a href="../../cours/chapitre-2/organizations">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/federation-sso">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/organizations">Suivant</a></nav>
 
 ### 4.1 Différence : IAM vs Cognito
 
@@ -38,4 +38,4 @@ Cognito est souvent utilisé dans les architectures serverless ou mobiles. Il pe
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-2/federation-sso">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-2/">Sommaire</a> <a href="../../cours/chapitre-2/organizations">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/federation-sso">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/organizations">Suivant</a></nav>

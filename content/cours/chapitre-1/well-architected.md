@@ -5,7 +5,7 @@ description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 7. A
 
 # 7. AWS Well-Architected Framework
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/ecosysteme-aws">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/console-aws">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/ecosysteme-aws">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/console-aws">Suivant</a></nav>
 
 Le **Well-Architected Framework** est une méthodologie officielle AWS qui permet de **concevoir des architectures Cloud robustes**, sécurisées, performantes, optimisées en coûts et **durables**.
 
@@ -118,4 +118,4 @@ Cette approche sera **reprise au fil des jours**, notamment lors des ateliers EC
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/ecosysteme-aws">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/console-aws">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/ecosysteme-aws">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/console-aws">Suivant</a></nav>

@@ -5,7 +5,7 @@ description: "Chapitre 5 — Automatisation, supervision et reprise d'activité 
 
 # 9. Certifications AWS — Objectif SAA-C03
 
-<nav class="page-sequence"><a href="../../cours/chapitre-5/evenements">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-5/">Sommaire</a> <a href="../../cours/chapitre-5/ressources">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/evenements">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/ressources">Suivant</a></nav>
 
 Le Chapitre 1 a présenté les quatre niveaux de certification AWS (Fondamental, Associate, Professional, Specialty) et pourquoi cette formation cible la **Solutions Architect Associate (SAA-C03)**. Maintenant que vous avez vu l'ensemble des services du programme, voici ce qui compte vraiment pour préparer concrètement cet examen : la pondération réelle des domaines testés.
 
@@ -49,4 +49,4 @@ Le préfixe du code identifie l'examen et le suffixe `-C0x` sa version. Le catal
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-5/evenements">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-5/">Sommaire</a> <a href="../../cours/chapitre-5/ressources">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/evenements">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/ressources">Suivant</a></nav>

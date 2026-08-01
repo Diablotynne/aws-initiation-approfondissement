@@ -5,7 +5,7 @@ description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 10. 
 
 # 10. Bonnes pratiques de démarrage
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/services-aws">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/points-attention">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/services-aws">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/points-attention">Suivant</a></nav>
 
 ### 10.1 Repères pour la navigation dans la console AWS
 
@@ -32,4 +32,4 @@ Si vous créez des ressources dans une région autre que celle attendue (ex. `us
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/services-aws">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/points-attention">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/services-aws">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/points-attention">Suivant</a></nav>

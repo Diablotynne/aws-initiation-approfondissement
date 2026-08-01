@@ -5,7 +5,7 @@ description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 11. 
 
 # 11. Points importants et pièges fréquents
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/bonnes-pratiques">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/ressources">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/bonnes-pratiques">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/ressources">Suivant</a></nav>
 
 | Piège | Réalité |
 |-------|---------|
@@ -22,4 +22,4 @@ description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 11. 
 
 Comprendre l'infrastructure ne suffit pas — encore faut-il la sécuriser. Le Chapitre 2 est entièrement consacré à la sécurité et à la gestion des identités dans AWS : comment **IAM** structure les droits et les accès, comment appliquer les bonnes pratiques de moindre privilège, et comment mettre en place une gouvernance solide.
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/bonnes-pratiques">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/ressources">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/bonnes-pratiques">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/ressources">Suivant</a></nav>

@@ -5,7 +5,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 9. Auto S
 
 # 9. Auto Scaling — Adaptation dynamique des ressources
 
-<nav class="page-sequence"><a href="../../cours/chapitre-3/elb">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-3/">Sommaire</a> <a href="../../cours/chapitre-3/lambda">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/elb">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/lambda">Suivant</a></nav>
 
 ### 9.1 Qu'est-ce qu'Auto Scaling ?
 
@@ -159,4 +159,4 @@ T=540s  CPU toujours < 30% → Scale-in (-1 instance)
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-3/elb">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-3/">Sommaire</a> <a href="../../cours/chapitre-3/lambda">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/elb">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/lambda">Suivant</a></nav>

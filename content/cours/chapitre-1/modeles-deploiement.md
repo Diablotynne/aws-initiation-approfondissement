@@ -5,7 +5,7 @@ description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 4. M
 
 # 4. Modèles de déploiement : Public, Privé et Hybride
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/modeles-service">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/virtualisation-conteneurs">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/modeles-service">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/virtualisation-conteneurs">Suivant</a></nav>
 
 Les **modèles de déploiement** définissent *où* sont hébergées les ressources Cloud et *qui* les gère.
 Ce choix a un impact direct sur la **gouvernance**, la **sécurité**, la **performance** et le **coût global** d'une solution Cloud.
@@ -203,4 +203,4 @@ Cette flexibilité est l'un des grands atouts d'AWS : vous pouvez commencer peti
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/modeles-service">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/virtualisation-conteneurs">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/modeles-service">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/virtualisation-conteneurs">Suivant</a></nav>

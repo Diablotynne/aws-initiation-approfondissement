@@ -5,7 +5,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 1. Introd
 
 # 1. Introduction aux services de stockage AWS
 
-<nav class="page-sequence"><a href="../../cours/chapitre-3/vocabulaire">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-3/">Sommaire</a> <a href="../../cours/chapitre-3/s3">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/vocabulaire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/s3">Suivant</a></nav>
 
 📹 **Vidéo** : [Introduction to Amazon S3](https://www.youtube.com/watch?v=4RI3pDKpx38)
 
@@ -38,4 +38,4 @@ AWS transpose ces modèles dans le Cloud et les **rend flexibles, évolutifs et 
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-3/vocabulaire">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-3/">Sommaire</a> <a href="../../cours/chapitre-3/s3">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/vocabulaire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/s3">Suivant</a></nav>

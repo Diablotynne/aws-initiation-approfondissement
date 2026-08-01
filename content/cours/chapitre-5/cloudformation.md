@@ -5,7 +5,7 @@ description: "Chapitre 5 — Automatisation, supervision et reprise d'activité 
 
 # 3. AWS CloudFormation — Infrastructure as Code
 
-<nav class="page-sequence"><a href="../../cours/chapitre-5/automatisation">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-5/">Sommaire</a> <a href="../../cours/chapitre-5/systems-manager">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/automatisation">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/systems-manager">Suivant</a></nav>
 
 ### 3.1 Qu'est-ce que CloudFormation ?
 
@@ -592,4 +592,4 @@ aws cloudformation delete-stack \
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-5/automatisation">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-5/">Sommaire</a> <a href="../../cours/chapitre-5/systems-manager">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/automatisation">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/systems-manager">Suivant</a></nav>

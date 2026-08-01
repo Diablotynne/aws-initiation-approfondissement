@@ -5,7 +5,7 @@ description: "Chapitre 4 — Amazon VPC et bases de données AWS - Vocabulaire d
 
 # Vocabulaire du chapitre
 
-<nav class="page-sequence"><a href="../../cours/chapitre-4/">Sommaire de la journ&eacute;e</a> <a href="../../cours/chapitre-4/">Sommaire</a> <a href="../../cours/chapitre-4/bases-donnees">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-4/index">Sommaire de la journ&eacute;e</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/bases-donnees">Suivant</a></nav>
 
 | Terme | Définition |
 |---|---|
@@ -43,4 +43,4 @@ Les instances EC2 et les buckets S3 déployés au chapitre précédent doivent m
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-4/">Sommaire de la journ&eacute;e</a> <a href="../../cours/chapitre-4/">Sommaire</a> <a href="../../cours/chapitre-4/bases-donnees">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-4/index">Sommaire de la journ&eacute;e</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/bases-donnees">Suivant</a></nav>

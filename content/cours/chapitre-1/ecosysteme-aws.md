@@ -5,7 +5,7 @@ description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 6. P
 
 # 6. Présentation d'AWS et de son écosystème
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/virtualisation-conteneurs">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/well-architected">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/virtualisation-conteneurs">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/well-architected">Suivant</a></nav>
 
 ### 6.1 Vue d'ensemble
 
@@ -154,4 +154,4 @@ Selon le service et l'engagement pris, plusieurs modes de tarification existent 
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/virtualisation-conteneurs">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/well-architected">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/virtualisation-conteneurs">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/well-architected">Suivant</a></nav>

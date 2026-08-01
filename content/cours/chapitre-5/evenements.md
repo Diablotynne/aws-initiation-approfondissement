@@ -5,7 +5,7 @@ description: "Chapitre 5 — Automatisation, supervision et reprise d'activité 
 
 # 8. Services complémentaires — Queues et événements
 
-<nav class="page-sequence"><a href="../../cours/chapitre-5/well-architected">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-5/">Sommaire</a> <a href="../../cours/chapitre-5/certifications">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/well-architected">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/certifications">Suivant</a></nav>
 
 ### 8.1 Amazon SQS — File d'attente de messages
 
@@ -299,4 +299,4 @@ Aucun composant de ce schéma ne connaît directement l'adresse réseau d'un aut
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-5/well-architected">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-5/">Sommaire</a> <a href="../../cours/chapitre-5/certifications">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/well-architected">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/certifications">Suivant</a></nav>

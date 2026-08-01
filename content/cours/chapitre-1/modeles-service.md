@@ -5,7 +5,7 @@ description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 3. M
 
 # 3. Modèles de services : IaaS, PaaS et SaaS
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/fondamentaux-cloud">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/modeles-deploiement">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/fondamentaux-cloud">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/modeles-deploiement">Suivant</a></nav>
 
 <img src="../../assets/schemas/modeles-service-cloud.svg"
      alt="Répartition des couches gérées par le client et par le fournisseur pour les modèles sur site, IaaS, PaaS et SaaS"
@@ -92,4 +92,4 @@ Retenons les cas d'usage typiques du SaaS — messagerie, CRM, outils de collabo
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/fondamentaux-cloud">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/modeles-deploiement">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/fondamentaux-cloud">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/modeles-deploiement">Suivant</a></nav>

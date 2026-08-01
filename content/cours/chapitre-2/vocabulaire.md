@@ -5,7 +5,7 @@ description: "Chapitre 2 — Sécurité des accès avec AWS IAM - Vocabulaire du
 
 # Vocabulaire du chapitre
 
-<nav class="page-sequence"><a href="../../cours/chapitre-2/">Sommaire de la journ&eacute;e</a> <a href="../../cours/chapitre-2/">Sommaire</a> <a href="../../cours/chapitre-2/iam">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/index">Sommaire de la journ&eacute;e</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/iam">Suivant</a></nav>
 
 | Terme | Définition |
 |---|---|
@@ -42,4 +42,4 @@ Le chapitre précédent a posé les bases théoriques du Cloud Computing et pré
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-2/">Sommaire de la journ&eacute;e</a> <a href="../../cours/chapitre-2/">Sommaire</a> <a href="../../cours/chapitre-2/iam">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/index">Sommaire de la journ&eacute;e</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/iam">Suivant</a></nav>

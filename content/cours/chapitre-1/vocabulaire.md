@@ -5,7 +5,7 @@ description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - Voca
 
 # Vocabulaire du chapitre
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/">Sommaire de la journ&eacute;e</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/introduction">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/index">Sommaire de la journ&eacute;e</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/introduction">Suivant</a></nav>
 
 | Terme | Définition |
 |---|---|
@@ -43,4 +43,4 @@ Cette formation débute par les fondations théoriques indispensables avant de m
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/">Sommaire de la journ&eacute;e</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/introduction">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/index">Sommaire de la journ&eacute;e</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/introduction">Suivant</a></nav>

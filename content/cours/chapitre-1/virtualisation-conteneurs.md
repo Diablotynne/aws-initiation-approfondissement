@@ -5,7 +5,7 @@ description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 5. F
 
 # 5. Fondamentaux techniques : Virtualisation et Conteneurs
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/modeles-deploiement">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/ecosysteme-aws">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/modeles-deploiement">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/ecosysteme-aws">Suivant</a></nav>
 
 Derrière le Cloud se cachent des **technologies fondamentales** qui le rendent possible.
 Deux piliers en particulier ont permis l'essor massif des infrastructures à la demande :
@@ -144,4 +144,4 @@ Ce tableau permet de bien fixer les différences entre VM et conteneurs.
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/modeles-deploiement">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/ecosysteme-aws">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/modeles-deploiement">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/ecosysteme-aws">Suivant</a></nav>

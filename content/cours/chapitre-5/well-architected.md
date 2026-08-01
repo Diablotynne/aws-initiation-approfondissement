@@ -5,7 +5,7 @@ description: "Chapitre 5 — Automatisation, supervision et reprise d'activité 
 
 # 7. AWS Well-Architected Framework — Mise en pratique
 
-<nav class="page-sequence"><a href="../../cours/chapitre-5/cloudwatch">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-5/">Sommaire</a> <a href="../../cours/chapitre-5/evenements">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/cloudwatch">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/evenements">Suivant</a></nav>
 
 Le Chapitre 1 a introduit les six piliers du **AWS Well-Architected Framework** (Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, Sustainability) avec leurs bonnes pratiques respectives. Maintenant que vous avez manipulé IAM, S3, EC2, Lambda, RDS, VPC et CloudFormation, vous disposez de tous les services nécessaires pour appliquer concrètement ce framework à un cas réel.
 
@@ -38,4 +38,4 @@ Le Chapitre 3 a détaillé le fonctionnement d'**AWS Compute Optimizer** (collec
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-5/cloudwatch">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-5/">Sommaire</a> <a href="../../cours/chapitre-5/evenements">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/cloudwatch">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/evenements">Suivant</a></nav>

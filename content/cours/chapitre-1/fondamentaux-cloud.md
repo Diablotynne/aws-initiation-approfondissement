@@ -5,7 +5,7 @@ description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 2. F
 
 # 2. Fondamentaux du Cloud Computing
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/introduction">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/modeles-service">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/introduction">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/modeles-service">Suivant</a></nav>
 
 ### 2.1 Qu'est-ce que le Cloud Computing ?
 
@@ -207,4 +207,4 @@ AWS met à disposition un outil appelé **AWS Migration Readiness Assessment (MR
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/introduction">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/modeles-service">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/introduction">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/modeles-service">Suivant</a></nav>

@@ -5,7 +5,7 @@ description: "Chapitre 5 — Automatisation, supervision et reprise d'activité 
 
 # 2. Pourquoi automatiser dans le Cloud ?
 
-<nav class="page-sequence"><a href="../../cours/chapitre-5/reprise">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-5/">Sommaire</a> <a href="../../cours/chapitre-5/cloudformation">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/reprise">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/cloudformation">Suivant</a></nav>
 
 ### 2.1 Le déploiement manuel : une source d'erreurs
 
@@ -166,4 +166,4 @@ La stack `wordpress-production` est en cours de création. Suivez la progression
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-5/reprise">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-5/">Sommaire</a> <a href="../../cours/chapitre-5/cloudformation">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/reprise">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/cloudformation">Suivant</a></nav>

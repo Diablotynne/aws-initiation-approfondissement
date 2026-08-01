@@ -5,7 +5,7 @@ description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 9. L
 
 # 9. Les services AWS les plus utilisés
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/console-aws">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/bonnes-pratiques">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/console-aws">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/bonnes-pratiques">Suivant</a></nav>
 
 AWS propose un catalogue étendu et évolutif couvrant le calcul, le stockage, le réseau, les bases de données, la sécurité et de nombreux services applicatifs. Il est plus utile de comprendre les familles et les critères de choix que de mémoriser un nombre de services rapidement périmé.
 Sa philosophie est simple : offrir à chaque entreprise, quelle que soit sa taille, **la même puissance technologique** qu'Amazon utilise pour ses propres opérations mondiales.
@@ -287,4 +287,4 @@ Les deux ressources ont été créées par CloudFormation dans le bon ordre. En 
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/console-aws">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/bonnes-pratiques">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/console-aws">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/bonnes-pratiques">Suivant</a></nav>

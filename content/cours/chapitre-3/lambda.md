@@ -5,7 +5,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 10. AWS L
 
 # 10. AWS Lambda — Le calcul sans serveur
 
-<nav class="page-sequence"><a href="../../cours/chapitre-3/auto-scaling">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-3/">Sommaire</a> <a href="../../cours/chapitre-3/architecture">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/auto-scaling">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/architecture">Suivant</a></nav>
 
 ### 10.1 Pourquoi Lambda, quand on a déjà EC2 et Auto Scaling ?
 
@@ -135,4 +135,4 @@ Cette formule explique le modèle sans figer un tarif. Pour comparer Lambda à E
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-3/auto-scaling">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-3/">Sommaire</a> <a href="../../cours/chapitre-3/architecture">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/auto-scaling">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/architecture">Suivant</a></nav>

@@ -5,7 +5,7 @@ description: "Chapitre 5 — Automatisation, supervision et reprise d'activité 
 
 # 5. AWS Elastic Beanstalk — Déploiement simplifié d'applications
 
-<nav class="page-sequence"><a href="../../cours/chapitre-5/systems-manager">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-5/">Sommaire</a> <a href="../../cours/chapitre-5/cloudwatch">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/systems-manager">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/cloudwatch">Suivant</a></nav>
 
 ### 5.1 Qu'est-ce que Elastic Beanstalk ?
 
@@ -238,4 +238,4 @@ CHOISIR LAMBDA si :
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-5/systems-manager">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-5/">Sommaire</a> <a href="../../cours/chapitre-5/cloudwatch">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/systems-manager">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/cloudwatch">Suivant</a></nav>

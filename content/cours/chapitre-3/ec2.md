@@ -5,7 +5,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 4. Amazon
 
 # 4. Amazon EC2 : La couche de calcul AWS
 
-<nav class="page-sequence"><a href="../../cours/chapitre-3/protection-s3">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-3/">Sommaire</a> <a href="../../cours/chapitre-3/instance-ec2">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/protection-s3">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/instance-ec2">Suivant</a></nav>
 
 ### 4.1 Introduction à EC2
 
@@ -41,4 +41,4 @@ _Lors du lancement d'une instance, vous devez choisir chacun de ces éléments._
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-3/protection-s3">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-3/">Sommaire</a> <a href="../../cours/chapitre-3/instance-ec2">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/protection-s3">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/instance-ec2">Suivant</a></nav>

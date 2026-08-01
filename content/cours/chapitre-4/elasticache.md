@@ -5,7 +5,7 @@ description: "Chapitre 4 — Amazon VPC et bases de données AWS - 4. Amazon Ela
 
 # 4. Amazon ElastiCache — Mise en cache distribuée
 
-<nav class="page-sequence"><a href="../../cours/chapitre-4/route-53">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-4/">Sommaire</a> <a href="../../cours/chapitre-4/points-attention">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-4/route-53">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/points-attention">Suivant</a></nav>
 
 ### 4.1 Pourquoi une couche cache ?
 
@@ -264,4 +264,4 @@ Selon le mode choisi, ElastiCache facture notamment la capacité des nœuds ou d
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-4/route-53">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-4/">Sommaire</a> <a href="../../cours/chapitre-4/points-attention">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-4/route-53">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/points-attention">Suivant</a></nav>

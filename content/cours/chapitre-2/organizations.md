@@ -5,7 +5,7 @@ description: "Chapitre 2 — Sécurité des accès avec AWS IAM - 5. Stratégie 
 
 # 5. Stratégie multi-comptes avec AWS Organizations
 
-<nav class="page-sequence"><a href="../../cours/chapitre-2/cognito">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-2/">Sommaire</a> <a href="../../cours/chapitre-2/cloudtrail">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/cognito">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/cloudtrail">Suivant</a></nav>
 
 ### 5.1 Problématique
 
@@ -312,4 +312,4 @@ AWS Budgets peut être configuré au niveau de l'organisation pour :
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-2/cognito">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-2/">Sommaire</a> <a href="../../cours/chapitre-2/cloudtrail">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/cognito">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/cloudtrail">Suivant</a></nav>

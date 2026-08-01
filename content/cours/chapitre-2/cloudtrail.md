@@ -5,7 +5,7 @@ description: "Chapitre 2 — Sécurité des accès avec AWS IAM - 6. Traçabilit
 
 # 6. Traçabilité et surveillance avec CloudTrail
 
-<nav class="page-sequence"><a href="../../cours/chapitre-2/organizations">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-2/">Sommaire</a> <a href="../../cours/chapitre-2/points-attention">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/organizations">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/points-attention">Suivant</a></nav>
 
 ### 6.1 Pourquoi surveiller les activités dans AWS ?
 
@@ -164,4 +164,4 @@ La facture dépend des fonctions activées et du volume observé. Il faut donc r
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-2/organizations">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-2/">Sommaire</a> <a href="../../cours/chapitre-2/points-attention">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/organizations">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/points-attention">Suivant</a></nav>

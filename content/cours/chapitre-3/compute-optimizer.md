@@ -5,7 +5,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 6. AWS Co
 
 # 6. AWS Compute Optimizer — Dimensionnement optimal
 
-<nav class="page-sequence"><a href="../../cours/chapitre-3/instance-ec2">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-3/">Sommaire</a> <a href="../../cours/chapitre-3/tarification-ec2">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/instance-ec2">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/tarification-ec2">Suivant</a></nav>
 
 ### 6.1 Qu'est-ce que AWS Compute Optimizer ?
 
@@ -82,4 +82,4 @@ Si aucune recommandation n'apparaît, Compute Optimizer manque encore de donnée
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-3/instance-ec2">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-3/">Sommaire</a> <a href="../../cours/chapitre-3/tarification-ec2">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/instance-ec2">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/tarification-ec2">Suivant</a></nav>

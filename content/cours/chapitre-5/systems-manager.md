@@ -5,7 +5,7 @@ description: "Chapitre 5 — Automatisation, supervision et reprise d'activité 
 
 # 4. AWS Systems Manager — Automatisation opérationnelle
 
-<nav class="page-sequence"><a href="../../cours/chapitre-5/cloudformation">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-5/">Sommaire</a> <a href="../../cours/chapitre-5/beanstalk">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/cloudformation">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/beanstalk">Suivant</a></nav>
 
 ### 4.1 Qu'est-ce que Systems Manager ?
 
@@ -304,4 +304,4 @@ aws ssm create-patch-baseline \
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-5/cloudformation">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-5/">Sommaire</a> <a href="../../cours/chapitre-5/beanstalk">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/cloudformation">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/beanstalk">Suivant</a></nav>

@@ -5,7 +5,7 @@ description: "Chapitre 2 — Sécurité des accès avec AWS IAM - 2. Sécuriser 
 
 # 2. Sécuriser les accès IAM avec MFA et politiques conditionnelles
 
-<nav class="page-sequence"><a href="../../cours/chapitre-2/iam">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-2/">Sommaire</a> <a href="../../cours/chapitre-2/federation-sso">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/iam">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/federation-sso">Suivant</a></nav>
 
 ### 2.1 Pourquoi MFA et politiques conditionnelles ?
 
@@ -343,4 +343,4 @@ Ce code illustre comment un **broker** peut obtenir et distribuer des credential
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-2/iam">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-2/">Sommaire</a> <a href="../../cours/chapitre-2/federation-sso">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/iam">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/federation-sso">Suivant</a></nav>

@@ -5,7 +5,7 @@ description: "Chapitre 5 — Automatisation, supervision et reprise d'activité 
 
 # 6. Amazon CloudWatch — Supervision et alarmes
 
-<nav class="page-sequence"><a href="../../cours/chapitre-5/beanstalk">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-5/">Sommaire</a> <a href="../../cours/chapitre-5/well-architected">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/beanstalk">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/well-architected">Suivant</a></nav>
 
 ### 6.1 Qu'est-ce que CloudWatch ?
 
@@ -394,4 +394,4 @@ print("Alarme CloudWatch créée avec succès")
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-5/beanstalk">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-5/">Sommaire</a> <a href="../../cours/chapitre-5/well-architected">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/beanstalk">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/well-architected">Suivant</a></nav>

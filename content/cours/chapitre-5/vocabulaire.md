@@ -5,7 +5,7 @@ description: "Chapitre 5 — Automatisation, supervision et reprise d'activité 
 
 # Vocabulaire du chapitre
 
-<nav class="page-sequence"><a href="../../cours/chapitre-5/">Sommaire de la journ&eacute;e</a> <a href="../../cours/chapitre-5/">Sommaire</a> <a href="../../cours/chapitre-5/reprise">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/index">Sommaire de la journ&eacute;e</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/reprise">Suivant</a></nav>
 
 | Terme | Définition |
 |---|---|
@@ -42,4 +42,4 @@ Le réseau et les bases de données mis en place au chapitre précédent constit
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-5/">Sommaire de la journ&eacute;e</a> <a href="../../cours/chapitre-5/">Sommaire</a> <a href="../../cours/chapitre-5/reprise">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/index">Sommaire de la journ&eacute;e</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/reprise">Suivant</a></nav>

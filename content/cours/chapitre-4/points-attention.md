@@ -5,7 +5,7 @@ description: "Chapitre 4 — Amazon VPC et bases de données AWS - 5. Points imp
 
 # 5. Points importants et pièges fréquents
 
-<nav class="page-sequence"><a href="../../cours/chapitre-4/elasticache">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-4/">Sommaire</a> <a href="../../cours/chapitre-4/ressources">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-4/elasticache">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/ressources">Suivant</a></nav>
 
 ### 5.1 Pièges RDS et Bases de données
 
@@ -80,4 +80,4 @@ Un TTL très court peut augmenter le nombre de résolutions DNS et donc le coût
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-4/elasticache">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-4/">Sommaire</a> <a href="../../cours/chapitre-4/ressources">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-4/elasticache">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/ressources">Suivant</a></nav>

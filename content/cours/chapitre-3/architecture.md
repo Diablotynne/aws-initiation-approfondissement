@@ -5,7 +5,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 11. Archi
 
 # 11. Architecture complète : Illustration e-commerce
 
-<nav class="page-sequence"><a href="../../cours/chapitre-3/lambda">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-3/">Sommaire</a> <a href="../../cours/chapitre-3/haute-disponibilite">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/lambda">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/haute-disponibilite">Suivant</a></nav>
 
 Scénario réaliste — montée en charge pendant les soldes, puis retour à la normale :
 
@@ -34,4 +34,4 @@ Trafic revient à la normale
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-3/lambda">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-3/">Sommaire</a> <a href="../../cours/chapitre-3/haute-disponibilite">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/lambda">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/haute-disponibilite">Suivant</a></nav>

@@ -5,7 +5,7 @@ description: "Chapitre 2 — Sécurité des accès avec AWS IAM - 3. Fédératio
 
 # 3. Fédération d'identité et SSO avec IAM Identity Center
 
-<nav class="page-sequence"><a href="../../cours/chapitre-2/mfa-politiques">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-2/">Sommaire</a> <a href="../../cours/chapitre-2/cognito">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/mfa-politiques">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/cognito">Suivant</a></nav>
 
 ### 3.1 Introduction à la fédération d'identité
 
@@ -221,4 +221,4 @@ Cela permet de synchroniser les groupes et utilisateurs automatiquement.
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-2/mfa-politiques">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-2/">Sommaire</a> <a href="../../cours/chapitre-2/cognito">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/mfa-politiques">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/cognito">Suivant</a></nav>

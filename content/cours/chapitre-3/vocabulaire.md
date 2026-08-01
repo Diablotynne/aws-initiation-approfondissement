@@ -5,7 +5,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - Vocabulai
 
 # Vocabulaire du chapitre
 
-<nav class="page-sequence"><a href="../../cours/chapitre-3/">Sommaire de la journ&eacute;e</a> <a href="../../cours/chapitre-3/">Sommaire</a> <a href="../../cours/chapitre-3/stockage-aws">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/index">Sommaire de la journ&eacute;e</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/stockage-aws">Suivant</a></nav>
 
 | Terme | Définition |
 |---|---|
@@ -42,4 +42,4 @@ Après avoir sécurisé les accès avec IAM au chapitre précédent, les stagiai
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-3/">Sommaire de la journ&eacute;e</a> <a href="../../cours/chapitre-3/">Sommaire</a> <a href="../../cours/chapitre-3/stockage-aws">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/index">Sommaire de la journ&eacute;e</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/stockage-aws">Suivant</a></nav>

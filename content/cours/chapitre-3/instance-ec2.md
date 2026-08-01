@@ -5,7 +5,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 5. Choisi
 
 # 5. Choisir le bon type d'instance, AMI, stockage et sécurité
 
-<nav class="page-sequence"><a href="../../cours/chapitre-3/ec2">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-3/">Sommaire</a> <a href="../../cours/chapitre-3/compute-optimizer">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/ec2">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/compute-optimizer">Suivant</a></nav>
 
 ### 5.1 Types d'instances EC2
 
@@ -207,4 +207,4 @@ Les environnements réglementés (santé, finance, RGPD) ont besoin de **garanti
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-3/ec2">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-3/">Sommaire</a> <a href="../../cours/chapitre-3/compute-optimizer">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/ec2">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/compute-optimizer">Suivant</a></nav>

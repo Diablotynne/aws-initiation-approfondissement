@@ -5,7 +5,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 3. Proté
 
 # 3. Protéger et optimiser les données S3
 
-<nav class="page-sequence"><a href="../../cours/chapitre-3/s3">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-3/">Sommaire</a> <a href="../../cours/chapitre-3/ec2">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/s3">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/ec2">Suivant</a></nav>
 
 Amazon S3 propose plusieurs mécanismes pour **sécuriser vos fichiers**, **préserver leur historique**, et **réduire les coûts de stockage**. Ces options sont souvent méconnues, mais elles sont essentielles pour bien gérer vos données dans le cloud.
 
@@ -405,4 +405,4 @@ aws s3api delete-bucket-policy --bucket mon-bucket
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-3/s3">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-3/">Sommaire</a> <a href="../../cours/chapitre-3/ec2">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/s3">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/ec2">Suivant</a></nav>

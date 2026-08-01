@@ -5,7 +5,7 @@ description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 8. A
 
 # 8. AWS Management Console
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/well-architected">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/services-aws">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/well-architected">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/services-aws">Suivant</a></nav>
 
 La **console AWS** est une interface Web centralisée qui permet de gérer tous les services AWS depuis un seul endroit.
 
@@ -212,4 +212,4 @@ C'est pourquoi **mettre en place un monitoring budgétaire dès le départ est e
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-1/well-architected">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-1/">Sommaire</a> <a href="../../cours/chapitre-1/services-aws">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/well-architected">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/services-aws">Suivant</a></nav>

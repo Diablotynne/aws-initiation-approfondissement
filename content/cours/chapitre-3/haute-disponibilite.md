@@ -5,7 +5,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 12. Bonne
 
 # 12. Bonnes pratiques — Architecture hautement disponible
 
-<nav class="page-sequence"><a href="../../cours/chapitre-3/architecture">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-3/">Sommaire</a> <a href="../../cours/chapitre-3/conformite">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/architecture">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/conformite">Suivant</a></nav>
 
 ### 12.1 Architecture résiliente S3
 
@@ -77,4 +77,4 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 12. Bonne
 
 ---
 
-<nav class="page-sequence"><a href="../../cours/chapitre-3/architecture">Pr&eacute;c&eacute;dent</a> <a href="../../cours/chapitre-3/">Sommaire</a> <a href="../../cours/chapitre-3/conformite">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/architecture">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/conformite">Suivant</a></nav>
