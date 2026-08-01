@@ -16,7 +16,7 @@ description: "Chapitre 5 — Automatisation, supervision et reprise d'activité 
 - **Load Balancers** : requêtes/seconde, latence
 - **Applications custom** : envoi de métriques via API
 
-<img src="../../assets/schemas/cloudwatch-architecture.svg"
+<img src="assets/schemas/cloudwatch-architecture.svg"
      alt="Architecture Amazon CloudWatch"
      style="display:block; margin:auto; width:90%">
 

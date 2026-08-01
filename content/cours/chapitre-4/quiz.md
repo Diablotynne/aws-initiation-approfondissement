@@ -9,7 +9,7 @@ description: "Chapitre 4 — Amazon VPC et bases de données AWS - Quiz interact
 
 Choisissez une réponse : la correction expliquée apparaît immédiatement. Les questions et les propositions restent dans un ordre stable.
 
-<iframe class="quiz-frame" src="../../assets/quiz/quiz-chapitre-4.html" title="Quiz interactif du chapitre 4" loading="lazy"></iframe>
+<iframe class="quiz-frame" src="assets/quiz/quiz-chapitre-4.html" title="Quiz interactif du chapitre 4" loading="lazy"></iframe>
 
 ---
 

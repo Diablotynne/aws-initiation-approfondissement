@@ -24,7 +24,7 @@ Une VPC vous offre :
 
 #### Schéma architectural complet d'une VPC sécurisée
 
-<img src="../../assets/schemas/vpc-architecture.svg"
+<img src="assets/schemas/vpc-architecture.svg"
      alt="Architecture VPC — Haute disponibilité multi-AZ"
      style="display:block; margin:auto; width:90%">
 
@@ -136,7 +136,7 @@ Une instance EC2 sans IP publique reste pleinement fonctionnelle dans le VPC. El
 
 Chaque subnet est associé à une **table de routage** qui définit comment le trafic circule.
 
-<img src="../../assets/schemas/vpc-route-tables.svg"
+<img src="assets/schemas/vpc-route-tables.svg"
      alt="Tables de routage VPC — subnet public vs privé, association subnet/route table"
      style="display:block; margin:auto; width:90%">
 

@@ -69,7 +69,7 @@ Ces comptes sont regroupés dans des OU distinctes et **sécurisés par des SCP*
 - SCP sur `Production` → Interdire toute modification réseau sans validation.
 - SCP globale → Interdire l'utilisation de certaines régions AWS.
 
-<img src="../../assets/schemas/aws-scp-multi-comptes.svg"
+<img src="assets/schemas/aws-scp-multi-comptes.svg"
      alt="Architecture multi-comptes AWS à 4 niveaux — Management Account, OU Sandbox/Développement/Production et leurs SCP respectives"
      style="display:block; margin:auto; width:90%">
 
@@ -241,7 +241,7 @@ Les SCP peuvent s'appliquer à différents niveaux :
 **Bonne pratique** : Préférer les OU plutôt que les comptes individuels, pour une gestion centralisée.
 
 Exemple de structure :
-<img src="../../assets/schemas/aws-organizations-tree.svg"
+<img src="assets/schemas/aws-organizations-tree.svg"
      alt="AWS Organizations — Structure multi-comptes"
      style="display:block; margin:auto; width:90%">
 

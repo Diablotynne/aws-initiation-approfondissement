@@ -80,7 +80,7 @@ Pour une entreprise ayant un **AD local** ou **Azure AD**, AD FS permet de crée
 
 #### Architecture générale : AD FS → AWS IAM
 
-<img src="../../assets/schemas/saml-adfs-flow.svg"
+<img src="assets/schemas/saml-adfs-flow.svg"
      alt="Flux SSO — AD FS vers AWS IAM (SAML)"
      style="display:block; margin:auto; width:90%">
 

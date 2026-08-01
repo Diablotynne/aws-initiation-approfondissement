@@ -122,7 +122,7 @@ Chaque microservice est empaqueté dans son propre **conteneur Docker**, puis or
 
 #### Un exemple en image
 
-<img src="../../assets/schemas/aws-microservices-ecs-fargate.svg"
+<img src="assets/schemas/aws-microservices-ecs-fargate.svg"
      alt="Architecture microservices : CloudFront vers ALB, distribué vers Auth/Cart/Payment/Recomend puis vers RDS/DynamoDB/S3"
      style="display:block; margin:auto; width:90%">
 

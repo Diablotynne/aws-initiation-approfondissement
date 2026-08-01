@@ -40,7 +40,7 @@ Avantage : la recette peut être réutilisée 100 fois identiquement
 4. **Mettre à jour** la stack pour faire évoluer l'infrastructure (ajout, suppression, modification de ressources)
 5. **Supprimer** la stack si plus besoin (CloudFormation supprime toutes les ressources associées)
 
-<img src="../../assets/schemas/cloudformation-flow.svg"
+<img src="assets/schemas/cloudformation-flow.svg"
      alt="Flux simplifié de CloudFormation"
      style="display:block; margin:auto; width:90%">
 

@@ -9,7 +9,7 @@ description: "Chapitre 5 — Automatisation, supervision et reprise d'activité 
 
 Le Chapitre 1 a présenté les quatre niveaux de certification AWS (Fondamental, Associate, Professional, Specialty) et pourquoi cette formation cible la **Solutions Architect Associate (SAA-C03)**. Maintenant que vous avez vu l'ensemble des services du programme, voici ce qui compte vraiment pour préparer concrètement cet examen : la pondération réelle des domaines testés.
 
-<img src="../../assets/schemas/aws-certification-path.svg"
+<img src="assets/schemas/aws-certification-path.svg"
      alt="Parcours de certification AWS : Foundational, puis trois Associate (dont SAA-C03 ciblé par cette formation), puis Professional, puis Specialty"
      style="display:block; margin:auto; width:90%">
 

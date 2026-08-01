@@ -110,7 +110,7 @@ Supposons une plateforme qui stocke **les métadonnées** de ses contenus : titr
 
 Dans un déploiement RDS Multi-AZ avec une instance de secours, les modifications du principal sont répliquées de manière synchrone vers une autre zone de disponibilité. AWS peut basculer vers cette instance lors de certains incidents ou opérations de maintenance. Les autres variantes Multi-AZ peuvent utiliser plusieurs instances lisibles : il faut vérifier le comportement du moteur et du type de déploiement choisis.
 
-<img src="../../assets/schemas/rds-multiaz-read-replica.svg"
+<img src="assets/schemas/rds-multiaz-read-replica.svg"
      alt="Comparaison entre RDS Multi-AZ pour la disponibilité et une réplique en lecture pour décharger les lectures"
      style="display:block; margin:auto; width:95%">
 

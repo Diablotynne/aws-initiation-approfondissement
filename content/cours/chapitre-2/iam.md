@@ -19,7 +19,7 @@ IAM est à la sécurité ce que la serrure est à une porte. Il constitue **le c
 
 IAM fonctionne comme un contrôleur central placé entre deux mondes : d'un côté les **identités** (utilisateurs, groupes, rôles, services AWS), de l'autre les **ressources AWS** qu'elles cherchent à atteindre (S3, EC2, RDS, Lambda…). Chaque requête suit le même chemin : une identité émet un appel API, IAM évalue les **politiques JSON** qui lui sont associées, puis autorise (`Allow`) ou refuse (`Deny`) l'accès à la ressource visée.
 
-<img src="../../assets/schemas/aws-iam-schema.svg"
+<img src="assets/schemas/aws-iam-schema.svg"
      alt="Fonctionnement global d'IAM — identités, évaluation des policies, ressources AWS"
      style="display:block; margin:auto; width:90%">
 
@@ -115,7 +115,7 @@ Un administrateur met en place une **stratégie de sécurité structurée** :
 - Groupe `Developers` → accès restreint à **EC2** et **S3**.
 - Groupe `Comptabilité` → lecture seule sur la facturation (Billing).
 
-<img src="../../assets/schemas/aws-iam-groupes-exemple.svg"
+<img src="assets/schemas/aws-iam-groupes-exemple.svg"
      alt="Organisation des groupes IAM — Admins, Developers, Comptabilité et leurs policies respectives"
      style="display:block; margin:auto; width:90%">
 
