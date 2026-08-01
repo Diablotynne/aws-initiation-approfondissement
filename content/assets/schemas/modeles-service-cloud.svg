@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+  <title id="title">Répartition de la gestion entre infrastructure locale, IaaS, PaaS et SaaS</title>
+  <desc id="desc">Sept couches techniques montrent la part gérée par le client et celle gérée par le fournisseur selon le modèle de service.</desc>
+  <style>
+    text{font-family:Arial,sans-serif;fill:#172033} .title{font-size:25px;font-weight:700}.head{font-size:18px;font-weight:700}.label{font-size:15px}.small{font-size:13px}.client{fill:#ff9900}.provider{fill:#527aa3}.line{stroke:#fff;stroke-width:2}.white{fill:#fff;font-weight:700}
+  </style>
+  <text class="title" x="500" y="35" text-anchor="middle">Qui gère chaque couche ?</text>
+  <rect x="25" y="55" width="950" height="38" rx="8" fill="#e9eef5"/>
+  <rect x="630" y="64" width="18" height="18" class="client"/><text x="655" y="79" class="small">Client</text>
+  <rect x="725" y="64" width="18" height="18" class="provider"/><text x="750" y="79" class="small">Fournisseur cloud</text>
+  <text class="head" x="230" y="125" text-anchor="middle">Sur site</text><text class="head" x="430" y="125" text-anchor="middle">IaaS</text><text class="head" x="630" y="125" text-anchor="middle">PaaS</text><text class="head" x="830" y="125" text-anchor="middle">SaaS</text>
+  <g class="label" text-anchor="end"><text x="125" y="160">Application</text><text x="125" y="210">Données</text><text x="125" y="260">Runtime</text><text x="125" y="310">Système</text><text x="125" y="360">Virtualisation</text><text x="125" y="410">Serveurs</text><text x="125" y="460">Réseau / stockage</text></g>
+  <g class="line">
+    <rect x="150" y="140" width="160" height="340" class="client"/>
+    <rect x="350" y="140" width="160" height="190" class="client"/><rect x="350" y="330" width="160" height="150" class="provider"/>
+    <rect x="550" y="140" width="160" height="90" class="client"/><rect x="550" y="230" width="160" height="250" class="provider"/>
+    <rect x="750" y="140" width="160" height="340" class="provider"/>
+    <path d="M150 190h760M150 240h760M150 290h760M150 340h760M150 390h760M150 440h760" fill="none"/>
+  </g>
+  <g class="white" font-size="14" text-anchor="middle"><text x="230" y="315">Client</text><text x="430" y="240">Client</text><text x="430" y="410">Fournisseur</text><text x="630" y="190">Client</text><text x="630" y="365">Fournisseur</text><text x="830" y="315">Fournisseur</text></g>
+</svg>
