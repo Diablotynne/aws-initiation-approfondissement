@@ -17,8 +17,9 @@ Chaque entr&eacute;e ci-dessous ouvre une page consacr&eacute;e &agrave; un seul
   <a href="cours/chapitre-5/well-architected">AWS Well-Architected Framework — Mise en pratique</a>
   <a href="cours/chapitre-5/evenements">Services complémentaires — Queues et événements</a>
   <a href="cours/chapitre-5/certifications">Certifications AWS — Objectif SAA-C03</a>
-  <a href="cours/chapitre-5/fiche-memoire">Fiche mémo — Automatisation et exploitation</a>
+  <a href="cours/chapitre-5/fiche-memoire">Cheat sheet — Automatisation, supervision et reprise</a>
   <a href="cours/chapitre-5/travaux-pratiques">Travaux pratiques — Automatisation et résilience</a>
   <a href="cours/chapitre-5/ressources">Ressources</a>
   <a href="cours/chapitre-5/quiz">Quiz interactif du chapitre</a>
+  <a href="cours/chapitre-5/mini-jeu">Mini-jeu de synthèse — AWS Quest</a>
 </nav>

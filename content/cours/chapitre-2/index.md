@@ -16,8 +16,9 @@ Chaque entr&eacute;e ci-dessous ouvre une page consacr&eacute;e &agrave; un seul
   <a href="cours/chapitre-2/cloudtrail">Traçabilité et surveillance avec CloudTrail</a>
   <a href="cours/chapitre-2/points-attention">Points importants et pièges fréquents</a>
   <a href="cours/chapitre-2/choix-authentification">Choisir la bonne solution d'authentification AWS</a>
-  <a href="cours/chapitre-2/fiche-memoire">Fiche mémo — Identités, accès et traçabilité</a>
+  <a href="cours/chapitre-2/fiche-memoire">Cheat sheet — Identités, autorisations et traçabilité</a>
   <a href="cours/chapitre-2/travaux-pratiques">Travaux pratiques — Sécurité et gestion des accès</a>
   <a href="cours/chapitre-2/ressources">Ressources</a>
   <a href="cours/chapitre-2/quiz">Quiz interactif du chapitre</a>
+  <a href="cours/chapitre-2/mini-jeu">Mini-jeu de synthèse — AWS Quest</a>
 </nav>

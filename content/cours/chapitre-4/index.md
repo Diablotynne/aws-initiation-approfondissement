@@ -13,8 +13,9 @@ Chaque entr&eacute;e ci-dessous ouvre une page consacr&eacute;e &agrave; un seul
   <a href="cours/chapitre-4/route-53">Amazon Route 53 — DNS Intelligent</a>
   <a href="cours/chapitre-4/elasticache">Amazon ElastiCache — Mise en cache distribuée</a>
   <a href="cours/chapitre-4/points-attention">Points importants et pièges fréquents</a>
-  <a href="cours/chapitre-4/fiche-memoire">Fiche mémo — Réseau et données</a>
+  <a href="cours/chapitre-4/fiche-memoire">Cheat sheet — Réseau et données</a>
   <a href="cours/chapitre-4/travaux-pratiques">Travaux pratiques — Amazon VPC et bases de données</a>
   <a href="cours/chapitre-4/ressources">Ressources</a>
   <a href="cours/chapitre-4/quiz">Quiz interactif du chapitre</a>
+  <a href="cours/chapitre-4/mini-jeu">Mini-jeu de synthèse — AWS Quest</a>
 </nav>

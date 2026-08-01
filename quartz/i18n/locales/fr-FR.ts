@@ -39,7 +39,7 @@ export default {
       createdWith: "Créé avec",
     },
     graph: {
-      title: "Vue Graphique",
+      title: "Technologies du parcours",
     },
     recentNotes: {
       title: "Notes Récentes",

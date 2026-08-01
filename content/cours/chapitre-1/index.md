@@ -19,8 +19,9 @@ Chaque entr&eacute;e ci-dessous ouvre une page consacr&eacute;e &agrave; un seul
   <a href="cours/chapitre-1/services-aws">Les services AWS les plus utilisés</a>
   <a href="cours/chapitre-1/bonnes-pratiques">Bonnes pratiques de démarrage</a>
   <a href="cours/chapitre-1/points-attention">Points importants et pièges fréquents</a>
-  <a href="cours/chapitre-1/fiche-memoire">Fiche mémo — Fondamentaux et AWS</a>
+  <a href="cours/chapitre-1/fiche-memoire">Cheat sheet — Fondamentaux du cloud et AWS</a>
   <a href="cours/chapitre-1/travaux-pratiques">Travaux pratiques — Fondamentaux du cloud</a>
   <a href="cours/chapitre-1/ressources">Ressources</a>
   <a href="cours/chapitre-1/quiz">Quiz interactif du chapitre</a>
+  <a href="cours/chapitre-1/mini-jeu">Mini-jeu de synthèse — AWS Quest</a>
 </nav>

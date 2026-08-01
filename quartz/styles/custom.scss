@@ -372,6 +372,27 @@ article img[src*="assets/schemas/"] {
 .interactive-quiz__feedback.is-error { background: #401c27; }
 .interactive-quiz__result { display: grid; gap: 0.3rem; border: 1px solid var(--aws-orange); background: #17243a; color: #fff; text-align: center; }
 
+/* Le graphe de notes est remplacé par un repère visuel propre à la formation. */
+.graph > h3 {
+  font-size: 0;
+
+  &::after {
+    content: "Technologies du parcours";
+    font-size: 1rem;
+  }
+}
+
+.graph-outer {
+  min-height: 220px;
+  border: 1px solid var(--lightgray);
+  border-radius: 0.85rem;
+  background: #172033 url("./static/formation-brand/aws.svg") center / contain no-repeat;
+}
+
+.graph-container,
+.global-graph-icon,
+.global-graph-outer { display: none !important; }
+
 @media (max-width: 700px) {
   .module-quiz-link { align-items: flex-start; flex-direction: column; }
 }

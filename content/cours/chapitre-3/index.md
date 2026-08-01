@@ -22,8 +22,9 @@ Chaque entr&eacute;e ci-dessous ouvre une page consacr&eacute;e &agrave; un seul
   <a href="cours/chapitre-3/haute-disponibilite">Bonnes pratiques — Architecture hautement disponible</a>
   <a href="cours/chapitre-3/conformite">Conformité et sécurité pour les données sensibles</a>
   <a href="cours/chapitre-3/points-attention">Points importants et pièges fréquents</a>
-  <a href="cours/chapitre-3/fiche-memoire">Fiche mémo — Stockage et calcul</a>
+  <a href="cours/chapitre-3/fiche-memoire">Cheat sheet — Stockage et calcul</a>
   <a href="cours/chapitre-3/travaux-pratiques">Travaux pratiques — Amazon S3 et Amazon EC2</a>
   <a href="cours/chapitre-3/ressources">Ressources</a>
   <a href="cours/chapitre-3/quiz">Quiz interactif du chapitre</a>
+  <a href="cours/chapitre-3/mini-jeu">Mini-jeu de synthèse — AWS Quest</a>
 </nav>

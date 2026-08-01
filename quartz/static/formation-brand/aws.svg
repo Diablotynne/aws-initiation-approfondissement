@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 250" role="img" aria-labelledby="title desc">
+  <title id="title">Technologies de la formation AWS</title>
+  <desc id="desc">AWS au centre, associé à IAM, EC2, S3, VPC et CloudFormation.</desc>
+  <rect width="360" height="250" rx="22" fill="#172033"/>
+  <text x="180" y="112" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="74" font-weight="700">aws</text>
+  <path d="M112 133c42 28 104 31 151 5" fill="none" stroke="#ff9900" stroke-width="9" stroke-linecap="round"/>
+  <path d="M254 129l22 2-13 17" fill="#ff9900"/>
+  <g fill="#ffb347" font-family="system-ui,sans-serif" font-size="15" font-weight="650" text-anchor="middle">
+    <text x="45" y="211">IAM</text><text x="108" y="211">EC2</text><text x="174" y="211">S3</text><text x="236" y="211">VPC</text><text x="308" y="211">IaC</text>
+  </g>
+</svg>
