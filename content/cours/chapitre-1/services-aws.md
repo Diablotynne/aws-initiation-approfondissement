@@ -8,6 +8,10 @@ description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 9. L
 AWS propose un catalogue étendu et évolutif couvrant le calcul, le stockage, le réseau, les bases de données, la sécurité et de nombreux services applicatifs. Il est plus utile de comprendre les familles et les critères de choix que de mémoriser un nombre de services rapidement périmé.
 Sa philosophie est simple : offrir à chaque entreprise, quelle que soit sa taille, **la même puissance technologique** qu'Amazon utilise pour ses propres opérations mondiales.
 
+<a class="schema-zoom" href="assets/schemas/familles-services-aws.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/familles-services-aws.svg" alt="Carte des principales familles de services AWS autour d'une application"></a>
+
+**Lecture du schéma.** Une solution AWS combine généralement plusieurs familles. Le besoin métier et les contraintes d'architecture déterminent les capacités nécessaires ; le service précis est choisi ensuite.
+
 | Domaine | Service | Explication | Cas d'usage | Analogie |
 |---------|---------|-------------|-----------|----------|
 | **Calcul** | EC2 | Machines virtuelles configurables (CPU, RAM, OS) | Hébergement web, backend, batch | Louer un serveur dans le cloud |

@@ -15,6 +15,10 @@ Elle donne d'abord accès à l'ensemble des services AWS disponibles dans la ré
 
 ### 8.2 Structure de la console
 
+<a class="schema-zoom" href="assets/schemas/console-aws-reperes.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/console-aws-reperes.svg" alt="Repères de navigation dans AWS Management Console : service, région, identité et contrôle"></a>
+
+**Lecture du schéma.** Avant toute opération, contrôlez le compte ou le rôle actif, la région et le service ouvert. Après l'action, vérifiez l'état réel de la ressource et son incidence sur les coûts.
+
 | Zone | Rôle |
 |------|------|
 | **Barre de recherche** | Trouver rapidement un service (ex : EC2, S3, IAM) |

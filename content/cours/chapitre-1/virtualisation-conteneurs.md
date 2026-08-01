@@ -13,6 +13,10 @@ Deux piliers en particulier ont permis l'essor massif des infrastructures à la 
 
 Comprendre ces concepts est essentiel pour appréhender le fonctionnement d'**Amazon Web Services (AWS)** et de nombreux autres fournisseurs Cloud.
 
+<a class="schema-zoom" href="assets/schemas/virtualisation-conteneurs.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/virtualisation-conteneurs.svg" alt="Comparaison des couches d'un serveur traditionnel, de machines virtuelles et de conteneurs"></a>
+
+**Lecture du schéma.** Une machine virtuelle embarque un système invité complet au-dessus de l'hyperviseur. Un conteneur isole l'application et ses dépendances tout en partageant le noyau du système hôte : il est généralement plus léger, mais ce n'est pas une machine virtuelle miniature.
+
 📎 [Documentation Amazon EC2](https://docs.aws.amazon.com/ec2/)
 📎 [Introduction to Virtualization — VMware](https://www.vmware.com/topics/glossary/content/virtualization.html)
 📎 [Docker Documentation](https://docs.docker.com/get-started/)
