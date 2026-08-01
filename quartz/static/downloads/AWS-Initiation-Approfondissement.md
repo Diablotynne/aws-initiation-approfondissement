@@ -6764,10 +6764,10 @@ Dans le cloud AWS, l'**automatisation** permet de :
 
 ```text
 Infrastructure automatisée avec CloudFormation :
-  Jour 1 : Écrire un template YAML (1-2 heures)
-  Jour 2 : Déployer en Prod exactement identique au Dev (2 minutes)
-  Jour 3 : Déployer en Test (2 minutes)
-  Jour 4 : Dépliquer pour un client différent (2 minutes)
+  Étape 1 : Décrire l'infrastructure dans un template YAML
+  Étape 2 : Valider puis déployer le template en développement
+  Étape 3 : Réutiliser le même template dans l'environnement de test
+  Étape 4 : Promouvoir la version validée vers la production
 
   Avantage : zéro divergence entre les environnements
             zéro oubli de configuration
