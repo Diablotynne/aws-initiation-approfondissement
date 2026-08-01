@@ -9,7 +9,7 @@ description: "Chapitre 2 — Sécurité des accès avec AWS IAM - Quiz interacti
 
 Choisissez une réponse : la correction expliquée apparaît immédiatement. Les questions et les propositions restent dans un ordre stable.
 
-<iframe class="quiz-frame" src="assets/quiz/quiz-chapitre-2.html" title="Quiz interactif du chapitre 2" loading="lazy"></iframe>
+<iframe class="quiz-frame" src="static/quiz-aws/quiz-chapitre-2.htm" title="Quiz interactif du chapitre 2" loading="lazy"></iframe>
 
 ---
 

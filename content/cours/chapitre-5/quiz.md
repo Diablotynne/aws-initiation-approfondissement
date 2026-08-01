@@ -9,7 +9,7 @@ description: "Chapitre 5 — Automatisation, supervision et reprise d'activité 
 
 Choisissez une ou plusieurs réponses selon la question. La correction expliquée apparaît immédiatement. Les questions et les propositions restent dans un ordre stable.
 
-<iframe class="quiz-frame" src="assets/quiz/quiz-chapitre-5.html" title="Quiz interactif du chapitre 5" loading="lazy"></iframe>
+<iframe class="quiz-frame" src="static/quiz-aws/quiz-chapitre-5.htm" title="Quiz interactif du chapitre 5" loading="lazy"></iframe>
 
 ---
 
