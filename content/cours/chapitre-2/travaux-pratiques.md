@@ -1,25 +1,43 @@
 ---
-title: "Travaux pratiques — IAM et traçabilité"
-description: "Chapitre 2 — Sécurité des accès avec AWS IAM - Travaux pratiques — IAM et traçabilité"
+title: "Travaux pratiques — Sécurité et gestion des accès"
+description: "Chapitre 2 — Sécurité des accès avec AWS IAM - Travaux pratiques — Sécurité et gestion des accès"
 ---
 
 <nav class="page-sequence"><a href="cours/chapitre-2/fiche-memoire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/ressources">Suivant</a></nav>
 
-| Parcours | Modules et ateliers recensés |
+### AWS Academy — Cloud Foundations
+
+| Type | Référence | Intitulé |
+|---|---|---|
+| Module | Module 4 | Sécurité dans le Cloud AWS |
+| Atelier | Atelier 1 | Introduction à AWS IAM — 100 points |
+| Contrôle | Module 4 | Contrôle des connaissances du module |
+
+### AWS Academy — Cloud Architecting
+
+| Type | Référence | Intitulé |
+|---|---|---|
+| Module | Module 3 | Sécurisation de l'accès |
+| Module | Module 9 | Sécurisation de l'accès utilisateur, aux applications et aux données |
+| Atelier guidé | Module 3 | Exploration du service AWS IAM : utilisateurs, groupes, rôles et politiques |
+| Atelier guidé | Module 9 | Sécurisation des applications à l'aide d'Amazon Cognito |
+| Atelier guidé | Module 9 | Chiffrement des données au repos avec AWS KMS |
+
+### Go Deploy
+
+| Lab | Intitulé |
 |---|---|
-| Cloud Foundations | Module 4 — Sécurité dans le cloud AWS ; Atelier 1 — Introduction à AWS IAM |
-| Cloud Architecting | Module 3 — Sécurisation de l'accès ; Module 9 — Sécurisation de l'accès utilisateur, aux applications et aux données |
-| Ateliers associés | Exploration d'IAM ; sécurisation avec Cognito ; chiffrement au repos avec AWS KMS |
+| Lab 21 | Gestion des identités et des accès AWS — IAM |
 
-<details><summary><strong>Parcours guidé</strong></summary>
+<details><summary><strong>Parcours guidé et validation</strong></summary>
 
-1. Inventorier les utilisateurs, groupes, rôles et politiques déjà fournis par le lab.
-2. Tester une opération autorisée puis une opération refusée sans élargir arbitrairement les droits.
-3. Lire `Effect`, `Action`, `Resource` et `Condition` dans la politique impliquée.
-4. Utiliser `aws sts get-caller-identity` lorsque CloudShell est disponible pour identifier la session temporaire.
-5. Rechercher l'appel correspondant dans CloudTrail si l'activité le prévoit.
+1. Suivre le Module 4 et l'Atelier 1 Cloud Foundations pour distinguer utilisateur, groupe, rôle et politique.
+2. Tester dans l'atelier un accès autorisé puis un accès refusé, et lire les éléments utiles du message d'erreur.
+3. Dans Cloud Architecting, reconstituer la chaîne principal → politique → action → ressource → condition.
+4. Comparer IAM Identity Center pour les collaborateurs et Cognito pour les utilisateurs d'une application.
+5. Réaliser le Lab 21 Go Deploy selon l'énoncé fourni et contrôler l'effet des autorisations configurées.
 
-**Validation observable :** proposer un rôle temporaire, plutôt qu'une clé statique, pour une application EC2 qui lit un bucket S3 et justifier le moindre privilège.
+**Validation observable :** expliquer pourquoi un refus explicite l'emporte, identifier l'appelant avec STS et justifier l'emploi d'un rôle temporaire plutôt que de clés permanentes.
 </details>
 
 ---

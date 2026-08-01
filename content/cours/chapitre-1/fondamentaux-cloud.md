@@ -53,6 +53,10 @@ Les utilisateurs gèrent leurs ressources via une console Web, des API ou des ou
 
 📎 [NIST — The NIST Definition of Cloud Computing](https://csrc.nist.gov/publications/detail/sp/800-145/final)
 
+<a class="schema-zoom" href="assets/schemas/caracteristiques-cloud-nist.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/caracteristiques-cloud-nist.svg" alt="Les cinq caractéristiques essentielles du Cloud Computing selon le NIST autour d'un service cloud central"></a>
+
+**Lecture du schéma.** Les cinq caractéristiques sont cumulatives : une ressource accessible à distance n'est pas, à elle seule, un service cloud. Le libre-service, la mutualisation, l'élasticité et la mesure de l'usage complètent l'accès réseau.
+
 ### 2.3 CAPEX vs OPEX — Comprendre le changement de modèle économique
 
 Historiquement, les entreprises ont fonctionné sur un modèle **CAPEX** (*Capital Expenditures*) : elles achetaient leurs équipements, les installaient dans leurs propres locaux et les exploitaient pendant plusieurs années.
@@ -64,13 +68,9 @@ Avec le Cloud, elles passent à un modèle **OPEX** (*Operational Expenditures*)
 | **CAPEX** | Investissement initial important amorti sur plusieurs années | Achat de serveurs physiques | Budget fixe |
 | **OPEX** | Dépenses variables basées sur l'usage | Paiement horaire d'une instance EC2 | Budget flexible |
 
-**Exemple concret :**
+<a class="schema-zoom" href="assets/schemas/capex-opex-cloud.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/capex-opex-cloud.svg" alt="Comparaison entre un investissement CAPEX planifié à l'avance et une dépense OPEX qui suit la consommation"></a>
 
-**CAPEX (Avant le Cloud)** : Une entreprise achète 10 serveurs physiques pour héberger une application interne. Coût initial : 50 000 €. Ils fonctionnent en permanence, même en période creuse, avec des coûts d'entretien et de maintenance élevés (climatisation, électricité, renouvellement matériel tous les 5-7 ans).
-
-**OPEX (Avec AWS)** : La même entreprise utilise **Amazon EC2 (Elastic Compute Cloud)**, un service AWS permettant de lancer et gérer des **machines virtuelles**. Elle ne paie que les heures réellement consommées (ex. 100 € par mois en moyenne) et peut arrêter les instances lorsqu'elles ne sont pas nécessaires.
-
-La différence ? Flexibilité, prévisibilité des coûts, et liberté d'adapter l'infrastructure en temps réel.
+**Lecture du schéma.** Le passage à l'OPEX ne garantit ni une économie ni un coût fixe. Il remplace une partie de l'investissement initial par une consommation variable, ce qui rend indispensables le suivi, les budgets, l'attribution des coûts et l'arrêt des ressources inutilisées.
 
 > [!warning]
 > **Attention aux coûts AWS — le modèle OPEX peut surprendre :**
@@ -130,6 +130,10 @@ Nous allons détailler **la contrainte liée à la sécurité partagée**, car e
 ### 2.6 Le modèle de responsabilité partagée AWS
 
 Le tableau compare EC2, RDS et Lambda. Plus le service est **managé** — c'est-à-dire exploité techniquement par AWS — plus AWS prend en charge de couches techniques. Le client reste toutefois responsable de la classification de ses données et des autorisations qu'il accorde.
+
+<a class="schema-zoom" href="assets/schemas/responsabilite-partagee-aws.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/responsabilite-partagee-aws.svg" alt="Répartition de la sécurité du cloud assurée par AWS et de la sécurité dans le cloud assurée par le client"></a>
+
+**Lecture du schéma.** La frontière technique se déplace selon le service utilisé, mais la responsabilité du client sur les données, les identités et les configurations ne disparaît pas.
 
 Le modèle de responsabilité partagée AWS répartit la sécurité entre deux parties, et confondre les deux moitiés est l'une des erreurs les plus fréquentes chez les entreprises qui découvrent le cloud.
 

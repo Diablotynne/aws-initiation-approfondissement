@@ -20,7 +20,7 @@ Chaque entr&eacute;e ci-dessous ouvre une page consacr&eacute;e &agrave; un seul
   <a href="cours/chapitre-1/bonnes-pratiques">Bonnes pratiques de démarrage</a>
   <a href="cours/chapitre-1/points-attention">Points importants et pièges fréquents</a>
   <a href="cours/chapitre-1/fiche-memoire">Fiche mémo — Fondamentaux et AWS</a>
-  <a href="cours/chapitre-1/travaux-pratiques">Travaux pratiques — Modules de fondamentaux</a>
+  <a href="cours/chapitre-1/travaux-pratiques">Travaux pratiques — Fondamentaux du cloud</a>
   <a href="cours/chapitre-1/ressources">Ressources</a>
   <a href="cours/chapitre-1/quiz">Quiz interactif du chapitre</a>
 </nav>

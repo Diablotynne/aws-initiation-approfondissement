@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" role="img" aria-labelledby="title desc">
+  <title id="title">Les cinq caractéristiques essentielles du Cloud Computing selon le NIST</title>
+  <desc id="desc">Un service cloud central relié au libre-service, à l'accès réseau, à la mutualisation, à l'élasticité et au service mesuré.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#355a7a"/></marker>
+    <style>
+      .card{fill:#fff;stroke:#5f7890;stroke-width:2}.core{fill:#172f4f;stroke:#ff9900;stroke-width:4}.line{stroke:#355a7a;stroke-width:3;fill:none;marker-end:url(#arrow);stroke-dasharray:9 7;animation:flow 2.4s linear infinite}.h{font:700 22px Arial,sans-serif;fill:#172f4f}.p{font:16px Arial,sans-serif;fill:#334155}.white{fill:#fff}.orange{fill:#ff9900}.n{font:700 21px Arial,sans-serif;fill:#fff}@keyframes flow{to{stroke-dashoffset:-32}}@media(prefers-reduced-motion:reduce){.line{animation:none}}
+    </style>
+  </defs>
+  <rect width="1000" height="560" rx="24" fill="#f8fafc"/>
+  <text x="500" y="42" text-anchor="middle" class="h">Définition opérationnelle du Cloud</text>
+  <path class="line" d="M420 250L280 145"/><path class="line" d="M580 250L720 145"/><path class="line" d="M405 310L265 405"/><path class="line" d="M595 310L735 405"/><path class="line" d="M500 345L500 435"/>
+  <rect class="core" x="390" y="220" width="220" height="130" rx="28"/><text x="500" y="275" text-anchor="middle" class="n">SERVICE CLOUD</text><text x="500" y="306" text-anchor="middle" class="white" font-family="Arial" font-size="17">ressources accessibles</text><text x="500" y="330" text-anchor="middle" class="white" font-family="Arial" font-size="17">comme un service</text>
+  <g><rect class="card" x="45" y="75" width="270" height="115" rx="16"/><circle cx="78" cy="108" r="20" fill="#ff9900"/><text x="78" y="115" text-anchor="middle" class="n">1</text><text x="110" y="110" class="h">Libre-service</text><text x="75" y="151" class="p">Provisionner sans intervention</text><text x="75" y="174" class="p">humaine du fournisseur.</text></g>
+  <g><rect class="card" x="685" y="75" width="270" height="115" rx="16"/><circle cx="718" cy="108" r="20" fill="#ff9900"/><text x="718" y="115" text-anchor="middle" class="n">2</text><text x="750" y="110" class="h">Accès réseau</text><text x="715" y="151" class="p">Capacités accessibles par des</text><text x="715" y="174" class="p">mécanismes réseau standards.</text></g>
+  <g><rect class="card" x="25" y="370" width="300" height="120" rx="16"/><circle cx="60" cy="405" r="20" fill="#ff9900"/><text x="60" y="412" text-anchor="middle" class="n">3</text><text x="92" y="407" class="h">Mutualisation</text><text x="55" y="450" class="p">Ressources regroupées et allouées</text><text x="55" y="474" class="p">dynamiquement entre clients.</text></g>
+  <g><rect class="card" x="675" y="370" width="300" height="120" rx="16"/><circle cx="710" cy="405" r="20" fill="#ff9900"/><text x="710" y="412" text-anchor="middle" class="n">4</text><text x="742" y="407" class="h">Élasticité rapide</text><text x="705" y="450" class="p">Capacité augmentée ou réduite</text><text x="705" y="474" class="p">selon la demande.</text></g>
+  <g><rect class="card" x="365" y="425" width="270" height="110" rx="16"/><circle cx="400" cy="460" r="20" fill="#ff9900"/><text x="400" y="467" text-anchor="middle" class="n">5</text><text x="432" y="462" class="h">Service mesuré</text><text x="398" y="505" class="p">Usage suivi, contrôlé et rapporté.</text></g>
+</svg>

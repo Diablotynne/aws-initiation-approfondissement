@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 590" role="img" aria-labelledby="title desc">
+  <title id="title">Modèle de responsabilité partagée AWS</title>
+  <desc id="desc">AWS sécurise l'infrastructure du cloud. Le client sécurise ses données, identités et configurations dans le cloud. La répartition technique varie selon le niveau de service.</desc>
+  <defs><style>.h{font:700 24px Arial,sans-serif;fill:#172f4f}.s{font:700 19px Arial,sans-serif;fill:#172f4f}.p{font:16px Arial,sans-serif;fill:#334155}.aws{fill:#e8f1fb;stroke:#2874a6;stroke-width:2}.client{fill:#fff3df;stroke:#e07b00;stroke-width:2}.shared{fill:#edf7ef;stroke:#2f855a;stroke-width:2}.tag{font:700 15px Arial,sans-serif;fill:#fff}</style></defs>
+  <rect width="1000" height="590" rx="24" fill="#f8fafc"/><text x="500" y="42" text-anchor="middle" class="h">Sécurité du cloud / sécurité dans le cloud</text>
+  <rect class="client" x="55" y="75" width="890" height="180" rx="20"/><rect x="75" y="94" width="165" height="34" rx="17" fill="#e07b00"/><text x="157" y="117" text-anchor="middle" class="tag">CLIENT</text><text x="270" y="118" class="s">Sécurité dans le cloud</text>
+  <g class="p"><text x="95" y="165">• Données, classification et chiffrement</text><text x="95" y="200">• Identités, rôles et autorisations IAM</text><text x="520" y="165">• Configuration réseau et exposition</text><text x="520" y="200">• Système invité et applications selon le service</text></g>
+  <rect class="aws" x="55" y="330" width="890" height="180" rx="20"/><rect x="75" y="349" width="165" height="34" rx="17" fill="#2874a6"/><text x="157" y="372" text-anchor="middle" class="tag">AWS</text><text x="270" y="373" class="s">Sécurité du cloud</text>
+  <g class="p"><text x="95" y="420">• Centres de données et sécurité physique</text><text x="95" y="455">• Matériel, réseau mondial et alimentation</text><text x="520" y="420">• Hyperviseur et isolation de l'infrastructure</text><text x="520" y="455">• Disponibilité des services conformément à leur conception</text></g>
+  <rect class="shared" x="310" y="265" width="380" height="55" rx="27"/><text x="500" y="299" text-anchor="middle" class="s">Répartition variable : EC2 ≠ RDS ≠ Lambda</text>
+  <text x="500" y="555" text-anchor="middle" class="p">AWS fournit des contrôles ; le client doit les configurer, les vérifier et les surveiller.</text>
+</svg>

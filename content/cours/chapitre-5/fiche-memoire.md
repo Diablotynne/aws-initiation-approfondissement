@@ -5,7 +5,7 @@ description: "Chapitre 5 — Automatisation, supervision et reprise d'activité 
 
 <nav class="page-sequence"><a href="cours/chapitre-5/certifications">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/travaux-pratiques">Suivant</a></nav>
 
-| Besoin | Service ou mécanisme à examiner |
+| Besoin | Service ou mécanisme |
 |---|---|
 | Décrire et versionner l'infrastructure | AWS CloudFormation |
 | Administrer sans ouvrir SSH | AWS Systems Manager Session Manager |
@@ -13,9 +13,6 @@ description: "Chapitre 5 — Automatisation, supervision et reprise d'activité 
 | Mesurer, visualiser et alerter | Amazon CloudWatch |
 | Découpler producteur et consommateur | Amazon SQS |
 | Diffuser un événement à plusieurs abonnés | Amazon SNS |
-| Définir une perte de données admissible | RPO |
-| Définir un objectif de rétablissement | RTO |
-
-**CloudFormation :** valider le template, examiner le change set, suivre les événements de stack, traiter le rollback puis vérifier le drift.
+| Définir les objectifs de reprise | RPO et RTO, puis tests de restauration |
 
 <nav class="page-sequence"><a href="cours/chapitre-5/certifications">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/travaux-pratiques">Suivant</a></nav>

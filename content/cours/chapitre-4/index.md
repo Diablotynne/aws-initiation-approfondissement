@@ -14,7 +14,7 @@ Chaque entr&eacute;e ci-dessous ouvre une page consacr&eacute;e &agrave; un seul
   <a href="cours/chapitre-4/elasticache">Amazon ElastiCache — Mise en cache distribuée</a>
   <a href="cours/chapitre-4/points-attention">Points importants et pièges fréquents</a>
   <a href="cours/chapitre-4/fiche-memoire">Fiche mémo — Réseau et données</a>
-  <a href="cours/chapitre-4/travaux-pratiques">Travaux pratiques — VPC et bases de données</a>
+  <a href="cours/chapitre-4/travaux-pratiques">Travaux pratiques — Amazon VPC et bases de données</a>
   <a href="cours/chapitre-4/ressources">Ressources</a>
   <a href="cours/chapitre-4/quiz">Quiz interactif du chapitre</a>
 </nav>
