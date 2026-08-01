@@ -3,7 +3,7 @@ title: "15. Ressources"
 description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 15. Ressources"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-3/travaux-pratiques">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/quiz">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/points-attention">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/fiche-memoire">Suivant</a></nav>
 
 ### Documentation officielle AWS
 - [AWS Compute Optimizer](https://docs.aws.amazon.com/compute-optimizer/)
@@ -18,4 +18,4 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 15. Resso
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-3/travaux-pratiques">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/quiz">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/points-attention">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/fiche-memoire">Suivant</a></nav>

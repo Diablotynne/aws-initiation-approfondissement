@@ -3,7 +3,7 @@ title: "14. Points importants et pièges fréquents"
 description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 14. Points importants et pièges fréquents"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-3/conformite">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/fiche-memoire">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/conformite">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/ressources">Suivant</a></nav>
 
 | Piège | Réalité | Conséquence |
 |-------|---------|------------|
@@ -18,4 +18,4 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 14. Point
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-3/conformite">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/fiche-memoire">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/conformite">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/ressources">Suivant</a></nav>

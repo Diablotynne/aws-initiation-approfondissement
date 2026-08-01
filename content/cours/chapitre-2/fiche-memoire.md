@@ -3,7 +3,7 @@ title: "Cheat sheet — Identités, autorisations et traçabilité"
 description: "Chapitre 2 — Sécurité des accès avec AWS IAM - Cheat sheet — Identités, autorisations et traçabilité"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-2/choix-authentification">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/travaux-pratiques">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/ressources">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/travaux-pratiques">Suivant</a></nav>
 
 ### Choisir le bon mécanisme
 
@@ -85,4 +85,4 @@ aws cloudtrail lookup-events --max-results 10 \
 - Protéger également les journaux, les sauvegardes et les clés de chiffrement.
 - Ne jamais afficher, copier ou publier les identifiants temporaires du lab.
 
-<nav class="page-sequence"><a href="cours/chapitre-2/choix-authentification">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/travaux-pratiques">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/ressources">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/travaux-pratiques">Suivant</a></nav>

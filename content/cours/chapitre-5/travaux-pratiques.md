@@ -3,7 +3,7 @@ title: "Travaux pratiques — Automatisation et résilience"
 description: "Chapitre 5 — Automatisation, supervision et reprise d'activité - Travaux pratiques — Automatisation et résilience"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-5/fiche-memoire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/ressources">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/fiche-memoire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/quiz">Suivant</a></nav>
 
 ### AWS Academy — Cloud Foundations
 
@@ -59,4 +59,4 @@ description: "Chapitre 5 — Automatisation, supervision et reprise d'activité 
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-5/fiche-memoire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/ressources">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/fiche-memoire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/quiz">Suivant</a></nav>

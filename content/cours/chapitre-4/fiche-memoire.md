@@ -3,7 +3,7 @@ title: "Cheat sheet — Réseau et données"
 description: "Chapitre 4 — Amazon VPC et bases de données AWS - Cheat sheet — Réseau et données"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-4/points-attention">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/travaux-pratiques">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-4/ressources">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/travaux-pratiques">Suivant</a></nav>
 
 ### Chemin d'un paquet dans un VPC
 
@@ -85,4 +85,4 @@ aws dynamodb list-tables --output table
 5. Vérifier passerelle, NAT, peering ou Transit Gateway selon le chemin attendu.
 6. Tester le port applicatif, puis consulter journaux et métriques.
 
-<nav class="page-sequence"><a href="cours/chapitre-4/points-attention">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/travaux-pratiques">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-4/ressources">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/travaux-pratiques">Suivant</a></nav>

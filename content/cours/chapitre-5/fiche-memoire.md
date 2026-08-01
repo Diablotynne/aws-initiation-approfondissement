@@ -3,7 +3,7 @@ title: "Cheat sheet — Automatisation, supervision et reprise"
 description: "Chapitre 5 — Automatisation, supervision et reprise d'activité - Cheat sheet — Automatisation, supervision et reprise"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-5/certifications">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/travaux-pratiques">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/ressources">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/travaux-pratiques">Suivant</a></nav>
 
 ### Choisir le bon mécanisme
 
@@ -97,4 +97,4 @@ Une sauvegarde non restaurée lors d'un test ne démontre pas la capacité de re
 - Optimisation des coûts : mesure, suppression du gaspillage et arbitrage coût/valeur.
 - Durabilité : ressources efficaces et réduction des traitements ou stockages inutiles.
 
-<nav class="page-sequence"><a href="cours/chapitre-5/certifications">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/travaux-pratiques">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/ressources">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/travaux-pratiques">Suivant</a></nav>

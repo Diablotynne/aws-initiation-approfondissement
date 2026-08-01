@@ -3,7 +3,7 @@ title: "Cheat sheet — Stockage et calcul"
 description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - Cheat sheet — Stockage et calcul"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-3/points-attention">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/travaux-pratiques">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/ressources">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/travaux-pratiques">Suivant</a></nav>
 
 ### Choisir un stockage
 
@@ -88,4 +88,4 @@ aws ec2 describe-volumes \
 - Je sais distinguer sauvegarde, réplication, versioning et haute disponibilité.
 - Je sais expliquer les rôles complémentaires d'un load balancer et d'un groupe Auto Scaling.
 
-<nav class="page-sequence"><a href="cours/chapitre-3/points-attention">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/travaux-pratiques">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/ressources">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/travaux-pratiques">Suivant</a></nav>

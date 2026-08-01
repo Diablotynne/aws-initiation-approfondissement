@@ -3,7 +3,7 @@ title: "Cheat sheet — Fondamentaux du cloud et AWS"
 description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - Cheat sheet — Fondamentaux du cloud et AWS"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-1/points-attention">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/travaux-pratiques">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/ressources">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/travaux-pratiques">Suivant</a></nav>
 
 Cette fiche rassemble les repères à mobiliser pour lire une offre cloud, situer une ressource AWS et expliquer un choix d'architecture. Les commandes sont à exécuter uniquement dans l'environnement temporaire AWS Academy lorsqu'elles sont demandées par le lab.
 
@@ -76,4 +76,4 @@ aws ec2 describe-availability-zones \
 - Je sais citer et reconnaître les cinq caractéristiques NIST.
 - Je sais utiliser les six piliers Well-Architected comme axes d'analyse, pas comme une certification automatique de l'architecture.
 
-<nav class="page-sequence"><a href="cours/chapitre-1/points-attention">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/travaux-pratiques">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/ressources">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/travaux-pratiques">Suivant</a></nav>

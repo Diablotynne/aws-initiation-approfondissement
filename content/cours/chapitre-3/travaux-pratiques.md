@@ -3,7 +3,7 @@ title: "Travaux pratiques — Amazon S3 et Amazon EC2"
 description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - Travaux pratiques — Amazon S3 et Amazon EC2"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-3/fiche-memoire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/ressources">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/fiche-memoire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/quiz">Suivant</a></nav>
 
 ### AWS Academy — Cloud Foundations
 
@@ -56,4 +56,4 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - Travaux p
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-3/fiche-memoire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/ressources">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/fiche-memoire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/quiz">Suivant</a></nav>
