@@ -333,11 +333,12 @@ article img[src*="assets/schemas/"] {
 .quiz-frame {
   display: block;
   width: 100%;
-  min-height: 650px;
+  min-height: 0;
   margin: 1rem 0 2rem;
   border: 1px solid var(--lightgray);
   border-radius: 0.85rem;
   background: #111827;
+  overflow: hidden;
 }
 
 .module-quiz-link {
