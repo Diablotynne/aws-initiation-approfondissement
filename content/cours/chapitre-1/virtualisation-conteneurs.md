@@ -13,7 +13,7 @@ Deux piliers en particulier ont permis l'essor massif des infrastructures à la 
 
 Comprendre ces concepts est essentiel pour appréhender le fonctionnement d'**Amazon Web Services (AWS)** et de nombreux autres fournisseurs Cloud.
 
-<a class="schema-zoom" href="assets/schemas/virtualisation-conteneurs.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/virtualisation-conteneurs.svg" alt="Comparaison des couches d'un serveur traditionnel, de machines virtuelles et de conteneurs"></a>
+<a class="schema-zoom" href="assets/schemas/virtualisation-conteneurs.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/virtualisation-conteneurs.svg" alt="Comparaison des couches d'un serveur traditionnel, de machines virtuelles et de conteneurs"></a>
 
 **Lecture du schéma.** Une machine virtuelle embarque un système invité complet au-dessus de l'hyperviseur. Un conteneur isole l'application et ses dépendances tout en partageant le noyau du système hôte : il est généralement plus léger, mais ce n'est pas une machine virtuelle miniature.
 
@@ -124,7 +124,7 @@ Chaque microservice est empaqueté dans son propre **conteneur Docker**, puis or
 
 #### Un exemple en image
 
-<a class="schema-zoom" href="assets/schemas/aws-microservices-ecs-fargate.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/aws-microservices-ecs-fargate.svg"
+<a class="schema-zoom" href="assets/schemas/aws-microservices-ecs-fargate.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/aws-microservices-ecs-fargate.svg"
      alt="Architecture microservices : CloudFront vers ALB, distribué vers Auth/Cart/Payment/Recomend puis vers RDS/DynamoDB/S3"
      style="display:block; margin:auto; width:90%"></a>
 

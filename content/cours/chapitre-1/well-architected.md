@@ -11,7 +11,7 @@ C'est une **philosophie de design** qui s'applique à chaque projet AWS, du plus
 
 Ce framework repose sur **six piliers**, souvent représentés par le sigle **SOPREC** :
 
-<a class="schema-zoom" href="assets/schemas/well-architected-six-piliers.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/well-architected-six-piliers.svg" alt="Les six piliers AWS Well-Architected reliés à une même charge de travail"></a>
+<a class="schema-zoom" href="assets/schemas/well-architected-six-piliers.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/well-architected-six-piliers.svg" alt="Les six piliers AWS Well-Architected reliés à une même charge de travail"></a>
 
 **Lecture du schéma.** Les piliers ne forment pas une suite d'étapes. Ils servent à examiner simultanément une même charge de travail et à rendre visibles les compromis d'architecture.
 

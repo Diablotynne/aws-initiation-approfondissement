@@ -246,7 +246,7 @@ aws ssm create-patch-baseline \
 
 OpsWorks permettait de **déployer et configurer des applications** sur des instances EC2 en utilisant des **scripts de configuration déclaratifs** :
 
-<a class="schema-zoom" href="assets/schemas/opsworks-vs-ssm.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/opsworks-vs-ssm.svg"
+<a class="schema-zoom" href="assets/schemas/opsworks-vs-ssm.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/opsworks-vs-ssm.svg"
      alt="CloudFormation vs OpsWorks vs Systems Manager"
      style="display:block; margin:auto; width:90%"></a>
 

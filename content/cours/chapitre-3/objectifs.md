@@ -22,7 +22,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - Objectifs
 > - **Configurer** un groupe Auto Scaling pour adapter dynamiquement la capacité aux besoins
 > - **Concevoir** une architecture haute disponibilité combinant S3, EC2, ELB et Auto Scaling
 
-<a class="schema-zoom" href="assets/schemas/architecture-web-elastique.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/architecture-web-elastique.svg" alt="Architecture web élastique avec Route 53, un load balancer et des instances EC2 réparties sur deux zones"></a>
+<a class="schema-zoom" href="assets/schemas/architecture-web-elastique.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/architecture-web-elastique.svg" alt="Architecture web élastique avec Route 53, un load balancer et des instances EC2 réparties sur deux zones"></a>
 
 **Lecture du schéma.** Le load balancer distribue le trafic vers plusieurs instances gérées par Auto Scaling. La répartition sur plusieurs zones évite qu'une défaillance unique d'AZ interrompe toute la couche de calcul.
 

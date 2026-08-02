@@ -22,7 +22,7 @@ description: "Chapitre 5 — Automatisation, supervision et reprise d'activité 
 > - **Concevoir** une architecture microservices sans serveur avec API Gateway et Step Functions, et justifier les choix de découplage
 > - **Situer** les certifications AWS (Cloud Practitioner à Solutions Architect Professional) et les domaines couverts par la SAA-C03
 
-<a class="schema-zoom" href="assets/schemas/boucle-exploitation-aws.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/boucle-exploitation-aws.svg" alt="Boucle de déploiement, observation, intervention et amélioration d'une architecture AWS"></a>
+<a class="schema-zoom" href="assets/schemas/boucle-exploitation-aws.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/boucle-exploitation-aws.svg" alt="Boucle de déploiement, observation, intervention et amélioration d'une architecture AWS"></a>
 
 **Lecture du schéma.** L'exploitation n'est pas une étape finale : les métriques et incidents alimentent une nouvelle décision d'architecture, puis une modification versionnée de l'infrastructure.
 

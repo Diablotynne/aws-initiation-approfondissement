@@ -99,7 +99,7 @@ OpenStack ne joue pas sur le même terrain qu'AWS/Azure/GCP (qui sont des servic
 
 ### 6.4 L'infrastructure mondiale d'AWS
 
-<a class="schema-zoom" href="assets/schemas/infrastructure-mondiale-aws.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/infrastructure-mondiale-aws.svg"
+<a class="schema-zoom" href="assets/schemas/infrastructure-mondiale-aws.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/infrastructure-mondiale-aws.svg"
      alt="Une région AWS contenant plusieurs zones de disponibilité, distinctes des points de présence"
      style="display:block; margin:auto; width:95%"></a>
 

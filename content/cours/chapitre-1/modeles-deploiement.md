@@ -12,7 +12,7 @@ Le NIST distingue les clouds **public**, **privé**, **communautaire** et **hybr
 
 Le modèle de déploiement choisi dépend souvent d'un compromis entre agilité, sécurité, conformité et maîtrise de l'environnement technique.
 
-<a class="schema-zoom" href="assets/schemas/modeles-deploiement-cloud.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/modeles-deploiement-cloud.svg" alt="Comparaison visuelle du cloud public, du cloud privé, du cloud hybride et du multicloud"></a>
+<a class="schema-zoom" href="assets/schemas/modeles-deploiement-cloud.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/modeles-deploiement-cloud.svg" alt="Comparaison visuelle du cloud public, du cloud privé, du cloud hybride et du multicloud"></a>
 
 **Lecture du schéma.** Le cloud hybride relie des environnements de nature différente. Le multicloud indique l'utilisation de plusieurs fournisseurs, sans impliquer automatiquement une interconnexion entre eux.
 

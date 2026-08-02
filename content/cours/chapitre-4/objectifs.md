@@ -22,7 +22,7 @@ description: "Chapitre 4 — Amazon VPC et bases de données AWS - Objectifs du 
 > - **Configurer** une zone DNS et des enregistrements avec Amazon Route 53, dont des politiques de routage avancées
 > - **Mettre en place** un cluster ElastiCache (Redis) pour accélérer l'accès aux données fréquemment lues
 
-<a class="schema-zoom" href="assets/schemas/architecture-vpc-donnees.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/architecture-vpc-donnees.svg" alt="Architecture VPC segmentée avec subnets publics, applicatifs privés et base RDS privée"></a>
+<a class="schema-zoom" href="assets/schemas/architecture-vpc-donnees.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/architecture-vpc-donnees.svg" alt="Architecture VPC segmentée avec subnets publics, applicatifs privés et base RDS privée"></a>
 
 **Lecture du schéma.** Le routage détermine les destinations joignables ; les groupes de sécurité déterminent les flux autorisés. La base reste privée et n'accepte que la couche applicative prévue.
 

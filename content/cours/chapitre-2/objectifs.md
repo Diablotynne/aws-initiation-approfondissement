@@ -21,7 +21,7 @@ description: "Chapitre 2 — Sécurité des accès avec AWS IAM - Objectifs du c
 > - **Configurer** la traçabilité des activités avec AWS CloudTrail et la comparer à AWS Config
 > - **Créer** via la CLI des utilisateurs, groupes, rôles et policies IAM, et activer le MFA
 
-<a class="schema-zoom" href="assets/schemas/evaluation-autorisation-iam.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/evaluation-autorisation-iam.svg" alt="Chemin d'évaluation d'une requête AWS par IAM"></a>
+<a class="schema-zoom" href="assets/schemas/evaluation-autorisation-iam.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/evaluation-autorisation-iam.svg" alt="Chemin d'évaluation d'une requête AWS par IAM"></a>
 
 **Lecture du schéma.** IAM évalue la requête dans son contexte complet. Un refus explicite prévaut ; en son absence, une autorisation explicite doit permettre l'action sur la ressource concernée.
 

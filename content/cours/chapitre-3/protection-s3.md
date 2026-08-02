@@ -82,7 +82,7 @@ Les **politiques de cycle de vie** permettent de définir des règles pour :
 - Déplacer les fichiers vers une classe de stockage moins coûteuse
 - Archiver dans Glacier pour la conformité
 
-<a class="schema-zoom" href="assets/schemas/cycle-vie-s3.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/cycle-vie-s3.svg"
+<a class="schema-zoom" href="assets/schemas/cycle-vie-s3.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/cycle-vie-s3.svg"
      alt="Cycle de vie d'un objet S3 depuis sa création jusqu'aux transitions, à l'archivage et à l'expiration"
      style="display:block; margin:auto; width:95%"></a>
 

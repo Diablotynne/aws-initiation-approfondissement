@@ -53,7 +53,7 @@ Les utilisateurs gèrent leurs ressources via une console Web, des API ou des ou
 
 📎 [NIST — The NIST Definition of Cloud Computing](https://csrc.nist.gov/publications/detail/sp/800-145/final)
 
-<a class="schema-zoom" href="assets/schemas/caracteristiques-cloud-nist.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/caracteristiques-cloud-nist.svg" alt="Les cinq caractéristiques essentielles du Cloud Computing selon le NIST autour d'un service cloud central"></a>
+<a class="schema-zoom" href="assets/schemas/caracteristiques-cloud-nist.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/caracteristiques-cloud-nist.svg" alt="Les cinq caractéristiques essentielles du Cloud Computing selon le NIST autour d'un service cloud central"></a>
 
 **Lecture du schéma.** Les cinq caractéristiques sont cumulatives : une ressource accessible à distance n'est pas, à elle seule, un service cloud. Le libre-service, la mutualisation, l'élasticité et la mesure de l'usage complètent l'accès réseau.
 
@@ -68,7 +68,7 @@ Avec le Cloud, elles passent à un modèle **OPEX** (*Operational Expenditures*)
 | **CAPEX** | Investissement initial important amorti sur plusieurs années | Achat de serveurs physiques | Budget fixe |
 | **OPEX** | Dépenses variables basées sur l'usage | Paiement horaire d'une instance EC2 | Budget flexible |
 
-<a class="schema-zoom" href="assets/schemas/capex-opex-cloud.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/capex-opex-cloud.svg" alt="Comparaison entre un investissement CAPEX planifié à l'avance et une dépense OPEX qui suit la consommation"></a>
+<a class="schema-zoom" href="assets/schemas/capex-opex-cloud.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/capex-opex-cloud.svg" alt="Comparaison entre un investissement CAPEX planifié à l'avance et une dépense OPEX qui suit la consommation"></a>
 
 **Lecture du schéma.** Le passage à l'OPEX ne garantit ni une économie ni un coût fixe. Il remplace une partie de l'investissement initial par une consommation variable, ce qui rend indispensables le suivi, les budgets, l'attribution des coûts et l'arrêt des ressources inutilisées.
 
@@ -131,7 +131,7 @@ Nous allons détailler **la contrainte liée à la sécurité partagée**, car e
 
 Le tableau compare EC2, RDS et Lambda. Plus le service est **managé** — c'est-à-dire exploité techniquement par AWS — plus AWS prend en charge de couches techniques. Le client reste toutefois responsable de la classification de ses données et des autorisations qu'il accorde.
 
-<a class="schema-zoom" href="assets/schemas/responsabilite-partagee-aws.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/responsabilite-partagee-aws.svg" alt="Répartition de la sécurité du cloud assurée par AWS et de la sécurité dans le cloud assurée par le client"></a>
+<a class="schema-zoom" href="assets/schemas/responsabilite-partagee-aws.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/responsabilite-partagee-aws.svg" alt="Répartition de la sécurité du cloud assurée par AWS et de la sécurité dans le cloud assurée par le client"></a>
 
 **Lecture du schéma.** La frontière technique se déplace selon le service utilisé, mais la responsabilité du client sur les données, les identités et les configurations ne disparaît pas.
 

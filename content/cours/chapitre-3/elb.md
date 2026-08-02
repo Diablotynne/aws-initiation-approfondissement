@@ -11,7 +11,7 @@ Un **Load Balancer** agit comme un répartiteur de trafic. Il reçoit les requê
 
 #### Architecture simple
 
-<a class="schema-zoom" href="assets/schemas/elb-architecture.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/elb-architecture.svg"
+<a class="schema-zoom" href="assets/schemas/elb-architecture.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/elb-architecture.svg"
      alt="Elastic Load Balancing — Architecture"
      style="display:block; margin:auto; width:90%"></a>
 

@@ -5,7 +5,7 @@ description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 3. M
 
 <nav class="page-sequence"><a href="cours/chapitre-1/fondamentaux-cloud">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/modeles-deploiement">Suivant</a></nav>
 
-<a class="schema-zoom" href="assets/schemas/modeles-service-cloud.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/modeles-service-cloud.svg"
+<a class="schema-zoom" href="assets/schemas/modeles-service-cloud.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/modeles-service-cloud.svg"
      alt="Répartition des couches gérées par le client et par le fournisseur pour les modèles sur site, IaaS, PaaS et SaaS"
      style="display:block; margin:auto; width:95%"></a>
 

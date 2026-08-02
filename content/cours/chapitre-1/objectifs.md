@@ -22,7 +22,7 @@ description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - Obje
 > - **Naviguer** dans l'AWS Management Console et identifier ses principales fonctionnalités
 > - **Utiliser** les outils de suivi budgétaire AWS (Billing Dashboard, Budgets, Cost Explorer) pour maîtriser les coûts
 
-<a class="schema-zoom" href="assets/schemas/parcours-cloud-aws.svg" target="_blank" rel="noopener" aria-label="Agrandir le schÃ©ma"><img src="assets/schemas/parcours-cloud-aws.svg" alt="Chaîne de décision allant du besoin métier au choix des services et de l'architecture AWS"></a>
+<a class="schema-zoom" href="assets/schemas/parcours-cloud-aws.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/parcours-cloud-aws.svg" alt="Chaîne de décision allant du besoin métier au choix des services et de l'architecture AWS"></a>
 
 **Lecture du schéma.** Le choix d'un service intervient après l'analyse du besoin, du modèle de responsabilité et de l'implantation. Les six préoccupations transverses du cadre Well-Architected encadrent ensuite chaque décision.
 
