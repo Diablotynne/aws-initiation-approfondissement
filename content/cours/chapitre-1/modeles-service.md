@@ -82,6 +82,10 @@ Retenons les cas d'usage typiques du SaaS — messagerie, CRM, outils de collabo
 
 ### 3.4 Comparatif synthétique des modèles
 
+<a class="schema-zoom" href="assets/schemas/modele-responsabilite-couches.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/modele-responsabilite-couches.svg" alt="Qui gère chaque couche ? Répartition Client/Fournisseur par couche technique selon le modèle Sur site, IaaS, PaaS, SaaS"></a>
+
+Ce schéma reprend, couche par couche, la bascule progressive de responsabilité déjà observée dans la définition de chaque modèle : sur site, tout reste à votre charge ; en IaaS, AWS ne prend en charge que la virtualisation, les serveurs et le réseau physique ; en PaaS, AWS gère aussi le runtime et le système d'exploitation ; en SaaS, seule la donnée que vous y déposez reste réellement de votre ressort.
+
 | Élément | IaaS | PaaS | SaaS |
 |--------|------|------|------|
 | **Flexibilité** | Très élevée | Moyenne | Faible |

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" font-family="system-ui, sans-serif">
+  <rect x="0" y="0" width="900" height="620" rx="16" fill="#0d1117"/>
+  <text x="450" y="40" text-anchor="middle" fill="#e6edf3" font-size="22" font-weight="700">Qui gère chaque couche ? — Sur site, IaaS, PaaS, SaaS</text>
+
+  <!-- Legend -->
+  <rect x="300" y="58" width="16" height="16" rx="3" fill="#f0883e"/>
+  <text x="322" y="71" fill="#e6edf3" font-size="14">Client</text>
+  <rect x="400" y="58" width="16" height="16" rx="3" fill="#3d5a80"/>
+  <text x="422" y="71" fill="#e6edf3" font-size="14">Fournisseur cloud</text>
+
+  <!-- Column headers -->
+  <text x="330" y="105" text-anchor="middle" fill="#e6edf3" font-size="15" font-weight="700">Sur site</text>
+  <text x="480" y="105" text-anchor="middle" fill="#e6edf3" font-size="15" font-weight="700">IaaS</text>
+  <text x="630" y="105" text-anchor="middle" fill="#e6edf3" font-size="15" font-weight="700">PaaS</text>
+  <text x="780" y="105" text-anchor="middle" fill="#e6edf3" font-size="15" font-weight="700">SaaS</text>
+
+  <!-- Row labels -->
+  <text x="110" y="140" fill="#8b949e" font-size="13">Application</text>
+  <text x="110" y="196" fill="#8b949e" font-size="13">Données</text>
+  <text x="110" y="252" fill="#8b949e" font-size="13">Runtime</text>
+  <text x="110" y="308" fill="#8b949e" font-size="13">Système</text>
+  <text x="110" y="364" fill="#8b949e" font-size="13">Virtualisation</text>
+  <text x="110" y="420" fill="#8b949e" font-size="13">Serveurs</text>
+  <text x="110" y="476" fill="#8b949e" font-size="13">Réseau / stockage</text>
+
+  <!-- Column: Sur site (all client) -->
+  <g>
+    <rect x="270" y="118" width="120" height="42" fill="#f0883e"/>
+    <rect x="270" y="174" width="120" height="42" fill="#f0883e"/>
+    <rect x="270" y="230" width="120" height="42" fill="#f0883e"/>
+    <rect x="270" y="286" width="120" height="42" fill="#f0883e"/>
+    <rect x="270" y="342" width="120" height="42" fill="#f0883e"/>
+    <rect x="270" y="398" width="120" height="42" fill="#f0883e"/>
+    <rect x="270" y="454" width="120" height="42" fill="#f0883e"/>
+    <text x="330" y="590" text-anchor="middle" fill="#8b949e" font-size="12">Tout est géré en interne</text>
+  </g>
+
+  <!-- Column: IaaS (client jusqu'au système, fournisseur en dessous) -->
+  <g>
+    <rect x="420" y="118" width="120" height="42" fill="#f0883e"/>
+    <rect x="420" y="174" width="120" height="42" fill="#f0883e"/>
+    <rect x="420" y="230" width="120" height="42" fill="#f0883e"/>
+    <rect x="420" y="286" width="120" height="42" fill="#f0883e"/>
+    <rect x="420" y="342" width="120" height="42" fill="#3d5a80"/>
+    <rect x="420" y="398" width="120" height="42" fill="#3d5a80"/>
+    <rect x="420" y="454" width="120" height="42" fill="#3d5a80"/>
+    <text x="480" y="590" text-anchor="middle" fill="#8b949e" font-size="12">Ex. Amazon EC2</text>
+  </g>
+
+  <!-- Column: PaaS (client applications+données, fournisseur reste) -->
+  <g>
+    <rect x="570" y="118" width="120" height="42" fill="#f0883e"/>
+    <rect x="570" y="174" width="120" height="42" fill="#f0883e"/>
+    <rect x="570" y="230" width="120" height="42" fill="#3d5a80"/>
+    <rect x="570" y="286" width="120" height="42" fill="#3d5a80"/>
+    <rect x="570" y="342" width="120" height="42" fill="#3d5a80"/>
+    <rect x="570" y="398" width="120" height="42" fill="#3d5a80"/>
+    <rect x="570" y="454" width="120" height="42" fill="#3d5a80"/>
+    <text x="630" y="590" text-anchor="middle" fill="#8b949e" font-size="12">Ex. AWS Elastic Beanstalk</text>
+  </g>
+
+  <!-- Column: SaaS (fournisseur tout gère) -->
+  <g>
+    <rect x="720" y="118" width="120" height="42" fill="#3d5a80"/>
+    <rect x="720" y="174" width="120" height="42" fill="#3d5a80"/>
+    <rect x="720" y="230" width="120" height="42" fill="#3d5a80"/>
+    <rect x="720" y="286" width="120" height="42" fill="#3d5a80"/>
+    <rect x="720" y="342" width="120" height="42" fill="#3d5a80"/>
+    <rect x="720" y="398" width="120" height="42" fill="#3d5a80"/>
+    <rect x="720" y="454" width="120" height="42" fill="#3d5a80"/>
+    <text x="780" y="590" text-anchor="middle" fill="#8b949e" font-size="12">Ex. AWS WorkMail</text>
+  </g>
+
+  <line x1="60" y1="500" x2="840" y2="500" stroke="#30363d" stroke-width="1"/>
+  <text x="450" y="530" text-anchor="middle" fill="#e6edf3" font-size="14" font-weight="600">Plus on avance vers la droite, plus AWS prend en charge de couches — mais jamais la classification des données ni les autorisations décidées par le client.</text>
+</svg>
