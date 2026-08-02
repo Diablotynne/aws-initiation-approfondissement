@@ -1,6 +1,6 @@
 ---
-title: "6. AWS Compute Optimizer — Dimensionnement optimal"
-description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 6. AWS Compute Optimizer — Dimensionnement optimal"
+title: "7. AWS Compute Optimizer — Dimensionnement optimal"
+description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 7. AWS Compute Optimizer — Dimensionnement optimal"
 ---
 
 <nav class="page-sequence"><a href="cours/chapitre-3/instance-ec2">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/tarification-ec2">Suivant</a></nav>

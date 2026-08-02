@@ -1,9 +1,9 @@
 ---
-title: "7. Options de tarification AWS EC2"
-description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 7. Options de tarification AWS EC2"
+title: "8. Options de tarification AWS EC2"
+description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 8. Options de tarification AWS EC2"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-3/compute-optimizer">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/elb">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/compute-optimizer">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/ec2-cli">Suivant</a></nav>
 
 AWS propose plusieurs modèles de tarification pour s'adapter aux besoins techniques et budgétaires des entreprises. Le choix dépend du niveau de prévisibilité des workloads, du budget disponible, et de la tolérance aux interruptions.
 
@@ -140,4 +140,4 @@ URL : https://calculator.aws/
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-3/compute-optimizer">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/elb">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/compute-optimizer">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/ec2-cli">Suivant</a></nav>

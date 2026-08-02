@@ -1,6 +1,6 @@
 ---
-title: "8. Choisir la bonne solution d'authentification AWS"
-description: "Chapitre 2 — Sécurité des accès avec AWS IAM - 8. Choisir la bonne solution d'authentification AWS"
+title: "9. Choisir la bonne solution d'authentification AWS"
+description: "Chapitre 2 — Sécurité des accès avec AWS IAM - 9. Choisir la bonne solution d'authentification AWS"
 ---
 
 <nav class="page-sequence"><a href="cours/chapitre-2/points-attention">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/ressources">Suivant</a></nav>

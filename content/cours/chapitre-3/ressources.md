@@ -1,6 +1,6 @@
 ---
-title: "15. Ressources"
-description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 15. Ressources"
+title: "17. Ressources"
+description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 17. Ressources"
 ---
 
 <nav class="page-sequence"><a href="cours/chapitre-3/points-attention">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/travaux-pratiques">Suivant</a></nav>

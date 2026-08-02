@@ -1,9 +1,9 @@
 ---
-title: "3. Amazon Route 53 — DNS Intelligent"
-description: "Chapitre 4 — Amazon VPC et bases de données AWS - 3. Amazon Route 53 — DNS Intelligent"
+title: "4. Amazon Route 53 — DNS Intelligent"
+description: "Chapitre 4 — Amazon VPC et bases de données AWS - 4. Amazon Route 53 — DNS Intelligent"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-4/vpc">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/elasticache">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-4/vpc-cli">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/elasticache">Suivant</a></nav>
 
 ### 3.1 Fondamentaux du DNS
 
@@ -89,4 +89,4 @@ Route 53 peut évaluer des contrôles d'intégrité et utiliser leur état dans 
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-4/vpc">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/elasticache">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-4/vpc-cli">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/elasticache">Suivant</a></nav>

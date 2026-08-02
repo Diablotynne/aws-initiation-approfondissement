@@ -1,6 +1,6 @@
 ---
-title: "5. Choisir le bon type d'instance, AMI, stockage et sécurité"
-description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 5. Choisir le bon type d'instance, AMI, stockage et sécurité"
+title: "6. Choisir le bon type d'instance, AMI, stockage et sécurité"
+description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 6. Choisir le bon type d'instance, AMI, stockage et sécurité"
 ---
 
 <nav class="page-sequence"><a href="cours/chapitre-3/ec2">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/compute-optimizer">Suivant</a></nav>

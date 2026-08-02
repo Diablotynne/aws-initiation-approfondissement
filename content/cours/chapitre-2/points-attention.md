@@ -1,9 +1,9 @@
 ---
-title: "7. Points importants et pièges fréquents"
-description: "Chapitre 2 — Sécurité des accès avec AWS IAM - 7. Points importants et pièges fréquents"
+title: "8. Points importants et pièges fréquents"
+description: "Chapitre 2 — Sécurité des accès avec AWS IAM - 8. Points importants et pièges fréquents"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-2/cloudtrail">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/choix-authentification">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/iam-cli">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/choix-authentification">Suivant</a></nav>
 
 | Piège courant | Réalité | Solution |
 |---|---|---|
@@ -18,4 +18,4 @@ description: "Chapitre 2 — Sécurité des accès avec AWS IAM - 7. Points impo
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-2/cloudtrail">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/choix-authentification">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/iam-cli">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/choix-authentification">Suivant</a></nav>

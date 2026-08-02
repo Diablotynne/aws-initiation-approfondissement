@@ -1,9 +1,9 @@
 ---
-title: "8. Elastic Load Balancing (ELB) — Répartition du trafic"
-description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 8. Elastic Load Balancing (ELB) — Répartition du trafic"
+title: "10. Elastic Load Balancing (ELB) — Répartition du trafic"
+description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 10. Elastic Load Balancing (ELB) — Répartition du trafic"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-3/tarification-ec2">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/auto-scaling">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/ec2-cli">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/auto-scaling">Suivant</a></nav>
 
 ### 8.1 Pourquoi un Load Balancer ?
 
@@ -53,4 +53,4 @@ Si pas de réponse ou erreur 5xx :
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-3/tarification-ec2">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/auto-scaling">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/ec2-cli">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/auto-scaling">Suivant</a></nav>

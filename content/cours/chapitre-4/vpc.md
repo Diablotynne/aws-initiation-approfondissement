@@ -3,7 +3,7 @@ title: "2. Amazon VPC — Concevoir un réseau privé sécurisé"
 description: "Chapitre 4 — Amazon VPC et bases de données AWS - 2. Amazon VPC — Concevoir un réseau privé sécurisé"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-4/bases-donnees">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/route-53">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-4/bases-donnees">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/vpc-cli">Suivant</a></nav>
 
 ### 2.1 Du réseau on-prem au réseau virtuel
 
@@ -543,4 +543,4 @@ aws ec2 modify-network-interface-attribute \
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-4/bases-donnees">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/route-53">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-4/bases-donnees">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/vpc-cli">Suivant</a></nav>

@@ -1,6 +1,6 @@
 ---
-title: "12. Bonnes pratiques — Architecture hautement disponible"
-description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 12. Bonnes pratiques — Architecture hautement disponible"
+title: "14. Bonnes pratiques — Architecture hautement disponible"
+description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 14. Bonnes pratiques — Architecture hautement disponible"
 ---
 
 <nav class="page-sequence"><a href="cours/chapitre-3/architecture">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/conformite">Suivant</a></nav>

@@ -13,8 +13,9 @@ Les notions de cours sont pr&eacute;sent&eacute;es sur des pages courtes. Tous l
   <a href="cours/chapitre-2/cognito">4. Amazon Cognito : gestion d'identités applicatives</a>
   <a href="cours/chapitre-2/organizations">5. Stratégie multi-comptes avec AWS Organizations</a>
   <a href="cours/chapitre-2/cloudtrail">6. Traçabilité et surveillance avec CloudTrail</a>
-  <a href="cours/chapitre-2/points-attention">7. Points importants et pièges fréquents</a>
-  <a href="cours/chapitre-2/choix-authentification">8. Choisir la bonne solution d'authentification AWS</a>
+  <a href="cours/chapitre-2/iam-cli">7. Gestion pratique d'IAM avec la CLI</a>
+  <a href="cours/chapitre-2/points-attention">8. Points importants et pièges fréquents</a>
+  <a href="cours/chapitre-2/choix-authentification">9. Choisir la bonne solution d'authentification AWS</a>
   <a href="cours/chapitre-2/ressources">Ressources</a>
   <a href="cours/chapitre-2/travaux-pratiques">Travaux pratiques — Sécurité et gestion des accès</a>
   <a class="chapter-annex" href="annexes/glossaire">Annexe - Glossaire</a>

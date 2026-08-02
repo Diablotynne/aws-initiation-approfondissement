@@ -1,6 +1,6 @@
 ---
-title: "13. Conformité et sécurité pour les données sensibles"
-description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 13. Conformité et sécurité pour les données sensibles"
+title: "15. Conformité et sécurité pour les données sensibles"
+description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 15. Conformité et sécurité pour les données sensibles"
 ---
 
 <nav class="page-sequence"><a href="cours/chapitre-3/haute-disponibilite">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/points-attention">Suivant</a></nav>
