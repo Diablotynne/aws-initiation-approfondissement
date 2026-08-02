@@ -7,7 +7,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 15. Confo
 
 Les environnements soumis à des réglementations (RGPD, HIPAA, PCI-DSS) nécessitent des garanties strictes.
 
-### 13.1 Frameworks de conformité AWS
+### 15.1 Frameworks de conformité AWS
 
 | Framework | Objectif | Services AWS applicables |
 |-----------|----------|-------------------------|
@@ -16,7 +16,7 @@ Les environnements soumis à des réglementations (RGPD, HIPAA, PCI-DSS) nécess
 | **PCI-DSS** | Sécurité des données cartes bancaires | VPC isolé, Encryption, Firewall |
 | **ISO 27001** | Gestion de la sécurité informatique | IAM, KMS, CloudTrail, Monitoring |
 
-### 13.2 Bonnes pratiques de conformité pour S3
+### 15.2 Bonnes pratiques de conformité pour S3
 
 - ✅ Chiffrement : SSE-KMS (clés maîtrisées)
 - ✅ Versioning : actif (trace des modifications)
@@ -28,7 +28,7 @@ Les environnements soumis à des réglementations (RGPD, HIPAA, PCI-DSS) nécess
 - ✅ Lifecycle : archivage des données obsolètes
 - ✅ Réplication CRR : backup multi-région
 
-### 13.3 Bonnes pratiques de conformité pour EC2
+### 15.3 Bonnes pratiques de conformité pour EC2
 
 - ✅ Dedicated Instance : pas de partage d'hôte physique
 - ✅ EBS chiffré : SSE-KMS pour tous les volumes
@@ -40,7 +40,7 @@ Les environnements soumis à des réglementations (RGPD, HIPAA, PCI-DSS) nécess
 - ✅ Patch Management : système à jour
 - ✅ Monitoring : alertes sur anomalies
 
-### 13.4 Exemple : Architecture RGPD multi-région
+### 15.4 Exemple : Architecture RGPD multi-région
 
 ```text
 Région EU (Ireland)
@@ -64,7 +64,7 @@ Région EU (Frankfurt) — Backup
    - Préservé 7 ans (conformité)
 ```
 
-### 13.5 Audit et certification
+### 15.5 Audit et certification
 
 **AWS Artifact** : plateforme d'AWS pour les certifications de conformité. Les rapports téléchargés (SOC 2, ISO 27001) servent à prouver à vos clients ou auditeurs qu'AWS respecte les normes de sécurité.
 

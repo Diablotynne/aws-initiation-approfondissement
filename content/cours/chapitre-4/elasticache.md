@@ -5,7 +5,7 @@ description: "Chapitre 4 — Amazon VPC et bases de données AWS - 5. Amazon Ela
 
 <nav class="page-sequence"><a href="cours/chapitre-4/route-53">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/points-attention">Suivant</a></nav>
 
-### 4.1 Pourquoi une couche cache ?
+### 5.1 Pourquoi une couche cache ?
 
 Imaginez une **base de données RDS** qui reçoit **1 000 requêtes par seconde** pour lire les **mêmes 10 utilisateurs**. Chaque requête demande 5–10 ms à la base. Résultat : **goulot d'étranglement**, latence élevée, coût RDS énorme.
 
@@ -15,7 +15,7 @@ Imaginez une **base de données RDS** qui reçoit **1 000 requêtes par seconde*
 
 ---
 
-### 4.2 Deux moteurs : Redis vs Memcached
+### 5.2 Deux moteurs : Redis vs Memcached
 
 #### Redis (Remote Dictionary Server)
 
@@ -47,7 +47,7 @@ TTL : Oui
 
 ---
 
-### 4.3 Cas d'usage typiques
+### 5.3 Cas d'usage typiques
 
 | Cas d'usage | Moteur | Raison |
 |---|---|---|
@@ -60,7 +60,7 @@ TTL : Oui
 
 ---
 
-### 4.4 Architecture ElastiCache
+### 5.4 Architecture ElastiCache
 
 #### Cluster Mode Disabled (simple, old-school)
 
@@ -76,7 +76,7 @@ L'application (EC2, Lambda) hache chaque clé pour la router vers l'une des troi
 
 ---
 
-### 4.5 Commandes Redis essentielles
+### 5.5 Commandes Redis essentielles
 
 ```bash
 # Installation (macOS via Homebrew)
@@ -135,7 +135,7 @@ PUBLISH channel:notifications "Hello" # Diffuser
 
 ---
 
-### 4.6 Créer un cluster Redis en CLI
+### 5.6 Créer un cluster Redis en CLI
 
 > [!info]
 > Une activité pratique permet d’approfondir le déploiement d’un cache Redis.
@@ -224,7 +224,7 @@ aws elasticache delete-cache-cluster \
 
 ---
 
-### 4.7 Bonne pratique : Cache-Aside Pattern
+### 5.7 Bonne pratique : Cache-Aside Pattern
 
 Le pattern le plus courant pour intégrer un cache :
 
@@ -247,7 +247,7 @@ Avantage : logique simple, contrôle du cache
 Risque : cache stale (données anciennes) pendant TTL
 ```
 
-### 4.8 Comment estimer le coût d'ElastiCache ?
+### 5.8 Comment estimer le coût d'ElastiCache ?
 
 Selon le mode choisi, ElastiCache facture notamment la capacité des nœuds ou des unités de traitement serverless, le stockage de données et de sauvegardes, ainsi que certains transferts. La disponibilité et le partitionnement multiplient les composants à prendre en compte.
 

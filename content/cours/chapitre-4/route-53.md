@@ -5,7 +5,7 @@ description: "Chapitre 4 — Amazon VPC et bases de données AWS - 4. Amazon Rou
 
 <nav class="page-sequence"><a href="cours/chapitre-4/vpc-cli">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/elasticache">Suivant</a></nav>
 
-### 3.1 Fondamentaux du DNS
+### 4.1 Fondamentaux du DNS
 
 #### Qu'est-ce que le DNS ?
 
@@ -13,7 +13,7 @@ Le **DNS (Domain Name System)** est un système **mondial décentralisé** qui t
 
 ---
 
-### 3.2 Amazon Route 53 — Service DNS managé
+### 4.2 Amazon Route 53 — Service DNS managé
 
 #### Définition
 
@@ -46,7 +46,7 @@ Route 53 combine plusieurs fonctionnalités :
 
 ---
 
-### 3.3 Politiques de routage — Diriger le trafic intelligemment
+### 4.3 Politiques de routage — Diriger le trafic intelligemment
 
 Route 53 n'est pas un simple DNS classique. C'est un **routeur de trafic applicatif**.
 
@@ -74,7 +74,7 @@ En cas de panne détectée, router vers une ressource de secours.
 
 ---
 
-### 3.4 Health Checks et Monitoring
+### 4.4 Health Checks et Monitoring
 
 Route 53 peut évaluer des contrôles d'intégrité et utiliser leur état dans certaines politiques de routage. Le basculement n'existe que si les enregistrements, les contrôles et la stratégie de routage ont été configurés pour cela.
 

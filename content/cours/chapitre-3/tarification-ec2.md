@@ -7,7 +7,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 8. Option
 
 AWS propose plusieurs modèles de tarification pour s'adapter aux besoins techniques et budgétaires des entreprises. Le choix dépend du niveau de prévisibilité des workloads, du budget disponible, et de la tolérance aux interruptions.
 
-### 7.1 On-Demand (À la demande)
+### 8.1 On-Demand (À la demande)
 
 - **Paiement à l'heure** ou à la seconde pour la capacité de calcul utilisée, sans engagement à long terme.
 - **Idéal pour** les charges de travail à court terme, les tests et le développement.
@@ -17,7 +17,7 @@ AWS propose plusieurs modèles de tarification pour s'adapter aux besoins techni
 
 **Exemple** : Vous avez un pic de trafic imprévu. Vous lancez des instances On-Demand pour répondre à la demande, puis les arrêtez après le pic.
 
-### 7.2 Savings Plans
+### 8.2 Savings Plans
 
 - **Engagement de consommation horaire** sur une période de 1 ou 3 ans.
 - **Réduction variable** par rapport au tarif à la demande selon le plan, la durée et le mode de paiement.
@@ -29,7 +29,7 @@ AWS propose plusieurs modèles de tarification pour s'adapter aux besoins techni
   - **Partial Upfront** : Paiement partiel initial.
   - **Full Upfront** : Paiement total initial offrant les meilleures réductions.
 
-### 7.3 Instances Spot (À prix réduit)
+### 8.3 Instances Spot (À prix réduit)
 
 - **Utilisation de la capacité EC2 inutilisée** d'AWS.
 - **Remise variable** par rapport au prix à la demande, en échange d'un risque d'interruption.
@@ -49,7 +49,7 @@ AWS propose plusieurs modèles de tarification pour s'adapter aux besoins techni
 > **Instances Spot : concevoir pour l'interruption.** L'avis d'interruption est émis au mieux deux minutes avant l'arrêt ou la terminaison ; l'hibernation commence immédiatement et les notifications restent fournies en best effort. Utilisez Spot pour des traitements tolérants aux interruptions, avec reprise, checkpoint ou remplacement automatique.
 
 
-### 7.4 Reserved Instances (RI)
+### 8.4 Reserved Instances (RI)
 
 - **Engagement** sur une instance spécifique pour **1 ou 3 ans**.
 - **Remise variable** par rapport au prix à la demande, contre un engagement de durée et de configuration.
@@ -58,7 +58,7 @@ AWS propose plusieurs modèles de tarification pour s'adapter aux besoins techni
   - Les Savings Plans sont basés sur un engagement de consommation en dollars (plus flexibles).
   - Les RI peuvent être vendues sur le **AWS RI Marketplace**, pas les Savings Plans.
 
-### 7.5 Comparatif synthétique
+### 8.5 Comparatif synthétique
 
 | Critère | On-Demand | Reserved | Spot | Savings Plans |
 |---------|-----------|----------|------|----------------|
@@ -70,7 +70,7 @@ AWS propose plusieurs modèles de tarification pour s'adapter aux besoins techni
 
 **Décision** : il n'existe pas de modèle universellement meilleur. La charge stable favorise un engagement ; la charge interruptible favorise Spot ; l'incertitude favorise le paiement à la demande. La décision doit s'appuyer sur les métriques réelles.
 
-### 7.6 Cas métier : Choisir la meilleure option tarifaire
+### 8.6 Cas métier : Choisir la meilleure option tarifaire
 
 #### Cas 1 : Site e-commerce avec trafic prévisible
 
@@ -125,7 +125,7 @@ aws ec2 request-spot-fleet \
 - **Recommandation** : **Savings Plans (mélange)** pour la charge de base + **On-Demand** pour les pics.
 - **Avantage** : si charge explose au-delà des prévisions, On-Demand absorbe sans coupure.
 
-### 7.7 Outil : AWS Pricing Calculator
+### 8.7 Outil : AWS Pricing Calculator
 
 ```text
 URL : https://calculator.aws/

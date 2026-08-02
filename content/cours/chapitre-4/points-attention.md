@@ -5,7 +5,7 @@ description: "Chapitre 4 — Amazon VPC et bases de données AWS - 6. Points imp
 
 <nav class="page-sequence"><a href="cours/chapitre-4/elasticache">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/ressources">Suivant</a></nav>
 
-### 5.1 Pièges RDS et Bases de données
+### 6.1 Pièges RDS et Bases de données
 
 | Piège | Réalité | Conséquence | Solution |
 |-------|---------|-----------|----------|
@@ -15,7 +15,7 @@ description: "Chapitre 4 — Amazon VPC et bases de données AWS - 6. Points imp
 | **Read Replica ≠ Multi-AZ** | Replica = asynchrone, pour lectures. Multi-AZ = synchrone, failover | Confondre les deux gâche design | Multi-AZ pour haute dispo, Replicas pour scalabilité lecture |
 | **Snapshot RDS = backup manuel** | Snapshots manuels ne s'auto-suppriment pas | Surcoûts stockage | Supprimer manuellement ou appliquer cycle vie |
 
-### 5.2 Pièges VPC et Réseau
+### 6.2 Pièges VPC et Réseau
 
 | Piège | Réalité | Conséquence | Solution |
 |-------|---------|-----------|----------|
@@ -31,7 +31,7 @@ description: "Chapitre 4 — Amazon VPC et bases de données AWS - 6. Points imp
 | **Transit Gateway routing par défaut = tous allowed** | TGW fait transiter tous les paquets par défaut | Communication imprévue entre VPCs | Restreindre via Route Tables TGW explicites |
 | **VPC CIDR overlap interdit dans Transit Gateway** | Tous les VPCs attachés doivent avoir CIDR différents | Adresses en collision = paquets perdus | Planifier CIDR par VPC avant TGW |
 
-### 5.3 Pièges Route 53 et DNS
+### 6.3 Pièges Route 53 et DNS
 
 | Piège | Réalité | Conséquence | Solution |
 |-------|---------|-----------|----------|
@@ -50,7 +50,7 @@ description: "Chapitre 4 — Amazon VPC et bases de données AWS - 6. Points imp
 > - Remonter le TTL à **300-3600s** après stabilisation
 
 
-### 5.4 Pièges DynamoDB
+### 6.4 Pièges DynamoDB
 
 | Piège | Réalité | Conséquence | Solution |
 |-------|---------|-----------|----------|
@@ -59,7 +59,7 @@ description: "Chapitre 4 — Amazon VPC et bases de données AWS - 6. Points imp
 | **DynamoDB TTL n'est pas immédiat** | TTL supprime dans 24-48h après expiration | Données restent visibles brièvement | Ne pas compter sur TTL pour sécurité |
 | **Global Secondary Index (GSI) coûte** | GSI = throughput supplémentaire à provisionner | Surcoûts si GSI mal utilisés | Bien planifier projections, ne créer que GSI utiles |
 
-### 5.5 Pièges ElastiCache
+### 6.5 Pièges ElastiCache
 
 | Piège | Réalité | Conséquence | Solution |
 |-------|---------|-----------|----------|
@@ -68,7 +68,7 @@ description: "Chapitre 4 — Amazon VPC et bases de données AWS - 6. Points imp
 | **ElastiCache dans VPC ≠ accessible depuis EC2 autre subnet** | Besoin Security Group + route table | EC2 ne peut pas accéder cache | Vérifier SG ElastiCache permet EC2, même VPC |
 | **Cluster mode disabled : une seule shard** | Pas de sharding = un seul nœud max CPU | Bottleneck CPU même avec plusieurs replicas | Cluster mode enabled pour scalabilité |
 
-### 5.6 Pièges Architecture Générale
+### 6.6 Pièges Architecture Générale
 
 | Piège | Réalité | Conséquence | Solution |
 |-------|---------|-----------|----------|

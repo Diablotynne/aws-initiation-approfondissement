@@ -5,7 +5,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 10. Elast
 
 <nav class="page-sequence"><a href="cours/chapitre-3/ec2-cli">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/auto-scaling">Suivant</a></nav>
 
-### 8.1 Pourquoi un Load Balancer ?
+### 10.1 Pourquoi un Load Balancer ?
 
 Un **Load Balancer** agit comme un répartiteur de trafic. Il reçoit les requêtes des clients et les distribue vers les instances EC2 disponibles, selon des règles de routage et de santé (**health checks**).
 
@@ -17,7 +17,7 @@ Un **Load Balancer** agit comme un répartiteur de trafic. Il reçoit les requê
 
 **Lecture du schéma.** Le répartiteur reçoit le trafic client et l'envoie uniquement aux cibles déclarées saines par les contrôles d'état. Les instances sont réparties sur plusieurs zones de disponibilité afin qu'une défaillance de zone n'interrompe pas nécessairement le service.
 
-### 8.2 Types de Load Balancer AWS
+### 10.2 Types de Load Balancer AWS
 
 | Type | Cas d'usage typique | Protocole | Niveau OSI |
 |---|---|---|---|
@@ -31,7 +31,7 @@ Un **Load Balancer** agit comme un répartiteur de trafic. Il reçoit les requê
 
 **GLB (Gateway Load Balancer)** : utilisé pour intégrer des **appliances réseau** comme des pare-feu ou des outils d'inspection. Il fonctionne au niveau **IP**.
 
-### 8.3 Fonctionnement du Load Balancer
+### 10.3 Fonctionnement du Load Balancer
 
 - Le Load Balancer **vérifie l'état** des instances via des **health checks** (tests de disponibilité).
 - Il **répartit les requêtes** vers les instances **saines** uniquement.

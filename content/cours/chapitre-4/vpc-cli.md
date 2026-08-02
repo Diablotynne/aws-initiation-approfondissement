@@ -8,7 +8,7 @@ description: "Chapitre 4 — Amazon VPC et bases de données AWS - 3. Construire
 > [!info]
 > Une activité pratique permet d’approfondir la construction d’un VPC complet.
 
-### 6.1 Créer une VPC complète avec AWS CLI
+### 3.1 Créer une VPC complète avec AWS CLI
 
 Cette séquence construit une VPC de zéro, pièce par pièce : VPC → subnets public/privé → Internet Gateway → NAT Gateway → tables de routage. C'est l'ordre obligatoire — chaque ressource dépend de la précédente.
 
@@ -272,7 +272,7 @@ aws ec2 describe-route-tables --filters "Name=vpc-id,Values=$VPC_ID"
 
 ---
 
-### 6.2 Créer et configurer un RDS Multi-AZ
+### 3.2 Créer et configurer un RDS Multi-AZ
 
 Cette démo crée une instance RDS MySQL en production-ready : Multi-AZ activé (réplication synchrone vers une AZ de secours), chiffrement KMS, logs CloudWatch, et authentification IAM. Chaque option a son impact sur la résilience et la sécurité.
 
@@ -414,7 +414,7 @@ aws rds delete-db-instance \
 
 ---
 
-### 6.3 Configurer Security Groups (pare-feu instance)
+### 3.3 Configurer Security Groups (pare-feu instance)
 
 Les Security Groups fonctionnent en chaîne dans une architecture 3-tiers : l'ALB accepte le trafic public, les instances EC2 n'acceptent que le trafic de l'ALB, et RDS n'accepte que le trafic des instances EC2. Cette démo crée les 3 SG et configure leurs règles d'entrée dans cet ordre.
 
@@ -613,7 +613,7 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 
 ---
 
-### 6.4 Créer une Zone Route 53 et des Enregistrements
+### 3.4 Créer une Zone Route 53 et des Enregistrements
 
 Une Hosted Zone Route 53 est le conteneur DNS pour un domaine. On crée la zone, puis on y ajoute les enregistrements (A, CNAME, MX…) via des "change batches" JSON. Chaque modification est atomique — soit tout réussit, soit tout échoue.
 

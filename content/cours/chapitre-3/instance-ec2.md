@@ -5,7 +5,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 6. Choisi
 
 <nav class="page-sequence"><a href="cours/chapitre-3/ec2">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/compute-optimizer">Suivant</a></nav>
 
-### 5.1 Types d'instances EC2
+### 6.1 Types d'instances EC2
 
 AWS propose plusieurs familles d'instances, selon le type de charge à traiter :
 
@@ -30,7 +30,7 @@ _Dans un environnement de formation, le type d'instance est imposé par le lab. 
 - `xlarge` ou `2xlarge` : très puissants, pour les charges importantes
 - le **`g`** que l'on trouve dans `t4g`, `m6g`, `c6g`, etc. signale généralement une instance équipée d'un processeur **AWS Graviton** fondé sur l'architecture ARM. Le rapport performance/prix dépend de la charge. Les binaires et images doivent être compatibles avec l'architecture choisie ; un composant compilé uniquement pour x86 doit être recompilé ou remplacé.
 
-### 5.2 AMI (Amazon Machine Image)
+### 6.2 AMI (Amazon Machine Image)
 
 L'AMI est le **système d'exploitation** de votre machine EC2.
 
@@ -60,7 +60,7 @@ Les AMI peuvent être classifiées dans les grandes catégories suivantes :
 
 > Il est souvent utile en entreprise de créer ses propres AMI afin de pouvoir déployer plus rapidement des instances EC2 correspondant aux besoins spécifiques. Vous pouvez enregistrer le disque contenant cette AMI après lancement de la machine EC2 et après avoir ajouté les spécificités de l'ensemble de vos machines.
 
-### 5.3 Stockage associé à EC2
+### 6.3 Stockage associé à EC2
 
 #### EBS — Elastic Block Store
 
@@ -124,7 +124,7 @@ Les AMI peuvent être classifiées dans les grandes catégories suivantes :
 📎 [EFS Documentation](https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html)
 📎 [FSx Documentation](https://aws.amazon.com/fr/fsx/)
 
-### 5.4 Sécurité EC2
+### 6.4 Sécurité EC2
 
 #### Security Groups : pare-feu virtuel
 
@@ -163,7 +163,7 @@ Les **Key Pairs** servent à sécuriser l'accès SSH :
 3. Depuis votre ordinateur, vous utilisez votre clé privée pour vous connecter en SSH.
 4. L'authentification par clé est plus sécurisée qu'un mot de passe (impossible à craquer par brute force).
 
-### 5.5 Options de conformité EC2
+### 6.5 Options de conformité EC2
 
 Les environnements réglementés (santé, finance, RGPD) ont besoin de **garanties de conformité**. AWS fournit plusieurs mécanismes :
 

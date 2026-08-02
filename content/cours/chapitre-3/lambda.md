@@ -5,7 +5,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 12. AWS L
 
 <nav class="page-sequence"><a href="cours/chapitre-3/auto-scaling">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/architecture">Suivant</a></nav>
 
-### 10.1 Pourquoi Lambda, quand on a déjà EC2 et Auto Scaling ?
+### 12.1 Pourquoi Lambda, quand on a déjà EC2 et Auto Scaling ?
 
 Vous venez de voir comment EC2 et Auto Scaling permettent d'adapter dynamiquement une flotte de serveurs à la charge. Mais même avec Auto Scaling, une instance EC2 minimale **tourne en permanence** — vous la payez même quand elle ne traite aucune requête.
 
@@ -19,7 +19,7 @@ Vous venez de voir comment EC2 et Auto Scaling permettent d'adapter dynamiquemen
 | **Démarrage** | Minutes (boot instance) ou secondes (déjà démarrée) | Millisecondes à quelques secondes (cold start) |
 | **Durée d'exécution max** | Illimitée | **15 minutes** par exécution |
 
-### 10.2 Fonctionnement d'une fonction Lambda
+### 12.2 Fonctionnement d'une fonction Lambda
 
 Une fonction Lambda est un paquet de code (Python, Node.js, Java, Go, etc.) associé à une configuration : mémoire allouée (128 Mo à 10 Go), timeout maximal, et un ou plusieurs **triggers** — les événements qui la déclenchent.
 
@@ -34,7 +34,7 @@ Planification (EventBridge)      ──►                            ──► 
 
 Le CPU alloué est proportionnel à la mémoire configurée — une fonction à 1 769 Mo de RAM obtient l'équivalent d'un vCPU complet. AWS gère entièrement l'infrastructure sous-jacente : vous ne choisissez ni AMI, ni type d'instance, ni Security Group pour la fonction elle-même.
 
-### 10.3 Créer et invoquer une fonction Lambda en CLI
+### 12.3 Créer et invoquer une fonction Lambda en CLI
 
 > [!info]
 > Une activité pratique permet d’approfondir la création et l’invocation de fonctions Lambda.
@@ -117,7 +117,7 @@ aws logs tail /aws/lambda/formation-bonjour --follow
 > **Le rôle IAM est la seule "sécurité réseau" de Lambda par défaut.** Contrairement à EC2, une fonction Lambda n'a pas de Security Group tant qu'elle n'est pas explicitement rattachée à un VPC (`--vpc-config`). Une Lambda simple qui n'a besoin que d'appeler d'autres services AWS (S3, DynamoDB) via leurs API n'a généralement pas besoin d'être dans un VPC — le rôle IAM suffit à contrôler ce qu'elle a le droit de faire.
 
 
-### 10.4 Comment estimer le coût de Lambda ?
+### 12.4 Comment estimer le coût de Lambda ?
 
 Lambda facture principalement le **nombre de requêtes** et la **durée d'exécution pondérée par la mémoire allouée**. D'autres postes peuvent s'ajouter : concurrence provisionnée, stockage éphémère supplémentaire, journaux CloudWatch, transfert réseau et services déclencheurs.
 

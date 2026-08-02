@@ -5,7 +5,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 14. Bonne
 
 <nav class="page-sequence"><a href="cours/chapitre-3/architecture">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/conformite">Suivant</a></nav>
 
-### 12.1 Architecture résiliente S3
+### 14.1 Architecture résiliente S3
 
 **Multi-région** :
 - S3 est déjà multi-AZ au sein d'une région.
@@ -22,7 +22,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 14. Bonne
 - CloudTrail pour auditer les accès et modifications.
 - S3 Access Analyzer pour vérifier les politiques d'accès.
 
-### 12.2 Architecture résiliente EC2
+### 14.2 Architecture résiliente EC2
 
 **Load Balancer + Auto Scaling minimum** :
 - Toujours au minimum 2 instances (haute disponibilité).
@@ -39,7 +39,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 14. Bonne
 - Externaliser les sauvegardes sur S3.
 - Tester la restauration régulièrement !
 
-### 12.3 Optimisation des coûts
+### 14.3 Optimisation des coûts
 
 **S3 Coûts** :
 - Utiliser **Intelligent-Tiering** si l'accès est imprévisible.
@@ -60,7 +60,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 14. Bonne
 - Utiliser le **Pricing Calculator** pour estimer les coûts futurs.
 - Vérifier les coûts inattendus via la **Cost Explorer**.
 
-### 12.4 Performance et scalabilité
+### 14.4 Performance et scalabilité
 
 **S3 Performance** :
 - Utiliser des **préfixes intelligents** pour éviter les goulots d'étranglement (ex. `2024/03/24/log-xxxxx`).

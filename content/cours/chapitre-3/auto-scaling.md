@@ -5,7 +5,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 11. Auto 
 
 <nav class="page-sequence"><a href="cours/chapitre-3/elb">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/lambda">Suivant</a></nav>
 
-### 9.1 Qu'est-ce qu'Auto Scaling ?
+### 11.1 Qu'est-ce qu'Auto Scaling ?
 
 Un **Auto Scaling Group (ASG)** est un groupe d'instances EC2 géré automatiquement. Il peut être associé à un Load Balancer pour garantir que :
 
@@ -13,7 +13,7 @@ Un **Auto Scaling Group (ASG)** est un groupe d'instances EC2 géré automatique
 - Les instances défaillantes sont **retirées** du pool.
 - Le trafic est toujours dirigé vers les **ressources disponibles**.
 
-### 9.2 Politiques de scaling — Fondamentaux
+### 11.2 Politiques de scaling — Fondamentaux
 
 Les politiques définissent **quand et comment** ajouter ou retirer des instances.
 
@@ -41,7 +41,7 @@ Attendre que les requêtes actuelles finissent
 Fermer l'instance, libérer les ressources
 ```
 
-### 9.3 Configuration d'Auto Scaling
+### 11.3 Configuration d'Auto Scaling
 
 Un ASG typique comporte :
 
@@ -56,7 +56,7 @@ Scaling Policies : Target CPU 70% · Scale out +2 instances/5 min · Scale in -1
 - **Desired Capacity** : nombre d'instances cible en ce moment
 - **Launch Template** : modèle (AMI, type, security group, etc.) pour les nouvelles instances
 
-### 9.4 Métriques CloudWatch et politiques de scaling avancées
+### 11.4 Métriques CloudWatch et politiques de scaling avancées
 
 Auto Scaling peut se baser sur **plusieurs métriques CloudWatch**, pas seulement CPU.
 
@@ -147,7 +147,7 @@ T=540s  CPU toujours < 30% → Scale-in (-1 instance)
 
 📎 [Auto Scaling EC2](https://docs.aws.amazon.com/autoscaling/ec2/)
 
-### 9.5 Avantages combinés Load Balancer + Auto Scaling
+### 11.5 Avantages combinés Load Balancer + Auto Scaling
 
 - **Résilience** : les instances défaillantes sont automatiquement **remplacées**.
 - **Scalabilité** : le nombre d'instances s'adapte à la **charge** en temps réel.

@@ -5,7 +5,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 5. Amazon
 
 <nav class="page-sequence"><a href="cours/chapitre-3/s3-cli">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/instance-ec2">Suivant</a></nav>
 
-### 4.1 Introduction à EC2
+### 5.1 Introduction à EC2
 
 <div class="video-embed"><iframe src="https://www.youtube-nocookie.com/embed/aARcLxcGJaU" title="Lancer une machine virtuelle Windows avec Amazon EC2" loading="lazy" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
@@ -17,13 +17,13 @@ EC2 est l'un des premiers services historiques d'AWS (2006). Il permet de **loue
 
 **Amazon EC2 (Elastic Compute Cloud)** est le service AWS qui permet de créer des **machines virtuelles** dans le cloud, appelées **instances EC2**.
 
-### 4.2 Pourquoi utiliser EC2 ?
+### 5.2 Pourquoi utiliser EC2 ?
 
 EC2 reprend le principe familier d'un serveur physique — un système d'exploitation, du CPU, de la RAM, du stockage, une carte réseau — mais en supprime toutes les contraintes matérielles, ce qui explique son adoption massive comme brique de calcul de base sur AWS.
 
 Le **lancement est rapide** : là où commander, recevoir et configurer un serveur physique prenait des semaines, une instance EC2 est prête à l'emploi en quelques clics ou quelques lignes de CLI, avec un système d'exploitation déjà installé. Le service est aussi **flexible** : vous choisissez la puissance de calcul, le système d'exploitation, le type de stockage attaché et la configuration réseau, et vous pouvez faire évoluer ces choix a posteriori si les besoins changent — un projet peut commencer sur une petite instance et migrer vers une plus puissante sans réinstallation. Le modèle est **économique** parce que la facturation suit la consommation réelle plutôt qu'un investissement matériel figé : vous payez à l'heure ou à la seconde pour ce qui tourne, et vous pouvez arrêter une instance dès qu'elle n'est plus utile pour cesser d'être facturé. Enfin, EC2 est nativement **connecté** au reste de l'écosystème AWS : une instance peut lire et écrire dans un bucket S3, s'authentifier via un rôle IAM sans stocker de clé d'accès, et vivre dans un VPC dont vous contrôlez entièrement le découpage réseau — cette intégration native évite d'avoir à recoller manuellement des briques hétérogènes comme sur une infrastructure on-premise.
 
-### 4.3 Les composants essentiels d'une instance EC2
+### 5.3 Les composants essentiels d'une instance EC2
 
 | Composant | Rôle dans l'architecture EC2 |
 |---|---|

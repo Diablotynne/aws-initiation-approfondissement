@@ -5,7 +5,7 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 7. AWS Co
 
 <nav class="page-sequence"><a href="cours/chapitre-3/instance-ec2">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/tarification-ec2">Suivant</a></nav>
 
-### 6.1 Qu'est-ce que AWS Compute Optimizer ?
+### 7.1 Qu'est-ce que AWS Compute Optimizer ?
 
 **AWS Compute Optimizer** est un service qui **analyse vos patterns d'utilisation** des instances EC2 et recommande des types plus optimisés en coût et performance.
 
@@ -20,14 +20,14 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - 7. AWS Co
 
 Compute Optimizer applique cette analyse automatiquement à partir des métriques CloudWatch collectées.
 
-### 6.2 Fonctionnement
+### 7.2 Fonctionnement
 
 1. **Collecte** : Compute Optimizer récupère les métriques CloudWatch (CPU, mémoire, réseau) sur **14 jours minimum**.
 2. **Analyse** : Machine Learning compare votre utilisation réelle avec les capabilities des autres types.
 3. **Recommandation** : Propose des types économiquement viables.
 4. **Confiance** : Indique un score de confiance (low, medium, high).
 
-### 6.3 Types de recommandations
+### 7.3 Types de recommandations
 
 | Recommandation | Bénéfice | Risque | Exemple |
 |---|---|---|---|
@@ -36,7 +36,7 @@ Compute Optimizer applique cette analyse automatiquement à partir des métrique
 | **Switch Family** | Meilleure performance/$ | Changement d'architecture | t3.large → m6i.large |
 | **Aucune recommandation** | Instance bien dimensionnée | N/A | ✅ Garder tel quel |
 
-### 6.4 Activation et utilisation
+### 7.4 Activation et utilisation
 
 Compute Optimizer analyse l'utilisation réelle de vos instances (CPU, mémoire, réseau) sur 14 jours et suggère le type le mieux adapté. La commande suivante affiche ces recommandations sous forme de tableau comparatif.
 
@@ -69,7 +69,7 @@ aws compute-optimizer get-ec2-instance-recommendations \
 > Si aucune recommandation n'apparaît, Compute Optimizer manque encore de données (il lui faut au minimum 30h d'activité sur les instances).
 
 
-### 6.5 Cas d'usage
+### 7.5 Cas d'usage
 
 - **Optimisation de coûts** : identifier toutes les instances surdimensionnées.
 - **Gouvernance cloud** : politiques de rightsizing automatisées.
