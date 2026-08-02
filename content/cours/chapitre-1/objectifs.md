@@ -3,7 +3,7 @@ title: "Objectifs du chapitre"
 description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - Objectifs du chapitre"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-1/index">Sommaire du chapitre</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/vocabulaire">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/index">Sommaire du chapitre</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/introduction">Suivant</a></nav>
 
 > [!info]
 > Cette formation débute par les fondations théoriques indispensables avant de manipuler la console AWS : sans comprendre ce qu'est réellement le Cloud Computing, ses modèles économiques et ses responsabilités, il est impossible de faire des choix d'architecture pertinents par la suite.
@@ -28,4 +28,4 @@ description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - Obje
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-1/index">Sommaire du chapitre</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/vocabulaire">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/index">Sommaire du chapitre</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/introduction">Suivant</a></nav>

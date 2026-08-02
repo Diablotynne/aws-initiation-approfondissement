@@ -7,7 +7,6 @@ Les notions de cours sont pr&eacute;sent&eacute;es sur des pages courtes. Tous l
 
 <nav class="chapter-map" aria-label="Sous-chapitres de la journee">
   <a href="cours/chapitre-5/objectifs">Objectifs du chapitre</a>
-  <a href="cours/chapitre-5/vocabulaire">Vocabulaire du chapitre</a>
   <a href="cours/chapitre-5/reprise">1. RTO/RPO et Récupération de Sauvegarde</a>
   <a href="cours/chapitre-5/automatisation">2. Pourquoi automatiser dans le Cloud ?</a>
   <a href="cours/chapitre-5/cloudformation">3. AWS CloudFormation — Infrastructure as Code</a>
@@ -18,8 +17,9 @@ Les notions de cours sont pr&eacute;sent&eacute;es sur des pages courtes. Tous l
   <a href="cours/chapitre-5/evenements">8. Services complémentaires — Queues et événements</a>
   <a href="cours/chapitre-5/certifications">9. Certifications AWS — Objectif SAA-C03</a>
   <a href="cours/chapitre-5/ressources">Ressources</a>
-  <a href="cours/chapitre-5/fiche-memoire">Cheat sheet — Automatisation, supervision et reprise</a>
   <a href="cours/chapitre-5/travaux-pratiques">Travaux pratiques — Automatisation et résilience</a>
+  <a class="chapter-annex" href="annexes/glossaire">Annexe - Glossaire</a>
+  <a class="chapter-annex" href="annexes/cheat-sheet">Annexe - Cheat sheet</a>
   <a href="cours/chapitre-5/quiz">Quiz interactif du chapitre</a>
   <a href="cours/chapitre-5/mini-jeu">Mini-jeu de synthèse — AWS Quest</a>
 </nav>

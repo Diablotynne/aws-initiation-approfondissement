@@ -3,7 +3,7 @@ title: "1. RTO/RPO et Récupération de Sauvegarde"
 description: "Chapitre 5 — Automatisation, supervision et reprise d'activité - 1. RTO/RPO et Récupération de Sauvegarde"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-5/vocabulaire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/automatisation">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/objectifs">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/automatisation">Suivant</a></nav>
 
 ### 1.1 Définitions essentielles
 
@@ -281,4 +281,4 @@ aws rds restore-db-instance-from-db-snapshot \
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-5/vocabulaire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/automatisation">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/objectifs">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/automatisation">Suivant</a></nav>

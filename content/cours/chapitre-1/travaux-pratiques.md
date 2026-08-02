@@ -3,7 +3,7 @@ title: "Travaux pratiques — Fondamentaux du cloud"
 description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - Travaux pratiques — Fondamentaux du cloud"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-1/fiche-memoire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/quiz">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/ressources">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/quiz">Suivant</a></nav>
 
 Les accès sont remis au début de la formation. Utilisez uniquement l'environnement temporaire attribué et suivez l'énoncé du module, de l'atelier ou du lab sélectionné. Aucun compte AWS personnel n'est nécessaire.
 
@@ -42,4 +42,4 @@ Les accès sont remis au début de la formation. Utilisez uniquement l'environne
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-1/fiche-memoire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/quiz">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/ressources">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/quiz">Suivant</a></nav>

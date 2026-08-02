@@ -7,7 +7,6 @@ Les notions de cours sont pr&eacute;sent&eacute;es sur des pages courtes. Tous l
 
 <nav class="chapter-map" aria-label="Sous-chapitres de la journee">
   <a href="cours/chapitre-3/objectifs">Objectifs du chapitre</a>
-  <a href="cours/chapitre-3/vocabulaire">Vocabulaire du chapitre</a>
   <a href="cours/chapitre-3/stockage-aws">1. Introduction aux services de stockage AWS</a>
   <a href="cours/chapitre-3/s3">2. Amazon S3 : Le stockage objet scalable</a>
   <a href="cours/chapitre-3/protection-s3">3. Protéger et optimiser les données S3</a>
@@ -23,8 +22,9 @@ Les notions de cours sont pr&eacute;sent&eacute;es sur des pages courtes. Tous l
   <a href="cours/chapitre-3/conformite">13. Conformité et sécurité pour les données sensibles</a>
   <a href="cours/chapitre-3/points-attention">14. Points importants et pièges fréquents</a>
   <a href="cours/chapitre-3/ressources">15. Ressources</a>
-  <a href="cours/chapitre-3/fiche-memoire">Cheat sheet — Stockage et calcul</a>
   <a href="cours/chapitre-3/travaux-pratiques">Travaux pratiques — Amazon S3 et Amazon EC2</a>
+  <a class="chapter-annex" href="annexes/glossaire">Annexe - Glossaire</a>
+  <a class="chapter-annex" href="annexes/cheat-sheet">Annexe - Cheat sheet</a>
   <a href="cours/chapitre-3/quiz">Quiz interactif du chapitre</a>
   <a href="cours/chapitre-3/mini-jeu">Mini-jeu de synthèse — AWS Quest</a>
 </nav>

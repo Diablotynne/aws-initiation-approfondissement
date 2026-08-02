@@ -33,10 +33,10 @@ body[data-slug="index"] article > h1:first-child {
 
 .aws-hero p { max-width: 47rem; color: #dce7f7; font-size: 1.05rem; }
 .aws-kicker { color: var(--aws-orange); font-size: 0.8rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
-.aws-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.4rem; }
-.aws-actions a { padding: 0.72rem 1rem; border: 1px solid #ffffff55; border-radius: 0.65rem; color: #fff; font-weight: 750; text-decoration: none; }
-.aws-actions a:first-child,
-.course-intro-hero .aws-actions a:first-child:visited {
+.course-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.4rem; }
+.course-actions a { padding: 0.72rem 1rem; border: 1px solid #ffffff55; border-radius: 0.65rem; color: #fff; font-weight: 750; text-decoration: none; }
+.course-actions a:first-child,
+.course-intro-hero .course-actions a:first-child:visited {
   border-color: var(--aws-orange);
   color: #111827 !important;
   background: var(--aws-orange);

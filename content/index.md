@@ -1,20 +1,18 @@
 ---
-title: AWS — Initiation et approfondissement
-description: Support de cours théorique sur le Cloud Computing et les principaux services AWS.
+title: "AWS â€” Initiation et approfondissement"
+description: "Support de cours thÃ©orique sur le Cloud Computing et les principaux services AWS."
 ---
 
 <!-- introduction-integree -->
 
-# AWS — Initiation et approfondissement
+# AWS â€” Initiation et approfondissement
 
 <section class="course-intro-hero">
-  <p class="module-hero__eyebrow">Support de cours · Cloud Computing et Amazon Web Services</p>
-  <h2>Fondamentaux du cloud, services AWS, sécurité et architecture</h2>
-  <p>Cinq chapitres couvrent les fondamentaux et offres AWS, la sécurité IAM, le stockage et le calcul, le réseau et les bases de données, puis l'automatisation et la reprise d'activité.</p>
-  <div class="aws-actions"><a href="#objectifs-de-la-formation">Voir les objectifs</a><a href="cours/chapitre-1/">Commencer le cours</a></div>
+  <p class="module-hero__eyebrow">Support de cours Â· Cloud Computing et Amazon Web Services</p>
+  <h2>Fondamentaux du cloud, services AWS, sÃ©curitÃ© et architecture</h2>
+  <p>Cinq chapitres couvrent les fondamentaux et offres AWS, la sÃ©curitÃ© IAM, le stockage et le calcul, le rÃ©seau et les bases de donnÃ©es, puis l'automatisation et la reprise d'activitÃ©.</p>
+  <div class="course-actions"><a href="#objectifs-de-la-formation">Voir les objectifs</a><a href="cours/chapitre-1/">Commencer le cours</a></div>
 </section>
-
-<!-- contenu-introduction:debut -->
 
 ## Informations administratives
 
@@ -22,7 +20,6 @@ Cette page rassemble les informations pratiques à connaître avant d'aborder le
 
 - L'émargement est réalisé deux fois par journée de formation.
 - Les besoins et attentes sont recueillis au démarrage de la session.
-- Une évaluation des acquis et de la formation est réalisée en fin de parcours.
 - Les accès temporaires et les consignes propres aux labs sont communiqués pendant la session et ne sont pas publiés dans ce support.
 
 ## Horaires
@@ -45,6 +42,9 @@ Avant d'aborder les concepts techniques, ce tour de table permet d'adapter les e
 - Existe-t-il une contrainte particulière à prendre en compte : sécurité, réseau, coûts, exploitation ou architecture ?
 
 Les réponses servent à choisir les exemples et le niveau d'approfondissement sans modifier la couverture du programme.
+
+> [!important]
+> **Règle d'or de cette formation :** interrompre le formateur dès qu'une notion n'est pas comprise ou qu'une question se présente ; partager son écran en cas de blocage technique afin de permettre un diagnostic collectif ; participer activement aux échanges et aux validations.
 
 ## Finalité de la formation
 
@@ -84,47 +84,28 @@ Les manipulations nécessitent :
 
 Aucun compte AWS personnel, aucune carte bancaire et aucune installation locale de la CLI AWS ne sont exigés pour suivre les activités prévues.
 
-## Organisation des ressources
-
-Chaque chapitre commence par ses objectifs puis propose une page par concept. Le vocabulaire, la fiche mémo, les travaux pratiques et le quiz disposent également de pages distinctes afin de limiter le défilement et de permettre un accès direct.
-
-> [!important]
-> Les identifiants, modules et labs disponibles dépendent de la session ouverte pour la formation. Ce support ne publie aucun identifiant privé et n'ajoute aucun lab absent des ressources remises.
-
 ## Méthode de travail
 
 1. Lire les objectifs du chapitre.
 2. Parcourir les concepts dans l'ordre proposé ou accéder directement à une notion précise.
-3. Consulter la fiche mémo avant l'activité pratique.
+3. Consulter le glossaire et la cheat sheet depuis les liens du chapitre.
 4. Réaliser les modules et labs indiqués dans l'environnement de formation.
 5. Terminer par le quiz interactif du chapitre.
-
-<!-- contenu-introduction:fin -->
-
-
 
 ## Parcours de formation
 
 <div class="learning-card-grid">
-  <a class="learning-card" href="cours/chapitre-1/"><span class="learning-card__number">01</span><span class="learning-card__meta">Cloud Computing et AWS</span><strong>Fondamentaux du cloud et présentation d'AWS</strong><small>NIST, modèles cloud, virtualisation, infrastructure mondiale, services, coûts et Well-Architected.</small></a>
-  <a class="learning-card" href="cours/chapitre-2/"><span class="learning-card__number">02</span><span class="learning-card__meta">Sécurité</span><strong>Identités, authentification et autorisations avec IAM</strong><small>Utilisateurs, groupes, rôles, politiques, MFA, fédération, Cognito, comptes multiples et CloudTrail.</small></a>
-  <a class="learning-card" href="cours/chapitre-3/"><span class="learning-card__number">03</span><span class="learning-card__meta">Stockage et calcul</span><strong>Amazon S3, EC2 et services de stockage associés</strong><small>Stockage objet, AMI, instances, EBS, EFS, tarification, équilibrage et Auto Scaling.</small></a>
-  <a class="learning-card" href="cours/chapitre-4/"><span class="learning-card__number">04</span><span class="learning-card__meta">Réseau et données</span><strong>Amazon VPC et bases de données AWS</strong><small>RDS, Aurora, DynamoDB, migration, adressage, sous-réseaux, routage, sécurité et DNS.</small></a>
-  <a class="learning-card" href="cours/chapitre-5/"><span class="learning-card__number">05</span><span class="learning-card__meta">Exploitation</span><strong>Automatisation, supervision et reprise d'activité</strong><small>RTO, RPO, sauvegarde, CloudFormation, Systems Manager, Elastic Beanstalk et CloudWatch.</small></a>
+<a class="learning-card" href="cours/chapitre-1/"><span class="learning-card__number">01</span><span class="learning-card__meta">Cloud Computing et AWS</span><strong>Fondamentaux du cloud et prÃ©sentation d'AWS</strong><small>NIST, modÃ¨les cloud, virtualisation, infrastructure mondiale, services, coÃ»ts et Well-Architected.</small></a>
+  <a class="learning-card" href="cours/chapitre-2/"><span class="learning-card__number">02</span><span class="learning-card__meta">SÃ©curitÃ©</span><strong>IdentitÃ©s, authentification et autorisations avec IAM</strong><small>Utilisateurs, groupes, rÃ´les, politiques, MFA, fÃ©dÃ©ration, Cognito, comptes multiples et CloudTrail.</small></a>
+  <a class="learning-card" href="cours/chapitre-3/"><span class="learning-card__number">03</span><span class="learning-card__meta">Stockage et calcul</span><strong>Amazon S3, EC2 et services de stockage associÃ©s</strong><small>Stockage objet, AMI, instances, EBS, EFS, tarification, Ã©quilibrage et Auto Scaling.</small></a>
+  <a class="learning-card" href="cours/chapitre-4/"><span class="learning-card__number">04</span><span class="learning-card__meta">RÃ©seau et donnÃ©es</span><strong>Amazon VPC et bases de donnÃ©es AWS</strong><small>RDS, Aurora, DynamoDB, migration, adressage, sous-rÃ©seaux, routage, sÃ©curitÃ© et DNS.</small></a>
+  <a class="learning-card" href="cours/chapitre-5/"><span class="learning-card__number">05</span><span class="learning-card__meta">Exploitation</span><strong>Automatisation, supervision et reprise d'activitÃ©</strong><small>RTO, RPO, sauvegarde, CloudFormation, Systems Manager, Elastic Beanstalk et CloudWatch.</small></a>
 </div>
 
+## Annexes du cours
 
+<div class="download-grid"><a href="annexes/glossaire"><strong>Glossaire</strong><span>Définitions des termes techniques employés dans le cours.</span></a><a href="annexes/cheat-sheet"><strong>Cheat sheet</strong><span>Commandes, syntaxes et repères à consulter rapidement.</span></a></div>
 
 ## Télécharger le support
 
-<div class="download-grid">
-  <a href="static/downloads/aws-initiation-approfondissement-markdown.zip" download><strong>Archive Markdown (.zip)</strong><span>Les cinq chapitres sans navigation Quartz, accompagnés des schémas SVG.</span></a>
-  <a href="assets/telechargements/aws-initiation-approfondissement.pdf" download><strong>Version PDF</strong><span>Document mis en page pour lecture hors ligne et impression.</span></a>
-</div>
-
-## Utilisation du support
-
-Chaque chapitre développe d'abord les notions théoriques et leur fonctionnement technique. Les schémas servent à représenter les relations entre les composants. Un quiz interactif placé en fin de chapitre permet ensuite de vérifier les acquis ; l'explication apparaît après la réponse.
-
-> [!NOTE]
-> Les travaux pratiques sont réalisés dans les environnements temporaires remis pour la session. Ce support ne demande pas de créer un compte AWS personnel et ne contient ni consigne de création de compte ni identifiant d'accès.
+<div class="download-grid"><a href="static/downloads/aws-initiation-approfondissement-markdown.zip" download><strong>Archive Markdown</strong><span>Les cinq chapitres, les annexes et leurs illustrations.</span></a><a href="assets/telechargements/aws-initiation-approfondissement.pdf" download><strong>Version PDF</strong><span>Support hors ligne et imprimable.</span></a></div>

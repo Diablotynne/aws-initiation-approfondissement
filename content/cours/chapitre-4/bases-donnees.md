@@ -3,7 +3,7 @@ title: "1. Bases de données dans AWS — Du service géré à la scalabilité"
 description: "Chapitre 4 — Amazon VPC et bases de données AWS - 1. Bases de données dans AWS — Du service géré à la scalabilité"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-4/vocabulaire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/vpc">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-4/objectifs">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/vpc">Suivant</a></nav>
 
 ### 1.1 Répartition des responsabilités avec une base managée
 
@@ -667,4 +667,4 @@ aws dms delete-replication-task \
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-4/vocabulaire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/vpc">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-4/objectifs">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/vpc">Suivant</a></nav>

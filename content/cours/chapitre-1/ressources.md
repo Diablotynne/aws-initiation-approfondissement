@@ -3,7 +3,7 @@ title: "Ressources"
 description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - Ressources"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-1/points-attention">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/fiche-memoire">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/points-attention">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/travaux-pratiques">Suivant</a></nav>
 
 ### Documentation officielle AWS
 - [AWS Documentation](https://docs.aws.amazon.com/fr_fr/)
@@ -13,4 +13,4 @@ description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - Ress
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-1/points-attention">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/fiche-memoire">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/points-attention">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/travaux-pratiques">Suivant</a></nav>

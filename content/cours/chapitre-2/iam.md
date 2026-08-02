@@ -3,7 +3,7 @@ title: "1. Introduction à IAM : Identity and Access Management"
 description: "Chapitre 2 — Sécurité des accès avec AWS IAM - 1. Introduction à IAM : Identity and Access Management"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-2/vocabulaire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/mfa-politiques">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/objectifs">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/mfa-politiques">Suivant</a></nav>
 
 ### 1.1 Définition et rôle stratégique
 
@@ -232,4 +232,4 @@ AWS suit **trois règles fondamentales**, dans cet ordre :
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-2/vocabulaire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/mfa-politiques">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/objectifs">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/mfa-politiques">Suivant</a></nav>

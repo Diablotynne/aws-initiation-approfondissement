@@ -3,7 +3,7 @@ title: "Objectifs du chapitre"
 description: "Chapitre 5 — Automatisation, supervision et reprise d'activité - Objectifs du chapitre"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-5/index">Sommaire du chapitre</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/vocabulaire">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/index">Sommaire du chapitre</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/reprise">Suivant</a></nav>
 
 > [!info]
 > Le réseau et les bases de données étudiés précédemment constituent une architecture fonctionnelle. Ce chapitre ajoute l'automatisation, la supervision et les mécanismes nécessaires pour évaluer et faire évoluer cette architecture.
@@ -28,4 +28,4 @@ description: "Chapitre 5 — Automatisation, supervision et reprise d'activité 
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-5/index">Sommaire du chapitre</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/vocabulaire">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-5/index">Sommaire du chapitre</a> <a href="cours/chapitre-5/index">Sommaire</a> <a href="cours/chapitre-5/reprise">Suivant</a></nav>

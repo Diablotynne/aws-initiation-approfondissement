@@ -3,7 +3,7 @@ title: "1. Introduction"
 description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - 1. Introduction"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-1/vocabulaire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/fondamentaux-cloud">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/objectifs">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/fondamentaux-cloud">Suivant</a></nav>
 
 ### 1.1 Qu'est-ce qu'AWS et pourquoi le découvrir ?
 
@@ -49,4 +49,4 @@ Les notions du programme recoupent une partie du périmètre de **Solutions Arch
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-1/vocabulaire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/fondamentaux-cloud">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-1/objectifs">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/fondamentaux-cloud">Suivant</a></nav>

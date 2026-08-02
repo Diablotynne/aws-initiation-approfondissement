@@ -3,7 +3,7 @@ title: "Objectifs du chapitre"
 description: "Chapitre 4 — Amazon VPC et bases de données AWS - Objectifs du chapitre"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-4/index">Sommaire du chapitre</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/vocabulaire">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-4/index">Sommaire du chapitre</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/bases-donnees">Suivant</a></nav>
 
 > [!info]
 > Les instances EC2 et les buckets S3 déployés au chapitre précédent doivent maintenant s'intégrer dans un réseau maîtrisé et s'appuyer sur des bases de données managées : ce chapitre couvre les deux piliers d'une architecture AWS mature, le réseau (VPC) et la donnée persistante (RDS, Aurora, DynamoDB).
@@ -28,4 +28,4 @@ description: "Chapitre 4 — Amazon VPC et bases de données AWS - Objectifs du 
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-4/index">Sommaire du chapitre</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/vocabulaire">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-4/index">Sommaire du chapitre</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/bases-donnees">Suivant</a></nav>

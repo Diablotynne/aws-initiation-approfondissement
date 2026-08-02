@@ -7,7 +7,6 @@ Les notions de cours sont pr&eacute;sent&eacute;es sur des pages courtes. Tous l
 
 <nav class="chapter-map" aria-label="Sous-chapitres de la journee">
   <a href="cours/chapitre-1/objectifs">Objectifs du chapitre</a>
-  <a href="cours/chapitre-1/vocabulaire">Vocabulaire du chapitre</a>
   <a href="cours/chapitre-1/introduction">1. Introduction</a>
   <a href="cours/chapitre-1/fondamentaux-cloud">2. Fondamentaux du Cloud Computing</a>
   <a href="cours/chapitre-1/modeles-service">3. Modèles de services : IaaS, PaaS et SaaS</a>
@@ -20,8 +19,9 @@ Les notions de cours sont pr&eacute;sent&eacute;es sur des pages courtes. Tous l
   <a href="cours/chapitre-1/bonnes-pratiques">10. Bonnes pratiques de démarrage</a>
   <a href="cours/chapitre-1/points-attention">11. Points importants et pièges fréquents</a>
   <a href="cours/chapitre-1/ressources">Ressources</a>
-  <a href="cours/chapitre-1/fiche-memoire">Cheat sheet — Fondamentaux du cloud et AWS</a>
   <a href="cours/chapitre-1/travaux-pratiques">Travaux pratiques — Fondamentaux du cloud</a>
+  <a class="chapter-annex" href="annexes/glossaire">Annexe - Glossaire</a>
+  <a class="chapter-annex" href="annexes/cheat-sheet">Annexe - Cheat sheet</a>
   <a href="cours/chapitre-1/quiz">Quiz interactif du chapitre</a>
   <a href="cours/chapitre-1/mini-jeu">Mini-jeu de synthèse — AWS Quest</a>
 </nav>

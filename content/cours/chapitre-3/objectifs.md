@@ -3,7 +3,7 @@ title: "Objectifs du chapitre"
 description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - Objectifs du chapitre"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-3/index">Sommaire du chapitre</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/vocabulaire">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/index">Sommaire du chapitre</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/stockage-aws">Suivant</a></nav>
 
 > [!info]
 > Après l'étude des accès IAM, ce chapitre aborde deux composants structurants d'une architecture AWS : le stockage objet avec Amazon S3 et la capacité de calcul avec Amazon EC2.
@@ -28,4 +28,4 @@ description: "Chapitre 3 — Stockage Amazon S3 et calcul Amazon EC2 - Objectifs
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-3/index">Sommaire du chapitre</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/vocabulaire">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-3/index">Sommaire du chapitre</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/stockage-aws">Suivant</a></nav>

@@ -3,7 +3,7 @@ title: "Travaux pratiques — Sécurité et gestion des accès"
 description: "Chapitre 2 — Sécurité des accès avec AWS IAM - Travaux pratiques — Sécurité et gestion des accès"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-2/fiche-memoire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/quiz">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/ressources">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/quiz">Suivant</a></nav>
 
 ### AWS Academy — Cloud Foundations
 
@@ -42,4 +42,4 @@ description: "Chapitre 2 — Sécurité des accès avec AWS IAM - Travaux pratiq
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-2/fiche-memoire">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/quiz">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/ressources">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/quiz">Suivant</a></nav>

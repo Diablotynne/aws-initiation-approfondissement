@@ -3,7 +3,7 @@ title: "Objectifs du chapitre"
 description: "Chapitre 2 — Sécurité des accès avec AWS IAM - Objectifs du chapitre"
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-2/index">Sommaire du chapitre</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/vocabulaire">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/index">Sommaire du chapitre</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/iam">Suivant</a></nav>
 
 > [!info]
 > Le chapitre précédent a posé les bases théoriques du Cloud Computing et présenté l'écosystème AWS ; ce chapitre entre dans le concret en abordant le premier pilier opérationnel de toute architecture AWS : la sécurité des accès.
@@ -27,4 +27,4 @@ description: "Chapitre 2 — Sécurité des accès avec AWS IAM - Objectifs du c
 
 ---
 
-<nav class="page-sequence"><a href="cours/chapitre-2/index">Sommaire du chapitre</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/vocabulaire">Suivant</a></nav>
+<nav class="page-sequence"><a href="cours/chapitre-2/index">Sommaire du chapitre</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/iam">Suivant</a></nav>
