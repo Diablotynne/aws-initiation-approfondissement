@@ -72,5 +72,6 @@
   </g>
 
   <line x1="60" y1="500" x2="840" y2="500" stroke="#30363d" stroke-width="1"/>
-  <text x="450" y="530" text-anchor="middle" fill="#e6edf3" font-size="14" font-weight="600">Plus on avance vers la droite, plus AWS prend en charge de couches — mais jamais la classification des données ni les autorisations décidées par le client.</text>
+  <text x="450" y="525" text-anchor="middle" fill="#e6edf3" font-size="14" font-weight="600">Plus on avance vers la droite, plus AWS prend en charge de couches.</text>
+  <text x="450" y="547" text-anchor="middle" fill="#e6edf3" font-size="14" font-weight="600">Mais jamais la classification des données ni les autorisations décidées par le client.</text>
 </svg>

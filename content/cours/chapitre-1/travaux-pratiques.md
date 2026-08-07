@@ -1,6 +1,6 @@
 ---
 title: "Travaux pratiques — Fondamentaux du cloud"
-description: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS - Travaux pratiques — Fondamentaux du cloud"
+description: "\"Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS\" - Travaux pratiques — Fondamentaux du cloud"
 ---
 
 <nav class="page-sequence"><a href="cours/chapitre-1/ressources">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/quiz">Suivant</a></nav>

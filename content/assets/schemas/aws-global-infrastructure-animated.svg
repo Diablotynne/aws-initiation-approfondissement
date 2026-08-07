@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" role="img" aria-labelledby="title desc">
+  <title id="title">Infrastructure mondiale AWS, de la région aux zones de disponibilité</title>
+  <desc id="desc">Une requête entre dans la région Europe Paris puis circule vers un répartiteur et trois zones de disponibilité indépendantes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#101c35"/><stop offset="1" stop-color="#263f69"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-opacity=".2"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0l10 5-10 5z" fill="#ff9900"/></marker>
+    <style>
+      .card{fill:#fff;stroke:#ccd8e7;stroke-width:2;filter:url(#shadow)}.az{transition:transform .2s ease,opacity .2s ease;transform-box:fill-box;transform-origin:center}.az:hover{transform:translateY(-7px);opacity:.92}.flow{fill:none;stroke:#ff9900;stroke-width:4;stroke-dasharray:10 10;marker-end:url(#arrow);animation:move 1.4s linear infinite}.soft{fill:#60758e;font:15px system-ui,sans-serif}.label{fill:#17223b;font:700 19px system-ui,sans-serif}.small{fill:#40546a;font:14px system-ui,sans-serif}.head{fill:#fff;font:800 28px system-ui,sans-serif}.sub{fill:#dce8f7;font:16px system-ui,sans-serif}@keyframes move{to{stroke-dashoffset:-40}}@media(prefers-reduced-motion:reduce){.flow{animation:none}}
+    </style>
+  </defs>
+  <rect width="1000" height="560" rx="26" fill="url(#bg)"/>
+  <text x="42" y="54" class="head">Région AWS Europe (Paris) · eu-west-3</text>
+  <text x="42" y="82" class="sub">Une région est isolée ; la haute disponibilité se construit entre plusieurs AZ.</text>
+  <g transform="translate(40 130)">
+    <rect class="card" width="190" height="94" rx="16"/>
+    <circle cx="42" cy="47" r="22" fill="#ff9900"/><path d="M31 47h22m-7-7 7 7-7 7" fill="none" stroke="#17223b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="76" y="40" class="label">Utilisateurs</text><text x="76" y="63" class="small">Internet / API</text>
+  </g>
+  <path class="flow" d="M235 177H354"/>
+  <g transform="translate(360 130)"><rect class="card" width="230" height="94" rx="16"/><text x="115" y="40" text-anchor="middle" class="label">Point d’entrée régional</text><text x="115" y="64" text-anchor="middle" class="small">Load Balancer / service AWS</text></g>
+  <path class="flow" d="M475 230v56M475 286H205v54M475 286v54M475 286h270v54"/>
+  <g class="az" transform="translate(70 340)"><title>Zone eu-west-3a : ressources zonales indépendantes</title><rect class="card" width="270" height="155" rx="18"/><rect width="270" height="43" rx="18" fill="#e8f2ff"/><text x="20" y="29" class="label">AZ eu-west-3a</text><rect x="25" y="68" width="95" height="55" rx="10" fill="#eaf7f2" stroke="#55a786"/><rect x="150" y="68" width="95" height="55" rx="10" fill="#fff3de" stroke="#e3a43c"/><text x="72" y="101" text-anchor="middle" class="small">EC2</text><text x="197" y="101" text-anchor="middle" class="small">RDS</text><text x="20" y="145" class="soft">Un ou plusieurs datacenters</text></g>
+  <g class="az" transform="translate(365 340)"><title>Zone eu-west-3b : deuxième domaine de défaillance</title><rect class="card" width="270" height="155" rx="18"/><rect width="270" height="43" rx="18" fill="#e8f2ff"/><text x="20" y="29" class="label">AZ eu-west-3b</text><rect x="25" y="68" width="95" height="55" rx="10" fill="#eaf7f2" stroke="#55a786"/><rect x="150" y="68" width="95" height="55" rx="10" fill="#fff3de" stroke="#e3a43c"/><text x="72" y="101" text-anchor="middle" class="small">EC2</text><text x="197" y="101" text-anchor="middle" class="small">RDS standby</text><text x="20" y="145" class="soft">Alimentation et réseau séparés</text></g>
+  <g class="az" transform="translate(660 340)"><title>Zone eu-west-3c : capacité supplémentaire et résilience</title><rect class="card" width="270" height="155" rx="18"/><rect width="270" height="43" rx="18" fill="#e8f2ff"/><text x="20" y="29" class="label">AZ eu-west-3c</text><rect x="25" y="68" width="95" height="55" rx="10" fill="#eaf7f2" stroke="#55a786"/><rect x="150" y="68" width="95" height="55" rx="10" fill="#eee9ff" stroke="#8c73cf"/><text x="72" y="101" text-anchor="middle" class="small">EC2</text><text x="197" y="101" text-anchor="middle" class="small">Cache</text><text x="20" y="145" class="soft">Même région, autre domaine de panne</text></g>
+  <text x="500" y="535" text-anchor="middle" class="sub">Survolez une zone · les pointillés orange représentent la distribution du trafic</text>
+</svg>

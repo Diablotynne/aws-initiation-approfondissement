@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 495" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
       .aws-orange { fill: #FF9900; stroke: #1A365D; stroke-width: 2; }
@@ -129,6 +129,7 @@
   <text x="637" y="433" class="text-label" font-size="8.5" style="text-anchor:start">Lambda bloqués)</text>
 
   <!-- Security Notes -->
-  <rect x="40" y="460" width="700" height="10" class="aws-navy" opacity="0.05"/>
-  <text x="390" y="475" class="text-label" font-size="9">💡 Conseil: Appliquer le Principe du Moindre Privilège (PoLP) — accorder juste ce qui est nécessaire, pas plus.</text>
+  <rect x="40" y="458" width="700" height="28" class="aws-navy" opacity="0.05"/>
+  <text x="390" y="470" class="text-label" font-size="9">💡 Conseil: Appliquer le Principe du Moindre Privilège (PoLP)</text>
+  <text x="390" y="482" class="text-label" font-size="9">— accorder juste ce qui est nécessaire, pas plus.</text>
 </svg>
