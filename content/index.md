@@ -60,17 +60,11 @@ Le support sépare volontairement trois activités :
 
 À l'issue de la formation, vous saurez :
 
-- **expliquer** les caractéristiques du Cloud Computing, ses modèles économiques et le positionnement des principaux services AWS ;
-- **décrire** l'infrastructure mondiale AWS et choisir une région ou une architecture multi-AZ à partir de contraintes explicites ;
-- **appliquer** le modèle de responsabilité partagée et distinguer ce qui relève d'AWS de ce qui reste sous la responsabilité du client ;
-- **concevoir** une gestion des identités et des accès fondée sur IAM, les rôles temporaires, le moindre privilège, la MFA et la traçabilité ;
-- **sélectionner et configurer** les services de calcul et de stockage adaptés parmi EC2, Lambda, S3, EBS et EFS ;
-- **concevoir** un VPC segmenté et raisonner sur les routes, passerelles, Security Groups, NACL et mécanismes d'interconnexion ;
-- **choisir** un service de données relationnel, NoSQL ou de cache en fonction du modèle de données, de la disponibilité et de la charge ;
-- **mettre en relation** élasticité, équilibrage de charge, sauvegarde, RPO, RTO et reprise d'activité ;
-- **décrire et automatiser** une infrastructure avec CloudFormation et administrer des ressources avec Systems Manager ;
-- **superviser et évaluer** une architecture avec CloudWatch et les six piliers du AWS Well-Architected Framework ;
-- **justifier** une décision d'architecture en tenant compte de la sécurité, de la fiabilité, de la performance, des coûts et de l'exploitation.
+- **expliquer** les fondamentaux du Cloud Computing et le modèle de responsabilité partagée pour choisir une région ou une architecture multi-AZ adaptée ;
+- **concevoir** une gestion des identités et des accès sécurisée avec IAM (rôles temporaires, moindre privilège, MFA, traçabilité) ;
+- **concevoir** un VPC segmenté et choisir un service de données (relationnel, NoSQL ou cache) adapté à un besoin donné ;
+- **sélectionner et configurer** les services de calcul et de stockage adaptés (EC2, Lambda, S3, EBS, EFS) en tenant compte de l'élasticité, de la disponibilité et de la reprise d'activité ;
+- **automatiser** une infrastructure avec CloudFormation, l'administrer avec Systems Manager et l'évaluer avec CloudWatch et les six piliers du AWS Well-Architected Framework.
 
 ## Public et prérequis
 

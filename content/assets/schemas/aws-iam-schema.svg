@@ -30,7 +30,7 @@
 
   <!-- Arrow 1 -->
   <path d="M 140 120 L 190 120" class="arrow-line"/>
-  <text x="165" y="110" class="text-label" font-size="9">Appartient à</text>
+  <text x="165" y="60" class="text-label" font-size="9">Appartient à</text>
 
   <!-- Column 2: Group -->
   <rect x="190" y="70" width="100" height="100" class="aws-orange"/>

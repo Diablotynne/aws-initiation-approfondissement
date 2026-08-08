@@ -20,13 +20,13 @@
   <text x="715" y="219" text-anchor="middle" fill="#8b949e" font-size="10">rôle fédéré + STS</text>
 
   <line x1="150" y1="200" x2="215" y2="200" stroke="#e6edf3" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <text x="182" y="192" text-anchor="middle" fill="#8b949e" font-size="10">① authentification</text>
+  <text x="182" y="165" text-anchor="middle" fill="#8b949e" font-size="10">① authentification</text>
 
   <line x1="360" y1="210" x2="425" y2="210" stroke="#e6edf3" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <text x="392" y="202" text-anchor="middle" fill="#8b949e" font-size="10">② assertion SAML</text>
+  <text x="392" y="165" text-anchor="middle" fill="#8b949e" font-size="10">② assertion SAML</text>
 
   <line x1="590" y1="200" x2="645" y2="200" stroke="#e6edf3" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <text x="617" y="192" text-anchor="middle" fill="#8b949e" font-size="10">③④ token STS</text>
+  <text x="617" y="165" text-anchor="middle" fill="#8b949e" font-size="10">③④ token STS</text>
 
   <line x1="510" y1="240" x2="510" y2="290" stroke="#8b949e" stroke-width="1" stroke-dasharray="4,3"/>
   <text x="510" y="308" text-anchor="middle" fill="#8b949e" font-size="10">③ valide l'assertion et génère</text>

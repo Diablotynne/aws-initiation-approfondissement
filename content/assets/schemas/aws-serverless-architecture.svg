@@ -1,4 +1,4 @@
-<svg viewBox="0 0 1000 550" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+<svg viewBox="0 0 1000 570" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#232F3E;stop-opacity:1" />
@@ -9,7 +9,7 @@
     </filter>
   </defs>
 
-  <rect width="1000" height="550" fill="url(#bgGrad)"/>
+  <rect width="1000" height="570" fill="url(#bgGrad)"/>
 
   <!-- Title -->
   <text x="500" y="30" font-size="18" font-weight="bold" fill="#FF9900" text-anchor="middle">AWS Serverless Event-Driven Architecture</text>
@@ -127,16 +127,16 @@
 
   <!-- Response Path -->
   <path d="M 445 140 Q 350 120 310 100" stroke="#FF6700" stroke-width="1.5" fill="none" stroke-dasharray="2,2" marker-end="url(#arrowhead3)"/>
-  <text x="380" y="110" font-size="8" fill="#FF6700">Response</text>
+  <text x="330" y="128" font-size="8" fill="#FF6700">Response</text>
 
   <!-- Event Flow Legend -->
   <g>
-    <text x="30" y="520" font-size="10" font-weight="bold" fill="#FFFFFF">Event Flow:</text>
-    <text x="140" y="520" font-size="9" fill="#FFFFFF">1) Client → API Gateway  2) Lambda executes  3) Read/Write data  4) Async processing via SQS</text>
+    <text x="30" y="522" font-size="10" font-weight="bold" fill="#FFFFFF">Event Flow:</text>
+    <text x="140" y="522" font-size="9" fill="#FFFFFF">1) Client → API Gateway  2) Lambda executes  3) Read/Write data  4) Async processing via SQS</text>
   </g>
 
   <!-- Key Benefits -->
-  <text x="500" y="515" font-size="9" fill="#FFFFFF" text-anchor="middle">No servers to manage | Auto-scaling | Pay per execution | Event-driven | Highly available</text>
+  <text x="500" y="550" font-size="9" fill="#FFFFFF" text-anchor="middle">No servers to manage | Auto-scaling | Pay per execution | Event-driven | Highly available</text>
 
   <!-- Arrow marker definitions -->
   <defs>

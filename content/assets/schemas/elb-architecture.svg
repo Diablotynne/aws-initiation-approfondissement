@@ -28,8 +28,8 @@
   <line x1="380" y1="170" x2="495" y2="175" stroke="#3fb950" stroke-width="1.5" marker-end="url(#arrow)"/>
   <line x1="380" y1="195" x2="495" y2="280" stroke="#f85149" stroke-width="1.2" stroke-dasharray="4,3"/>
 
-  <text x="440" y="235" text-anchor="middle" fill="#8b949e" font-size="10">le trafic n'est jamais</text>
-  <text x="440" y="249" text-anchor="middle" fill="#8b949e" font-size="10">envoyé vers une cible unhealthy</text>
+  <text x="400" y="292" text-anchor="middle" fill="#8b949e" font-size="10">le trafic n'est jamais</text>
+  <text x="400" y="306" text-anchor="middle" fill="#8b949e" font-size="10">envoyé vers une cible unhealthy</text>
 
   <defs>
     <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">

@@ -134,12 +134,12 @@
   <!-- Legend -->
   <text x="30" y="450" class="text-label" font-size="9">Légende:</text>
   <rect x="85" y="438" width="15" height="15" class="aws-orange"/>
-  <text x="110" y="450" class="text-label" font-size="9">Services AWS</text>
+  <text x="110" y="450" style="text-anchor:start" class="text-label" font-size="9">Services AWS</text>
 
   <rect x="225" y="438" width="15" height="15" class="aws-blue" opacity="0.3"/>
-  <text x="250" y="450" class="text-label" font-size="9">Availability Zone</text>
+  <text x="250" y="450" style="text-anchor:start" class="text-label" font-size="9">Availability Zone</text>
 
   <circle cx="370" cy="445.5" r="7.5" class="aws-green"/>
-  <text x="395" y="450" class="text-label" font-size="9">Edge Location (CDN)</text>
+  <text x="395" y="450" style="text-anchor:start" class="text-label" font-size="9">Edge Location (CDN)</text>
 
 </svg>
