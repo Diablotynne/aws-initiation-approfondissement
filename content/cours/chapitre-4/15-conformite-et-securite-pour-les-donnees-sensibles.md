@@ -128,7 +128,7 @@ aws cloudtrail list-events \
 >             "EventName": "PutObject",
 >             "ReadOnly": "false",
 >             "EventTime": "2024-05-17T14:23:05+00:00",
->             "Username": "participant-demo",
+>             "Username": "stagiaire-demo",
 >             "Resources": [
 >                 {
 >                     "ResourceType": "AWS::S3::Object",

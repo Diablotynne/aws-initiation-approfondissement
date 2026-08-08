@@ -89,7 +89,7 @@ Elles **ne donnent pas de permissions** directement mais **restreignent** ce que
 
 #### SCP vs IAM Policy — Différence essentielle
 
-Beaucoup de participants confondent **SCP** et **IAM Policy**. Voici la différence cruciale :
+Beaucoup de stagiaires confondent **SCP** et **IAM Policy**. Voici la différence cruciale :
 
 | Aspect | IAM Policy | SCP |
 |--------|-----------|-----|
@@ -164,7 +164,7 @@ Ce principe d'intersection entre SCP et IAM Policy se retrouve dans la plupart d
 
 #### Exemple 2 : Interdire la suppression de certaines ressources critiques
 
-**Contexte** : Les participants ne doivent pas pouvoir supprimer les RDS ou les VPC de production.
+**Contexte** : Les stagiaires ne doivent pas pouvoir supprimer les RDS ou les VPC de production.
 
 ```json
 {

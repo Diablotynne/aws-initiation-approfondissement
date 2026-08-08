@@ -162,7 +162,7 @@ aws ssm start-session \
 > [!tip]
 > **Résultat attendu :**
 > ```
-> Starting session with SessionId: participant-demo-0abc123def456789
+> Starting session with SessionId: stagiaire-demo-0abc123def456789
 > sh-4.2$
 > ```
 > Un shell bash s'ouvre directement sur l'instance sans passer par SSH. Toutes les commandes saisies sont journalisées dans CloudTrail. Si la commande échoue avec `TargetNotConnected`, vérifiez que l'agent SSM est actif (`systemctl status amazon-ssm-agent`) et que le rôle IAM `AmazonSSMManagedInstanceCore` est attaché à l'instance.
@@ -299,7 +299,7 @@ Pour approfondir cette migration, AWS et sa communauté fournissent les guides s
 📎 [Pourquoi OpsWorks est obsolète](https://aws.amazon.com/fr/blogs/france/migration-opsworks-systems-manager/)
 ```
 
-**Conclusion pour les participants :** Vous ne créerez JAMAIS un nouvel OpsWorks stack. Si vous le rencontrez en production, c'est un signal pour moderniser vers Systems Manager.
+**Conclusion pour les stagiaires :** Vous ne créerez JAMAIS un nouvel OpsWorks stack. Si vous le rencontrez en production, c'est un signal pour moderniser vers Systems Manager.
 
 ---
 

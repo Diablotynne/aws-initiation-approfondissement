@@ -7,7 +7,7 @@ description: "\"Chapitre 2 — Sécurité des accès avec AWS IAM\" - 4. Amazon 
 
 ### 4.1 Différence : IAM vs Cognito
 
-Souvent, les participants confondent IAM et Cognito. C'est normal — ce sont tous les deux des services d'identité. Mais ils n'ont **pas le même public** :
+Souvent, les stagiaires confondent IAM et Cognito. C'est normal — ce sont tous les deux des services d'identité. Mais ils n'ont **pas le même public** :
 
 - **IAM** = gestion des identités **administratives** (accès AWS pour l'équipe IT/DevOps).
 - **Amazon Cognito** = gestion des identités **applicatives** (accès à une application web ou mobile pour les utilisateurs finaux).

@@ -5,7 +5,7 @@ description: "\"Chapitre 2 — Sécurité des accès avec AWS IAM\" - 8. Points 
 
 <nav class="page-sequence"><a href="cours/chapitre-2/7-gestion-pratique-diam-avec-la-cli">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/9-choisir-la-bonne-solution-dauthentification-aws">Suivant</a></nav>
 
-Ce chapitre a couvert IAM, MFA, la fédération, Organizations et CloudTrail ; le tableau suivant recense les confusions les plus fréquentes constatées chez les participants sur l'ensemble de ces sujets.
+Ce chapitre a couvert IAM, MFA, la fédération, Organizations et CloudTrail ; le tableau suivant recense les confusions les plus fréquentes constatées chez les stagiaires sur l'ensemble de ces sujets.
 
 | Piège courant | Réalité | Solution |
 |---|---|---|

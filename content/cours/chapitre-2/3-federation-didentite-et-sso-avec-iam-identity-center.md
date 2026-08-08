@@ -26,7 +26,7 @@ Grâce à cette approche :
 
 ### 3.2 IAM Identity Center vs IAM classique — Clarification pour débutant
 
-Beaucoup de participants confondent ces deux concepts. Voici la différence **essentielle** :
+Beaucoup de stagiaires confondent ces deux concepts. Voici la différence **essentielle** :
 
 | Critère | IAM classique | IAM Identity Center |
 |---------|---------------|-------------------|

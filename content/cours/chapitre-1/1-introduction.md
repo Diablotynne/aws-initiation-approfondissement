@@ -83,7 +83,7 @@ Ce chiffre de 18 % du chiffre d'affaires masque le poids réel d'AWS : sa rentab
 Autrement dit : AWS produit à elle seule plus de la **moitié du profit opérationnel de tout le groupe Amazon**, alors qu'elle ne représente qu'un cinquième de son chiffre d'affaires. Ce déséquilibre explique pourquoi la presse économique décrit souvent AWS comme le véritable "moteur de profit" d'Amazon. Les activités de vente en ligne (Amazon.com) génèrent l'essentiel du volume d'affaires. Mais elles opèrent avec des marges nettement plus faibles que celles du cloud — structurellement plus rentable une fois l'infrastructure de base amortie.
 
 > [!info]
-> **À retenir :** AWS ≈ 18 % du chiffre d'affaires d'Amazon, mais plus de 55 % de son résultat opérationnel. Un participant qui comprend ce déséquilibre comprend aussi pourquoi Amazon continue d'investir massivement dans de nouvelles régions et de nouveaux services cloud : c'est la partie la plus rentable du groupe.
+> **À retenir :** AWS ≈ 18 % du chiffre d'affaires d'Amazon, mais plus de 55 % de son résultat opérationnel. Un stagiaire qui comprend ce déséquilibre comprend aussi pourquoi Amazon continue d'investir massivement dans de nouvelles régions et de nouveaux services cloud : c'est la partie la plus rentable du groupe.
 
 📖 [Amazon — rapport annuel (formulaire 10-K, SEC)](https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001018724&type=10-K)
 📎 [Success-stories de clients AWS (Netflix, Airbnb, NASA, Nasdaq...)](https://aws.amazon.com/solutions/case-studies/)
@@ -92,7 +92,7 @@ Autrement dit : AWS produit à elle seule plus de la **moitié du profit opérat
 
 AWS structure son parcours de certification en quatre niveaux, pensés pour accompagner une montée en compétence progressive plutôt que pour classer les candidats par mérite. Chaque niveau valide un périmètre de responsabilités différent en entreprise, et il est tout à fait normal — recommandé, même — de les passer dans l'ordre.
 
-Le niveau **Fondamental** (Cloud Practitioner) s'adresse à toute personne qui doit comprendre le vocabulaire et les grands principes du cloud AWS sans nécessairement configurer quoi que ce soit elle-même : commerciaux, chefs de projet, décideurs, ou participants qui découvrent AWS pour la première fois. L'examen porte sur les concepts (modèles de tarification, responsabilité partagée, services principaux) plutôt que sur la mise en œuvre technique.
+Le niveau **Fondamental** (Cloud Practitioner) s'adresse à toute personne qui doit comprendre le vocabulaire et les grands principes du cloud AWS sans nécessairement configurer quoi que ce soit elle-même : commerciaux, chefs de projet, décideurs, ou stagiaires qui découvrent AWS pour la première fois. L'examen porte sur les concepts (modèles de tarification, responsabilité partagée, services principaux) plutôt que sur la mise en œuvre technique.
 
 Le niveau **Associate** cible les professionnels qui déploient et opèrent concrètement des infrastructures AWS au quotidien. Il se décline selon le métier visé : **Solutions Architect – Associate** pour la conception d'architectures, **CloudOps Engineer – Associate (SOA-C03)** pour l'exploitation et la supervision — ce nom remplace SysOps Administrator depuis 2025 — et **Developer – Associate** pour l'intégration d'applications avec les API et services AWS. Le catalogue comprend également des certifications Associate orientées données et machine learning.
 

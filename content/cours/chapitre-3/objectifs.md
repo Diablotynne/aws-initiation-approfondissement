@@ -5,7 +5,7 @@ description: "\"Chapitre 3 — Amazon VPC et bases de données AWS\" - Objectifs
 
 <nav class="page-sequence"><a href="cours/chapitre-3/index">Sommaire du chapitre</a> <a href="cours/chapitre-3/index">Sommaire</a> <a href="cours/chapitre-3/1-bases-de-donnees-dans-aws-du-service-gere-a-la-scalabilite">Suivant</a></nav>
 
-À l'issue de ce chapitre, vous serez capable de :
+À l'issue de ce chapitre, les stagiaires seront capables de :
 
 - **Expliquer** l'intérêt des bases managées et déployer une Amazon RDS Multi-AZ sécurisée
 - **Différencier** Aurora, RDS et DynamoDB, et planifier une migration avec AWS DMS

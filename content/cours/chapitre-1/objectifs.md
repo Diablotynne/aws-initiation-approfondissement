@@ -5,7 +5,7 @@ description: "\"Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS\" - 
 
 <nav class="page-sequence"><a href="cours/chapitre-1/index">Sommaire du chapitre</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/1-introduction">Suivant</a></nav>
 
-À l'issue de ce chapitre, vous serez capable de :
+À l'issue de ce chapitre, les stagiaires seront capables de :
 
 - **Expliquer** ce qu'est AWS — historique, positionnement sur le marché, modèle de responsabilité partagée
 - **Distinguer** les modèles cloud : IaaS/PaaS/SaaS, public/privé/hybride, CAPEX vs OPEX
