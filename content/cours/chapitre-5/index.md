@@ -3,6 +3,9 @@ title: "Chapitre 5 — Automatisation, supervision et reprise d'activité"
 description: "RTO, RPO, sauvegarde, CloudFormation, Systems Manager, Elastic Beanstalk et CloudWatch."
 ---
 
+> [!info]
+> Le réseau et les bases de données mis en place au chapitre précédent constituent une architecture fonctionnelle mais encore déployée manuellement ; ce dernier chapitre referme la formation en automatisant ce déploiement et en donnant les clés pour évaluer et faire évoluer une architecture AWS dans la durée.
+
 Les notions de cours sont pr&eacute;sent&eacute;es sur des pages courtes. Tous les exercices du chapitre sont regroup&eacute;s sur une seule page de travaux pratiques. Utilisez les liens Pr&eacute;c&eacute;dent et Suivant pour suivre la progression.
 
 <nav class="chapter-map" aria-label="Sous-chapitres de la journee">

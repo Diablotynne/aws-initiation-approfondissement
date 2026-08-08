@@ -8,13 +8,13 @@ description: "\"Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS\" - 
 > [!info]
 > L’environnement temporaire fourni pendant la formation permet de découvrir la console sans créer de compte AWS personnel.
 
-### 10.1 Démarrer et sécuriser une session de lab
+### 10.1 Démarrer et sécuriser une session d'atelier
 
-Le lab fournit un compte, un rôle et des autorisations temporaires. La séquence de démarrage est la suivante :
+L'atelier fournit un compte, un rôle et des autorisations temporaires. La séquence de démarrage est la suivante :
 
-1. Ouvrir le lab indiqué par la formatrice.
-2. Cliquer sur **Start Lab** et attendre que la console soit disponible.
-3. Ouvrir la console avec le bouton **AWS** fourni par le lab.
+1. Ouvrir l'atelier indiqué par la formatrice.
+2. Cliquer sur **Start Lab** (le bouton de démarrage de l'environnement AWS Academy) et attendre que la console soit disponible.
+3. Ouvrir la console avec le bouton **AWS** fourni par l'atelier.
 4. Vérifier le rôle et la **région active** avant toute création de ressource.
 5. Utiliser **AWS CloudShell** pour les commandes CLI : aucune installation ni configuration locale n'est requise.
 
@@ -30,7 +30,7 @@ Le lab fournit un compte, un rôle et des autorisations temporaires. La séquenc
 >     "Arn": "arn:aws:sts::123456789012:assumed-role/LabRole/academy-session"
 > }
 > ```
-> L'ARN confirme que la session utilise un rôle temporaire du lab. N'exécutez pas `aws configure` et ne copiez jamais d'identifiants sur votre poste.
+> L'ARN confirme que la session utilise un rôle temporaire de l'atelier. N'exécutez pas `aws configure` et ne copiez jamais d'identifiants sur votre poste.
 
 ### 10.2 Repères pour la navigation dans la console AWS
 

@@ -15,6 +15,8 @@ Elle donne d'abord accès à l'ensemble des services AWS disponibles dans la ré
 
 ### 8.2 Structure de la console
 
+L'interface de la console se découpe en quelques zones fixes, présentes quelle que soit la page ou le service consulté, ce qui facilite la navigation une fois ces repères identifiés.
+
 | Zone | Rôle |
 |------|------|
 | **Barre de recherche** | Trouver rapidement un service (ex : EC2, S3, IAM) |
@@ -51,6 +53,8 @@ Rappelons que la console est un moyen parmi d'autres d'interagir avec AWS — il
 
 ### 8.3 Bonnes pratiques de base
 
+Avant d'aller plus loin dans les services eux-mêmes, quelques réflexes simples à prendre dès l'utilisation de la console évitent la majorité des incidents de sécurité et de facturation rencontrés par les débutants.
+
 - Toujours vérifier la **région active** avant de créer des ressources.
 - Fermer les ressources non utilisées pour éviter des coûts inutiles.
 - Utiliser **IAM** pour créer des comptes utilisateurs distincts plutôt que d'utiliser le compte root — rappel : voir l'encart sur le compte root en section 2.6 de ce chapitre.
@@ -69,10 +73,14 @@ AWS fournit des outils puissants pour **monitorer, budgéter et optimiser** les 
 
 ### Principes clés de la tarification AWS
 
+Ces principes reprennent et détaillent, dans le contexte spécifique du suivi budgétaire, la logique de facturation déjà introduite en section 6.5 de ce chapitre.
+
 1. **Pay-as-you-go** : payer ce qu'on utilise réellement.
 2. **Granularité** : chaque service a ses propres métriques — EC2 facturé par heure (ou seconde), S3 par Go stocké + requêtes, RDS par heure + stockage + transfert.
 3. **Réductions possibles** : Reserved Instances (engagement 1 ou 3 ans), Savings Plans (engagement flexible), Spot Instances (capacité excédentaire à -70%).
 4. **AWS Free Tier** : pour les comptes créés depuis le 15 juillet 2025, AWS propose un système de crédits — 100 USD à l'inscription et jusqu'à 100 USD supplémentaires via des activités — ainsi qu'un plan gratuit limité à six mois. Les comptes plus anciens restent soumis au régime historique, qui comportait notamment certaines offres gratuites pendant douze mois. Dans tous les cas, un service hors périmètre, un dépassement de crédit ou un dépassement de quota est facturé au tarif normal.
+
+Le point le plus piégeux reste le quatrième : le Free Tier n'est pas un mode gratuit permanent, seulement une couverture partielle et temporaire — d'où l'intérêt de la commande de vérification ci-dessous pour confirmer ce qui est réellement facturé.
 
 > [!tip]
 > **Exemple de commande AWS CLI pour vérifier votre consommation du Free Tier :**
@@ -146,6 +154,8 @@ C'est idéal pour les **POC (Proof of Concept)** et les **RFQ** (appels d'offre)
 
 ### Bonnes pratiques pour maîtriser les coûts
 
+Au-delà des outils de suivi, quelques pratiques d'architecture et d'exploitation permettent de réduire structurellement la facture plutôt que de simplement la surveiller.
+
 | Pratique | Description | Impact |
 |----------|-------------|--------|
 | **Utiliser des Reserved Instances** | Engagement 1 ou 3 ans pour réduction tarifaire (~30-60%) | Très utile pour charges stables 24/7 |
@@ -155,6 +165,8 @@ C'est idéal pour les **POC (Proof of Concept)** et les **RFQ** (appels d'offre)
 | **Optimiser le stockage** | S3 Standard pour accès fréquent, S3 Glacier pour archive | Différences tarifaires importantes |
 | **Utiliser des réductions volantes** | Savings Plans, commitments, consolidated billing | ~30-40% de réduction possible |
 | **Monitorer régulièrement** | Cost Explorer, Budgets, anomaly detection | Détection précoce des dérives |
+
+Ces pratiques se combinent plutôt que s'excluent : une architecture bien optimisée associe généralement des Reserved Instances pour la charge stable, des Spot Instances pour les tâches tolérantes aux interruptions, et un monitoring continu pour détecter les dérives que ni l'une ni l'autre ne préviennent.
 
 ### Exemple concret : budget mal maîtrisé
 

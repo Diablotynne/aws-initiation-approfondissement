@@ -24,6 +24,8 @@ AWS transpose ces modèles dans le Cloud et les **rend flexibles, évolutifs et 
 
 ### 1.2 Les trois modèles de stockage AWS
 
+AWS reprend ces trois familles de stockage traditionnelles et leur donne chacune un service managé équivalent :
+
 | Type de stockage | Service AWS        | Cas d'usage typique                              | Analogie utilisateur                 |
 |-------------------|--------------------|--------------------------------------------------|---------------------------------------|
 | **Objet**         | **Amazon S3**      | Sauvegarde, site statique, logs, Data Lake       | Dropbox / Google Drive               |

@@ -9,6 +9,8 @@ Les environnements soumis à des réglementations (RGPD, HIPAA, PCI-DSS) nécess
 
 ### 15.1 Frameworks de conformité AWS
 
+Chaque référentiel impose ses propres exigences, qui s'appuient néanmoins sur un socle commun de services AWS déjà présentés dans ce chapitre :
+
 | Framework | Objectif | Services AWS applicables |
 |-----------|----------|-------------------------|
 | **RGPD** | Protection des données personnelles UE | Encryption, Data Residency, CloudTrail |
@@ -16,7 +18,11 @@ Les environnements soumis à des réglementations (RGPD, HIPAA, PCI-DSS) nécess
 | **PCI-DSS** | Sécurité des données cartes bancaires | VPC isolé, Encryption, Firewall |
 | **ISO 27001** | Gestion de la sécurité informatique | IAM, KMS, CloudTrail, Monitoring |
 
+Ces quatre référentiels se recoupent largement sur les mécanismes techniques à activer ; ce qui change surtout, c'est le niveau d'exigence et le périmètre des données couvertes.
+
 ### 15.2 Bonnes pratiques de conformité pour S3
+
+Quel que soit le référentiel visé, la mise en œuvre concrète repose sur les mêmes briques techniques : chiffrement, isolation réseau et traçabilité. Côté stockage S3, cela se traduit par la liste de contrôle suivante :
 
 - ✅ Chiffrement : SSE-KMS (clés maîtrisées)
 - ✅ Versioning : actif (trace des modifications)
@@ -28,7 +34,11 @@ Les environnements soumis à des réglementations (RGPD, HIPAA, PCI-DSS) nécess
 - ✅ Lifecycle : archivage des données obsolètes
 - ✅ Réplication CRR : backup multi-région
 
+Cette liste de contrôle S3 couvre le stockage ; il reste à sécuriser de la même façon les instances de calcul qui traitent ces données.
+
 ### 15.3 Bonnes pratiques de conformité pour EC2
+
+Côté calcul, la liste de contrôle est différente mais suit la même logique de défense en profondeur :
 
 - ✅ Dedicated Instance : pas de partage d'hôte physique
 - ✅ EBS chiffré : SSE-KMS pour tous les volumes
@@ -40,7 +50,11 @@ Les environnements soumis à des réglementations (RGPD, HIPAA, PCI-DSS) nécess
 - ✅ Patch Management : système à jour
 - ✅ Monitoring : alertes sur anomalies
 
+Ces deux listes de contrôle restent abstraites tant qu'elles ne sont pas assemblées dans une architecture concrète, ce que montre l'exemple RGPD suivant.
+
 ### 15.4 Exemple : Architecture RGPD multi-région
+
+Pour voir comment ces éléments S3 et EC2 s'assemblent concrètement, voici un exemple d'architecture répondant aux exigences RGPD avec une région de secours :
 
 ```
 Région EU (Ireland)
@@ -63,6 +77,8 @@ Région EU (Frankfurt) — Backup
 - S3 Réplication CRR du bucket EU-Ireland
    - Préservé 7 ans (conformité)
 ```
+
+Cette architecture répond à l'exigence RGPD de résidence des données (tout reste en UE) tout en assurant une continuité d'activité via la réplication vers une seconde région européenne. Mettre en œuvre ces mesures ne suffit cependant pas : il faut aussi pouvoir le prouver à un auditeur.
 
 ### 15.5 Audit et certification
 

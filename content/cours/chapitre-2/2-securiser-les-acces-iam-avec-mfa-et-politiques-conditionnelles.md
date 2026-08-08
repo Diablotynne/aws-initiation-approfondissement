@@ -35,9 +35,13 @@ Dans AWS, la MFA s'applique :
 - aux **rôles** via AWS CLI ou API,
 - aux **accès fédérés**.
 
+Le type de facteur utilisé pour prouver son identité varie cependant selon les moyens disponibles et le niveau de sécurité recherché.
+
 ---
 
 #### Types de MFA supportés
+
+AWS accepte plusieurs familles de facteurs MFA, du plus répandu (l'application mobile) au plus robuste (la clé physique) :
 
 | Type | Description | Exemples |
 |------|-------------|-----------|
@@ -51,10 +55,14 @@ Dans AWS, la MFA s'applique :
 
 ### 2.3 Bonnes pratiques AWS sur MFA
 
+Au-delà de l'activation de base, quelques pratiques permettent de généraliser et de vérifier en continu le recours au MFA plutôt que de le laisser au bon vouloir de chaque utilisateur :
+
 - Toujours activer MFA sur le **compte root** (obligatoire en production).
 - Exiger MFA pour tous les utilisateurs **ayant des privilèges élevés**.
 - Automatiser la vérification de MFA via **AWS Config** ou **Security Hub**.
 - Interdire les actions sensibles (ex : suppression d'instances, modification de policies) sans MFA.
+
+Ces quatre pratiques passent d'une MFA "recommandée" à une MFA réellement appliquée et contrôlée, ce qui est la seule façon de garantir qu'aucun compte à privilèges n'y échappe.
 
 📎 [AWS Security Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
 
@@ -188,11 +196,14 @@ Ici, l'accès n'est autorisé que si :
 
 ### 2.7 Bonnes pratiques et points d'attention
 
+Pour conclure cette section MFA, quelques rappels permettent d'éviter les erreurs les plus fréquentes constatées en audit de sécurité :
+
 * MFA ne remplace pas les bonnes politiques IAM, elle **les renforce**.
 * Toujours combiner MFA avec une politique conditionnelle.
 * Documenter les exceptions éventuelles (services automatisés, CI/CD).
 * Tester systématiquement les policies dans **Policy Simulator** avant déploiement.
 
+Le point le plus souvent oublié est la documentation des exceptions : sans elle, un compte de service exempté de MFA pour des raisons techniques légitimes finit par ressembler, lors d'un audit, à une faille de sécurité non traitée.
 
 ---
 
@@ -218,6 +229,8 @@ Le processus est simple :
 3. STS émet **un set de credentials temporaires** : AccessKeyId, SecretAccessKey, et SessionToken.
 4. Ces credentials permettent d'accéder à AWS pendant leur durée de validité.
 5. À l'expiration, les credentials deviennent inutilisables.
+
+Ce mécanisme générique de STS prend tout son sens lorsqu'il est combiné à un système d'authentification externe déjà en place dans l'entreprise, via ce qu'on appelle un identity broker.
 
 ### STS Identity Broker — Cas d'usage concret
 
@@ -247,7 +260,11 @@ Une entreprise utilise **LDAP interne** pour gérer ses employés. Elle souhaite
 6. L'employé clique, se connecte à AWS, et accède aux ressources autorisées.
 7. **Aucun compte IAM permanent n'a été créé**.
 
+Cette séquence côté fonctionnel se traduit, techniquement, par l'enchaînement d'appels suivant entre le portail et STS.
+
 ### Flux technique de STS
+
+Le schéma ci-dessous reprend l'exemple précédent sous forme de flux technique, en explicitant à quel moment intervient chaque appel API :
 
 ```
 Utilisateur (LDAP)
@@ -269,7 +286,11 @@ Portail (reçoit les credentials)
 Utilisateur accède à AWS Console (valide 1 heure, puis expiration)
 ```
 
+Ce flux illustre l'appel `AssumeRole`, mais ce n'est qu'une des opérations que STS expose selon le contexte d'authentification.
+
 ### Types de requêtes STS courantes
+
+Ce flux ne concernait que le scénario `AssumeRole` d'un identity broker ; STS expose en réalité plusieurs opérations selon le contexte d'authentification, résumées ci-dessous.
 
 | Opération STS | Cas d'usage | Durée de validité |
 |---|---|---|
@@ -279,7 +300,11 @@ Utilisateur accède à AWS Console (valide 1 heure, puis expiration)
 | **AssumeRoleWithSAML** | Assumer un rôle via assertion SAML (fédération) | 1 heure |
 | **AssumeRoleWithWebIdentity** | Assumer un rôle via token JWT (OAuth/OIDC) | Configurable |
 
+Les deux dernières opérations sont celles qui rendent la fédération possible : `AssumeRoleWithSAML` s'utilise avec un IdP d'entreprise (Active Directory, Okta), tandis que `AssumeRoleWithWebIdentity` s'utilise avec un fournisseur OAuth/OIDC grand public (Google, Facebook) ou un IdP compatible OIDC.
+
 ### Avantages de STS Identity Broker
+
+Au-delà du cas d'usage LDAP déjà présenté, l'utilisation d'un identity broker basé sur STS apporte des bénéfices qui s'appliquent à tout scénario de fédération :
 
 - **Zéro compte IAM permanent** pour les utilisateurs fédérés.
 - **Credentials automatiquement révoquées** à l'expiration.
@@ -287,7 +312,11 @@ Utilisateur accède à AWS Console (valide 1 heure, puis expiration)
 - **Intégration facile** avec les systèmes legacy (LDAP, SAP, Salesforce…).
 - **MFA possible** au niveau du broker.
 
+Le point sur l'audit centralisé est souvent sous-estimé : contrairement à des clés d'accès permanentes partagées, chaque appel `AssumeRole` est individuellement journalisé dans CloudTrail avec l'identité de l'appelant d'origine, ce qui facilite grandement les investigations post-incident.
+
 ### Exemple de code (Python) — Simple Identity Broker
+
+Le script suivant reprend, en Python, la logique du broker décrite plus haut : authentification externe simulée, puis appel `assume_role` pour obtenir des credentials temporaires.
 
 ```python
 import boto3

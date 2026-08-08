@@ -31,11 +31,13 @@ Elastic Beanstalk = "Je veux juste déployer mon app, pas m'embêter avec l'infr
   - Moins de contrôle mais moins de friction
 ```
 
+Ce compromis « moins de contrôle contre moins de friction » n'est intéressant que si votre langage et framework sont effectivement pris en charge par la plateforme.
+
 ---
 
 ### 5.2 Runtimes et plateformes supportées
 
-Elastic Beanstalk supporte plusieurs langages et frameworks :
+Elastic Beanstalk supporte plusieurs langages et frameworks, avec un mode Docker en filet de sécurité pour tout le reste :
 
 | Langage | Framework | Exemple |
 |---------|-----------|---------|
@@ -159,6 +161,8 @@ eb terminate monappbeanstalk-env
 
 ### 5.4 Avantages et limitations
 
+Après cette prise en main, voici comment situer Elastic Beanstalk par rapport à une approche CloudFormation complète :
+
 | Avantage | Limitation |
 |----------|-----------|
 | Déploiement simple du code | Contrôle limité sur l'infrastructure |
@@ -178,7 +182,11 @@ Ces deux services répondent à la même question — "comment déployer du code
 | Exécution | EC2 toujours allumé, Load Balancer, Auto Scaling Group, CloudWatch | Conteneur éphémère, créé à la demande et détruit après exécution |
 | Paradigme | Lift & Shift | Event-Driven |
 
+Cette différence de paradigme se décline sur une dizaine de critères concrets, résumés dans le tableau détaillé ci-dessous.
+
 #### Tableau de comparaison
+
+Voici le détail critère par critère, qui explique pourquoi ces deux services ne sont pas réellement interchangeables :
 
 | Critère | Elastic Beanstalk | Lambda |
 |---------|------------------|--------|
@@ -197,6 +205,8 @@ Ces deux services répondent à la même question — "comment déployer du code
 | **État** | Stateful possible (session, fichiers) | Stateless obligatoire |
 | **Réseau** | VPC natif, Security Groups | VPC optionnel |
 | **Déploiement** | ZIP, WAR, Docker, `eb deploy` | ZIP, container, `aws lambda update-function-code` |
+
+Le critère « Modèle de coût » mérite un chiffrage détaillé, car c'est souvent celui qui fait basculer la décision.
 
 #### Modèle de coût détaillé
 
@@ -233,7 +243,11 @@ Exemple : 10M requêtes/mois
   TOTAL : ~1,80 $/mois
 ```
 
+Ces deux exemples confirment l'intuition : Lambda reste imbattable en dessous du Free Tier et pour un trafic modéré, tandis que Beanstalk facture un socle fixe indépendant du trafic réel.
+
 #### Quand utiliser lequel ?
+
+En croisant les critères techniques et le modèle de coût vus ci-dessus, voici une grille de décision pratique :
 
 ```
 CHOISIR BEANSTALK si :

@@ -19,6 +19,8 @@ Vous venez de voir comment EC2 et Auto Scaling permettent d'adapter dynamiquemen
 | **Démarrage** | Minutes (boot instance) ou secondes (déjà démarrée) | Millisecondes à quelques secondes (cold start) |
 | **Durée d'exécution max** | Illimitée | **15 minutes** par exécution |
 
+Cette limite de 15 minutes n'est pas anodine : elle signale que Lambda est pensé pour des traitements courts et événementiels, pas pour remplacer un serveur applicatif de longue durée.
+
 ### 12.2 Fonctionnement d'une fonction Lambda
 
 Une fonction Lambda est un paquet de code (Python, Node.js, Java, Go, etc.) associé à une configuration : mémoire allouée (128 Mo à 10 Go), timeout maximal, et un ou plusieurs **triggers** — les événements qui la déclenchent.

@@ -34,6 +34,8 @@ Avec Systems Manager Run Command :
   → Appliquée automatiquement à 100 instances simultaneously
 ```
 
+Cette capacité de commande centralisée n'est que l'une des cinq fonctionnalités listées plus haut ; voyons maintenant chacune d'elles en détail.
+
 ---
 
 ### 4.2 Fonctionnalités clés de Systems Manager
@@ -172,6 +174,8 @@ aws ssm start-session \
 - Audit complet des sessions dans CloudTrail
 - Gestion centralisée des accès via IAM
 
+Une fois l'accès aux instances sécurisé, encore faut-il les maintenir à jour : c'est le rôle du dernier outil de cette section.
+
 ---
 
 #### Patch Manager — Appliquer les mises à jour automatiquement
@@ -238,6 +242,8 @@ aws ssm create-patch-baseline \
 - ❌ OpsWorks for Puppet Enterprise : **fin de vie et désactivé depuis le 5 mai 2024**
 - ❌ OpsWorks Stacks : **fin de vie et désactivé depuis le 26 mai 2024**
 
+Cette section est donc purement informative, pour reconnaître le service si vous le croisez sur une infrastructure existante, et non pour l'utiliser sur un nouveau projet.
+
 #### Qu'était AWS OpsWorks ?
 
 OpsWorks permettait de **déployer et configurer des applications** sur des instances EC2 en utilisant des **scripts de configuration déclaratifs** :
@@ -285,6 +291,8 @@ aws ssm create-patch-baseline \
 > ```
 
 #### Ressources de migration
+
+Pour approfondir cette migration, AWS et sa communauté fournissent les guides suivants :
 
 ```
 📎 [AWS OpsWorks → Systems Manager Migration Guide](https://docs.aws.amazon.com/systems-manager/latest/userguide/opsworks-migration.html)

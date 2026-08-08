@@ -26,6 +26,8 @@ L'application utilise Cognito pour gérer les sessions, les jetons d'accès, et 
 
 ### 4.3 Concepts clés
 
+Cognito repose sur trois notions à ne pas confondre entre elles :
+
 - **User Pool** : base d'utilisateurs gérée par Cognito (inscription, mot de passe, MFA, etc.).
 - **Identity Pool** : permet d'obtenir des **credentials AWS temporaires** pour accéder à des services comme S3 ou DynamoDB.
 - **Fédération d'identité** : possibilité de déléguer l'authentification à un fournisseur externe (SAML, OAuth2).

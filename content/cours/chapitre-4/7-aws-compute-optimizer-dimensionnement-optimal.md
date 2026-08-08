@@ -27,7 +27,11 @@ Compute Optimizer applique cette analyse automatiquement à partir des métrique
 3. **Recommandation** : Propose des types économiquement viables.
 4. **Confiance** : Indique un score de confiance (low, medium, high).
 
+Ce score de confiance conditionne directement la nature de la recommandation reçue, qui se décline en quatre catégories.
+
 ### 7.3 Types de recommandations
+
+Compute Optimizer ne se limite pas à proposer une taille plus petite : il distingue quatre types de recommandations selon ce que révèle l'analyse de vos métriques :
 
 | Recommandation | Bénéfice | Risque | Exemple |
 |---|---|---|---|
@@ -35,6 +39,8 @@ Compute Optimizer applique cette analyse automatiquement à partir des métrique
 | **Upgrade** | Meilleure performance | Légère augmentation de coût | m5.large → m5.xlarge |
 | **Switch Family** | Meilleure performance/$ | Changement d'architecture | t3.large → m6i.large |
 | **Aucune recommandation** | Instance bien dimensionnée | N/A | ✅ Garder tel quel |
+
+Voyons maintenant comment activer le service et récupérer concrètement ces recommandations via la CLI.
 
 ### 7.4 Activation et utilisation
 
@@ -69,6 +75,8 @@ aws compute-optimizer get-ec2-instance-recommendations \
 > Si aucune recommandation n'apparaît, Compute Optimizer manque encore de données (il lui faut au minimum 30h d'activité sur les instances).
 
 ### 7.5 Cas d'usage
+
+Au-delà de la simple réduction de facture, Compute Optimizer s'intègre dans plusieurs démarches organisationnelles :
 
 - **Optimisation de coûts** : identifier toutes les instances surdimensionnées.
 - **Gouvernance cloud** : politiques de rightsizing automatisées.

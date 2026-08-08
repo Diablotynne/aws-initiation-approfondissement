@@ -3,6 +3,9 @@ title: "Chapitre 3 — Amazon VPC et bases de données AWS"
 description: "RDS, Aurora, DynamoDB, migration, VPC, routage, filtrage et Route 53."
 ---
 
+> [!info]
+> Les instances EC2 et les buckets S3 déployés au chapitre précédent doivent maintenant s'intégrer dans un réseau maîtrisé et s'appuyer sur des bases de données managées : ce chapitre couvre les deux piliers d'une architecture AWS mature, le réseau (VPC) et la donnée persistante (RDS, Aurora, DynamoDB).
+
 Les notions de cours sont pr&eacute;sent&eacute;es sur des pages courtes. Tous les exercices du chapitre sont regroup&eacute;s sur une seule page de travaux pratiques. Utilisez les liens Pr&eacute;c&eacute;dent et Suivant pour suivre la progression.
 
 <nav class="chapter-map" aria-label="Sous-chapitres de la journee">

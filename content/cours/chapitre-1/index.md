@@ -3,6 +3,9 @@ title: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS"
 description: "Cloud Computing, modèles de service et de déploiement, infrastructure AWS, coûts et Well-Architected."
 ---
 
+> [!info]
+> Cette formation débute par les fondations théoriques indispensables avant de manipuler la console AWS : sans comprendre ce qu'est réellement le Cloud Computing, ses modèles économiques et ses responsabilités, il est impossible de faire des choix d'architecture pertinents par la suite.
+
 Les notions de cours sont pr&eacute;sent&eacute;es sur des pages courtes. Tous les exercices du chapitre sont regroup&eacute;s sur une seule page de travaux pratiques. Utilisez les liens Pr&eacute;c&eacute;dent et Suivant pour suivre la progression.
 
 <nav class="chapter-map" aria-label="Sous-chapitres de la journee">

@@ -11,6 +11,8 @@ Trois profils d'authentification distincts se dégagent : les développeurs/serv
 
 ### Tableau comparatif complet
 
+Voici le détail technique de chacune de ces solutions, avec leur mode de credentials, leur durée de validité et leur coût :
+
 | Solution | Pour qui | Credentials | Durée | MFA | Coût |
 |----------|----------|-------------|-------|-----|------|
 | **IAM User + Access Key** | Développeurs internes, CI/CD | Permanents | Jusqu'à révocation | Oui | Gratuit |
@@ -26,6 +28,8 @@ Trois profils d'authentification distincts se dégagent : les développeurs/serv
 **MAU** (Monthly Active Users, utilisateurs actifs mensuels) est l'unité de facturation de Cognito User Pool : AWS compte un utilisateur comme "actif" dès qu'il s'authentifie au moins une fois dans le mois, et facture au-delà des 50 000 premiers MAU gratuits — une application avec 200 000 utilisateurs connectés dans le mois ne paiera donc que sur les 150 000 dépassant le seuil gratuit.
 
 ### Arbre de décision
+
+Le tableau précédent liste les options disponibles ; l'arbre suivant permet de trancher rapidement selon le profil de l'utilisateur ou du système qui doit s'authentifier :
 
 ```
 Qui s'authentifie ?
@@ -47,6 +51,8 @@ Qui s'authentifie ?
     - Authentification + accès aux services AWS       → Cognito User Pool
                                                           + Identity Pool
 ```
+
+Cet arbre confirme une règle simple : dès qu'un utilisateur ou un service doit franchir une frontière (plusieurs comptes AWS, un IdP externe, une application publique), la solution passe presque toujours par un mécanisme de credentials temporaires plutôt que par un compte IAM permanent.
 
 ### Focus : Cognito User Pool vs Identity Pool
 
@@ -73,7 +79,11 @@ Utilisé par :                         Utilisé pour :
   • Tout service vérifiant un JWT       • Accès AWS sans backend
 ```
 
+Retenez la question clé de chaque colonne : un User Pool répond à « qui es-tu ? » (authentification), un Identity Pool répond à « qu'as-tu le droit de faire dans AWS ? » (autorisation) — les deux se combinent quand une application doit à la fois authentifier ses utilisateurs et leur donner un accès direct à des services AWS comme S3.
+
 ### Focus : IAM Identity Center vs SAML 2.0
+
+Ce chapitre a présenté SAML 2.0 comme mécanisme générique de fédération (section 3) et IAM Identity Center comme service AWS dédié à la gestion du SSO ; voici comment les deux se comparent concrètement au moment de choisir :
 
 | | IAM Identity Center | SAML 2.0 direct |
 |--|--------------------|-----------------|

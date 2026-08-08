@@ -3,6 +3,9 @@ title: "Chapitre 4 — Stockage Amazon S3 et calcul Amazon EC2"
 description: "S3, AMI, instances EC2, stockage EBS, conteneurs ECS/ECR/Fargate, équilibrage de charge et Auto Scaling."
 ---
 
+> [!info]
+> Après avoir sécurisé les accès avec IAM au chapitre précédent, les participants disposent des bases nécessaires pour créer et protéger de vraies ressources AWS : ce chapitre aborde les deux briques les plus utilisées du Cloud AWS, le stockage objet S3 et le calcul EC2.
+
 Les notions de cours sont pr&eacute;sent&eacute;es sur des pages courtes. Tous les exercices du chapitre sont regroup&eacute;s sur une seule page de travaux pratiques. Utilisez les liens Pr&eacute;c&eacute;dent et Suivant pour suivre la progression.
 
 <nav class="chapter-map" aria-label="Sous-chapitres de la journee">

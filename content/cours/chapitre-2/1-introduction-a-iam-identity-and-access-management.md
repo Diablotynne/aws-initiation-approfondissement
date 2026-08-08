@@ -209,12 +209,16 @@ AWS suit **trois règles fondamentales**, dans cet ordre :
 
 ### 1.7 Services IAM complémentaires
 
+IAM ne fonctionne pas isolément : plusieurs autres services AWS s'appuient sur lui ou l'étendent pour couvrir des besoins spécifiques (multi-comptes, identifiants temporaires, utilisateurs finaux, authentification unique) que ce chapitre détaille dans les sections suivantes.
+
 |Service|Rôle|
 |---|---|
 |**AWS Organizations**|Gestion centralisée de plusieurs comptes AWS (OU, SCP, facturation consolidée).|
 |**AWS STS (Security Token Service)**|Génère des identifiants temporaires sécurisés.|
 |**Amazon Cognito**|Gestion d'utilisateurs finaux (authentification applicative).|
 |**IAM Identity Center (ex-SSO)**|Authentification unique (SSO) sur plusieurs comptes et applications.|
+
+Retenez surtout la distinction entre Cognito (utilisateurs finaux d'une application) et IAM Identity Center (employés d'une organisation accédant à plusieurs comptes AWS) — une confusion fréquente entre ces deux services.
 
 📎 [AWS Organizations](https://docs.aws.amazon.com/organizations/)
 

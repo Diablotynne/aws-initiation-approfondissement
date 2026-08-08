@@ -22,6 +22,8 @@ description: "\"Chapitre 5 — Automatisation, supervision et reprise d'activit�
 
 ### 6.2 Créer une alarme CloudWatch (CLI)
 
+Une alarme surveille une métrique en continu et déclenche une action (ici, une notification par email via SNS) dès qu'un seuil est franchi de façon répétée :
+
 ```bash
 # 1. Créer une alarme sur la métrique CPU d'une instance EC2
 # L'alarme se déclenche si CPU > 80% pendant 2 périodes consécutives (10 min)
@@ -145,6 +147,8 @@ cloudwatch.put_metric_data(
 )
 ```
 
+Une fois plusieurs métriques (standard et custom) collectées, il devient utile de les visualiser toutes ensemble sur un même écran plutôt que de les consulter une par une.
+
 ---
 
 ### 6.4 Tableaux de bord CloudWatch
@@ -217,7 +221,11 @@ Votre application Python/Node/Java appelle AWS directement
 Exemple : ec2_client.describe_instances()
 ```
 
+Ce choix entre CLI et SDK n'est pas exclusif — les deux s'appuient sur les mêmes API et peuvent cohabiter dans un même projet. AWS propose un SDK officiel pour chaque langage majeur.
+
 #### SDK AWS Disponibles
+
+AWS maintient officiellement un SDK pour chaque langage majeur, avec la même couverture fonctionnelle que la CLI :
 
 | Langage | Nom SDK | Cas d'usage |
 |---------|---------|-----------|
@@ -228,6 +236,8 @@ Exemple : ec2_client.describe_instances()
 | **C#/.NET** | `AWS SDK for .NET` | Windows, applications d'entreprise | |
 | **PHP** | `AWS SDK for PHP** | Applications web, Laravel | |
 
+Le reste de cette section se concentre sur `boto3`, le SDK Python, très utilisé pour l'automatisation et les fonctions Lambda.
+
 #### Introduction à boto3 (Python)
 
 **boto3** est la **SDK AWS officielle pour Python**. Elle est utilisée dans :
@@ -236,7 +246,11 @@ Exemple : ec2_client.describe_instances()
 - Tâches cron de maintenance
 - Outils de gestion d'infrastructure
 
+Avant de l'utiliser dans du code, il faut bien sûr l'installer dans votre environnement Python.
+
 ##### Installation de boto3
+
+Comme toute bibliothèque Python, boto3 s'installe via pip :
 
 ```bash
 # Installer boto3
@@ -256,6 +270,8 @@ python3 -c "import boto3; print(boto3.__version__)"
 > ```
 
 ##### Exemple 1 : Lister les instances EC2
+
+Premier réflexe avec boto3 : créer un client pour le service ciblé, puis appeler la méthode correspondant à l'action CLI équivalente :
 
 ```python
 import boto3
@@ -291,7 +307,11 @@ Instance : i-0987654321abcdef0
   État : stopped
 ```
 
+Ce premier exemple ne fait que lire l'existant ; voyons maintenant comment créer une nouvelle ressource avec la même logique client/appel/réponse.
+
 ##### Exemple 2 : Créer une snapshot EBS
+
+Ce même client EC2 sert aussi bien à consulter l'existant qu'à créer de nouvelles ressources :
 
 ```python
 import boto3
@@ -322,7 +342,11 @@ print(f"Snapshot créé : {snapshot_id}")
 print(f"Progression : {progress}")
 ```
 
+Ce snapshot protège les données ; il reste à voir comment agir sur le cycle de vie de l'instance elle-même.
+
 ##### Exemple 3 : Arrêter une instance EC2
+
+À l'inverse d'une création, certaines opérations modifient l'état d'une ressource existante — comme arrêter une instance en cours d'exécution :
 
 ```python
 import boto3
@@ -342,7 +366,11 @@ for instance in response['StoppingInstances']:
     print(f"État courant : {instance['CurrentState']['Name']}")
 ```
 
+Ces trois premiers exemples ont ciblé EC2 ; boto3 s'utilise de la même façon pour n'importe quel autre service, comme CloudWatch.
+
 ##### Exemple 4 : Créer une alarme CloudWatch
+
+Ce dernier exemple ramène au thème de la section 6 : créer via boto3 la même alarme CloudWatch qu'on a créée plus haut en CLI, pour montrer l'équivalence entre les deux approches :
 
 ```python
 import boto3
@@ -373,7 +401,11 @@ cloudwatch_client.put_metric_alarm(
 print("Alarme CloudWatch créée avec succès")
 ```
 
+Ces quatre exemples suivent tous le même schéma (client, appel, traitement de la réponse) ; pour les généraliser en code de production, quelques règles s'imposent.
+
 #### Bonnes pratiques boto3
+
+Avant d'utiliser ces scripts au-delà d'un simple test, voici les réflexes à adopter systématiquement :
 
 ```
 ✓ Utiliser des variables d'environnement ou des profils AWS pour les credentials
@@ -383,6 +415,8 @@ print("Alarme CloudWatch créée avec succès")
 ✓ Tester en environnement non-production d'abord
 ✓ Utiliser des rôles IAM appropriés (pas de clés d'accès root)
 ```
+
+Le premier et le dernier point se rejoignent : ne jamais coder en dur des clés d'accès, qu'elles soient celles d'un utilisateur IAM classique ou, pire, celles du compte root.
 
 ---
 

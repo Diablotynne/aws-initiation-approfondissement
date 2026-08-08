@@ -7,6 +7,8 @@ description: "\"Chapitre 3 — Amazon VPC et bases de données AWS\" - 5. Points
 
 ### 5.1 Pièges RDS et Bases de données
 
+Ce chapitre a couvert beaucoup de mécanismes RDS/Aurora en détail ; voici les confusions les plus fréquentes qui reviennent en certification comme en production :
+
 | Piège | Réalité | Conséquence | Solution |
 |-------|---------|-----------|----------|
 | **RDS n'est pas auto-scalable en stockage** | Faut augmenter manuellement (RDS) ou activer auto-scaling (Aurora) | Saturation disque → downtime | Vérifier "Storage autoscaling" dans RDS config |
@@ -15,7 +17,11 @@ description: "\"Chapitre 3 — Amazon VPC et bases de données AWS\" - 5. Points
 | **Read Replica ≠ Multi-AZ** | Replica = asynchrone, pour lectures. Multi-AZ = synchrone, failover | Confondre les deux gâche design | Multi-AZ pour haute dispo, Replicas pour scalabilité lecture |
 | **Snapshot RDS = backup manuel** | Snapshots manuels ne s'auto-suppriment pas | Surcoûts stockage | Supprimer manuellement ou appliquer cycle vie |
 
+Les deux pièges les plus fréquemment testés en examen sont la confusion Multi-AZ/Read Replica et l'impossibilité de chiffrer après coup — gardez ces deux réflexes en tête avant de passer au réseau.
+
 ### 5.2 Pièges VPC et Réseau
+
+Le réseau concentre le plus grand nombre de pièges de ce chapitre, du fait de la diversité des composants (Peering, Security Groups, NACL, Transit Gateway, ENI) :
 
 | Piège | Réalité | Conséquence | Solution |
 |-------|---------|-----------|----------|
@@ -31,7 +37,11 @@ description: "\"Chapitre 3 — Amazon VPC et bases de données AWS\" - 5. Points
 | **Transit Gateway routing par défaut = tous allowed** | TGW fait transiter tous les paquets par défaut | Communication imprévue entre VPCs | Restreindre via Route Tables TGW explicites |
 | **VPC CIDR overlap interdit dans Transit Gateway** | Tous les VPCs attachés doivent avoir CIDR différents | Adresses en collision = paquets perdus | Planifier CIDR par VPC avant TGW |
 
+Le point commun à la majorité de ces pièges réseau est une confusion entre deux mécanismes qui se ressemblent en apparence (SG/NACL, Peering/Transit Gateway, IGW/NAT) mais répondent à des besoins différents — relire leur définition respective lève la plupart de ces confusions.
+
 ### 5.3 Pièges Route 53 et DNS
+
+Côté DNS, les pièges sont moins nombreux mais tout aussi coûteux en cas d'erreur, notamment sur le TTL :
 
 | Piège | Réalité | Conséquence | Solution |
 |-------|---------|-----------|----------|
@@ -53,6 +63,8 @@ description: "\"Chapitre 3 — Amazon VPC et bases de données AWS\" - 5. Points
 
 ### 5.4 Pièges DynamoDB
 
+DynamoDB fonctionne différemment d'une base relationnelle, ce qui génère des erreurs de conception typiques chez les habitués du SQL :
+
 | Piège | Réalité | Conséquence | Solution |
 |-------|---------|-----------|----------|
 | **DynamoDB provisionned vs on-demand** | Mode provisionné = moins cher si prévisible | Charge imprévisible = throttling ou surcoûts | Choisir on-demand si variable, provisionné si stable |
@@ -60,7 +72,11 @@ description: "\"Chapitre 3 — Amazon VPC et bases de données AWS\" - 5. Points
 | **DynamoDB TTL n'est pas immédiat** | TTL supprime dans 24-48h après expiration | Données restent visibles brièvement | Ne pas compter sur TTL pour sécurité |
 | **Global Secondary Index (GSI) coûte** | GSI = throughput supplémentaire à provisionner | Surcoûts si GSI mal utilisés | Bien planifier projections, ne créer que GSI utiles |
 
+Le piège de la partition/sort key est le plus structurant : mal le concevoir dès le départ oblige souvent à recréer la table entière, DynamoDB ne permettant pas de modifier ces clés après coup.
+
 ### 5.5 Pièges ElastiCache
+
+Côté cache, les pièges tiennent surtout à la confusion entre les deux moteurs et à une mauvaise gestion de la fraîcheur des données :
 
 | Piège | Réalité | Conséquence | Solution |
 |-------|---------|-----------|----------|
@@ -69,13 +85,19 @@ description: "\"Chapitre 3 — Amazon VPC et bases de données AWS\" - 5. Points
 | **ElastiCache dans VPC ≠ accessible depuis EC2 autre subnet** | Besoin Security Group + route table | EC2 ne peut pas accéder cache | Vérifier SG ElastiCache permet EC2, même VPC |
 | **Cluster mode disabled : une seule shard** | Pas de sharding = un seul nœud max CPU | Bottleneck CPU même avec plusieurs replicas | Cluster mode enabled pour scalabilité |
 
+Le troisième piège rappelle qu'ElastiCache reste soumis aux mêmes règles réseau qu'EC2 ou RDS : être dans le même VPC ne suffit pas, il faut aussi que les Security Groups autorisent explicitement le flux entre l'application et le cache.
+
 ### 5.6 Pièges Architecture Générale
+
+Ces derniers pièges dépassent un service unique et concernent des choix d'architecture transverses vus dans ce chapitre :
 
 | Piège | Réalité | Conséquence | Solution |
 |-------|---------|-----------|----------|
 | **Aurora Serverless = scaling pas instantané** | Scaling automatique peut durer 30-60s | Latence pics pendant scaling | Pas idéal real-time, mieux RDS provisionné |
 | **VPC Endpoint S3 évite la NAT** | Mais doit configurer policies explicites | S3 accès reste privé mais règles complexes | Créer endpoint + bucket policy restrictive |
 | **VPC Endpoint = interface privée (coût)** | Interface endpoint = ENI = $0.007/h | Nombreux endpoints = facture élevée | Gateway endpoint pour S3/DynamoDB (gratuit) |
+
+Ce dernier piège illustre un principe général de ce chapitre : sur AWS, chaque mécanisme d'automatisation ou de connectivité a un modèle de coût propre, qu'il faut vérifier avant de le généraliser à grande échelle plutôt que de supposer qu'il est gratuit par défaut.
 
 ---
 

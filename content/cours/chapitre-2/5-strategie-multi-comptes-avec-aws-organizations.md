@@ -14,6 +14,8 @@ Lorsqu'une entreprise évolue et déploie de plus en plus de workloads dans AWS,
 - Difficile d'appliquer des politiques globales cohérentes.
 - Problèmes de conformité et de cloisonnement des environnements.
 
+Ces risques ne sont pas propres à AWS : ils apparaissent dès qu'une organisation fait grandir un système d'information partagé sans cloisonnement, et c'est précisément ce que vise à résoudre AWS Organizations.
+
 ---
 
 ### 5.2 Introduction à AWS Organizations
@@ -36,9 +38,13 @@ Il facilite :
 - la **centralisation de la facturation**,
 - la **gestion simplifiée des identités et des accès** à grande échelle.
 
+Ces quatre bénéfices reposent sur quelques notions structurantes qu'il convient de définir avant d'aller plus loin.
+
 ---
 
 ### 5.4 Concepts clés d'AWS Organizations
+
+Avant d'aller plus loin, voici le vocabulaire propre à AWS Organizations que l'on retrouvera tout au long de cette section :
 
 | Élément | Définition |
 |---------|-----------|
@@ -93,7 +99,11 @@ Beaucoup de participants confondent **SCP** et **IAM Policy**. Voici la différe
 | **Exemples** | `Allow s3:GetObject`, `Deny ec2:RunInstances` | `Deny iam:CreateUser`, `Deny *:* (sauf S3)` |
 | **Cas bloqué** | Un utilisateur sans policy = accès refusé | Un utilisateur avec Allow, mais SCP refuse = accès refusé |
 
+La ligne « Cas bloqué » résume l'essentiel : une SCP ne peut jamais accorder un droit, elle ne peut que le retirer — même le compte Management ne peut pas s'octroyer une permission via une SCP.
+
 #### Analogie : Restaurant avec zones interdites
+
+Pour fixer durablement cette différence, voici une analogie simple :
 
 - **IAM Policy** = "Alice peut commander des plats du menu".
 - **SCP** = "Personne dans le restaurant ne peut avoir d'alcool" (limite absolue).
@@ -101,6 +111,8 @@ Beaucoup de participants confondent **SCP** et **IAM Policy**. Voici la différe
 Même si Alice a l'autorisation IAM, la SCP l'empêche de commander de l'alcool.
 
 #### Ordre d'évaluation des permissions
+
+Concrètement, AWS évalue toujours les deux couches dans le même ordre lorsqu'une requête arrive :
 
 ```
 1. SCP évalue : "Est-ce que le compte autorise cela ?"
@@ -119,6 +131,8 @@ Résultat final = SCP AND IAM Policy
 - Un utilisateur a une IAM Policy : `Allow ec2:*` (tous les droits EC2).
 - Mais l'OU a une SCP : `Deny ec2:RunInstances` (interdire lancer des instances).
 - **Résultat** : L'utilisateur peut faire presque tout avec EC2 **sauf lancer des instances**.
+
+Ce principe d'intersection entre SCP et IAM Policy se retrouve dans la plupart des cas pratiques rencontrés en entreprise, dont voici quelques exemples courants.
 
 ---
 
@@ -262,11 +276,15 @@ Cela évite les surprises en production.
 
 ### 5.10 Avantages d'une stratégie multi-comptes
 
+En reprenant les problématiques évoquées en 5.1, on voit que la stratégie multi-comptes y répond point par point :
+
 * Séparation claire des environnements (Prod, Dev, Test).
 * Meilleure sécurité grâce au cloisonnement.
 * Gestion fine des coûts par compte.
 * Application de politiques globales cohérentes.
 * Simplification de l'audit et de la conformité.
+
+Ce cloisonnement a toutefois un coût organisationnel : plus de comptes signifie plus de structure à maintenir (OU, SCP, budgets), ce qui justifie de s'appuyer sur les bonnes pratiques détaillées en 5.12.
 
 ---
 
@@ -283,6 +301,8 @@ AWS Budgets peut être configuré au niveau de l'organisation pour :
 
 ### 5.12 Bonnes pratiques recommandées par AWS
 
+Ces recommandations d'AWS visent avant tout à limiter les risques structurels d'une organisation multi-comptes, à commencer par le compte le plus sensible de tous :
+
 * Créer un **compte de management** dédié, jamais utilisé pour déployer des ressources.
 * Utiliser **des OU logiques** (par environnement ou par métier).
 * Appliquer les SCP **par OU** plutôt que par compte individuel.
@@ -294,6 +314,8 @@ AWS Budgets peut être configuré au niveau de l'organisation pour :
 ---
 
 ### 5.13 Points de vigilance
+
+Pour clore cette section sur AWS Organizations, quelques rappels sur les erreurs de compréhension les plus fréquentes autour des SCP :
 
 * Les SCP n'annulent pas les politiques IAM, elles les **limitent**.
 * L'ordre d'évaluation est : SCP → IAM → Permissions effectives.

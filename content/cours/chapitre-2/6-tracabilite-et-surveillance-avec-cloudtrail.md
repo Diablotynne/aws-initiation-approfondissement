@@ -33,6 +33,8 @@ CloudTrail permet ainsi :
 * de **stocker les logs dans S3**,
 * et de les **exploiter dans CloudWatch ou EventBridge** pour créer des alertes.
 
+Ces capacités s'appliquent par défaut à un seul compte ; dans une organisation multi-comptes, CloudTrail offre en plus un mode de centralisation dédié.
+
 ---
 
 ### 6.3 CloudTrail et AWS Organizations
@@ -49,6 +51,8 @@ Cela permet de suivre les activités de tous les comptes de votre organisation d
 
 ### 6.4 Exemples d'événements courants enregistrés
 
+Chaque appel API AWS génère un événement CloudTrail ; voici quelques exemples représentatifs des cas d'usage sécurité les plus courants :
+
 | Événement CloudTrail | Description | Cas d'usage |
 |---|---|---|
 | `ConsoleLogin` | Connexion à la console AWS | Détecter les connexions non MFA |
@@ -57,9 +61,13 @@ Cela permet de suivre les activités de tous les comptes de votre organisation d
 | `PutUserPolicy` | Modification d'une policy IAM | Traçabilité sécurité IAM |
 | `DeleteTrail` | Suppression du trail CloudTrail | Détection activité critique |
 
+Le dernier événement, `DeleteTrail`, mérite une attention particulière : un attaquant qui obtient un accès administrateur tentera souvent de désactiver ou supprimer le trail pour effacer ses traces — c'est pourquoi il est recommandé de surveiller ce type d'événement via une alerte dédiée plutôt que de se contenter de sa présence dans les logs.
+
 ---
 
 ### 6.5 CloudTrail vs CloudWatch
+
+Ces deux services sont fréquemment confondus alors qu'ils répondent à des questions différentes :
 
 | CloudTrail | CloudWatch |
 |---|---|
@@ -71,6 +79,8 @@ Cela permet de suivre les activités de tous les comptes de votre organisation d
 Les deux sont complémentaires :
 - CloudTrail = audit et traçabilité
 - CloudWatch = surveillance opérationnelle
+
+Cette complémentarité prend tout son sens lorsque les volumes de logs CloudTrail deviennent trop importants pour être consultés manuellement, ce qui appelle une chaîne d'analyse dédiée.
 
 ---
 
@@ -123,6 +133,8 @@ Si CloudTrail trace les **actions**, AWS Config trace les **états**. Ensemble, 
 ---
 
 ### 6.9 Bonnes pratiques CloudTrail
+
+Pour conclure cette section, voici les réglages qui distinguent un CloudTrail « activé par défaut » d'un CloudTrail réellement exploitable en cas d'incident :
 
 * Activer CloudTrail **au niveau de l'organisation**.
 * Centraliser les logs dans un **bucket S3 sécurisé**.

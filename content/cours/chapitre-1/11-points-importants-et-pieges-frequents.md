@@ -5,6 +5,8 @@ description: "\"Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS\" - 
 
 <nav class="page-sequence"><a href="cours/chapitre-1/10-bonnes-pratiques-de-demarrage">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-1/index">Sommaire</a> <a href="cours/chapitre-1/ressources">Suivant</a></nav>
 
+Ce chapitre a couvert beaucoup de notions en peu de temps ; le tableau suivant recense les idées reçues les plus fréquentes chez les débutants AWS, pour clarifier une dernière fois ce qui relève du mythe et ce qui relève de la réalité technique.
+
 | Piège | Réalité |
 |-------|---------|
 | **« AWS, c'est juste des serveurs dans le cloud »** | AWS est une **plateforme complète** couvrant 200+ services — calcul, stockage, réseau, IA, sécurité, DevOps, etc. |

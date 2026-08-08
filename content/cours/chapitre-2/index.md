@@ -3,6 +3,9 @@ title: "Chapitre 2 — Sécurité des accès avec AWS IAM"
 description: "Identités, politiques, rôles, MFA, fédération, Cognito, Organizations et CloudTrail."
 ---
 
+> [!info]
+> Le chapitre précédent a posé les bases théoriques du Cloud Computing et présenté l'écosystème AWS ; ce chapitre entre dans le concret en abordant le premier pilier opérationnel de toute architecture AWS : la sécurité des accès.
+
 Les notions de cours sont pr&eacute;sent&eacute;es sur des pages courtes. Tous les exercices du chapitre sont regroup&eacute;s sur une seule page de travaux pratiques. Utilisez les liens Pr&eacute;c&eacute;dent et Suivant pour suivre la progression.
 
 <nav class="chapter-map" aria-label="Sous-chapitres de la journee">

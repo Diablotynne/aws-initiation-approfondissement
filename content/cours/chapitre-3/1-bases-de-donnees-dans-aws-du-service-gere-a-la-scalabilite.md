@@ -38,6 +38,8 @@ Avec RDS :
 - AWS crée l'instance, configure le stockage EBS, met en place le monitoring, gère les snapshots, applique les patches.
 - Vous accédez à votre base via un endpoint standard (`mondb.xxxxx.eu-west-1.rds.amazonaws.com:3306`).
 
+Ce changement de paradigme se concrétise par un catalogue de moteurs relationnels managés, détaillé dans la section suivante.
+
 ---
 
 ### 1.2 Amazon RDS — Bases relationnelles managées
@@ -55,7 +57,11 @@ Avec RDS :
 | **SQL Server** | Windows, intégration Active Directory | Environnements Microsoft |
 | **Amazon Aurora** | Natif AWS, ultra-performant | Haute disponibilité, haute scalabilité |
 
+Le choix du moteur ne change rien à l'expérience de gestion : quel que soit le moteur retenu, RDS apporte le même socle de fonctionnalités managées, détaillé ci-dessous.
+
 #### Caractéristiques clés
+
+Quel que soit le moteur choisi, RDS apporte un socle commun de fonctionnalités managées qui le distingue d'une base installée manuellement sur un serveur :
 
 | Fonctionnalité | Description |
 |---|---|
@@ -65,6 +71,8 @@ Avec RDS :
 | **Scalabilité verticale** | Augmenter CPU/RAM sans interruption (dans certains cas) |
 | **Read Replicas** | Jusqu'à 5 réplicas de lecture asynchrones pour répartir les lectures |
 | **Maintenance automatisée** | Patches et mises à jour sans intervention manuelle |
+
+La haute disponibilité (Multi-AZ) et les Read Replicas sont souvent confondues alors qu'elles répondent à des besoins différents : la première protège contre une panne, la seconde répartit la charge de lecture — les sections suivantes détaillent chacune.
 
 #### Types de stockage EBS pour RDS
 
@@ -101,6 +109,8 @@ Supposons une plateforme qui stocke **les métadonnées** de ses contenus : titr
 - Read Replicas pour diffuser les lectures (reports analytiques)
 → Coût annuel : ~1 500 $, gestion minimal (0,1 FTE)
 ```
+
+Le gain ne se limite pas au coût : c'est surtout la disponibilité qui change de nature, passant d'un risque géré manuellement à un mécanisme automatique intégré au service, comme détaillé ci-dessous.
 
 ---
 
@@ -199,16 +209,24 @@ aws rds create-db-instance-read-replica \
 
 ### 1.4 Sécurité et supervision RDS
 
+Une base de données RDS contient généralement des données sensibles (informations clients, identifiants, données métier) : elle doit donc être protégée par du chiffrement et surveillée en continu pour détecter toute anomalie ou tentative d'accès non autorisé. RDS propose deux volets complémentaires : le **chiffrement** des données elles-mêmes, et la **supervision** de l'activité et des performances de l'instance.
+
 #### Chiffrement
+
+RDS distingue deux états dans lesquels une donnée doit être protégée : au repos (stockée sur disque) et en transit (lors de son transfert entre le client et la base).
 
 | Type | Description |
 |------|---|
 | **Au repos** | Les données sur disque EBS sont chiffrées via AWS KMS |
 | **En transit** | SSL/TLS obligatoire entre client et base |
 
-⚠️ **Important** : le chiffrement **doit être activé à la création** de l'instance.
+Le chiffrement au repos s'appuie sur **AWS KMS** (Key Management Service) : la clé chiffre le volume de stockage, les instantanés (snapshots) et les réplicas, de façon totalement transparente pour les applications. Le chiffrement en transit, lui, impose l'usage de SSL/TLS pour toute connexion au moteur de base de données, ce qui protège les données contre l'interception sur le réseau.
+
+⚠️ **Important** : le chiffrement **doit être activé à la création** de l'instance. Il est impossible de chiffrer après coup une instance RDS existante : la seule solution consiste à créer un instantané, puis à restaurer ce dernier vers une nouvelle instance chiffrée.
 
 #### Supervision et alertes
+
+Une fois l'instance en production, plusieurs outils AWS permettent de suivre son état de santé, ses performances et les accès qui y sont effectués. Chacun couvre un besoin différent : métriques d'infrastructure, analyse des requêtes, audit de configuration ou détail au niveau du système d'exploitation.
 
 | Outil | Rôle |
 |---|---|
@@ -216,6 +234,8 @@ aws rds create-db-instance-read-replica \
 | **Performance Insights** | Requêtes coûteuses, sessions actives |
 | **CloudTrail** | Audit : qui a modifié la configuration |
 | **Enhanced Monitoring** | Metrics granulaires de l'OS |
+
+En pratique, **CloudWatch** suffit pour une supervision de base (alertes sur le CPU ou l'espace disque), tandis que **Performance Insights** devient indispensable dès qu'un problème de lenteur applicative nécessite d'identifier les requêtes SQL les plus coûteuses. **CloudTrail** répond à un besoin de traçabilité et de conformité (qui a modifié quoi et quand), et **Enhanced Monitoring** apporte une vue fine des ressources de l'OS sous-jacent (jusqu'à la seconde), utile pour du diagnostic système avancé.
 
 ---
 
@@ -229,13 +249,19 @@ Aurora découple le **calcul** (instances) du **stockage** (volume distribué). 
 
 #### Performances
 
+Ce découplage calcul/stockage se traduit par des gains mesurables par rapport aux moteurs open source qu'Aurora reste compatible avec :
+
 | Métrique | vs MySQL | vs PostgreSQL |
 |----------|----------|---|
 | Throughput max | **5×** | **3×** |
 | Basculement automatique | 30 sec | 30 sec |
 | Réplicas de lecture | 15 (vs 5) | 15 (vs 5) |
 
+Ces chiffres ne sont pas de simples arguments marketing : ils découlent directement de l'architecture distribuée décrite plus haut, qui permet à Aurora de répliquer les écritures et de servir davantage de réplicas sans passer par le stockage EBS classique.
+
 #### Comparaison détaillée : RDS MySQL/PostgreSQL vs Aurora
+
+Pour choisir entre les deux moteurs en connaissance de cause, voici une comparaison exhaustive critère par critère :
 
 | Aspect | RDS MySQL/PostgreSQL | Aurora |
 |--------|---|---|
@@ -261,6 +287,8 @@ Aurora offre **deux modèles de déploiement** :
 |---|---|---|---|
 | **Provisioned** (classique) | Vous choisissez la taille (ex. `db.r6g.xlarge`) | Coût fixe, performance prévisible | Application de reporting critique, charge stable (12h/jour) |
 | **Serverless V2** (moderne) | Scaling auto de 0.5 à 1000+ ACU (Aurora Compute Units) | Paiement à l'utilisation, scaling en ≈5 sec | API imprévisible, pics aléatoires, environnements de développement |
+
+Le choix entre les deux n'est pas figé : une même charge peut démarrer en Serverless V2 pendant sa phase de croissance imprévisible, puis basculer en Provisioned une fois le trafic stabilisé et prévisible.
 
 #### Créer un cluster Aurora en CLI
 
@@ -372,6 +400,8 @@ aws rds create-db-cluster \
 
 ##### Instance (calcul)
 
+Premier poste de coût à comparer : le prix horaire de l'instance elle-même, qui varie sensiblement selon la taille choisie :
+
 | Type | RDS MySQL | Aurora MySQL | Écart |
 |------|-----------|-------------|-------|
 | db.t3.micro | **0,017 $/h** (~12 $/mois) | ❌ Non disponible | — |
@@ -384,6 +414,8 @@ aws rds create-db-cluster \
 
 ##### Stockage et I/O
 
+Second poste de coût, souvent négligé lors d'un premier chiffrage : le stockage et les I/O, où Aurora inverse la tendance observée sur le calcul en devenant moins cher au Go, réplication comprise :
+
 | | RDS (gp3) | Aurora |
 |--|-----------|--------|
 | Prix stockage | 0,115 $/Go/mois | 0,10 $/Go/mois |
@@ -392,7 +424,11 @@ aws rds create-db-cluster \
 | Réplication | 1 copie (Multi-AZ = 2×) | **6 copies dans 3 AZ** (inclus) |
 | I/O | Inclus (gp3) | 0,20 $ / million de requêtes (Standard) ou inclus (I/O-Optimized +25%) |
 
+À volume équivalent, Aurora reste donc plus cher sur le calcul mais moins cher sur le stockage — le choix final dépend du ratio entre les deux pour votre charge de travail, ce que l'exemple chiffré ci-dessous permet d'illustrer.
+
 ##### Aurora Serverless v2 — facturation à l'utilisation
+
+Contrairement au mode Provisioned facturé à l'heure d'instance, Serverless v2 facture la capacité réellement consommée, exprimée en ACU (Aurora Capacity Unit) :
 
 ```
 Facturation : ACU-heure (Aurora Capacity Unit)
@@ -406,7 +442,11 @@ Avantage : scale automatiquement de 0,5 à 128 ACU en quelques secondes
 Cas idéal : applications avec trafic très variable (pics journaliers, saisonnalité)
 ```
 
+Ces tarifs unitaires restent abstraits tant qu'on ne les applique pas à un cas concret comparé côte à côte avec RDS classique.
+
 ##### Exemple comparatif — Application web standard, 50 Go de données
+
+Pour donner un sens concret à ces tarifs unitaires, voici comment ils se traduisent sur un cas réel comparé côte à côte avec RDS classique :
 
 ```
                     RDS MySQL           Aurora MySQL (Serverless v2)
@@ -439,6 +479,8 @@ TOTAL Multi-AZ  ~104 $/mois             ~75–125 $/mois
 
 #### Structure d'une table DynamoDB
 
+Contrairement à une table SQL, une table DynamoDB n'impose pas de colonnes fixes : seule la clé primaire est obligatoire, chaque type d'attribut étant identifié par un code court utilisé dans l'API et les requêtes :
+
 ```
 Chaque attribut peut être :
 - Chaîne (S)
@@ -451,7 +493,11 @@ Chaque attribut peut être :
 Aucune contrainte de schéma : vous pouvez ajouter des attributs par ligne.
 ```
 
+Cette absence de schéma figé permet de faire évoluer la structure des données au fil du temps sans migration, mais déplace la responsabilité de la cohérence des données depuis la base de données vers le code applicatif.
+
 #### Modèles de tarification
+
+DynamoDB propose deux façons de payer selon la prévisibilité de votre trafic :
 
 | Modèle | Débit garanti | Facturation | Cas d'usage |
 |--------|---|---|---|
@@ -467,12 +513,16 @@ Aucune contrainte de schéma : vous pouvez ajouter des attributs par ligne.
 
 #### DynamoDB vs RDS
 
+Ce choix de modèle de tarification n'est qu'un aspect parmi d'autres différences structurelles entre DynamoDB et une base relationnelle comme RDS :
+
 | Aspect | RDS (SQL) | DynamoDB (NoSQL) |
 |--------|-----------|---|
 | **Schéma** | Structuré, relationnel | Flexible, semi-structuré |
 | **Requêtes** | Complexes (jointures) | Simples (accès par clé) |
 | **Scalabilité** | Verticale surtout | Horizontale, ultra-massive |
 | **Latence** | ms-s | ms |
+
+Cette scalabilité horizontale « ultra-massive » n'est pas magique : elle repose sur un découpage des données en partitions, et un mauvais choix de clé de partition peut annuler cet avantage en concentrant tout le trafic sur une seule partition, comme détaillé ci-dessous.
 
 > [!danger]
 > **Hot Partitions DynamoDB — Erreur de conception fréquente**
@@ -514,6 +564,8 @@ La source (Oracle Database on-premise/RDS, 5 To, 50 tables, actif à 1000 txn/s)
 - J+0 22h00 : cutover — redirection de l'application vers Aurora.
 - J+1 : validation complète, monitoring 24h.
 
+Cette timeline repose sur trois phases techniques distinctes, détaillées ci-dessous.
+
 #### Processus de migration par étapes
 
 **Phase 1 — Full Load (copie complète)** : les données transitent de la source vers la cible via un DMS Agent. Tous les types de données, tous les indices et les contraintes PRIMARY sont copiés automatiquement ; en revanche, les triggers et procédures stockées doivent être recréés manuellement.
@@ -527,13 +579,19 @@ La source (Oracle Database on-premise/RDS, 5 To, 50 tables, actif à 1000 txn/s)
 4. Vérifier les logs applicatifs.
 5. Garder un plan de rollback armé.
 
+La difficulté de ce cutover varie fortement selon le type de migration entrepris, comme le montre le tableau suivant.
+
 #### Types de migrations DMS
+
+La complexité d'une migration DMS dépend surtout de l'écart entre le moteur source et le moteur cible :
 
 | Type | Exemple | Complexité | Coût |
 |------|---------|---|---|
 | **Homogène (même moteur)** | MySQL → RDS MySQL | ⭐ Très facile | Bas |
 | **Hétérogène (moteurs diff)** | Oracle → Aurora PostgreSQL | ⭐⭐⭐ Moyen | Moyen |
 | **Schéma complexe** | DB2 → PostgreSQL (types custom) | ⭐⭐⭐⭐ Élevé | Élevé |
+
+L'exemple Oracle → Aurora PostgreSQL de ce chapitre se situe dans la catégorie hétérogène : DMS gère la conversion des types de données courants, mais les procédures stockées et triggers spécifiques à Oracle doivent être portés manuellement en PL/pgSQL.
 
 #### Créer une tâche DMS en CLI
 
@@ -733,7 +791,11 @@ aws dms delete-replication-task \
   --replication-task-arn arn:aws:dms:eu-west-1:123456789012:task:oracle-to-aurora-migration
 ```
 
+Ces commandes de gestion suffisent pour piloter le cycle de vie d'une tâche DMS ; en pratique, quelques erreurs reviennent régulièrement lors des migrations réelles.
+
 #### Pièges et bonnes pratiques DMS
+
+Voici les erreurs les plus courantes constatées lors de migrations DMS en production, et comment les éviter :
 
 | Piège | Solution |
 |-------|----------|
@@ -743,6 +805,8 @@ aws dms delete-replication-task \
 | **Incompatibilités types données** | Utiliser **Schema Conversion Tool (SCT)** avant DMS pour préparer |
 | **Oublier transaction logs source** | Source doit activer binary logs (MySQL) / redo logs (Oracle) |
 | **Cutover sans validation données** | Test requêtes applicatives sur cible avant redirection |
+
+Le piège le plus coûteux reste le schéma incomplet : DMS donne l'illusion d'une migration totale alors qu'il ne copie que les données, laissant la logique métier embarquée dans la base (procédures, triggers, vues) entièrement à la charge de l'équipe de migration.
 
 ---
 

@@ -18,6 +18,8 @@ Le Chapitre 1 a présenté les quatre niveaux de certification AWS (Fondamental,
 
 ### 9.3 Domaines couverts par la SAA-C03
 
+L'examen SAA-C03 répartit ses questions selon quatre domaines pondérés :
+
 | Domaine | Pondération |
 |---------|-------------|
 | Design d'architectures résilientes | 26 % |

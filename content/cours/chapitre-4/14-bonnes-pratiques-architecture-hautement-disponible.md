@@ -22,6 +22,8 @@ description: "\"Chapitre 4 — Stockage Amazon S3 et calcul Amazon EC2\" - 14. B
 - CloudTrail pour auditer les accès et modifications.
 - S3 Access Analyzer pour vérifier les politiques d'accès.
 
+Ces principes de résilience S3 se retrouvent, sous une forme adaptée, côté calcul EC2.
+
 ### 14.2 Architecture résiliente EC2
 
 **Load Balancer + Auto Scaling minimum** :
@@ -38,6 +40,8 @@ description: "\"Chapitre 4 — Stockage Amazon S3 et calcul Amazon EC2\" - 14. B
 - Snapshots EBS réguliers (quotidiens ou hebdomadaires).
 - Externaliser les sauvegardes sur S3.
 - Tester la restauration régulièrement !
+
+Une fois la résilience assurée pour S3 et EC2, le levier suivant consiste à s'assurer que cette infrastructure ne coûte pas plus que nécessaire.
 
 ### 14.3 Optimisation des coûts
 
@@ -59,6 +63,8 @@ description: "\"Chapitre 4 — Stockage Amazon S3 et calcul Amazon EC2\" - 14. B
 - Utiliser le **Pricing Calculator** pour estimer les coûts futurs.
 - Vérifier les coûts inattendus via la **Cost Explorer**.
 
+Coût maîtrisé et résilience assurée, il reste un dernier axe à travailler pour une architecture réellement mature : la performance à grande échelle.
+
 ### 14.4 Performance et scalabilité
 
 **S3 Performance** :
@@ -71,6 +77,8 @@ description: "\"Chapitre 4 — Stockage Amazon S3 et calcul Amazon EC2\" - 14. B
 - **Auto Scaling** sur **multiple métriques** : CPU, mémoire, débit réseau.
 - Usar **Read Replicas** pour les bases de données.
 - **Connexion pooling** pour les applications critiques.
+
+Ces bonnes pratiques de résilience, coût et performance forment la base d'une architecture AWS mature ; certains secteurs d'activité imposent en plus des garanties de conformité réglementaire spécifiques.
 
 ---
 

@@ -33,7 +33,11 @@ Route 53 combine plusieurs fonctionnalités :
 | **Routage intelligent** | Diriger le trafic selon latence, géolocalisation, poids, failover |
 | **Alias Records** | Lier un domaine à une ressource AWS (ALB, CloudFront, S3) |
 
+Les fonctions Registrar et résolution DNS existent chez tout fournisseur DNS ; ce qui distingue Route 53, ce sont les Health Checks et le routage intelligent, détaillés dans les sections suivantes.
+
 #### Types d'enregistrements DNS courants
+
+La résolution DNS elle-même s'appuie sur plusieurs types d'enregistrements normalisés, dont voici les plus courants :
 
 | Type | Exemple | Rôle |
 |------|---------|------|
@@ -43,6 +47,8 @@ Route 53 combine plusieurs fonctionnalités :
 | **MX** | `example.com` → `mail.example.com` | Serveur mail |
 | **TXT** | `example.com` → `v=spf1...` | Enregistrement texte |
 | **NS** | `example.com` → `ns1.route53...` | Serveurs DNS |
+
+Les enregistrements **A/AAAA** et **CNAME** sont ceux que vous manipulerez le plus souvent pour pointer un domaine vers une ressource AWS ; **Alias Records** (vu ci-dessus) est une extension propriétaire Route 53 qui se comporte comme un CNAME mais peut cibler la racine d'un domaine, ce qu'un CNAME classique interdit.
 
 ---
 
@@ -80,12 +86,16 @@ Route 53 peut **monitorer la santé** des ressources et basculer automatiquement
 
 #### Types de Health Checks
 
+Quatre types de vérification sont disponibles selon le niveau de granularité souhaité :
+
 | Type | Description | Fréquence |
 |------|---|---|
 | **HTTP/HTTPS** | Effectue une requête GET, attend 2xx/3xx | Toutes les 30s |
 | **TCP** | Établit une connexion TCP | Toutes les 10s |
 | **Calculated** | Combine plusieurs health checks | Toutes les 30s |
 | **CloudWatch** | Déclenché par une alarme CloudWatch | Variable |
+
+C'est ce Health Check qui alimente la politique de routage Failover vue en 3.3 : dès qu'il détecte une ressource en panne (délai selon la fréquence choisie), Route 53 bascule automatiquement le trafic vers la ressource de secours.
 
 ![](assets/schemas/ch4-capture-09-0f658ba9.png)
 

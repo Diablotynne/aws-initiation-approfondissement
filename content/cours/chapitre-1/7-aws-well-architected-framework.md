@@ -51,6 +51,8 @@ Mettre en œuvre des mesures de protection fortes à tous les niveaux — **IAM*
 - Utiliser des security groups et NACL pour isoler les ressources.
 - Activer CloudTrail pour auditer les accès.
 
+La sécurité posée, le pilier suivant s'intéresse à la façon de faire fonctionner l'infrastructure au quotidien sans intervention manuelle permanente.
+
 #### 2. Operational Excellence (Excellence opérationnelle)
 
 Surveiller et améliorer continuellement les opérations — **mise en place de processus**, **d'automatisation** et de **monitoring**.
@@ -60,6 +62,8 @@ Surveiller et améliorer continuellement les opérations — **mise en place de 
 - Automatiser les déploiements avec CloudFormation ou Terraform.
 - Documenter les procédures d'incident.
 - Faire des reviews régulières de l'architecture.
+
+Une bonne automatisation opérationnelle facilite directement le pilier suivant, qui vise à garantir que le système continue de fonctionner même en cas de panne.
 
 #### 3. Reliability (Fiabilité / Résilience)
 
@@ -71,6 +75,8 @@ Assurer la **résilience** et la **tolérance aux pannes** — **redondance**, *
 - Utiliser des auto-scaling groups pour ajuster le nombre d'instances en cas de charge.
 - Tester régulièrement les scénarios de récupération d'urgence (RTO/RPO).
 
+Une fois la résilience assurée, encore faut-il que les ressources déployées pour l'atteindre soient correctement dimensionnées, sans sur- ni sous-provisionnement.
+
 #### 4. Performance Efficiency (Efficacité des performances)
 
 Utiliser les ressources de manière **efficace et évolutive** — **choix des bonnes instances**, **optimisation des requêtes**.
@@ -81,6 +87,8 @@ Utiliser les ressources de manière **efficace et évolutive** — **choix des b
 - Optimiser les requêtes de bases de données.
 - Utiliser AWS Compute Optimizer pour recommander les bonnes tailles.
 
+Ce dimensionnement au plus juste a une conséquence directe sur le pilier suivant : moins de ressources sur-dimensionnées signifie mécaniquement moins de coûts gaspillés.
+
 #### 5. Cost Optimization (Optimisation des coûts)
 
 Éviter les dépenses inutiles et **ajuster la capacité à la demande** — **monitoring des coûts**, **réservation d'instances**, **suppression des ressources non utilisées**.
@@ -90,6 +98,8 @@ Utiliser les ressources de manière **efficace et évolutive** — **choix des b
 - Mettre en place des **budgets d'alerte** dans AWS Billing.
 - Arrêter les ressources non utilisées (instances EC2, RDS développement).
 - Analyser les logs de coûts avec Cost Explorer ou AWS Cost Anomaly Detection.
+
+Le sixième et dernier pilier prolonge cette logique d'optimisation des ressources au-delà du seul aspect financier, en y ajoutant une dimension environnementale.
 
 #### 6. Sustainability (Durabilité) — **Le pilier le plus récent** ✨
 

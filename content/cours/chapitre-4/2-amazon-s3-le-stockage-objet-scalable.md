@@ -23,6 +23,8 @@ Imaginez une **armoire de rangement** :
 - Chaque fichier est un **objet** : il contient le contenu (ex. une image) + des étiquettes (métadonnées) comme son nom, sa date, ses droits d'accès.
 - Les "dossiers" que vous voyez dans S3 ne sont pas réels : ce sont juste des **préfixes logiques** dans le nom du fichier (ex. `images/logo.png`).
 
+Cette absence de vraie hiérarchie de dossiers surprend souvent les nouveaux utilisateurs ; l'exemple suivant montre concrètement comment ces préfixes s'utilisent en pratique.
+
 ### 2.3 Exemple concret
 
 Vous créez un bucket nommé `site-web-entreprise`. Vous y déposez :
@@ -37,6 +39,8 @@ Ces fichiers peuvent ensuite être **consultés via Internet**, sans serveur web
 
 ### 2.4 Structure interne de S3
 
+Reprenons l'analogie de l'armoire avec le vocabulaire technique exact que vous rencontrerez dans la console et l'API S3 :
+
 | Élément | Description |
 |--------|-------------|
 | **Bucket** | Conteneur global (nom unique dans AWS), lié à une région |
@@ -45,7 +49,11 @@ Ces fichiers peuvent ensuite être **consultés via Internet**, sans serveur web
 | **Key** | Identifiant unique de l'objet au sein du bucket |
 | **Métadonnées** | Informations sur l'objet (format, date, ACL, tags) |
 
+Retenez surtout la **Key** : c'est cet identifiant unique, et non un chemin de dossier réel, que l'API S3 utilise pour retrouver un objet — ce qui explique pourquoi renommer un "dossier" entier sur S3 revient en réalité à recopier tous les objets sous une nouvelle Key.
+
 ### 2.5 Caractéristiques clés de S3
+
+Ces éléments structurels s'accompagnent de propriétés de service qui expliquent la popularité de S3 :
 
 | Caractéristique | Description |
 |------------------|-------------|
@@ -54,6 +62,8 @@ Ces fichiers peuvent ensuite être **consultés via Internet**, sans serveur web
 | **Évolutivité** | Pas de limite pratique en nombre d'objets. |
 | **Sécurité** | Contrôle fin via IAM, ACL, policies de bucket et chiffrement. |
 | **Coût à l'usage** | Payez uniquement pour le stockage et les requêtes. |
+
+La distinction entre durabilité (99,999999999 %, la probabilité de ne jamais perdre un objet) et disponibilité (99,99 %, la probabilité qu'il soit accessible à un instant donné) est un point souvent confondu : un objet peut être temporairement inaccessible (disponibilité) sans jamais être perdu (durabilité).
 
 📎 [S3 Storage Classes](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html)
 

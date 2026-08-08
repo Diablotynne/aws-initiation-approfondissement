@@ -23,6 +23,8 @@ Imaginons une application de commande de pizzas. Appliquons les 6 piliers :
 | **Cost Optimization** | Reserved Instances pour serveurs stables, Spot pour batch | Réduire 40% des coûts |
 | **Sustainability** | Déployer en Irlande (énergies renouvelables), Lambda sans serveur | Réduire l'empreinte carbone |
 
+Ce tableau ne donne que la synthèse des décisions ; le pilier Cost Optimization s'appuie en réalité sur un outil précis, déjà présenté au Chapitre 4, qu'il vaut la peine de relier explicitement à ce cas d'usage.
+
 ---
 
 ### 7.2 Rappel — AWS Compute Optimizer et le pilier Cost Optimization

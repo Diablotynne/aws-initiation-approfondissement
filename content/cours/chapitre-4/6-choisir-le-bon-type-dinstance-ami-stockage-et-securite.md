@@ -29,6 +29,8 @@ _Pour un TP ou un test, on utilise souvent `t3.micro` (gratuit dans le Free Tier
 - `xlarge` ou `2xlarge` : très puissants, pour les charges importantes
 - le **`g`** que l'on trouve dans `t4g`, `m6g`, `c6g`, etc. signale que l'instance tourne sur un processeur **Graviton**, la puce ARM conçue par AWS elle-même (au lieu d'un processeur x86 classique Intel/AMD). Les instances Graviton offrent généralement un meilleur rapport performance/prix (jusqu'à 20-40 % moins cher à performance équivalente), mais nécessitent que votre application soit compilée pour l'architecture ARM — la plupart des langages interprétés (Python, Node.js, Java) et des images Docker officielles la supportent nativement, mais un vieux binaire compilé spécifiquement pour x86 ne fonctionnera pas dessus sans recompilation.
 
+Le type d'instance ne détermine que la puissance matérielle disponible ; le logiciel qui tourne dessus au démarrage dépend d'un second choix indépendant, l'AMI.
+
 ### 6.2 AMI (Amazon Machine Image)
 
 L'AMI est le **système d'exploitation** de votre machine EC2.
@@ -36,6 +38,8 @@ L'AMI est le **système d'exploitation** de votre machine EC2.
 📹 **Vidéo** : [AMI — Amazon Machine Images](https://www.youtube.com/watch?v=xjZx37dsVRw)
 
 #### Types d'AMI
+
+On distingue trois origines possibles pour une AMI, selon qui l'a créée et publiée :
 
 - **Public AMI** : proposées par AWS (Linux, Windows, Ubuntu, etc.)
 - **Custom AMI** : créées par vous (ex. avec des logiciels préinstallés)
@@ -65,6 +69,8 @@ Les AMI peuvent être classifiées dans les grandes catégories suivantes :
 
 #### EBS — Elastic Block Store
 
+EBS est le disque virtuel « par défaut » d'EC2, attaché à une seule instance à la fois :
+
 - **Disque attaché** à une instance EC2.
 - **Persiste** même si l'instance est arrêtée.
 - Permet les **snapshots** (sauvegardes incrémentales).
@@ -75,11 +81,15 @@ Les AMI peuvent être classifiées dans les grandes catégories suivantes :
 
 #### EFS — Elastic File System
 
+Là où un volume EBS ne peut être monté que sur une seule instance à la fois, EFS lève cette limite en proposant un système de fichiers partagé :
+
 - **Système de fichiers partagé** entre plusieurs instances.
 - Montable sur **plusieurs instances EC2 simultanément**.
 - Idéal pour les architectures distribuées.
 - Escalabilité automatique sans gestion de capacité.
 - Compatible avec NFS (Network File System).
+
+Ce partage simultané entre plusieurs instances est précisément ce qu'EBS ne permet pas — c'est le critère de choix déterminant entre les deux services.
 
 **Cas d'usage** : cluster d'applications, déploiement multi-serveurs, stockage partagé.
 
@@ -87,6 +97,8 @@ Les AMI peuvent être classifiées dans les grandes catégories suivantes :
 - Haute disponibilité multi-AZ.
 - Performance prédictible et constante.
 - Paiement à l'usage (pas de provisionnement anticipé).
+
+EFS couvre bien les usages Linux/NFS génériques, mais certains environnements ont des besoins plus spécifiques (compatibilité Windows, calcul haute performance) auxquels répond un troisième service.
 
 #### FSx — Managed File Systems
 
@@ -134,7 +146,11 @@ Les **Security Groups** sont des pare-feux virtuels qui :
 - Sont **stateful** (les réponses sont automatiquement autorisées),
 - Peuvent être appliqués à plusieurs instances.
 
+Ce caractère stateful est essentiel à comprendre avant de lire des règles concrètes : il signifie qu'une règle entrante suffit à autoriser la réponse correspondante, sans avoir à écrire une règle sortante symétrique.
+
 ##### Exemple de règles
+
+Voici un jeu de règles typique pour un serveur web accessible publiquement mais administrable uniquement depuis une IP de confiance :
 
 | Direction | Port | Source/Destination |
 |---|---|---|
@@ -164,25 +180,37 @@ Les **Key Pairs** servent à sécuriser l'accès SSH :
 3. Depuis votre ordinateur, vous utilisez votre clé privée pour vous connecter en SSH.
 4. L'authentification par clé est plus sécurisée qu'un mot de passe (impossible à craquer par brute force).
 
+Security Groups et Key Pairs suffisent pour la grande majorité des instances ; certains secteurs réglementés exigent cependant des garanties matérielles supplémentaires.
+
 ### 6.5 Options de conformité EC2
 
 Les environnements réglementés (santé, finance, RGPD) ont besoin de **garanties de conformité**. AWS fournit plusieurs mécanismes :
 
 #### Dedicated Instances
 
+Le premier niveau d'isolation matérielle, le plus simple à activer, consiste à louer du matériel non partagé sans en avoir le contrôle direct :
+
 - Instance EC2 qui s'exécute sur **matériel physique dédié**.
 - Pas de partage avec d'autres clients AWS.
 - Idéal pour les **exigences légales** ou de conformité.
 - Coût plus élevé que le partage de matériel.
 
+Quand la conformité exige non seulement un matériel non partagé mais aussi un contrôle explicite du placement des instances, on passe au niveau supérieur.
+
 #### Dedicated Hosts
+
+Ce second niveau va plus loin que Dedicated Instances en donnant une visibilité complète sur le serveur physique sous-jacent :
 
 - **Serveur physique entier** réservé pour votre compte.
 - Contrôle total : vous décidez quelles instances y tournent.
 - Utile pour les **licences logicielles** (ex. Windows, SQL Server avec licensing par socket/processeur).
 - Exigences réglementaires très strictes.
 
+Ces deux options d'isolation matérielle n'ont cependant rien à voir avec le type de stockage attaché à l'instance, sujet traité séparément ci-dessous.
+
 #### Instance Store (éphémère)
+
+À l'opposé de la conformité matérielle, ce type de stockage répond à un besoin de performance brute, au prix d'une contrainte forte :
 
 - Stockage **très rapide** mais **temporaire** sur l'hyperviseur physique.
 - **Attention** : données perdues à l'arrêt/redémarrage de l'instance.
@@ -193,6 +221,8 @@ Les environnements réglementés (santé, finance, RGPD) ont besoin de **garanti
 > **Instance Store : perte de données garantie à l'arrêt** — Contrairement à EBS, le stockage instance store **n'est pas persistant**. Toutes les données écrites dessus sont définitivement perdues si l'instance est arrêtée, terminée ou si l'hôte physique tombe en panne. Ne stockez jamais de données de production, de bases de données ou de fichiers importants sur instance store sans sauvegarde préalable vers S3 ou EBS.
 
 #### Encrypted EBS Volumes
+
+Dernier levier de conformité, orthogonal aux précédents puisqu'il porte sur la donnée plutôt que sur le matériel :
 
 - Les volumes EBS peuvent être chiffrés avec **AWS KMS**.
 - Le chiffrement est **transparent** pour l'application.

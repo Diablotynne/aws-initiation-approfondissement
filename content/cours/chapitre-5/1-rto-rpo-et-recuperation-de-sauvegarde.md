@@ -25,6 +25,8 @@ Système bancaire           | 15 minutes  | Réglementation stricte
 API partenaire (non-vital) | 4 heures    | Impact mineur sur le business
 ```
 
+Le RTO répond à la question du temps ; un second indicateur, tout aussi structurant, répond à la question de la donnée perdue.
+
 #### RPO (Recovery Point Objective) — Quantité de Données Perdable
 
 **RPO** = **combien de données suis-je prêt à perdre en cas de sinistre ?**
@@ -40,7 +42,11 @@ Données de client (CRM)  | 1 heure    | Important pour relancer les clients
 Backups archivés         | 30 jours   | Archive long terme, peu critique
 ```
 
+RTO et RPO ne se choisissent pas indépendamment : ils s'associent en stratégies cohérentes, dont le coût grimpe à mesure que les deux délais se raccourcissent.
+
 #### Relation RTO ↔ RPO
+
+Voici trois stratégies types, du plus réactif (et coûteux) au plus économique (et lent à restaurer) :
 
 ```
 Scénario : Serveur RDS tombe en panne à 10:00
@@ -64,9 +70,13 @@ Stratégie 3 (RTO long, RPO long)
   - Coût : ⭐ (très bon marché)
 ```
 
+Ces trois stratégies sont génériques ; voyons maintenant comment elles se traduisent concrètement en services AWS.
+
 ---
 
 ### 1.2 Stratégies AWS pour Atteindre RTO/RPO
+
+Chaque technologie AWS vue dans les chapitres précédents se positionne différemment sur l'échelle RTO/RPO/coût :
 
 | Technologie | RTO | RPO | Coût | Cas d'usage |
 |-------------|-----|-----|------|-----------|
@@ -77,6 +87,8 @@ Stratégie 3 (RTO long, RPO long)
 | **AWS Glacier** | 1-12 heures | Sans limite | Très faible | Archive long terme |
 | **Lambda + S3** | 10-60 min | 1 heure | Très faible | Backup custom |
 
+Dans la pratique, ces technologies se combinent plutôt qu'elles ne s'excluent : Multi-AZ pour l'instantané, Snapshots ou AWS Backup pour la profondeur d'historique, Glacier pour l'archivage réglementaire à long terme. AWS Backup a justement pour rôle de centraliser la gestion de plusieurs de ces mécanismes.
+
 ---
 
 ### 1.3 AWS Backup — Service Centralisé de Sauvegarde
@@ -84,6 +96,8 @@ Stratégie 3 (RTO long, RPO long)
 **AWS Backup** est un **service managé** pour centraliser et automatiser les sauvegardes de ressources AWS.
 
 #### Ressources sauvegardables par AWS Backup
+
+Plutôt que de configurer une sauvegarde différente pour chaque service, AWS Backup couvre en un seul endroit la plupart des ressources vues dans les chapitres précédents :
 
 ```
 Compute & Storage:
@@ -100,6 +114,8 @@ Backup Store:
   ✓ AWS Storage Gateway
   ✓ VMware vSphere
 ```
+
+Cette couverture large est précisément ce qui justifie l'existence d'AWS Backup : centraliser en un seul plan de sauvegarde des ressources qui, sans lui, nécessiteraient chacune leur propre mécanisme (snapshots EBS manuels, exports DynamoDB, etc.).
 
 #### Déployer AWS Backup via CLI
 
@@ -198,6 +214,8 @@ aws backup start-restore-job \
 
 #### Bonnes pratiques AWS Backup
 
+Pour conclure sur AWS Backup, voici les réflexes qui distinguent une politique de sauvegarde réellement fiable d'une simple case cochée :
+
 ```
 ✓ Planifier les sauvegardes en dehors des heures de pic
 ✓ Utiliser des Backup Vaults séparés pour Prod/Staging/Dev
@@ -205,6 +223,8 @@ aws backup start-restore-job \
 ✓ Définir une rétention appropriée (30j prod, 7j dev)
 ✓ Combiner avec CloudWatch Events pour alertes
 ```
+
+Le point le plus souvent négligé est le test de restauration : une sauvegarde jamais restaurée n'est qu'une hypothèse — c'est seulement en la testant qu'on connaît le RTO réel, et pas seulement celui annoncé sur le papier.
 
 ---
 

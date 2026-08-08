@@ -19,6 +19,8 @@ Imaginez une **base de données RDS** qui reçoit **1 000 requêtes par seconde*
 
 #### Redis (Remote Dictionary Server)
 
+Redis est le moteur le plus riche fonctionnellement des deux, avec des structures de données avancées et une option de persistance :
+
 ```
 Cas d'usage : Sessions utilisateur, panier e-commerce, rankings, pubsub
 Structure : Chaînes, listes, ensembles, hashes, streams, géo-spatial
@@ -33,6 +35,8 @@ Redis peut perdre les données stockées en mémoire lors d'un redémarrage ou d
 **Analogie** : un **dictionnaire magique ultra-rapide** qui se souvient des modifications.
 
 #### Memcached
+
+À l'inverse, Memcached vise la simplicité et la performance brute plutôt que la richesse fonctionnelle :
 
 ```
 Cas d'usage : Cache objet simple (résultats DB, pages HTML)
@@ -49,6 +53,8 @@ TTL : Oui
 
 ### 4.3 Cas d'usage typiques
 
+En croisant les caractéristiques des deux moteurs avec des besoins concrets, un choix se dégage assez naturellement pour chaque scénario :
+
 | Cas d'usage | Moteur | Raison |
 |---|---|---|
 | **Session utilisateur** | Redis | Besoin de persistance, expiration TTL |
@@ -57,6 +63,8 @@ TTL : Oui
 | **Cache HTML statique** | Memcached | Simple, volatil, très rapide |
 | **Résultats requête DB** | Redis | Contrôle TTL par clé, publish/subscribe |
 | **Real-time counters** | Redis | Opérations atomiques (`INCR`) |
+
+Redis domine ce tableau non par supériorité générale, mais parce que la plupart des cas d'usage cache modernes ont besoin d'au moins une fonctionnalité (TTL fin, structures, persistance) que Memcached n'offre pas ; Memcached reste pertinent dès que la simplicité et le débit brut priment sur ces fonctionnalités.
 
 ---
 
@@ -77,6 +85,8 @@ L'application (EC2, Lambda) hache chaque clé pour la router vers l'une des troi
 ---
 
 ### 4.5 Commandes Redis essentielles
+
+Voici un aide-mémoire des commandes Redis les plus utilisées, organisées par type de structure de données, pour s'entraîner en local avant de déployer un cluster sur AWS :
 
 ```bash
 # Installation (macOS via Homebrew)
@@ -132,6 +142,8 @@ EXEC                               # Atomique : tout ou rien
 SUBSCRIBE channel:notifications    # S'abonner
 PUBLISH channel:notifications "Hello" # Diffuser
 ```
+
+Ces commandes s'exécutent en local pour se familiariser avec Redis ; la section suivante montre comment provisionner l'équivalent managé sur AWS.
 
 ---
 
@@ -220,6 +232,8 @@ aws elasticache delete-cache-cluster \
   --cache-cluster-id formation-redis-simple
 ```
 
+Le Replication Group (commande 4) est la configuration à privilégier en production : contrairement au cluster simple créé en commande 1, il offre un failover automatique en cas de panne du nœud primaire.
+
 ---
 
 ### 4.7 Bonne pratique : Cache-Aside Pattern
@@ -244,6 +258,8 @@ Requête application :
 Avantage : logique simple, contrôle du cache
 Risque : cache stale (données anciennes) pendant TTL
 ```
+
+Ce pattern place la responsabilité du remplissage du cache côté application plutôt que côté base de données — c'est ce choix architectural qui explique pourquoi il faut définir un TTL cohérent avec la fréquence de mise à jour réelle des données en base.
 
 ### 4.8 Combien coûte ElastiCache ?
 

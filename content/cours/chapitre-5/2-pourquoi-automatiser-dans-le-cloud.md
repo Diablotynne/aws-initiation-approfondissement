@@ -32,6 +32,8 @@ Infrastructure créée manuellement :
 Résultat : deux "mêmes" infrastructures qui ne sont PAS identiques
 ```
 
+Ce scénario, banal dans beaucoup d'organisations, illustre pourquoi le Cloud a besoin d'un mécanisme qui élimine la dépendance à la mémoire humaine et à une documentation à jour.
+
 ---
 
 ### 2.2 L'automatisation dans le Cloud : standardisation et rapidité
@@ -55,9 +57,13 @@ Infrastructure automatisée avec CloudFormation :
             traçabilité complète (versionning Git du template)
 ```
 
+CloudFormation n'est cependant qu'un outil parmi plusieurs dans la boîte à outils AWS dédiée à l'automatisation.
+
 ---
 
 ### 2.3 Les outils AWS pour l'automatisation
+
+AWS propose plusieurs outils complémentaires pour automatiser une infrastructure, chacun adapté à un niveau différent :
 
 | Outil | Fonction | Cas d'usage |
 |-------|----------|-----------|
@@ -77,6 +83,8 @@ Infrastructure automatisée avec CloudFormation :
 
 #### Qu'est-ce qu'un Quick Start ?
 
+Un Quick Start n'est rien d'autre qu'un template CloudFormation déjà écrit et testé par AWS, que vous n'avez qu'à paramétrer :
+
 ```
 Quick Start = CloudFormation template complet + documentation + bonnes pratiques
 
@@ -88,7 +96,11 @@ Exemplar :
   - Testé et validé en production
 ```
 
+Ce principe s'applique à de nombreuses architectures de référence, comme le montrent les exemples courants ci-dessous.
+
 #### Quick Starts courants (exemples)
+
+Ce principe s'applique à de nombreuses architectures de référence, comme le montrent ces exemples courants :
 
 | Quick Start | Qu'il déploie | Temps |
 |-------------|---------------|-------|
@@ -117,7 +129,11 @@ Les Quick Starts sont accessibles depuis la console CloudFormation ou directemen
 # 3. Cliquer sur "Launch" → remplir les paramètres → Create Stack
 ```
 
+Une fois le Quick Start repéré et lancé, les bénéfices concrets se retrouvent dans le résultat final plutôt que dans la procédure elle-même.
+
 #### Avantages des Quick Starts
+
+Ces bénéfices se résument en six points, qui expliquent pourquoi il est rarement judicieux de repartir de zéro quand une architecture de référence existe déjà :
 
 ```
 ✓ Gain de temps : architecture complète en 15 min au lieu de 3-4 heures
@@ -127,6 +143,8 @@ Les Quick Starts sont accessibles depuis la console CloudFormation ou directemen
 ✓ Support : documentation et troubleshooting fournis
 ✓ Flexibilité : vous pouvez modifier les templates après déploiement
 ```
+
+Voyons maintenant ces avantages à l'œuvre sur un cas concret : le déploiement d'un site WordPress complet.
 
 #### Exemple : Déployer WordPress via Quick Start
 

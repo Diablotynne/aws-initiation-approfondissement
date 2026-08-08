@@ -54,6 +54,8 @@ Il supporte deux moteurs d'automation populaires :
 - Assurer la conformité des serveurs (tous les serveurs web ont la même configuration).
 - Automatiser les déploiements continus (CI/CD).
 
+Ces cas d'usage reposaient concrètement sur deux moteurs d'automatisation aux philosophies différentes, que nous détaillons ci-dessous à titre historique.
+
 #### Chef — Automation as Code
 
 **Chef** est un outil d'**automatisation de configuration** très populaire. Il fonctionne sur un modèle de **recettes (recipes)** écrites en Ruby qui décrivent **l'état souhaité** d'une machine.

@@ -412,6 +412,8 @@ aws rds delete-db-instance \
   --skip-final-snapshot
 ```
 
+La base RDS étant provisionnée, il reste à verrouiller son accès réseau : c'est le rôle des Security Groups configurés ci-dessous.
+
 ---
 
 ### 6.3 Configurer Security Groups (pare-feu instance)
@@ -610,6 +612,8 @@ echo "  INGRESS  : 3306 from SG-Web"
 echo "  EGRESS   : Aucun (DB ne sort pas)"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 ```
+
+Le réseau et la base de données étant sécurisés, il reste à rendre l'application joignable par son nom de domaine : c'est l'objet de la dernière section pratique de ce chapitre.
 
 ---
 

@@ -21,6 +21,8 @@ Le trafic est multiplié par 5, le CPU moyen passe à 85% — cela déclenche le
 
 ### 13.3 Après les soldes (retour à la normale)
 
+Une fois le pic absorbé, le mécanisme symétrique de scale-in ramène progressivement l'infrastructure à son niveau normal :
+
 ```
 Trafic revient à la normale
 

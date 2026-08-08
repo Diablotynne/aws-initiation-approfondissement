@@ -13,11 +13,15 @@ Un **Auto Scaling Group (ASG)** est un groupe d'instances EC2 géré automatique
 - Les instances défaillantes sont **retirées** du pool.
 - Le trafic est toujours dirigé vers les **ressources disponibles**.
 
+Cette intégration avec le Load Balancer n'est qu'une face d'Auto Scaling ; l'autre face concerne les règles qui décident du nombre d'instances à faire tourner à un instant donné.
+
 ### 11.2 Politiques de scaling — Fondamentaux
 
-Les politiques définissent **quand et comment** ajouter ou retirer des instances.
+Les politiques définissent **quand et comment** ajouter ou retirer des instances, dans deux directions symétriques.
 
 #### Scale-out (Agrandissement)
+
+Voici la séquence déclenchée lorsque la charge augmente :
 
 ```
 Charge CPU dépasse 70% pendant 5 min
@@ -29,7 +33,11 @@ Attendre que les instances démarrent
 Health check OK : instances intégrées au LB
 ```
 
+À l'opposé de cette montée en charge, un mécanisme symétrique retire les instances devenues inutiles pour éviter de payer une capacité surdimensionnée.
+
 #### Scale-in (Réduction)
+
+Et voici la séquence inverse, déclenchée lorsque la charge redescend :
 
 ```
 Charge CPU chute à 30% pendant 10 min
@@ -40,6 +48,8 @@ Attendre que les requêtes actuelles finissent
                  ▼
 Fermer l'instance, libérer les ressources
 ```
+
+Notez l'asymétrie des délais (5 min pour scale-out, 10 min pour scale-in) : c'est volontaire, mieux vaut réagir vite à une surcharge et prudemment à une baisse, pour éviter d'osciller sans arrêt entre ajout et retrait d'instances.
 
 ![](assets/schemas/ch3-capture-04-88735023.png)
 
@@ -58,11 +68,15 @@ Scaling Policies : Target CPU 70% · Scale out +2 instances/5 min · Scale in -1
 - **Desired Capacity** : nombre d'instances cible en ce moment
 - **Launch Template** : modèle (AMI, type, security group, etc.) pour les nouvelles instances
 
+Cette configuration de base repose entièrement sur le CPU pour déclencher le scaling ; Auto Scaling peut en réalité observer bien d'autres signaux pour piloter ses décisions.
+
 ### 11.4 Métriques CloudWatch et politiques de scaling avancées
 
 Auto Scaling peut se baser sur **plusieurs métriques CloudWatch**, pas seulement CPU.
 
 #### Métriques disponibles
+
+Selon la nature de l'application, une métrique différente du CPU peut être plus pertinente pour déclencher le scaling :
 
 | Métrique | Source | Cas d'usage typique |
 |----------|--------|-------------------|
@@ -73,6 +87,8 @@ Auto Scaling peut se baser sur **plusieurs métriques CloudWatch**, pas seulemen
 | **Target Response Time** | CloudWatch + ELB | Dégradation de performance |
 | **Memory Utilization** | CloudWatch Agent | Applications mémoire-intensives |
 | **Queue Depth** (SQS) | SQS | Traitement asynchrone |
+
+Rien n'empêche de combiner plusieurs de ces métriques sur un même Auto Scaling Group, comme le montre l'exemple suivant avec CPU et débit réseau.
 
 #### Exemple de politique de scaling multi-métriques
 
@@ -127,6 +143,8 @@ aws autoscaling put-scaling-policy \
 
 #### Cooldown Periods (délais entre actions)
 
+Les deux politiques créées ci-dessus configurent chacune un délai de stabilisation après une action de scaling, pour éviter les décisions trop rapprochées :
+
 - **ScaleOutCooldown** (120-300s) : attend avant la prochaine augmentation.
   - Évite les oscillations rapides (scaling de "ping-pong").
   - Laisse le temps aux instances de démarrer.
@@ -150,11 +168,15 @@ T=540s  CPU toujours < 30% → Scale-in (-1 instance)
 
 ### 11.5 Avantages combinés Load Balancer + Auto Scaling
 
+Utilisés ensemble, Load Balancer et Auto Scaling forment le duo de base d'une architecture web résiliente sur AWS :
+
 - **Résilience** : les instances défaillantes sont automatiquement **remplacées**.
 - **Scalabilité** : le nombre d'instances s'adapte à la **charge** en temps réel.
 - **Performance** : le trafic est réparti de manière **optimale** entre les ressources disponibles.
 - **Économie** : vous payez uniquement pour les ressources utilisées.
 - **Sécurité** : le Load Balancer peut gérer les **certificats SSL/TLS** pour sécuriser les communications.
+
+Cette combinaison reste néanmoins bâtie sur des instances EC2 qui tournent en continu, même au repos. Le modèle serverless présenté dans la section suivante pousse l'élasticité un cran plus loin.
 
 ---
 

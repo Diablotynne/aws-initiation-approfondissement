@@ -5,6 +5,8 @@ description: "\"Chapitre 4 — Stockage Amazon S3 et calcul Amazon EC2\" - 16. P
 
 <nav class="page-sequence"><a href="cours/chapitre-4/15-conformite-et-securite-pour-les-donnees-sensibles">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-4/index">Sommaire</a> <a href="cours/chapitre-4/17-ressources">Suivant</a></nav>
 
+Ce chapitre a couvert S3, EC2, la tarification, le Load Balancing, Auto Scaling et Lambda ; voici les idées reçues les plus fréquentes chez les débutants sur l'ensemble de ces sujets.
+
 | Piège | Réalité | Conséquence |
 |-------|---------|------------|
 | **S3 a une structure de dossiers** | Non ! C'est du stockage objet, les "dossiers" sont juste des préfixes dans les noms | Impossible de renommer les dossiers, penser en clés, pas en hiérarchies |

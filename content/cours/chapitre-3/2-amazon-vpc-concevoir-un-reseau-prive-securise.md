@@ -16,6 +16,8 @@ Une VPC vous offre :
 - **Contrôle total** : vous définissez les adresses IP, les routes, les pare-feux.
 - **Flexibilité** : ajouter ou retirer des subnets, des passerelles à volonté.
 
+Cette flexibilité repose sur un petit nombre de briques de base — CIDR, subnets, passerelles — que la section suivante détaille une par une.
+
 ---
 
 ### 2.2 Composants clés d'une VPC
@@ -31,6 +33,8 @@ Une VPC vous offre :
 2. ALB → EC2 Web (Security Group + règles subnet)
 3. EC2 → RDS (Security Group DB ouvre port 3306)
 4. EC2 → Internet (via NAT Gateway, pour updates)
+
+Ce schéma d'ensemble repose sur quatre briques de base, détaillées une par une dans la suite de cette section, à commencer par le plan d'adressage IP.
 
 ---
 
@@ -53,6 +57,8 @@ Adresses réservées AWS :
 - `10.0.0.0/8` (la plus courante, 16 M d'adresses)
 - `172.16.0.0/12` (1 M d'adresses)
 - `192.168.0.0/16` (65 536 adresses)
+
+Une fois ce CIDR défini pour toute la VPC, il reste à le découper en sous-blocs plus petits — les subnets — chacun rattaché à une zone de disponibilité précise.
 
 #### 2. Subnets (Sous-réseaux)
 
@@ -217,6 +223,8 @@ Un **Network ACL** est un ensemble de règles appliquées à un **subnet entier*
 
 #### Différences clés
 
+Security Group et Network ACL sont souvent confondus alors qu'ils opèrent à des niveaux différents et se complètent plutôt que de se remplacer :
+
 | Aspect | Security Group | Network ACL |
 |--------|---|---|
 | **Portée** | Instance | Subnet |
@@ -255,6 +263,8 @@ VPC 10.0.0.0/16
 - Le RDS n'accepte du trafic que depuis l'EC2 — la base de données n'a **aucune route vers Internet**, donc même une erreur de configuration Security Group ne peut pas l'exposer.
 - Chaque Security Group référence un *autre Security Group* comme source (pas une plage d'IP) — c'est la bonne pratique : si l'EC2 change d'adresse IP (redémarrage, remplacement), la règle reste valide.
 
+Cette architecture à un seul VPC suffit pour une application isolée ; dès qu'il faut faire communiquer plusieurs VPC entre eux, un nouveau mécanisme de connexion réseau entre en jeu.
+
 ---
 
 ### 2.4 VPC Peering — Connecter plusieurs VPC
@@ -262,6 +272,8 @@ VPC 10.0.0.0/16
 > **VPC Peering** établit une **connexion réseau privée** entre deux VPC, permettant aux instances de communiquer comme si elles étaient dans le même réseau.
 
 #### Caractéristiques
+
+Avant de l'utiliser, il faut connaître trois propriétés structurantes du peering, en particulier la première, source de nombreuses erreurs d'architecture :
 
 | Aspect | Détail |
 |--------|--------|
@@ -309,6 +321,8 @@ Problèmes :
 - Pas de contrôle centralisé : règles partagées impossibles
 ```
 
+Face à cette explosion combinatoire, AWS propose un service dédié qui remplace ce maillage de connexions point-à-point par une architecture en étoile.
+
 #### AWS Transit Gateway — La solution
 
 > **AWS Transit Gateway** est un **hub réseau centralisé** qui connecte **toutes vos VPCs, comptes AWS et réseaux on-prem** via une seule interface.
@@ -320,6 +334,8 @@ Attachements possibles :
 - ✅ Comptes AWS (via RAM — Resource Access Manager)
 - ✅ On-premise (via VPN ou Direct Connect)
 - ✅ Transit Gateway externe (inter-régions)
+
+Cette capacité à attacher des comptes AWS entiers (pas seulement des VPC individuels) est ce qui rend Transit Gateway indispensable dès qu'une organisation dépasse quelques comptes, comme l'illustre l'exemple concret suivant.
 
 #### Architecture complète : Multi-Comptes avec Transit Gateway
 
@@ -337,6 +353,8 @@ Le Transit Gateway maintient des route tables distinctes (Production, Dev, Share
 
 #### Avantages Transit Gateway
 
+En reprenant les limites du VPC Peering identifiées plus haut, voici point par point ce que Transit Gateway apporte en comparaison :
+
 | Aspect | VPC Peering | Transit Gateway |
 |--------|---|---|
 | **Connexions N VPCs** | N(N-1)/2 peerings 😱 | 1 attachement par VPC ✅ |
@@ -345,6 +363,8 @@ Le Transit Gateway maintient des route tables distinctes (Production, Dev, Share
 | **On-premise** | Non | Oui (VPN + Direct Connect) |
 | **Policies centralisées** | Impossible | Oui (Network Policy) |
 | **Coût** | $0.01 par million requêtes | $0.05 par attachement/h + data |
+
+Le seul inconvénient de Transit Gateway par rapport au Peering est donc le coût par attachement, qui reste toutefois largement compensé par l'économie de gestion dès que le nombre de VPC dépasse 3 ou 4.
 
 #### Configuration AWS CLI — Transit Gateway, principe
 
@@ -375,12 +395,16 @@ aws ec2 create-transit-gateway-vpc-attachment \
 
 #### Pièges Transit Gateway
 
+Avant de déployer un Transit Gateway en production, quatre points méritent une attention particulière :
+
 | Piège | Solution |
 |-------|----------|
 | **TGW par défaut permet tout** | Créer des route tables TGW restrictives par environnement |
 | **Coût : $0.05/attachement/h** | Budget pour 20 VPCs = ~$72/mois (0.05 × 20 × 720 h) |
 | **Association subnet obligatoire** | Au moins 1 subnet par AZ pour la résilience |
 | **CIDR overlap interdit** | VPCs partagés doivent avoir CIDRs différents |
+
+Le premier piège est le plus insidieux : un Transit Gateway nouvellement créé route tout le trafic entre tous les attachements par défaut, ce qui annule instantanément le cloisonnement Prod/Dev que l'architecture est censée garantir tant que des route tables restrictives ne sont pas explicitement configurées.
 
 ---
 
@@ -391,6 +415,8 @@ aws ec2 create-transit-gateway-vpc-attachment \
 > Un **VPC Endpoint** est une **passerelle privée** qui permet à vos ressources d'accéder à des **services AWS sans passer par Internet**.
 
 #### Deux types
+
+AWS propose deux implémentations de VPC Endpoint selon le service ciblé, avec un fonctionnement et un modèle de coût différents :
 
 | Type | Services | Fonctionnement | Coût |
 |------|----------|---|---|
@@ -412,6 +438,8 @@ aws ec2 create-transit-gateway-vpc-attachment \
 Dans une infrastructure **on-prem**, vous aviez des **cartes réseau physiques** (NIC) dans vos serveurs. Sur AWS, c'est exactement la même chose, mais **virtuelle et reconfigurable**.
 
 #### Anatomie d'une ENI
+
+Voici les attributs concrets que porte une ENI, illustrés sur l'interface principale d'une instance EC2 :
 
 ```
 Instance EC2 (t3.medium)
@@ -456,6 +484,8 @@ Instance (m5.xlarge) : 4 ENIs possibles
 
 Résultat : machine routeur/pare-feu multi-réseaux ! 🔥
 ```
+
+Voyons maintenant comment créer et attacher concrètement une ENI supplémentaire à une instance existante via l'AWS CLI.
 
 #### Configuration ENI via AWS CLI
 
@@ -545,6 +575,8 @@ aws ec2 describe-instances \
 
 #### Cas d'usage réels : ENI multiples
 
+Au-delà du scénario pare-feu/VPN déjà illustré, plusieurs cas d'usage concrets justifient l'ajout d'ENI supplémentaires sur une instance :
+
 | Scénario | Interfaces | Bénéfice |
 |----------|---|---|
 | **Routeur/Pare-feu** | 3-4 ENIs | Connexion à plusieurs VPCs/subnets sans NAT |
@@ -552,6 +584,8 @@ aws ec2 describe-instances \
 | **Serveur DNS interne** | Primary + management | Trafic DNS sur une interface, logs/monitoring sur autre |
 | **Load Balancer maison** | Multiple NICs | Distribution load par interface réseau |
 | **Serveur VPN/bastion** | 2+ interfaces | Accès de plusieurs subnets via une machine unique |
+
+Le cas de la haute disponibilité mérite une attention particulière : en détachant une ENI d'une instance défaillante et en la rattachant à une instance de secours, l'IP privée (et donc la configuration réseau côté clients) reste inchangée, ce qui rend le failover transparent pour le reste de l'infrastructure.
 
 #### Piège : Source/Destination Check
 

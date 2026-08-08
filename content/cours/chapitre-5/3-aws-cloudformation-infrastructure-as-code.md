@@ -28,6 +28,8 @@ Avantage : la recette peut être réutilisée 100 fois identiquement
           et versionnée dans Git
 ```
 
+Concrètement, cette « recette » se traduit par un cycle de vie en cinq étapes, de la rédaction du template à la suppression de la stack.
+
 ---
 
 ### 3.2 Fonctionnement simplifié de CloudFormation
@@ -205,6 +207,8 @@ Outputs:
     # !Sub remplace les variables ${...} par leurs valeurs
     Value: !Sub 'http://${MonInstance.PublicIp}'
 ```
+
+Ce template minimaliste illustre la structure de base (Parameters, Resources, Outputs) mais reste volontairement simplifié à des fins pédagogiques. Voici maintenant une version plus proche de ce qu'on rencontre réellement en production.
 
 ---
 ##### 3.3 (suite) — Exemple Production : VPC + Serveur Web Apache
@@ -398,6 +402,8 @@ Outputs:
     Value: !Ref WebServerSecurityGroup
 ```
 
+Ce template complet est prêt à l'emploi ; voyons maintenant comment le déployer concrètement via la CLI.
+
 ##### Déployer ce template
 
 > [!info]
@@ -406,7 +412,7 @@ Outputs:
 ```bash
 # 1. Créer la stack depuis le fichier YAML local
 aws cloudformation create-stack \
-  --stack-name formation-webserver-lab \
+  --stack-name formation-webserver-atelier \
   --template-body file://vpc-webserver.yaml \
   --parameters \
     ParameterKey=KeyPairName,ParameterValue=ma-clé-ssh \
@@ -415,12 +421,12 @@ aws cloudformation create-stack \
 
 # Attendre que la stack soit créée (statut CREATE_COMPLETE)
 aws cloudformation wait stack-create-complete \
-  --stack-name formation-webserver-lab \
+  --stack-name formation-webserver-atelier \
   --region eu-west-3
 
 # 2. Récupérer l'URL publique du serveur
 aws cloudformation describe-stacks \
-  --stack-name formation-webserver-lab \
+  --stack-name formation-webserver-atelier \
   --query 'Stacks[0].Outputs[?OutputKey==`WebServerURL`].OutputValue' \
   --output text \
   --region eu-west-3
@@ -430,12 +436,12 @@ aws cloudformation describe-stacks \
 
 # 3. Supprimer toute l'infrastructure quand vous avez terminé
 aws cloudformation delete-stack \
-  --stack-name formation-webserver-lab \
+  --stack-name formation-webserver-atelier \
   --region eu-west-3
 
 # Attendre la suppression complète
 aws cloudformation wait stack-delete-complete \
-  --stack-name formation-webserver-lab \
+  --stack-name formation-webserver-atelier \
   --region eu-west-3
 ```
 
@@ -444,7 +450,7 @@ aws cloudformation wait stack-delete-complete \
 > ```
 > # create-stack :
 > {
->     "StackId": "arn:aws:cloudformation:eu-west-3:123456789012:stack/formation-webserver-lab/b2c3d4e5-f6a7-8901-bcde-f12345678901"
+>     "StackId": "arn:aws:cloudformation:eu-west-3:123456789012:stack/formation-webserver-atelier/b2c3d4e5-f6a7-8901-bcde-f12345678901"
 > }
 >
 > # (après wait stack-create-complete — ~3 à 5 minutes)
@@ -462,6 +468,8 @@ aws cloudformation wait stack-delete-complete \
 
 ##### Points clés de ce template production
 
+Ce qui distingue ce template du premier exemple, ligne par ligne :
+
 | Élément | Explication | Bonne pratique |
 |---------|------------|----------------|
 | **VPC CIDR 10.0.0.0/16** | Classe privée standard pour les VPC | Utiliser RFC 1918 (10.x, 172.16.x, 192.168.x) |
@@ -471,6 +479,8 @@ aws cloudformation wait stack-delete-complete \
 | **UserData script** | Configure Apache automatiquement au lancement | Évite la configuration manuelle post-lancement |
 | **Outputs** | Affiche l'URL et l'IP après déploiement | Indispensable pour que l'utilisateur sache comment accéder |
 | **Tags** | Identification et traçabilité | Permet le suivi des ressources pour la facturation |
+
+Retenez surtout les Outputs et les Tags : ce sont les deux éléments les plus souvent oubliés dans un premier template, alors qu'ils deviennent indispensables dès que la stack sort du cadre d'un simple test.
 
 ---
 
@@ -565,6 +575,8 @@ aws cloudformation delete-stack \
 ---
 
 ### 3.5 Avantages de CloudFormation
+
+Après cette pratique, voici pourquoi CloudFormation reste le choix de référence pour l'Infrastructure as Code sur AWS :
 
 | Avantage | Bénéfice pédagogique |
 |----------|----------------------|

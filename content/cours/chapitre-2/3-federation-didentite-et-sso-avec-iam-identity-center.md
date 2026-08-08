@@ -43,9 +43,13 @@ Beaucoup de participants confondent ces deux concepts. Voici la différence **es
 - Entreprise avec AD ? → IAM Identity Center connecté à l'AD.
 - Application web avec utilisateurs finaux ? → Cognito (section 5).
 
+Avant d'aller plus loin dans la mise en œuvre technique de la fédération, clarifions le vocabulaire employé.
+
 ---
 
 ### 3.3 Définitions clés
+
+La section précédente a introduit plusieurs termes techniques propres à la fédération d'identité ; ce tableau les regroupe pour s'y référer facilement dans la suite du chapitre.
 
 | Terme | Définition |
 |-------|-----------|
@@ -55,6 +59,8 @@ Beaucoup de participants confondent ces deux concepts. Voici la différence **es
 | **SAML (Security Assertion Markup Language)** | Protocole standard pour la fédération d'identité entre systèmes d'entreprise et cloud. |
 | **OAuth / OIDC (OpenID Connect)** | Protocole moderne de délégation d'accès, souvent utilisé pour les applications web et mobiles. |
 | **IAM Identity Center** | Service AWS permettant de gérer l'accès fédéré et le Single Sign-On (SSO). |
+
+Retenez en particulier la paire IdP/SP : AWS joue toujours le rôle de fournisseur de service (SP) qui fait confiance à un IdP externe — jamais l'inverse.
 
 ---
 
@@ -109,6 +115,8 @@ Pour une entreprise ayant un **AD local** ou **Azure AD**, AD FS permet de crée
 
 #### Exemple de Trust Policy SAML (pour IAM Role)
 
+Le rôle IAM créé à l'étape 3 doit être associé à une trust policy qui autorise spécifiquement le provider SAML configuré à l'étape 2 à l'assumer :
+
 ```json
 {
   "Version": "2012-10-17",
@@ -134,7 +142,11 @@ Explication :
 - `Action` : l'action autorisée (`AssumeRoleWithSAML` pour les assertions SAML).
 - `Condition` : vérification que la demande vient réellement d'AWS (protection).
 
+Cette trust policy est la seule pièce technique à écrire manuellement dans toute cette architecture ; le reste (mapping des groupes, distribution du lien SSO) relève de la configuration côté AD FS et IAM Identity Center.
+
 #### Avantages de cette approche
+
+Une fois cette architecture SAML en place, les bénéfices dépassent la simple suppression des comptes IAM individuels :
 
 - Les utilisateurs **n'ont aucun compte IAM** (zéro gestion manuelle).
 - L'authentification reste **centralisée** en AD (changement de mot de passe une seule fois).
@@ -142,7 +154,11 @@ Explication :
 - Impossible de partager des credentials IAM (car ils n'existent pas).
 - **Audit centralisé** : CloudTrail enregistre qui s'est connecté, quand, et depuis où.
 
+Ces avantages ont cependant une contrepartie : la disponibilité d'AWS dépend désormais aussi de celle de l'infrastructure AD FS.
+
 #### Points de vigilance
+
+Cette dépendance introduit les points de vigilance suivants, à anticiper avant de généraliser la fédération SAML :
 
 - Les **métadonnées SAML** (certificats) ont une date d'expiration. Il faut les renouveler régulièrement.
 - La **confiance de certificat** doit être validée côté AWS.
@@ -186,6 +202,7 @@ Résultat :
 - Permissions gérées via AD,
 - Accès tracé et sécurisé.
 
+Ce scénario s'appuie sur Active Directory via AD FS, mais le même principe de fédération s'applique aussi aux IdP cloud les plus courants du marché.
 
 ---
 
@@ -205,6 +222,8 @@ Cela permet de synchroniser les groupes et utilisateurs automatiquement.
 ---
 
 ### 3.9 Points de vigilance et bonnes pratiques
+
+Pour conclure sur la fédération d'identité, voici les réflexes qui permettent d'en tirer les bénéfices tout en évitant les pièges déjà évoqués (expiration des certificats, panne de l'IdP) :
 
 * Préférer la fédération d'identité à la multiplication des comptes IAM.
 * Activer MFA au niveau de l'IdP.

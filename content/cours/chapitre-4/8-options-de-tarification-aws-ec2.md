@@ -9,6 +9,8 @@ AWS propose plusieurs modèles de tarification pour s'adapter aux besoins techni
 
 ### 8.1 On-Demand (À la demande)
 
+C'est le modèle par défaut, sans aucun engagement, sur lequel viennent se comparer tous les autres :
+
 - **Paiement à l'heure** ou à la seconde pour la capacité de calcul utilisée, sans engagement à long terme.
 - **Idéal pour** les charges de travail à court terme, les tests et le développement.
 - **Pas de paiement anticipé** ni d'engagement minimum.
@@ -18,6 +20,8 @@ AWS propose plusieurs modèles de tarification pour s'adapter aux besoins techni
 **Exemple** : Vous avez un pic de trafic imprévu. Vous lancez des instances On-Demand pour répondre à la demande, puis les arrêtez après le pic.
 
 ### 8.2 Savings Plans
+
+Pour une charge stable et prévisible, on peut aller plus loin que le simple On-Demand en échangeant un engagement contre une réduction substantielle :
 
 - **Engagement de consommation horaire en dollars** ($/heure) sur une période de 1 ou 3 ans.
 - **Réductions** pouvant atteindre **72%** par rapport au tarif à la demande.
@@ -30,6 +34,8 @@ AWS propose plusieurs modèles de tarification pour s'adapter aux besoins techni
   - **Full Upfront** : Paiement total initial offrant les meilleures réductions.
 
 ### 8.3 Instances Spot (À prix réduit)
+
+Ce modèle exploite un principe totalement différent des deux précédents : au lieu d'un engagement, c'est l'acceptation d'un risque d'interruption qui est rémunérée par une forte réduction :
 
 - **Utilisation de la capacité EC2 inutilisée** d'AWS.
 - **Réductions jusqu'à 90%** par rapport au prix à la demande.
@@ -50,6 +56,8 @@ AWS propose plusieurs modèles de tarification pour s'adapter aux besoins techni
 
 ### 8.4 Reserved Instances (RI)
 
+Plus ancien que les Savings Plans, ce modèle d'engagement reste pertinent dans certains cas, notamment grâce à sa revente possible :
+
 - **Engagement** sur une instance spécifique pour **1 ou 3 ans**.
 - **Réductions jusqu'à 75%** par rapport au prix à la demande.
 - **Différences principales** avec les Savings Plans :
@@ -58,6 +66,8 @@ AWS propose plusieurs modèles de tarification pour s'adapter aux besoins techni
   - Les RI peuvent être vendues sur le **AWS RI Marketplace**, pas les Savings Plans.
 
 ### 8.5 Comparatif synthétique
+
+Après ce tour des quatre modèles, voici une vue d'ensemble pour choisir rapidement selon vos priorités :
 
 | Critère | On-Demand | Reserved | Spot | Savings Plans |
 |---------|-----------|----------|------|----------------|
@@ -72,6 +82,8 @@ AWS propose plusieurs modèles de tarification pour s'adapter aux besoins techni
 ### 8.6 Cas métier : Choisir la meilleure option tarifaire
 
 #### Cas 1 : Site e-commerce avec trafic prévisible
+
+Ce premier cas combine deux modèles vus plus haut pour traiter séparément la charge stable et les pics ponctuels :
 
 - **Charge** : trafic stable, pics prévisibles en fin d'année.
 - **Infrastructure** : 10 instances t3.large en continu, +20 during soldes.
@@ -88,14 +100,22 @@ Coût optimisé (Savings Plans + Spot) :
 Économie : 652,92 $ / mois = 7,835 $ / an
 ```
 
+Ce calcul montre qu'un mix Savings Plans + Spot peut réduire la facture de plus des trois quarts sans sacrifier ni la disponibilité de la base ni la flexibilité des renforts saisonniers. Tous les profils de charge ne se prêtent cependant pas à cette optimisation.
+
 #### Cas 2 : Environnement de développement/test
+
+À l'inverse du cas précédent, ce scénario montre qu'il ne faut pas systématiquement chercher une réduction tarifaire :
 
 - **Charge** : variable, utilisation heures de travail uniquement.
 - **Infrastructure** : 2-4 instances selon le sprint en cours.
 - **Recommandation** : **On-Demand** uniquement (pas d'engagement, flexibilité totale).
 - **Économie** : aucune, mais coûts minimaux et liberté maximale.
 
+Ici, la simplicité et l'absence d'engagement priment sur l'économie potentielle, car le nombre d'instances change trop souvent pour justifier un engagement Savings Plans ou RI.
+
 #### Cas 3 : Job batch nocturne de traitement
+
+Ce troisième cas est le profil idéal pour les instances Spot, tolérantes aux interruptions par nature :
 
 - **Charge** : lance chaque nuit des instances pour 4h, puis arrêt.
 - **Infrastructure** : 50 instances c5.2xlarge pour le parallélisme.
@@ -128,12 +148,18 @@ aws ec2 request-spot-fleet \
 
 #### Cas 4 : Application critiques 24/7 avec charge non prévisible
 
+Ce dernier cas est le plus délicat, car il combine une exigence de continuité de service avec une charge impossible à anticiper précisément :
+
 - **Charge** : pas de pattern clair, augmentations soudaines.
 - **Infrastructure** : 4-30 instances selon la demande.
 - **Recommandation** : **Savings Plans (mélange)** pour la charge de base + **On-Demand** pour les pics.
 - **Avantage** : si charge explose au-delà des prévisions, On-Demand absorbe sans coupure.
 
+Ces quatre cas illustrent qu'il n'existe pas de modèle tarifaire universellement meilleur : le bon choix résulte toujours d'un arbitrage entre prévisibilité de la charge et tolérance aux interruptions. Pour chiffrer précisément votre propre scénario, AWS met à disposition un outil de simulation dédié.
+
 ### 8.7 Outil : AWS Pricing Calculator
+
+Cet outil web permet d'estimer le coût d'une architecture avant de la déployer, en combinant plusieurs services et modèles tarifaires :
 
 ```
 URL : https://calculator.aws/

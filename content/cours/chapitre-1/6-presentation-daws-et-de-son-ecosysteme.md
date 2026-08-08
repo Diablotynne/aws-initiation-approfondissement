@@ -50,7 +50,11 @@ Avant de décortiquer AWS, il est utile de comprendre son positionnement face à
 | **OVHcloud** (Européen) | OVH (France) | Souveraineté données EU, prix compétitifs | PME EU, données sensibles, RGPD stricte | Marché de niche EU |
 | **IBM Cloud, Oracle Cloud** | IBM / Oracle | Spécialisés (IA, bases données massives) | Grandes entreprises, solutions legacy | Marché de niche |
 
+Ce panorama confirme un marché dominé par trois hyperscalers généralistes (AWS, Azure, GCP), à côté duquel subsistent des acteurs de niche positionnés sur la souveraineté ou l'open source plutôt que sur le volume.
+
 #### Comparatif détaillé : AWS vs Azure vs GCP
+
+Le panorama ci-dessus donne une vue d'ensemble ; le tableau suivant entre dans le détail service par service pour les trois principaux fournisseurs, avec quelques lignes qui méritent une explication complémentaire.
 
 | Aspect | AWS | Azure | GCP |
 |--------|-----|-------|-----|
@@ -70,6 +74,8 @@ Avant de décortiquer AWS, il est utile de comprendre son positionnement face à
 - **Force communautaire** : désigne le volume et l'activité de la communauté d'utilisateurs autour du fournisseur — tutoriels, forums (Stack Overflow, Reddit), projets open source, meetups. Plus cette communauté est active, plus il est facile de trouver de l'aide en cas de blocage. AWS bénéficie ici de son avance historique (premier arrivé en 2006) : davantage de contenus accumulés sur près de 20 ans.
 - **Apprentissage** : la "courbe d'apprentissage" désigne la difficulté et le temps nécessaires pour devenir opérationnel sur la plateforme. AWS a la réputation d'avoir une courbe plus longue du fait de son catalogue de 200+ services parfois redondants (plusieurs façons de faire la même chose). Azure est souvent perçue comme plus accessible pour des équipes déjà habituées à l'écosystème Microsoft (Windows Server, Active Directory, Office 365) — les concepts et l'interface leur sont familiers. "**Pythoniste-friendly**" signifie que GCP a orienté beaucoup de ses outils et de sa documentation autour de Python, le langage dominant en data science — un développeur Python s'y retrouve plus vite, notamment pour les services data/IA (BigQuery, Vertex AI).
 - **Certifications** : chaque fournisseur a son propre parcours de certification, avec des noms et des codes différents mais un principe similaire (un premier niveau généraliste, puis des spécialisations). Côté Azure, **AZ-900** est la certification fondamentale (équivalent du AWS Cloud Practitioner) et **AZ-104** la certification Administrator Associate (gestion quotidienne des ressources Azure, équivalent du AWS SysOps). Les certifications AWS sont détaillées à la section 1.3 de ce chapitre.
+
+Ce détail ligne par ligne montre que le choix entre AWS, Azure et GCP dépend rarement d'un seul critère : il se joue souvent sur l'écosystème déjà en place dans l'entreprise (Microsoft, data science) ou sur des besoins matériels très spécifiques (TPU pour l'IA).
 
 #### AWS, pourquoi c'est le leader ?
 
@@ -114,18 +120,30 @@ Ce schéma montre l'emboîtement des trois niveaux : une région regroupe plusie
 
 #### 1. Régions AWS (Regions)
 
+Le niveau le plus large de cette hiérarchie est la région, qui définit avant tout où sont physiquement situées les données et les ressources.
+
 - Une *région* est une zone géographique physique (exemple : `eu-west-3` pour Paris).
 - Chaque région contient plusieurs datacenters appelés Zones de disponibilité (AZ).
 - Les services AWS sont déployés par région et choisis par l'utilisateur.
 
+Le choix de région n'est donc pas qu'une question de proximité géographique : il détermine aussi la juridiction sous laquelle sont hébergées les données et la liste des services AWS effectivement disponibles.
+
 #### 2. Zones de disponibilité (Availability Zones - AZ)
+
+À l'intérieur de chaque région se trouve le niveau qui garantit concrètement la résilience face à une panne locale : la zone de disponibilité.
 
 - Une AZ correspond à un ou plusieurs datacenters indépendants reliés entre eux par des liens à très faible latence.
 - Les AZ sont conçues pour **garantir la haute disponibilité** et **la tolérance aux pannes**.
 
+Contrairement aux régions et aux AZ, les points de présence ne servent pas à héberger des charges de travail mais à rapprocher le contenu de l'utilisateur final.
+
 #### 3. Points de présence (Edge Locations)
 
+Ce troisième niveau répond à un besoin différent : la performance perçue plutôt que la résilience.
+
 - Répartis dans le monde entier, ils permettent d'accélérer la diffusion de contenu et d'optimiser les performances réseau via des services comme **Amazon CloudFront** (réseau de diffusion de contenu — CDN).
+
+Ces trois niveaux ne se substituent pas l'un à l'autre : une architecture résiliente combine en général le bon choix de région (contrainte légale) avec une répartition sur plusieurs AZ (contrainte de disponibilité), les points de présence intervenant en complément pour la performance perçue par l'utilisateur.
 
 #### Vidéo explicative : infrastructure AWS
 
@@ -146,10 +164,14 @@ AWS applique un modèle de facturation souple et transparent basé sur la consom
 
 #### Principes clés :
 
+Ce modèle de facturation repose sur quatre principes qui se combinent entre eux :
+
 - **Pay-as-you-go** : paiement en fonction de l'utilisation réelle des ressources.
 - **Sans engagement initial** : pas de coût d'entrée, contrairement au modèle CAPEX.
 - **Économies d'échelle** : les tarifs peuvent diminuer avec l'usage.
 - **Facturation par service** : chaque service (EC2, S3, RDS…) est facturé séparément selon ses métriques propres.
+
+Ces quatre principes se combinent : un service EC2 facturé à l'heure de fonctionnement peut par exemple bénéficier de remises de volume (Savings Plans) sans jamais nécessiter d'engagement contractuel initial, ce qui distingue fondamentalement la logique tarifaire du Cloud de celle des infrastructures traditionnelles.
 
 Selon le service et l'engagement pris, plusieurs modes de tarification existent — à la demande, instances réservées, Savings Plans, Spot Instances. Le Chapitre 4 détaille chacun de ces modes avec des cas métier chiffrés, au moment où vous configurerez vos premières instances EC2.
 

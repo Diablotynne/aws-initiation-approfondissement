@@ -13,11 +13,15 @@ Quand vous stockez un fichier dans S3, vous pouvez demander à AWS de le **chiff
 
 #### Types de chiffrement et gestion des clés
 
+S3 propose trois mécanismes complémentaires, deux pour les données au repos et un pour les données en transit :
+
 | Acronyme | Signification complète | Description pédagogique |
 |---|---|---|
 | **SSE-S3** | _Server-Side Encryption with Amazon S3-managed keys_ | Le chiffrement est géré **automatiquement par AWS S3**. Vous n'avez rien à configurer. |
 | **SSE-KMS** | _Server-Side Encryption with AWS Key Management Service_ | Le chiffrement utilise **AWS KMS**, un service de gestion de clés. Vous définissez et contrôlez les clés. |
 | **HTTPS/TLS** | _HyperText Transfer Protocol Secure / Transport Layer Security_ | Ce protocole **sécurise les échanges** entre votre navigateur ou application et AWS. |
+
+SSE-S3 et SSE-KMS protègent la donnée stockée sur disque, tandis que HTTPS/TLS protège la donnée pendant son trajet réseau — les deux catégories sont à activer simultanément, l'une ne remplaçant pas l'autre.
 
 ### 3.2 Détails des types de chiffrement
 
@@ -33,12 +37,16 @@ Quand vous stockez un fichier dans S3, vous pouvez demander à AWS de le **chiff
 - **Avantage** : contrôle granulaire sur les clés.
 - **Complexité** : nécessite configuration, permissions IAM, et gestion des quotas KMS.
 
+C'est précisément ce service KMS, mentionné dans SSE-KMS, qui mérite d'être détaillé séparément puisqu'il ne se limite pas à S3.
+
 #### KMS (Key Management Service)
 
 > Service AWS permettant de **créer, stocker et gérer** des clés de chiffrement.
 
 - Utilisé dans **SSE-KMS**, mais aussi pour chiffrer des volumes EBS, des secrets, etc.
 - Permet la **rotation automatique**, l'audit via CloudTrail, et l'intégration avec IAM.
+
+Le chiffrement au repos protège la donnée stockée, mais elle circule aussi sur le réseau avant d'arriver sur S3 — c'est là qu'intervient le troisième mécanisme.
 
 #### HTTPS / TLS
 
@@ -48,7 +56,11 @@ Quand vous stockez un fichier dans S3, vous pouvez demander à AWS de le **chiff
 - **TLS (Transport Layer Security)** : protocole de chiffrement qui protège les données en transit.
 - Activé **par défaut** dans la console AWS et les SDK/API.
 
+Ces trois mécanismes sont donc à considérer ensemble plutôt qu'isolément, chacun couvrant une phase différente du cycle de vie de la donnée.
+
 ### 3.3 À retenir sur le chiffrement
+
+En résumé, le choix entre les deux mécanismes de chiffrement au repos dépend surtout de la sensibilité des données, tandis que le chiffrement en transit ne se discute pas :
 
 - **SSE-S3** : simple, automatique, suffisant pour les données non sensibles.
 - **SSE-KMS** : recommandé pour les données sensibles ou les environnements réglementés.
@@ -62,11 +74,14 @@ Quand vous stockez un fichier dans S3, vous pouvez demander à AWS de le **chiff
 Le **versioning** permet de conserver toutes les versions d'un fichier, même si vous le modifiez ou le supprimez par erreur.
 
 #### Exemple :
+
+Concrètement, le versioning fonctionne ainsi :
+
 - Vous téléversez `rapport.pdf`
 - Vous le modifiez et téléversez une nouvelle version
 - Vous pouvez toujours revenir à la version précédente
 
-C'est utile pour :
+Chaque nouvelle version occupe un espace de stockage supplémentaire — S3 ne remplace jamais un fichier, il en ajoute une nouvelle version, ce qui a un impact direct sur la facturation à surveiller. Au-delà de ce point d'attention, le versioning répond à plusieurs besoins concrets :
 - Éviter les pertes accidentelles
 - Respecter des exigences réglementaires
 - Tracer les modifications
@@ -126,6 +141,8 @@ Amazon S3 propose plusieurs **classes de stockage**, selon la fréquence d'accè
 - Lifecycle : vous définissez les règles (ex. "après 90 jours, archiver en Glacier").
 - Intelligent-Tiering : AWS observe votre accès réel et adapte automatiquement.
 
+Ces optimisations de classe de stockage concernent la donnée déjà présente dans S3 ; un autre levier d'optimisation, indépendant, concerne la vitesse à laquelle cette donnée y arrive.
+
 #### S3 Transfer Acceleration : Optimisation des uploads volumineux
 
 **S3 Transfer Acceleration** améliore les **vitesses d'upload** vers S3 en utilisant le réseau CloudFront d'AWS.
@@ -171,6 +188,8 @@ aws s3 cp mon-fichier-gros.zip \
 **Coûts** :
 - Frais supplémentaires par Go transféré (environ $0.04/Go).
 - À justifier uniquement pour uploads volumineux ou latence critique.
+
+Transfer Acceleration ne concerne que le sens montant (upload) ; le scénario bien plus fréquent en production consiste à distribuer efficacement du contenu déjà présent dans S3 vers un grand nombre de visiteurs.
 
 #### S3 comme origine CloudFront — distribuer du contenu statique à grande échelle
 
@@ -227,6 +246,8 @@ aws cloudfront create-distribution \
 - Synchronisations multi-sites hautes performances.
 - Distributions de fichiers volumineux vers plusieurs régions AWS.
 
+Chiffrement, classes de stockage et distribution du contenu reposent tous sur un même socle : la capacité à définir précisément qui peut faire quoi sur un bucket, ce que permettent les bucket policies.
+
 ### 3.7 Stratégies de compartiment (Bucket Policies) : Contrôle d'accès granulaire
 
 Les **bucket policies** sont des documents JSON qui définissent **qui** peut accéder **à quoi** dans un bucket S3.
@@ -269,6 +290,8 @@ Une bucket policy est un document JSON attaché directement au bucket (et non à
 - **Action** : quelle opération S3 (`s3:GetObject`, `s3:PutObject`, `s3:DeleteObject`, etc.)
 - **Resource** : sur quel objet (ARN format)
 - **Condition** : contextes additionnels (IP, SSL, chiffrement, etc.)
+
+Les trois cas d'usage suivants montrent comment combiner ces éléments pour répondre à des besoins concrets, du plus permissif au plus restrictif.
 
 #### Cas d'usage 1 : Site web statique public
 
@@ -381,6 +404,8 @@ aws s3api delete-bucket-policy --bucket mon-bucket
 
 ### 3.8 Bonnes pratiques S3
 
+Pour conclure cette section, voici une synthèse des réflexes à adopter systématiquement lors de la création d'un bucket en production, en reprenant chaque mécanisme vu plus haut :
+
 - Activez le **versioning** dès que vous stockez des fichiers importants.
 - Utilisez **SSE-S3** pour un chiffrement simple et automatique.
 - Créez des **règles de cycle de vie** pour archiver ou supprimer les fichiers inutilisés.
@@ -388,6 +413,8 @@ aws s3api delete-bucket-policy --bucket mon-bucket
 - Appliquez des **bucket policies** pour restreindre l'accès selon le principe du moindre privilège.
 - Utilisez **Intelligent-Tiering** si l'accès est imprévisible.
 - Activez **Transfer Acceleration** pour les uploads volumineux critiques.
+
+Passons maintenant à la pratique : la section suivante applique concrètement ces bonnes pratiques via l'AWS CLI.
 
 ---
 

@@ -19,12 +19,18 @@ Le client gère et configure ces ressources selon ses besoins.
 
 #### Caractéristiques clés :
 
+En IaaS, le fournisseur s'arrête à la couche matérielle et réseau : tout ce qui se trouve au-dessus reste sous la responsabilité du client.
+
 - Accès à des **machines virtuelles** configurables.
 - Gestion des disques, du réseau et de la sécurité.
 - Contrôle total sur l'OS et les applications.
 - Évolutivité à la demande.
 
+Ce niveau de contrôle est aussi ce qui distingue l'IaaS des autres modèles : le client conserve la responsabilité du système d'exploitation, des correctifs de sécurité et de la configuration réseau, en échange d'une liberté totale sur l'architecture.
+
 #### Exemples AWS :
+
+Ces services illustrent concrètement chacune des caractéristiques ci-dessus :
 
 - **Amazon EC2 (Elastic Compute Cloud)** : service qui permet de créer et gérer des machines virtuelles dans le Cloud.
 - **Amazon EBS (Elastic Block Store)** : stockage en mode bloc attaché aux instances EC2.
@@ -40,11 +46,17 @@ Le fournisseur gère les couches basses, le client se concentre sur le développ
 
 #### Caractéristiques clés :
 
+Le PaaS déplace la frontière de responsabilité plus haut que l'IaaS : le fournisseur prend en charge tout ce qui touche à l'exploitation de l'environnement d'exécution.
+
 - Pas de gestion des serveurs ni de patching système.
 - Environnements prêts à l'emploi pour le déploiement applicatif.
 - Scalabilité intégrée.
 
+Le client garde ainsi la main sur le code et la logique métier, mais délègue tout ce qui concerne le maintien en condition opérationnelle de l'infrastructure sous-jacente.
+
 #### Exemples AWS :
+
+Ces trois services couvrent les usages PaaS les plus courants chez AWS, du déploiement web classique au calcul événementiel :
 
 - **AWS Elastic Beanstalk** : service de déploiement et d'orchestration d'applications Web.
 - **AWS Lambda** : service serverless qui exécute du code sans gérer de serveur.
@@ -60,11 +72,17 @@ Le PaaS permet de **réduire la charge opérationnelle** et d'accélérer les cy
 
 #### Caractéristiques clés :
 
+Avec le SaaS, la frontière de responsabilité monte encore d'un cran : le client ne consomme plus qu'une fonctionnalité, sans jamais interagir avec la couche technique qui la fait fonctionner.
+
 - Aucune gestion technique côté client.
 - Accès via un navigateur ou une API.
 - Maintenance et sécurité assurées par le fournisseur.
 
+Le revers de cette simplicité est une perte de contrôle : le client ne peut ni personnaliser l'infrastructure ni choisir la version du logiciel qu'il utilise, il dépend entièrement de la feuille de route du fournisseur.
+
 #### Exemples AWS :
+
+Voici quelques services SaaS courants, aussi bien chez AWS que chez d'autres éditeurs :
 
 - **AWS WorkMail** : service de messagerie hébergée.
 - **Salesforce** : CRM en ligne.
@@ -87,6 +105,8 @@ Ce schéma reprend, couche par couche, la bascule progressive de responsabilité
 | **Flexibilité** | Très élevée | Moyenne | Faible |
 | **Temps de déploiement** | Plus long | Rapide | Instantané |
 | **Cas d'usage typique** | Migration, environnements complexes | Déploiements rapides, automatisation | Solutions métiers clés en main |
+
+Ce tableau confirme la logique observée plus haut : plus le fournisseur prend en charge de couches, plus le déploiement est rapide, mais moins le client garde de marge de manœuvre — un compromis à évaluer projet par projet plutôt qu'un modèle universellement supérieur aux autres.
 
 ---
 

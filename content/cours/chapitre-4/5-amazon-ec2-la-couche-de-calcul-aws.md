@@ -25,6 +25,8 @@ Le **lancement est rapide** : là où commander, recevoir et configurer un serve
 
 ### 5.3 Les composants essentiels d'une instance EC2
 
+Avant de lancer une instance, voici les briques que vous devrez assembler — chacune sera détaillée dans les sections suivantes :
+
 | Composant | Rôle dans l'architecture EC2 |
 |---|---|
 | **Instance EC2** | Machine virtuelle hébergée chez AWS |

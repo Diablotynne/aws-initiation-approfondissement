@@ -19,24 +19,36 @@ Les infrastructures sont **mutualisées**, mais chaque client bénéficie d'un e
 
 #### Caractéristiques :
 
+Ce modèle repose sur quelques propriétés techniques qui expliquent à la fois ses forces et ses limites.
+
 - Hébergement sur l'infrastructure du fournisseur.
 - Mutualisation des ressources physiques.
 - Facturation à l'usage.
 - Évolutivité quasi illimitée.
 - Accès global via Internet sécurisé.
 
+C'est précisément cette mutualisation des ressources physiques entre plusieurs clients qui permet au fournisseur de proposer une facturation à l'usage et une scalabilité que peu d'entreprises pourraient atteindre seules avec leur propre matériel.
+
 #### Avantages :
+
+Ces caractéristiques techniques se traduisent concrètement par les bénéfices suivants pour l'entreprise cliente :
 
 - Pas de gestion matérielle.
 - Déploiement rapide.
 - Coût réduit grâce à la mutualisation.
 - Accès à un large éventail de services.
 
+Ces avantages ont toutefois une contrepartie directe, qui explique pourquoi certaines entreprises hésitent encore à tout migrer en Cloud public.
+
 #### Inconvénients :
+
+Cette contrepartie se résume à trois limites principales :
 
 - Moins de contrôle sur l'infrastructure physique.
 - Dépendance au fournisseur.
 - Besoins accrus en gouvernance et sécurité.
+
+Ces inconvénients ne remettent pas en cause le modèle en lui-même, mais imposent de mettre en place des garde-fous (contrats, politiques IAM, plans de sortie) dès l'adoption.
 
 #### Exemple AWS :
 
@@ -54,6 +66,8 @@ Les infrastructures sont **mutualisées**, mais chaque client bénéficie d'un e
 - **Amazon RDS** : bases de données relationnelles gérées
 - **Amazon CloudFront** : CDN mondial pour accélérer les contenus
 
+Ces services couvrent l'essentiel des besoins d'une application moderne (calcul, stockage, base de données, distribution de contenu) sans qu'aucune infrastructure physique ne soit à gérer par l'entreprise.
+
 📎 [AWS Global Infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/)
 
 ### 4.2 Le Cloud Privé
@@ -62,22 +76,34 @@ Le **Cloud Privé** est un modèle dans lequel l'entreprise déploie ses propres
 
 #### Caractéristiques :
 
+Le fait de ne pas mutualiser l'infrastructure avec d'autres clients a des répercussions directes sur ce que l'entreprise gagne — et perd — par rapport au Cloud public.
+
 - Infrastructure dédiée à une seule organisation.
 - Contrôle complet sur l'environnement.
 - Peut utiliser des technologies de virtualisation similaires à celles du Cloud public.
 - Peut être automatisé et orchestré comme un Cloud public.
 
+Ces caractéristiques rapprochent le Cloud privé d'une infrastructure on-premise classique, à ceci près que les outils et pratiques du Cloud public (automatisation, orchestration) peuvent aussi bien s'y appliquer.
+
 #### Avantages :
+
+Ne pas partager l'infrastructure avec d'autres clients se traduit directement par trois bénéfices :
 
 - Meilleure maîtrise de la sécurité et de la conformité.
 - Contrôle total sur les configurations.
 - Plus de personnalisation possible.
 
+Ce niveau de maîtrise a cependant un coût, qui se traduit par les inconvénients suivants.
+
 #### Inconvénients :
+
+Ce coût se manifeste principalement sur trois plans, financier, organisationnel et humain :
 
 - Coût d'investissement plus élevé (proche d'un modèle CAPEX).
 - Moins de flexibilité et de scalabilité.
 - Nécessite des équipes internes pour la gestion.
+
+C'est ce compromis entre contrôle et coût qui pousse encore aujourd'hui certaines organisations à conserver un Cloud privé plutôt que de tout basculer en Cloud public, notamment pour des raisons réglementaires.
 
 #### Pourquoi le Cloud Privé existe-t-il encore ?
 
@@ -118,7 +144,11 @@ Ce type de réglementation **explique pourquoi certaines entreprises gardent enc
 
 #### AWS s'est adapté :
 
+Face à ces contraintes réglementaires, AWS propose des services qui rapprochent l'expérience du Cloud public d'une infrastructure restant on-premise ou dédiée.
+
 - Un groupe bancaire peut déployer un **Cloud privé** sur sa propre infrastructure virtualisée avec VMware ou OpenStack, tout en automatisant les déploiements comme dans AWS.
+
+Cette approche permet de retrouver les mêmes outils d'automatisation et d'orchestration que sur AWS, tout en gardant la donnée dans un périmètre maîtrisé par l'entreprise.
 
 📎 [VMware Cloud Foundation](https://www.vmware.com/products/cloud-foundation.html)
 📎 [OpenStack](https://www.openstack.org/)
@@ -139,23 +169,35 @@ C'est aujourd'hui le modèle **le plus répandu** dans les grandes organisations
 
 #### Caractéristiques :
 
+Ce modèle hérite à la fois des avantages du Cloud public et de ceux du Cloud privé, mais aussi d'une complexité supplémentaire liée à la coexistence des deux environnements.
+
 - Combinaison de ressources internes et publiques.
 - Interopérabilité entre les environnements.
 - Optimisation des coûts et de la sécurité.
 - Support de scénarios de migration progressive.
 
+Ces caractéristiques expliquent pourquoi le Cloud hybride est souvent choisi comme étape intermédiaire lors d'une migration progressive vers le Cloud, plutôt que comme destination finale.
+
 #### Avantages :
+
+Cette combinaison des deux mondes se traduit par quatre bénéfices concrets :
 
 - Flexibilité maximale.
 - Répartition intelligente des charges de travail.
 - Sécurité renforcée pour les données sensibles.
 - Possibilité d'exploiter le meilleur des deux mondes.
 
+Cette flexibilité a néanmoins un prix opérationnel, détaillé dans les inconvénients ci-dessous.
+
 #### Inconvénients :
+
+Faire coexister deux environnements distincts a un coût, principalement organisationnel :
 
 - Gestion plus complexe.
 - Nécessite des compétences solides en architecture et interconnexion.
 - Risque de dépendances multiples.
+
+Cette complexité de gestion justifie l'existence de services AWS dédiés à l'interconnexion, qui simplifient la mise en œuvre d'une architecture hybride.
 
 #### Exemple AWS :
 
@@ -192,7 +234,11 @@ Ce schéma résume visuellement ce qui distingue les trois modèles vus dans cet
 | **Scalabilité** | Très élevée | Limitée | Élevée |
 | **Gouvernance** | Fournisseur | Entreprise | Mixte |
 
+Ce tableau montre que le Cloud hybride n'est pas un compromis médiocre entre les deux autres modèles, mais une combinaison qui hérite spécifiquement de la scalabilité du public sur les charges qui le permettent, tout en conservant le contrôle du privé sur celles qui l'exigent.
+
 ### 4.5 Recommandations par contexte
+
+Le tableau ci-dessous traduit ces critères techniques en recommandation concrète selon le profil et les contraintes de l'organisation.
 
 | **Modèle** | **Recommandé pour…** | **Explication simplifiée** |
 |-----------|-------|---|

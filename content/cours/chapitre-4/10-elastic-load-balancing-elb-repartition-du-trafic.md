@@ -17,6 +17,8 @@ Un **Load Balancer** agit comme un répartiteur de trafic. Il reçoit les requê
 
 ### 10.2 Types de Load Balancer AWS
 
+AWS propose trois types de Load Balancer, qui n'opèrent pas au même niveau du modèle réseau OSI :
+
 | Type | Cas d'usage typique | Protocole | Niveau OSI |
 |---|---|---|---|
 | **ALB (Application Load Balancer)** | Applications web, microservices | HTTP/HTTPS | Couche 7 (Application) |
@@ -32,6 +34,8 @@ Un **Load Balancer** agit comme un répartiteur de trafic. Il reçoit les requê
 ![](assets/schemas/ch3-capture-03-43719ff5.png)
 
 ### 10.3 Fonctionnement du Load Balancer
+
+Concrètement, le Load Balancer répète un cycle simple pour maintenir le trafic dirigé uniquement vers des instances fonctionnelles :
 
 - Le Load Balancer **vérifie l'état** des instances via des **health checks** (tests de disponibilité).
 - Il **répartit les requêtes** vers les instances **saines** uniquement.
