@@ -40,8 +40,8 @@
     <text x="685" y="162" text-anchor="middle" fill="#fff" font-size="10">Sur site</text>
     <rect x="750" y="130" width="90" height="55" rx="6" fill="#8957e5"/>
     <text x="795" y="162" text-anchor="middle" fill="#fff" font-size="10">AWS</text>
-    <line x1="730" y1="157" x2="750" y2="157" stroke="#e6edf3" stroke-width="2" marker-end="url(#arrow)"/>
-    <line x1="750" y1="167" x2="730" y2="167" stroke="#e6edf3" stroke-width="2" marker-end="url(#arrow)"/>
+    <line class="flow" x1="730" y1="157" x2="750" y2="157" stroke="#e6edf3" stroke-width="2" marker-end="url(#arrow)"/>
+    <line class="flow" x1="750" y1="167" x2="730" y2="167" stroke="#e6edf3" stroke-width="2" marker-end="url(#arrow)"/>
     <rect x="640" y="200" width="200" height="70" rx="6" fill="#21262d" stroke="#8957e5"/>
     <text x="740" y="230" text-anchor="middle" fill="#e6edf3" font-size="12">Connexion sécurisée</text>
     <text x="740" y="246" text-anchor="middle" fill="#8b949e" font-size="10">(VPN Site-to-Site, Direct Connect)</text>
@@ -53,5 +53,6 @@
     <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
       <path d="M0,0 L8,4 L0,8 Z" fill="#e6edf3"/>
     </marker>
+    <style>.flow{stroke-dasharray:5 5;animation:move 1.4s linear infinite}@keyframes move{to{stroke-dashoffset:-20}}@media(prefers-reduced-motion:reduce){.flow{animation:none}}</style>
   </defs>
 </svg>

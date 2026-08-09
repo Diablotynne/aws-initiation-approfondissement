@@ -30,7 +30,7 @@
   </g>
 
   <!-- Arrow Client to API Gateway -->
-  <path d="M 120 100 L 180 100" stroke="#FF9900" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path class="flow" d="M 120 100 L 180 100" stroke="#FF9900" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
   <text x="150" y="90" font-size="8" fill="#FFFFFF">Request</text>
 
   <!-- Lambda Function -->
@@ -43,7 +43,7 @@
   </g>
 
   <!-- Arrow API Gateway to Lambda -->
-  <path d="M 310 100 L 380 90" stroke="#FF9900" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path class="flow" d="M 310 100 L 380 90" stroke="#FF9900" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
   <text x="340" y="85" font-size="8" fill="#FFFFFF">Invoke</text>
 
   <!-- DynamoDB (Main Data) -->
@@ -56,7 +56,7 @@
   </g>
 
   <!-- Arrow Lambda to DynamoDB -->
-  <path d="M 410 140 L 280 210" stroke="#FF9900" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path class="flow" d="M 410 140 L 280 210" stroke="#FF9900" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
   <text x="360" y="170" font-size="8" fill="#FFFFFF">Read/Write</text>
 
   <!-- S3 (Object Storage) -->
@@ -69,7 +69,7 @@
   </g>
 
   <!-- Arrow Lambda to S3 -->
-  <path d="M 445 140 L 445 210" stroke="#FF9900" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path class="flow" d="M 445 140 L 445 210" stroke="#FF9900" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
   <text x="460" y="175" font-size="8" fill="#FFFFFF">Store</text>
 
   <!-- SQS (Queue) -->
@@ -82,7 +82,7 @@
   </g>
 
   <!-- Arrow Lambda to SQS -->
-  <path d="M 510 180 L 580 245" stroke="#FF9900" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path class="flow" d="M 510 180 L 580 245" stroke="#FF9900" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
   <text x="530" y="210" font-size="8" fill="#FFFFFF">Publish</text>
 
   <!-- Lambda Function 2 (Worker) -->
@@ -95,7 +95,7 @@
   </g>
 
   <!-- Arrow SQS to Lambda Worker -->
-  <path d="M 645 300 L 645 380" stroke="#FF9900" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path class="flow" d="M 645 300 L 645 380" stroke="#FF9900" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
   <text x="660" y="340" font-size="8" fill="#FFFFFF">Pull</text>
 
   <!-- CloudWatch (Logs & Monitoring) -->
@@ -108,10 +108,10 @@
   </g>
 
   <!-- Arrow Lambda to CloudWatch -->
-  <path d="M 510 110 L 780 250" stroke="#759EE6" stroke-width="1.5" fill="none" marker-end="url(#arrowhead2)"/>
+  <path class="flow" d="M 510 110 L 780 250" stroke="#759EE6" stroke-width="1.5" fill="none" marker-end="url(#arrowhead2)"/>
 
   <!-- Arrow Lambda Worker to CloudWatch -->
-  <path d="M 710 425 L 780 260" stroke="#759EE6" stroke-width="1.5" fill="none" marker-end="url(#arrowhead2)"/>
+  <path class="flow" d="M 710 425 L 780 260" stroke="#759EE6" stroke-width="1.5" fill="none" marker-end="url(#arrowhead2)"/>
 
   <!-- X-Ray (Tracing) -->
   <g filter="url(#shadow)">
@@ -123,10 +123,10 @@
   </g>
 
   <!-- Arrow Lambda to X-Ray -->
-  <path d="M 510 160 L 780 410" stroke="#FF9900" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+  <path class="flow" d="M 510 160 L 780 410" stroke="#FF9900" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
 
   <!-- Response Path -->
-  <path d="M 445 140 Q 350 120 310 100" stroke="#FF6700" stroke-width="1.5" fill="none" stroke-dasharray="2,2" marker-end="url(#arrowhead3)"/>
+  <path class="flow" d="M 445 140 Q 350 120 310 100" stroke="#FF6700" stroke-width="1.5" fill="none" stroke-dasharray="2,2" marker-end="url(#arrowhead3)"/>
   <text x="330" y="128" font-size="8" fill="#FF6700">Response</text>
 
   <!-- Event Flow Legend -->
@@ -149,5 +149,6 @@
     <marker id="arrowhead3" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
       <polygon points="0 0, 10 5, 0 10" fill="#FF6700"/>
     </marker>
+    <style>.flow{stroke-dasharray:6 6;animation:move 1.5s linear infinite}@keyframes move{to{stroke-dashoffset:-24}}@media(prefers-reduced-motion:reduce){.flow{animation:none}}</style>
   </defs>
 </svg>

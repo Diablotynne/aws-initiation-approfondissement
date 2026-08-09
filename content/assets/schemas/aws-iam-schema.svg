@@ -13,6 +13,9 @@
       .text-label { fill: #1A365D; font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; }
       .arrow-line { stroke: #1A365D; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
       .dotted-line { stroke: #1A365D; stroke-width: 2; stroke-dasharray: 5,5; fill: none; marker-end: url(#arrowhead); }
+      .flow { stroke-dasharray: 6 6; animation: move 1.5s linear infinite; }
+      @keyframes move { to { stroke-dashoffset: -24; } }
+      @media (prefers-reduced-motion: reduce) { .flow { animation: none; } }
     </style>
     <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
       <polygon points="0 0, 10 3, 0 6" fill="#1A365D"/>
@@ -29,7 +32,7 @@
   <text x="90" y="140" class="text-label" font-size="9">(Identité)</text>
 
   <!-- Arrow 1 -->
-  <path d="M 140 120 L 190 120" class="arrow-line"/>
+  <path d="M 140 120 L 190 120" class="arrow-line flow"/>
   <text x="165" y="60" class="text-label" font-size="9">Appartient à</text>
 
   <!-- Column 2: Group -->
@@ -39,7 +42,7 @@
   <text x="240" y="140" class="text-label" font-size="9">(Collection)</text>
 
   <!-- Arrow 2 -->
-  <path d="M 290 120 L 340 120" class="arrow-line"/>
+  <path d="M 290 120 L 340 120" class="arrow-line flow"/>
   <text x="315" y="110" class="text-label" font-size="9">A des</text>
 
   <!-- Column 3: Role -->
@@ -49,7 +52,7 @@
   <text x="390" y="140" class="text-label" font-size="9">(Temporaire)</text>
 
   <!-- Arrow 3 -->
-  <path d="M 440 120 L 490 120" class="arrow-line"/>
+  <path d="M 440 120 L 490 120" class="arrow-line flow"/>
   <text x="465" y="110" class="text-label" font-size="9">Assume</text>
 
   <!-- Column 4: Policy -->
@@ -59,7 +62,7 @@
   <text x="540" y="140" class="text-label" font-size="9">(Permissions)</text>
 
   <!-- Arrow 4 -->
-  <path d="M 590 120 L 640 120" class="arrow-line"/>
+  <path d="M 590 120 L 640 120" class="arrow-line flow"/>
   <text x="615" y="110" class="text-label" font-size="9">Autorise</text>
 
   <!-- Column 5: AWS Services -->

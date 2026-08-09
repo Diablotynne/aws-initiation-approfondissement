@@ -7,6 +7,7 @@
     <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
       <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.4" />
     </filter>
+    <style>.flow{stroke-dasharray:8 8;animation:move 1.5s linear infinite}@keyframes move{to{stroke-dashoffset:-32}}@media(prefers-reduced-motion:reduce){.flow{animation:none}}</style>
   </defs>
 
   <rect width="1000" height="600" fill="url(#bgGrad)"/>
@@ -32,7 +33,7 @@
   </g>
 
   <!-- Arrow from IGW to VPC -->
-  <path d="M 170 150 Q 250 150 280 200" stroke="#FF9900" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path class="flow" d="M 170 150 Q 250 150 280 200" stroke="#FF9900" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
 
   <!-- Availability Zone 1 -->
   <g filter="url(#shadow)">
@@ -137,6 +138,6 @@
   <!-- Connections arrows -->
   <path d="M 230 330 L 300 330" stroke="#00A4A6" stroke-width="1.5" fill="none" stroke-dasharray="2,2"/>
   <path d="M 670 330 L 740 330" stroke="#00A4A6" stroke-width="1.5" fill="none" stroke-dasharray="2,2"/>
-  <path d="M 110 150 L 170 210" stroke="#FF9900" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
-  <path d="M 550 150 L 550 210" stroke="#FF9900" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+  <path class="flow" d="M 110 150 L 170 210" stroke="#FF9900" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+  <path class="flow" d="M 550 150 L 550 210" stroke="#FF9900" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
 </svg>

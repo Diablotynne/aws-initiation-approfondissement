@@ -22,10 +22,10 @@
   <text x="575" y="281" text-anchor="middle" fill="#f85149" font-size="12" font-weight="bold">EC2 — AZ-c</text>
   <text x="575" y="297" text-anchor="middle" fill="#8b949e" font-size="10">✗ unhealthy (exclue)</text>
 
-  <line x1="130" y1="170" x2="215" y2="170" stroke="#e6edf3" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line class="flow" x1="130" y1="170" x2="215" y2="170" stroke="#e6edf3" stroke-width="1.5" marker-end="url(#arrow)"/>
 
-  <line x1="380" y1="150" x2="495" y2="65" stroke="#3fb950" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <line x1="380" y1="170" x2="495" y2="175" stroke="#3fb950" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line class="flow" x1="380" y1="150" x2="495" y2="65" stroke="#3fb950" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line class="flow" x1="380" y1="170" x2="495" y2="175" stroke="#3fb950" stroke-width="1.5" marker-end="url(#arrow)"/>
   <line x1="380" y1="195" x2="495" y2="280" stroke="#f85149" stroke-width="1.2" stroke-dasharray="4,3"/>
 
   <text x="400" y="292" text-anchor="middle" fill="#8b949e" font-size="10">le trafic n'est jamais</text>
@@ -35,5 +35,6 @@
     <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
       <path d="M0,0 L8,4 L0,8 z" fill="#e6edf3"/>
     </marker>
+    <style>.flow{stroke-dasharray:6 6;animation:move 1.5s linear infinite}@keyframes move{to{stroke-dashoffset:-24}}@media(prefers-reduced-motion:reduce){.flow{animation:none}}</style>
   </defs>
 </svg>

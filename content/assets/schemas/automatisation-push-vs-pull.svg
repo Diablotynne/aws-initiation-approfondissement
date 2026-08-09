@@ -6,9 +6,9 @@
   <text x="225" y="72" text-anchor="middle" fill="#f0883e" font-size="16" font-weight="700">Push — Ansible, CloudFormation</text>
   <rect x="140" y="100" width="170" height="50" rx="6" fill="#3d5a80"/>
   <text x="225" y="130" text-anchor="middle" fill="#fff" font-size="12">Poste de contrôle</text>
-  <line x1="225" y1="150" x2="130" y2="220" stroke="#e6edf3" stroke-width="2" marker-end="url(#arrowPush)"/>
-  <line x1="225" y1="150" x2="225" y2="220" stroke="#e6edf3" stroke-width="2" marker-end="url(#arrowPush)"/>
-  <line x1="225" y1="150" x2="320" y2="220" stroke="#e6edf3" stroke-width="2" marker-end="url(#arrowPush)"/>
+  <line class="flow" x1="225" y1="150" x2="130" y2="220" stroke="#e6edf3" stroke-width="2" marker-end="url(#arrowPush)"/>
+  <line class="flow" x1="225" y1="150" x2="225" y2="220" stroke="#e6edf3" stroke-width="2" marker-end="url(#arrowPush)"/>
+  <line class="flow" x1="225" y1="150" x2="320" y2="220" stroke="#e6edf3" stroke-width="2" marker-end="url(#arrowPush)"/>
   <rect x="70" y="222" width="110" height="45" rx="6" fill="#21262d" stroke="#30363d"/>
   <text x="125" y="248" text-anchor="middle" fill="#e6edf3" font-size="10">Instance A</text>
   <rect x="170" y="222" width="110" height="45" rx="6" fill="#21262d" stroke="#30363d"/>
@@ -25,9 +25,9 @@
   <text x="675" y="72" text-anchor="middle" fill="#f0883e" font-size="16" font-weight="700">Pull — Chef, Puppet</text>
   <rect x="590" y="100" width="170" height="50" rx="6" fill="#3d5a80"/>
   <text x="675" y="130" text-anchor="middle" fill="#fff" font-size="12">Serveur central</text>
-  <line x1="580" y1="220" x2="675" y2="150" stroke="#e6edf3" stroke-width="2" marker-end="url(#arrowPull)"/>
-  <line x1="675" y1="220" x2="675" y2="150" stroke="#e6edf3" stroke-width="2" marker-end="url(#arrowPull)"/>
-  <line x1="770" y1="220" x2="675" y2="150" stroke="#e6edf3" stroke-width="2" marker-end="url(#arrowPull)"/>
+  <line class="flow" x1="580" y1="220" x2="675" y2="150" stroke="#e6edf3" stroke-width="2" marker-end="url(#arrowPull)"/>
+  <line class="flow" x1="675" y1="220" x2="675" y2="150" stroke="#e6edf3" stroke-width="2" marker-end="url(#arrowPull)"/>
+  <line class="flow" x1="770" y1="220" x2="675" y2="150" stroke="#e6edf3" stroke-width="2" marker-end="url(#arrowPull)"/>
   <rect x="520" y="222" width="110" height="45" rx="6" fill="#21262d" stroke="#8957e5"/>
   <text x="575" y="242" text-anchor="middle" fill="#e6edf3" font-size="10">Instance A</text>
   <text x="575" y="257" text-anchor="middle" fill="#8957e5" font-size="8">agent</text>
@@ -48,5 +48,6 @@
     <marker id="arrowPull" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
       <path d="M0,0 L8,4 L0,8 Z" fill="#e6edf3"/>
     </marker>
+    <style>.flow{stroke-dasharray:6 6;animation:move 1.5s linear infinite}@keyframes move{to{stroke-dashoffset:-24}}@media(prefers-reduced-motion:reduce){.flow{animation:none}}</style>
   </defs>
 </svg>
