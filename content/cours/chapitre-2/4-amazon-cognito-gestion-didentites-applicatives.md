@@ -5,18 +5,20 @@ description: "\"Chapitre 2 — Sécurité des accès avec AWS IAM\" - 4. Amazon 
 
 <nav class="page-sequence"><a href="cours/chapitre-2/3-federation-didentite-et-sso-avec-iam-identity-center">Pr&eacute;c&eacute;dent</a> <a href="cours/chapitre-2/index">Sommaire</a> <a href="cours/chapitre-2/5-strategie-multi-comptes-avec-aws-organizations">Suivant</a></nav>
 
-### 4.1 Différence : IAM vs Cognito
+### 4.1 Qu'est-ce qu'Amazon Cognito ?
+
+**Amazon Cognito** est un service AWS qui permet de gérer l'authentification et l'autorisation des utilisateurs dans les applications web et mobiles. Il permet de créer des **pools d'utilisateurs** (User Pools) et de connecter des **fournisseurs d'identité externes** (Google, Facebook, SAML, etc.).
+
+### 4.2 Différence : IAM vs Cognito
 
 Souvent, les stagiaires confondent IAM et Cognito. C'est normal — ce sont tous les deux des services d'identité. Mais ils n'ont **pas le même public** :
 
 - **IAM** = gestion des identités **administratives** (accès AWS pour l'équipe IT/DevOps).
 - **Amazon Cognito** = gestion des identités **applicatives** (accès à une application web ou mobile pour les utilisateurs finaux).
 
-**Amazon Cognito** est un service AWS qui permet de gérer l'authentification et l'autorisation des utilisateurs dans les applications web et mobiles. Il permet de créer des **pools d'utilisateurs** (User Pools) et de connecter des **fournisseurs d'identité externes** (Google, Facebook, SAML, etc.).
-
 ---
 
-### 4.2 Cas d'usage typique
+### 4.3 Cas d'usage typique
 
 Une application web souhaite permettre à ses utilisateurs de se connecter avec leur compte Google ou via un login/mot de passe.
 

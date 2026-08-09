@@ -221,13 +221,7 @@ article img[src*="assets/schemas/"] {
   display: block;
   width: 100%;
   height: auto;
-  margin: 0 auto;
-  padding: clamp(0.35rem, 1.2vw, 0.9rem);
-  box-sizing: border-box;
-  background: #f8fafc;
-  border: 1px solid #cbd5e1;
-  border-radius: 0.8rem;
-  box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.18);
+  margin: 1.5rem auto;
 }
 
 .video-embed {
