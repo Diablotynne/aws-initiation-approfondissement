@@ -24,10 +24,10 @@
   <rect x="60" y="200" width="110" height="40" rx="5" fill="#0d1117" stroke="#30363d"/>
   <text x="115" y="224" text-anchor="middle" fill="#e6edf3" font-size="11">Compte Prod-App</text>
 
-  <rect x="190" y="200" width="110" height="40" rx="5" fill="#0d1117" stroke="#30363d"/>
+  <rect x="195" y="200" width="100" height="40" rx="5" fill="#0d1117" stroke="#30363d"/>
   <text x="245" y="224" text-anchor="middle" fill="#e6edf3" font-size="11">Compte Prod-DB</text>
 
-  <rect x="295" y="200" width="110" height="40" rx="5" fill="#0d1117" stroke="#30363d"/>
+  <rect x="300" y="200" width="100" height="40" rx="5" fill="#0d1117" stroke="#30363d"/>
   <text x="350" y="224" text-anchor="middle" fill="#e6edf3" font-size="11">Compte Sandbox</text>
 
   <rect x="480" y="200" width="110" height="40" rx="5" fill="#0d1117" stroke="#30363d"/>

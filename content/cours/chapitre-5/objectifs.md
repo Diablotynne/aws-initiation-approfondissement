@@ -7,12 +7,7 @@ description: "\"Chapitre 5 — Automatisation, supervision et reprise d'activit�
 
 À l'issue de ce chapitre, les stagiaires seront capables de :
 
-- **Définir** RTO/RPO et mettre en œuvre une stratégie de sauvegarde (AWS Backup, snapshots EBS/RDS)
-- **Expliquer** l'intérêt de l'Infrastructure as Code et écrire/déployer un template CloudFormation
-- **Utiliser** AWS Systems Manager et déployer une application avec Elastic Beanstalk
-- **Superviser** une infrastructure avec CloudWatch et appliquer le Well-Architected Framework
-- **Découpler** une architecture (SQS, SNS, API Gateway, Step Functions) et situer les certifications AWS
-
+<a class="schema-zoom" href="assets/schemas/objectifs-chapitre-5.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/objectifs-chapitre-5.svg" alt="Objectifs du chapitre 5" style="display:block; margin:auto; width:100%; max-width:720px"></a>
 ---
 
 ---

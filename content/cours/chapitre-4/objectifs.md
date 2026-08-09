@@ -7,12 +7,7 @@ description: "\"Chapitre 4 — Stockage Amazon S3 et calcul Amazon EC2\" - Objec
 
 À l'issue de ce chapitre, les stagiaires seront capables de :
 
-- **Créer et administrer** un bucket Amazon S3 (chiffrement, versioning, lifecycle, CLI)
-- **Choisir et lancer** une instance EC2 adaptée (type, AMI, stockage, Security Groups, CLI)
-- **Comparer** les modèles de tarification EC2 et utiliser AWS Compute Optimizer
-- **Déployer** un conteneur sur ECS/ECR/Fargate comme alternative à l'instance EC2 classique
-- **Concevoir** une architecture haute disponibilité combinant Elastic Load Balancing et Auto Scaling
-
+<a class="schema-zoom" href="assets/schemas/objectifs-chapitre-4.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/objectifs-chapitre-4.svg" alt="Objectifs du chapitre 4" style="display:block; margin:auto; width:100%; max-width:720px"></a>
 ---
 
 ---

@@ -49,5 +49,5 @@
     <text x="700" y="315" text-anchor="middle" fill="#8b949e" font-size="10">des utilisateurs (CloudFront)</text>
   </g>
 
-  <text x="450" y="385" text-anchor="middle" fill="#8b949e" font-size="12">Région ⊃ Zones de disponibilité (≥ 3 par région) ⊃ Datacenters — les Edge Locations sont hors région, au plus près des utilisateurs</text>
+  <text x="450" y="430" text-anchor="middle" fill="#8b949e" font-size="12">Région ⊃ Zones de disponibilité (≥ 3 par région) ⊃ Datacenters — les Edge Locations sont hors région, au plus près des utilisateurs</text>
 </svg>

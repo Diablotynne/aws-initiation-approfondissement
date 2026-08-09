@@ -7,12 +7,7 @@ description: "\"Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS\" - 
 
 À l'issue de ce chapitre, les stagiaires seront capables de :
 
-- **Expliquer** ce qu'est AWS — historique, positionnement sur le marché, modèle de responsabilité partagée
-- **Distinguer** les modèles cloud : IaaS/PaaS/SaaS, public/privé/hybride, CAPEX vs OPEX
-- **Expliquer** les principes de virtualisation, conteneurisation et microservices
-- **Situer** l'infrastructure mondiale AWS (régions, AZ, edge locations) et appliquer le Well-Architected Framework
-- **Naviguer** dans l'AWS Management Console et maîtriser les outils de suivi budgétaire (Billing, Budgets, Cost Explorer)
-
+<a class="schema-zoom" href="assets/schemas/objectifs-chapitre-1.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/objectifs-chapitre-1.svg" alt="Objectifs du chapitre 1" style="display:block; margin:auto; width:100%; max-width:720px"></a>
 ---
 
 ---

@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="system-ui, sans-serif">
   <rect x="0" y="0" width="900" height="480" rx="16" fill="#0d1117"/>
-  <text x="450" y="38" text-anchor="middle" fill="#e6edf3" font-size="22" font-weight="700">Virtualisation vs conteneurisation — deux façons d'isoler des applications</text>
+  <text x="450" y="30" text-anchor="middle" fill="#e6edf3" font-size="20" font-weight="700">Virtualisation vs conteneurisation</text>
+  <text x="450" y="54" text-anchor="middle" fill="#e6edf3" font-size="20" font-weight="700">— deux façons d'isoler des applications</text>
 
   <!-- VM column -->
   <text x="225" y="72" text-anchor="middle" fill="#f0883e" font-size="16" font-weight="700">Machines virtuelles</text>

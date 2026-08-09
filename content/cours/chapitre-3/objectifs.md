@@ -7,12 +7,7 @@ description: "\"Chapitre 3 — Amazon VPC et bases de données AWS\" - Objectifs
 
 À l'issue de ce chapitre, les stagiaires seront capables de :
 
-- **Expliquer** l'intérêt des bases managées et déployer une Amazon RDS Multi-AZ sécurisée
-- **Différencier** Aurora, RDS et DynamoDB, et planifier une migration avec AWS DMS
-- **Concevoir** une VPC avec subnets publics/privés, table de routage et passerelle Internet/NAT
-- **Sécuriser et interconnecter** le réseau (Security Groups, NACL, VPC Peering, Transit Gateway, VPC Endpoint)
-- **Configurer** Route 53 (DNS, routage avancé) et un cluster ElastiCache pour accélérer l'accès aux données
-
+<a class="schema-zoom" href="assets/schemas/objectifs-chapitre-3.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/objectifs-chapitre-3.svg" alt="Objectifs du chapitre 3" style="display:block; margin:auto; width:100%; max-width:720px"></a>
 ---
 
 ---

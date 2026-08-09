@@ -21,7 +21,7 @@
   <text x="425" y="112" fill="#e6edf3" font-size="10">0.0.0.0/0</text>
   <text x="580" y="112" fill="#e6edf3" font-size="10">nat-xxxxx (NAT Gateway)</text>
 
-  <rect x="180" y="190" width="400" height="110" rx="6" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
+  <rect x="130" y="190" width="500" height="110" rx="6" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
   <text x="380" y="212" text-anchor="middle" fill="#58a6ff" font-size="12" font-weight="bold">Association Subnet ↔ Route Table</text>
   <text x="380" y="238" text-anchor="middle" fill="#e6edf3" font-size="10">Chaque subnet est associé à UNE SEULE table de routage</text>
   <text x="380" y="256" text-anchor="middle" fill="#e6edf3" font-size="10">(une table peut être partagée par plusieurs subnets)</text>

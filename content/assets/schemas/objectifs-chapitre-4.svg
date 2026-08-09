@@ -1,0 +1,43 @@
+<svg viewBox="0 0 650 360" xmlns="http://www.w3.org/2000/svg">
+  <rect width="650" height="360" fill="#0d1117"/>
+  <g>
+    <rect x="20" y="20" width="190" height="150" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <text x="115" y="66" text-anchor="middle" font-size="30">⭐</text>
+    <text x="115" y="90" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="bold" fill="#f0883e">Créer et administrer</text>
+    <text x="115" y="116" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#8b949e">un bucket Amazon S3</text>
+    <text x="115" y="131" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#8b949e">(chiffrement, versioning,</text>
+    <text x="115" y="146" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#8b949e">lifecycle, CLI)</text>
+  </g>
+  <g>
+    <rect x="230" y="20" width="190" height="150" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <text x="325" y="66" text-anchor="middle" font-size="30">🎯</text>
+    <text x="325" y="90" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="bold" fill="#f0883e">Choisir et lancer</text>
+    <text x="325" y="116" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#8b949e">une instance EC2 adaptée</text>
+    <text x="325" y="131" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#8b949e">(type, AMI, stockage,</text>
+    <text x="325" y="146" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#8b949e">Security Groups, CLI)</text>
+  </g>
+  <g>
+    <rect x="440" y="20" width="190" height="150" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <text x="535" y="66" text-anchor="middle" font-size="30">⭐</text>
+    <text x="535" y="90" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="bold" fill="#f0883e">Comparer</text>
+    <text x="535" y="116" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#8b949e">les modèles de</text>
+    <text x="535" y="131" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#8b949e">tarification EC2 et</text>
+    <text x="535" y="146" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#8b949e">utiliser AWS Compute Opti…</text>
+  </g>
+  <g>
+    <rect x="125" y="190" width="190" height="150" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <text x="220" y="236" text-anchor="middle" font-size="30">🚀</text>
+    <text x="220" y="260" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="bold" fill="#f0883e">Déployer</text>
+    <text x="220" y="286" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#8b949e">un conteneur sur</text>
+    <text x="220" y="301" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#8b949e">ECS/ECR/Fargate comme</text>
+    <text x="220" y="316" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#8b949e">alternative à l'instance…</text>
+  </g>
+  <g>
+    <rect x="335" y="190" width="190" height="150" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <text x="430" y="236" text-anchor="middle" font-size="30">📐</text>
+    <text x="430" y="260" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="bold" fill="#f0883e">Concevoir</text>
+    <text x="430" y="286" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#8b949e">une architecture haute</text>
+    <text x="430" y="301" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#8b949e">disponibilité combinant</text>
+    <text x="430" y="316" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#8b949e">Elastic Load Balancing et…</text>
+  </g>
+</svg>
