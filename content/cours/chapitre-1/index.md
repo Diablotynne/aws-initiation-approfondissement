@@ -1,6 +1,7 @@
 ---
 title: "Chapitre 1 — Fondamentaux du Cloud et présentation d'AWS"
 description: "Cloud Computing, modèles de service et de déploiement, infrastructure AWS, coûts et Well-Architected."
+modified: "2026-08-08"
 ---
 
 > [!info]

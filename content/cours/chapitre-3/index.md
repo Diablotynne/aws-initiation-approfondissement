@@ -1,6 +1,7 @@
 ---
 title: "Chapitre 3 — Amazon VPC et bases de données AWS"
 description: "RDS, Aurora, DynamoDB, migration, VPC, routage, filtrage et Route 53."
+modified: "2026-08-06"
 ---
 
 > [!info]
