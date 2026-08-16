@@ -261,6 +261,10 @@ Risque : cache stale (données anciennes) pendant TTL
 
 Ce pattern place la responsabilité du remplissage du cache côté application plutôt que côté base de données — c'est ce choix architectural qui explique pourquoi il faut définir un TTL cohérent avec la fréquence de mise à jour réelle des données en base.
 
+<a class="schema-zoom" href="assets/schemas/elasticache-cache-aside.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/elasticache-cache-aside.svg"
+     alt="Cache-Aside Pattern : application interroge ElastiCache, en cas de MISS interroge RDS puis remplit le cache avec un TTL"
+     style="display:block; margin:auto; width:95%"></a>
+
 ### 4.8 Combien coûte ElastiCache ?
 
 ElastiCache se facture à l'heure d'instance active, comme EC2 et RDS — pas de coût "à la requête" contrairement à DynamoDB. Le prix dépend du type de nœud et du nombre de nœuds (primary + replicas).

@@ -1,7 +1,7 @@
 ---
 title: "Chapitre 4 — Stockage Amazon S3 et calcul Amazon EC2"
 description: "S3, AMI, instances EC2, stockage EBS, conteneurs ECS/ECR/Fargate, équilibrage de charge et Auto Scaling."
-modified: "2026-08-05"
+modified: "2026-08-12"
 ---
 
 > [!info]

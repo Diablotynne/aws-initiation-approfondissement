@@ -1,7 +1,7 @@
 ---
 title: "Chapitre 5 — Automatisation, supervision et reprise d'activité"
 description: "RTO, RPO, sauvegarde, CloudFormation, Systems Manager, Elastic Beanstalk et CloudWatch."
-modified: "2026-08-04"
+modified: "2026-08-11"
 ---
 
 > [!info]

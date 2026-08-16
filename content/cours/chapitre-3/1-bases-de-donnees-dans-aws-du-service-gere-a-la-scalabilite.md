@@ -132,6 +132,10 @@ Le gain ne se limite pas au coût : c'est surtout la disponibilité qui change d
 
 **Après failover** : `AZ 1a` est en panne. `AZ 1b` héberge désormais le RDS Primary (ex-Standby), qui accepte lectures et écritures sur le **même endpoint** `mysql.xxxxx.rds.amazonaws.com` — aucune reconfiguration applicative n'est nécessaire. Un nouveau Standby est recréé et répliqué depuis ce nouveau Primary, ce qui résorbe la panne en environ 5 minutes.
 
+<a class="schema-zoom" href="assets/schemas/rds-multiaz-failover.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/rds-multiaz-failover.svg"
+     alt="RDS Multi-AZ — état avant failover (Primary AZ 1a, Standby AZ 1b) et pendant le failover (bascule DNS Route 53, promotion du Standby)"
+     style="display:block; margin:auto; width:95%"></a>
+
 **Bénéfice** : zéro downtime applicatif (reconnexion auto après failover), zéro perte données.
 **Coût** : +50 % sur la facture RDS.
 **À savoir** : L'endpoint DNS ne change pas → applications se reconnectent automatiquement.

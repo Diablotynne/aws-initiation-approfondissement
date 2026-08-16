@@ -78,6 +78,10 @@ En cas de panne détectée, router vers une ressource de secours.
 
 **Cas d'usage** : haute disponibilité, reprise après sinistre.
 
+<a class="schema-zoom" href="assets/schemas/route53-routing-policies.svg" target="_blank" rel="noopener" aria-label="Agrandir le schéma"><img src="assets/schemas/route53-routing-policies.svg"
+     alt="Comparaison des 4 politiques de routage Route 53 : Simple, Pondérée, Latence, Failover"
+     style="display:block; margin:auto; width:95%"></a>
+
 ---
 
 ### 3.4 Health Checks et Monitoring
