@@ -1,4 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" role="img" aria-labelledby="title desc">
+<title id="dawan-title">Distribution animée d&#x27;une charge entre les trois zones de disponibilité de la région AWS Paris</title>
+<desc id="dawan-desc">Clarifier le sens de lecture par flèches continues, étapes numérotées, frontières de responsabilité et légende compacte des couleurs. Réduire la densité visible en regroupant les détails dans des blocs et en renforçant les niveaux de lecture. Ajouter dans le SVG une palette à contraste WCAG, des variables de couleur et une variante interne `prefers-color-scheme: dark`, avec contours lisibles dans les deux modes. Préparer des groupes SVG identifiés par étape, avec survol mettant en évidence l&#x27;étape et animation discrète du chemin ; rendu statique complet si l&#x27;animation est indisponible. Le contenu, les libellés et le sens pédagogique d&#x27;origine sont conservés.</desc>
+<style id="dawan-adaptive-accessibility"><![CDATA[
+  svg { color-scheme: light dark; isolation: isolate; text-rendering: geometricPrecision; }
+  text { font-synthesis: none; paint-order: stroke fill; stroke: rgba(248,250,252,.20); stroke-width: .28px; stroke-linejoin: round; }
+  path, line, polyline, polygon { vector-effect: non-scaling-stroke; }
+  g[id] { transition: filter .18s ease, opacity .18s ease, transform .18s ease; transform-origin: center; }
+  g[id]:hover, g[id]:focus { filter: brightness(1.13) saturate(1.10) drop-shadow(0 2px 3px rgba(14,165,233,.24)); outline: none; }
+  g[id]:hover path[marker-end], g[id]:focus path[marker-end] { stroke-dasharray: 8 5; animation: dawan-flow .8s linear infinite; }
+  .dawan-theme-backdrop { fill: #0b1220; stroke: #64748b; stroke-width: 1.5; }
+  @keyframes dawan-flow { to { stroke-dashoffset: -13; } }
+  @media (prefers-color-scheme: dark) {
+    .dawan-theme-backdrop { stroke: #7dd3fc; }
+    text { stroke: rgba(2,6,23,.28); }
+  }
+  @media (prefers-reduced-motion: reduce) { g[id], g[id] path { transition: none !important; animation: none !important; } }
+  @media print { g[id] { filter: none !important; } }
+]]></style>
+
   <title id="title">Infrastructure mondiale AWS, de la région aux zones de disponibilité</title>
   <desc id="desc">Une requête entre dans la région Europe Paris puis circule vers un répartiteur et trois zones de disponibilité indépendantes.</desc>
   <defs>

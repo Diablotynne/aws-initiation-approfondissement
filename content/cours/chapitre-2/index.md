@@ -1,7 +1,7 @@
 ---
 title: "Chapitre 2 — Sécurité des accès avec AWS IAM"
 description: "Identités, politiques, rôles, MFA, fédération, Cognito, Organizations et CloudTrail."
-modified: "2026-08-14"
+modified: "2026-08-16"
 ---
 
 > [!info]

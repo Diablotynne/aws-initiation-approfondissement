@@ -1,4 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="system-ui, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="system-ui, sans-serif" role="img" aria-labelledby="dawan-title dawan-desc">
+<title id="dawan-title">Architecture comparée : VM avec hyperviseur et OS invité complet par application, contre conteneurs partageant le noyau de l&#x27;hôte</title>
+<desc id="dawan-desc">Structurer en deux colonnes strictement alignées, utiliser les mêmes critères des deux côtés et faire ressortir différences, avantages et limites. Réduire la densité visible en regroupant les détails dans des blocs et en renforçant les niveaux de lecture. Ajouter dans le SVG une palette à contraste WCAG, des variables de couleur et une variante interne `prefers-color-scheme: dark`, avec contours lisibles dans les deux modes. Ajouter des états de survol sobres sur les groupes importants et des identifiants de calques exploitables pour une révélation progressive. Le contenu, les libellés et le sens pédagogique d&#x27;origine sont conservés.</desc>
+<style id="dawan-adaptive-accessibility"><![CDATA[
+  svg { color-scheme: light dark; isolation: isolate; text-rendering: geometricPrecision; }
+  text { font-synthesis: none; paint-order: stroke fill; stroke: rgba(248,250,252,.20); stroke-width: .28px; stroke-linejoin: round; }
+  path, line, polyline, polygon { vector-effect: non-scaling-stroke; }
+  g[id] { transition: filter .18s ease, opacity .18s ease, transform .18s ease; transform-origin: center; }
+  g[id]:hover, g[id]:focus { filter: brightness(1.13) saturate(1.10) drop-shadow(0 2px 3px rgba(14,165,233,.24)); outline: none; }
+  g[id]:hover path[marker-end], g[id]:focus path[marker-end] { stroke-dasharray: 8 5; animation: dawan-flow .8s linear infinite; }
+  .dawan-theme-backdrop { fill: #f8fafc; stroke: #94a3b8; stroke-width: 1.5; }
+  @keyframes dawan-flow { to { stroke-dashoffset: -13; } }
+  @media (prefers-color-scheme: dark) {
+    .dawan-theme-backdrop { stroke: #7dd3fc; }
+    text { stroke: rgba(2,6,23,.28); }
+  }
+  @media (prefers-reduced-motion: reduce) { g[id], g[id] path { transition: none !important; animation: none !important; } }
+  @media print { g[id] { filter: none !important; } }
+]]></style>
+
   <rect x="0" y="0" width="900" height="480" rx="16" fill="#0d1117"/>
   <text x="450" y="30" text-anchor="middle" fill="#e6edf3" font-size="20" font-weight="700">Virtualisation vs conteneurisation</text>
   <text x="450" y="54" text-anchor="middle" fill="#e6edf3" font-size="20" font-weight="700">— deux façons d'isoler des applications</text>
